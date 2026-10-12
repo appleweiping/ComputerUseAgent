@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-27",
+  "budget_scope": "New Browser-Use and Skyvern Week 1 execution requested in the final delivery plan",
+  "combined_online_cost_cap_usd": 5.0,
+  "browser_use": {
+    "formal_reported_cost_usd": 0.436519,
+    "validation_smoke_reported_cost_usd": 0.058495,
+    "total_reported_cost_usd": 0.495014
+  },
+  "skyvern": {
+    "formal_reported_cost_usd": 0.432419,
+    "diagnostic_smoke_reported_cost_usd": 0.075239,
+    "canceled_attempt_reported_cost_usd": 0.001942,
+    "nonformal_overhead_reported_cost_usd": 0.077181,
+    "total_reported_cost_usd": 0.5096
+  },
+  "combined_formal_reported_cost_usd": 0.868938,
+  "combined_online_total_reported_cost_usd": 1.004614,
+  "remaining_reported_budget_usd": 3.995386,
+  "all_formal_run_costs_reported": true,
+  "stagehand_budget_treatment": "Supplemental pre-plan smoke; provider cost was not reported and is not included in the new Browser-Use/Skyvern budget ledger.",
+  "cost_interpretation": "Application-reported values; not independently reconciled to provider invoices."
+}

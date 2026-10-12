@@ -1,0 +1,160 @@
+name: Dependency audit
+
+on:
+  schedule:
+    - cron: "41 5 * * 1"
+  pull_request:
+    paths:
+      - "pyproject.toml"
+      - "uv.lock"
+      - "extension/package.json"
+      - "extension/package-lock.json"
+      - "research/**/requirements*"
+      - "research/**/package-lock.json"
+      - ".github/workflows/audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "pyproject.toml"
+      - "uv.lock"
+      - "extension/package.json"
+      - "extension/package-lock.json"
+      - ".github/workflows/audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  FORCE_COLOR: "1"
+  UV_VERSION: "0.11.21"
+  NODE_VERSION: "22"
+
+jobs:
+  python:
+    name: pip-audit (uv.lock, every extra and group)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      - name: Install pip-audit from uv.lock
+        run: uv sync --locked --only-group dev
+
+      - name: Audit the locked graph
+        run: |
+          uv export --quiet --locked --all-extras --all-groups --no-emit-project \
+            --format requirements-txt --output-file "${RUNNER_TEMP}/requirements.txt"
+          uv run --no-sync pip-audit --strict --progress-spinner off \
+            --disable-pip --require-hashes -r "${RUNNER_TEMP}/requirements.txt"
+
+  npm:
+    name: npm audit (extension)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: npm audit (development graph included; CI executes it)
+        working-directory: extension
+        run: npm audit --audit-level=high
+
+  research-locks:
+    name: Research locks (informational)
+    # The research graphs are frozen provenance (see research/PROVENANCE.md);
+    # findings here are reported, never auto-fixed, and never block a merge.
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: true
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      - name: Install audit tooling from uv.lock
+        run: uv sync --locked --no-default-groups --group dev
+
+      - name: pip-audit every hash-locked research graph in isolation
+        run: |
+          status=0
+          while IFS=$'\t' read -r group mode path; do
+            [ "${mode}" = "locked" ] || continue
+            echo "::group::${group} (${path})"
+            uv run --no-sync pip-audit --progress-spinner off --disable-pip \
+              --require-hashes -r "${path}" || status=1
+            echo "::endgroup::"
+          done < <(uv run --no-sync python tools/ci/supply_chain.py --print-python-audit-targets)
+          exit "${status}"
+
+      # The frozen research Python locks carry known advisories, so the step
+      # above fails on every run; without `if:` the npm audit would be skipped
+      # every time. The job still concludes red (informational, continue-on-error).
+      - name: Set up Node.js
+        if: ${{ !cancelled() }}
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: npm audit research lockfiles
+        if: ${{ !cancelled() }}
+        run: |
+          status=0
+          while IFS= read -r lock; do
+            dir="$(dirname "${lock}")"
+            echo "::group::${dir}"
+            (cd "${dir}" && npm audit --audit-level=high) || status=1
+            echo "::endgroup::"
+          done < <(git ls-files 'research/**/package-lock.json')
+          exit "${status}"
+
+  dependency-review:
+    name: Dependency review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Review dependency changes
+        uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+        with:
+          fail-on-severity: high

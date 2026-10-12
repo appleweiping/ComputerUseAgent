@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "cui-literature-repository-review-snapshots-v1",
+  "retrievedAt": "2026-08-11T11:53:08.4650870Z",
+  "retrievalMethod": "GitHub REST repository license and HEAD commit endpoints; anonymous request with no credential persisted",
+  "repositories": {
+    "GitHub:browser-use/browser-use": {
+      "reviewStatus": "repository-reviewed",
+      "headCommit": "32601887cfbc9f4f1e3cad3e2b678e56aeaeaae4",
+      "headCommitUrl": "https://github.com/browser-use/browser-use/commit/32601887cfbc9f4f1e3cad3e2b678e56aeaeaae4",
+      "headCommitDate": "2026-08-06T18:27:58Z",
+      "license": "MIT",
+      "licenseEvidenceUrl": "https://github.com/browser-use/browser-use/blob/main/LICENSE",
+      "licenseBlobSha": "1ea3836ce58a4cd32c90c0b4f4e736d840d23780",
+      "reuseBoundary": "MIT terms apply to the reviewed repository snapshot; paper and third-party assets may have separate terms."
+    },
+    "GitHub:browser-use/benchmark": {
+      "reviewStatus": "repository-reviewed",
+      "headCommit": "bc6fd7849aa102c4204509de0a83da680212b22d",
+      "headCommitUrl": "https://github.com/browser-use/benchmark/commit/bc6fd7849aa102c4204509de0a83da680212b22d",
+      "headCommitDate": "2026-08-04T17:53:20Z",
+      "license": "NOASSERTION",
+      "licenseEvidenceUrl": "https://api.github.com/repos/browser-use/benchmark/license",
+      "licenseBlobSha": null,
+      "reuseBoundary": "No root repository license was returned by GitHub at retrieval time; availability does not grant redistribution permission."
+    },
+    "GitHub:skyvern-ai/skyvern": {
+      "reviewStatus": "repository-reviewed",
+      "headCommit": "30b566fb8b4e9367cd8bc826f48f7edb27cde9a7",
+      "headCommitUrl": "https://github.com/Skyvern-AI/skyvern/commit/30b566fb8b4e9367cd8bc826f48f7edb27cde9a7",
+      "headCommitDate": "2026-08-09T04:38:13Z",
+      "license": "AGPL-3.0",
+      "licenseEvidenceUrl": "https://github.com/Skyvern-AI/skyvern/blob/main/LICENSE",
+      "licenseBlobSha": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "reuseBoundary": "AGPL-3.0 terms apply to the reviewed repository snapshot; deployed-service and modification obligations require project-owner review."
+    },
+    "GitHub:browserbase/stagehand": {
+      "reviewStatus": "repository-reviewed",
+      "headCommit": "a46676658b4f1c44f6210ed6d85193d9a4393770",
+      "headCommitUrl": "https://github.com/browserbase/stagehand/commit/a46676658b4f1c44f6210ed6d85193d9a4393770",
+      "headCommitDate": "2026-08-10T17:43:15Z",
+      "license": "MIT",
+      "licenseEvidenceUrl": "https://github.com/browserbase/stagehand/blob/main/LICENSE",
+      "licenseBlobSha": "683c709c95b54b899bb1a49207cd5bff296ba087",
+      "reuseBoundary": "MIT terms apply to the reviewed repository snapshot; integrations and third-party services may have separate terms."
+    }
+  }
+}

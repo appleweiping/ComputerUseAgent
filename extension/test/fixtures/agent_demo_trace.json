@@ -1,0 +1,1859 @@
+{
+  "metadata": {
+    "schema_version": "cui-trace-v1",
+    "session_id": "3cb77c70-97d5-417b-a092-e6e3e8c240fd",
+    "actor_type": "agent",
+    "actor_label": "codex-in-app-browser",
+    "participant_code": "self-test",
+    "task_id": "week2-matched-task-v1",
+    "executor": "codex-in-app-browser",
+    "executor_version": "2026-08-03",
+    "environment": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "raw_key_capture": false,
+    "include_query": false,
+    "consent_confirmed": true,
+    "started_at": "2026-08-03T12:56:50.245Z",
+    "stopped_at": "2026-08-03T12:56:52.693Z",
+    "status": "complete",
+    "event_count": 50,
+    "evidence_scope": "standalone mirror using recorder/src/core.js; not extension storage"
+  },
+  "summary": {
+    "event_count": 50,
+    "duration_ms": 2443,
+    "pointer_distance_px": 1668.79,
+    "by_type": {
+      "focusout": 4,
+      "pointermove": 4,
+      "pointerdown": 3,
+      "focusin": 4,
+      "pointerup": 3,
+      "click": 3,
+      "keydown": 14,
+      "beforeinput": 14,
+      "change": 1
+    }
+  },
+  "events": [
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "5d666102-264b-4ea1-9ba1-7507ce7310db",
+      "type": "focusout",
+      "epoch_ms": 1785761810245,
+      "monotonic_ms": 33514.2,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button#start-recording",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "3ec9831a-5487-4068-986d-9bf1092dce97",
+      "type": "pointermove",
+      "epoch_ms": 1785761810621,
+      "monotonic_ms": 33889.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 110,
+        "y": 430,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "aside",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "aside",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "628e1586-fd62-439a-bcca-382eae933997",
+      "type": "pointermove",
+      "epoch_ms": 1785761810677,
+      "monotonic_ms": 33945.9,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 610,
+        "y": 470,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "article",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "article.instrument",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "2fe8641d-c035-4349-90fa-79078a4c4cea",
+      "type": "pointerdown",
+      "epoch_ms": 1785761810732,
+      "monotonic_ms": 34001.5,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 192.2,
+        "y": 360,
+        "button": 0,
+        "buttons": 1,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "8e76dade-ad80-4e89-b8a7-c30ea9ec6c17",
+      "type": "focusin",
+      "epoch_ms": 1785761810736,
+      "monotonic_ms": 34004.8,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "a914769d-cfde-44ae-a1d2-ba0a4a6471fd",
+      "type": "pointerup",
+      "epoch_ms": 1785761810749,
+      "monotonic_ms": 34018.4,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 192.2,
+        "y": 360,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "d0d3965c-4971-48e6-ac22-b635e7294018",
+      "type": "click",
+      "epoch_ms": 1785761810750,
+      "monotonic_ms": 34019.1,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 192,
+        "y": 360,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "073eda02-83dc-4cfe-82c1-25ca06ff9f90",
+      "type": "keydown",
+      "epoch_ms": 1785761811038,
+      "monotonic_ms": 34307.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "ec7b1adb-8157-4ec4-b4ae-e14dd065bd02",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811040,
+      "monotonic_ms": 34308.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "4d4d7d3e-587d-46af-9c4b-141f8b25f5ce",
+      "type": "keydown",
+      "epoch_ms": 1785761811104,
+      "monotonic_ms": 34373.2,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "19274621-0294-4289-93ae-6bea1227a407",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811105,
+      "monotonic_ms": 34374,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "94207ea7-e3fc-4027-83b5-2c282bfaf8f0",
+      "type": "keydown",
+      "epoch_ms": 1785761811176,
+      "monotonic_ms": 34445.1,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "161debfe-278a-49df-bd0f-06697332a389",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811176,
+      "monotonic_ms": 34445.6,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "d11d03ca-cb52-429a-a9a5-f5a348284a72",
+      "type": "keydown",
+      "epoch_ms": 1785761811246,
+      "monotonic_ms": 34514.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "755467d3-97a5-4b14-8916-6d67992af2d7",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811246,
+      "monotonic_ms": 34515.6,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "0920ea99-bc13-4d56-9d2c-e57ae4fdff95",
+      "type": "keydown",
+      "epoch_ms": 1785761811319,
+      "monotonic_ms": 34587.8,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "6e906ecd-ea41-4693-873d-bc2ba41e0ff4",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811320,
+      "monotonic_ms": 34589.1,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "4ff9fc61-aaec-435e-9cb0-261af0f4ac32",
+      "type": "keydown",
+      "epoch_ms": 1785761811388,
+      "monotonic_ms": 34656.9,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "f6cbb7ff-911a-4e98-b787-167f8ce01fa0",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811389,
+      "monotonic_ms": 34658.6,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "6416327d-3e3d-4b5e-b882-ee42e565b697",
+      "type": "keydown",
+      "epoch_ms": 1785761811444,
+      "monotonic_ms": 34712.9,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "d9344e80-9fee-40e2-8c4e-b52711317c1b",
+      "type": "beforeinput",
+      "epoch_ms": 1785761811444,
+      "monotonic_ms": 34713.3,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "7ca1ac85-7dd3-42b0-afca-ad27b0520f21",
+      "type": "pointermove",
+      "epoch_ms": 1785761811561,
+      "monotonic_ms": 34829.9,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 716.713,
+        "y": 360.2,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "767bc1eb-0837-47ae-8586-047a1705bbbe",
+      "type": "pointerdown",
+      "epoch_ms": 1785761811571,
+      "monotonic_ms": 34840.5,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 716.713,
+        "y": 360.2,
+        "button": 0,
+        "buttons": 1,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "a1b3098c-b7b1-454d-9fb2-2e13b7cabaf2",
+      "type": "focusout",
+      "epoch_ms": 1785761811572,
+      "monotonic_ms": 34840.8,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "search",
+        "selector_hint": "input#catalog-search",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "74906298-aece-48a6-9c53-2336e4a2f013",
+      "type": "focusin",
+      "epoch_ms": 1785761811574,
+      "monotonic_ms": 34842.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "1c0abead-8835-4bf5-8aec-5460d9651931",
+      "type": "pointerup",
+      "epoch_ms": 1785761811619,
+      "monotonic_ms": 34888.5,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 716.713,
+        "y": 360.2,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "2f8c9a06-5bce-444b-a77b-8359fbb5b118",
+      "type": "click",
+      "epoch_ms": 1785761811622,
+      "monotonic_ms": 34890.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 716,
+        "y": 360,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "7136c323-ccd3-451f-9d48-183d54ac1bba",
+      "type": "focusout",
+      "epoch_ms": 1785761812034,
+      "monotonic_ms": 35303.3,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "ba18dfcd-3965-498a-862f-761f2a55f333",
+      "type": "focusin",
+      "epoch_ms": 1785761812041,
+      "monotonic_ms": 35309.8,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "3190de0e-ae71-468f-96a0-fe5dc6453a47",
+      "type": "keydown",
+      "epoch_ms": 1785761812082,
+      "monotonic_ms": 35350.9,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "470beaee-eb92-47cf-8c70-e77f9be4dc5f",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812085,
+      "monotonic_ms": 35354.4,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "4f6ca947-3336-4b81-889e-baf768cd90df",
+      "type": "keydown",
+      "epoch_ms": 1785761812166,
+      "monotonic_ms": 35435.6,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "digit",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "abebd2e4-64bc-40e4-beb2-4608e5a522cd",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812167,
+      "monotonic_ms": 35436.6,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "7ca99f1b-b959-486f-8ec4-c70c1c0aa38d",
+      "type": "keydown",
+      "epoch_ms": 1785761812227,
+      "monotonic_ms": 35496.2,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "punctuation",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "d7ee7eb5-bf62-4383-a9de-706cab0e0423",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812227,
+      "monotonic_ms": 35496.6,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "d577e89a-117a-43fb-8848-e6ab6f80616f",
+      "type": "keydown",
+      "epoch_ms": 1785761812286,
+      "monotonic_ms": 35555.1,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "285cede4-b5d8-4e55-a445-5433abafdce3",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812287,
+      "monotonic_ms": 35555.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "7eec52c9-f3e5-41ba-bd35-ac907e3d31db",
+      "type": "keydown",
+      "epoch_ms": 1785761812342,
+      "monotonic_ms": 35611,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "f2dc0ff9-1c42-4b09-853f-7dec1c957e00",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812342,
+      "monotonic_ms": 35611.5,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "54bfd249-807c-4cf3-b68f-e830c095e34e",
+      "type": "keydown",
+      "epoch_ms": 1785761812397,
+      "monotonic_ms": 35665.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "9b04f079-0fa5-4e74-b378-9e8dff4d5a43",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812398,
+      "monotonic_ms": 35666.7,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "62b78fca-08ad-4c02-87c2-4f78593630c2",
+      "type": "keydown",
+      "epoch_ms": 1785761812452,
+      "monotonic_ms": 35721,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": "letter",
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "ddbb5016-812d-4e18-abdc-7b6f2b4dc95e",
+      "type": "beforeinput",
+      "epoch_ms": 1785761812452,
+      "monotonic_ms": 35721.4,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": {
+        "input_type": "insertText",
+        "data_length": 1
+      },
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "d4ffe6a1-d7df-4520-a035-87ff80be0a53",
+      "type": "change",
+      "epoch_ms": 1785761812540,
+      "monotonic_ms": 35809.3,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "select",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "select#replications",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "a5fc8044-e41d-4b6c-a635-90637289e9ba",
+      "type": "pointermove",
+      "epoch_ms": 1785761812639,
+      "monotonic_ms": 35908.5,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 925.25,
+        "y": 360.05,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "2d83fdcc-3bcf-4f07-a3e8-6c4d33705d24",
+      "type": "pointerdown",
+      "epoch_ms": 1785761812653,
+      "monotonic_ms": 35922,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 925.25,
+        "y": 360.05,
+        "button": 0,
+        "buttons": 1,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "20a8553f-4f0f-4909-918e-eebf207985df",
+      "type": "focusout",
+      "epoch_ms": 1785761812653,
+      "monotonic_ms": 35922.3,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "input",
+        "role": null,
+        "input_type": "text",
+        "selector_hint": "input#run-code",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "f337315b-cb8f-4238-96b4-645277c75fd6",
+      "type": "focusin",
+      "epoch_ms": 1785761812654,
+      "monotonic_ms": 35923.5,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": null,
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": true,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "971c2072-f71d-40df-96d1-0fc7e55d5aed",
+      "type": "pointerup",
+      "epoch_ms": 1785761812687,
+      "monotonic_ms": 35956,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 925.25,
+        "y": 360.05,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    },
+    {
+      "schema_version": "cui-trace-v1",
+      "event_id": "ebc1cc95-357e-4001-aeff-696e6412dca5",
+      "type": "click",
+      "epoch_ms": 1785761812688,
+      "monotonic_ms": 35957.3,
+      "url": "http://127.0.0.1:8765/demo/",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_pixel_ratio": 1.25
+      },
+      "pointer": {
+        "x": 925,
+        "y": 360,
+        "button": 0,
+        "buttons": 0,
+        "pointer_type": "mouse"
+      },
+      "wheel": null,
+      "scroll": null,
+      "key": null,
+      "key_class": null,
+      "modifiers": {
+        "alt": false,
+        "ctrl": false,
+        "meta": false,
+        "shift": false
+      },
+      "input": null,
+      "target": {
+        "tag": "button",
+        "role": null,
+        "input_type": null,
+        "selector_hint": "button",
+        "password_like": false
+      },
+      "is_trusted": false,
+      "visibility_state": "visible"
+    }
+  ]
+}

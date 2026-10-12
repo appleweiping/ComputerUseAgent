@@ -1,0 +1,621 @@
+{
+  "blockedDirections": [
+    {
+      "direction": "incoming",
+      "persistentId": "IEEE-S&P-2026:WebCloak",
+      "provider": "openalex",
+      "state": {
+        "remaining": null,
+        "status": "blocked-seed-unresolved"
+      }
+    },
+    {
+      "direction": "outgoing",
+      "persistentId": "IEEE-S&P-2026:WebCloak",
+      "provider": "openalex",
+      "state": {
+        "remaining": null,
+        "status": "blocked-seed-unresolved"
+      }
+    },
+    {
+      "direction": "citations",
+      "persistentId": "IEEE-S&P-2026:WebCloak",
+      "provider": "semantic-scholar",
+      "state": {
+        "remaining": null,
+        "status": "blocked-seed-unresolved"
+      }
+    },
+    {
+      "direction": "citations",
+      "persistentId": "PMLR:v70/shi17a",
+      "provider": "semantic-scholar",
+      "state": {
+        "remaining": null,
+        "status": "blocked-seed-unresolved"
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "IEEE-S&P-2026:WebCloak",
+      "provider": "semantic-scholar",
+      "state": {
+        "remaining": null,
+        "status": "blocked-seed-unresolved"
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1016/s0167-739x(99)00059-x",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 25,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/e3a1c9f0ab24bca56641722f406b753da62161d8/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 786,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1016-s0167-739x-99-00059-x/references/page-0001.json",
+            "rawSha256": "8d1901efece29e3cceeaf17f56df8a6a6644a408a6702e4f40f9543f445d4430",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/e3a1c9f0ab24bca56641722f406b753da62161d8/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:38:54.902060Z"
+          }
+        ],
+        "remaining": 25,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1145/581271.581272",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 33,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/6695bd3dc2412b86ffd35d99b46e8bb3b602274b/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 755,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1145-581271-581272/references/page-0001.json",
+            "rawSha256": "09d813dc92f746d08d27a134d66c24b95f464bb8ddac8a0253915318fb082203",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/6695bd3dc2412b86ffd35d99b46e8bb3b602274b/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:38:57.367403Z"
+          }
+        ],
+        "remaining": 33,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1145/1085126.1085129",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 28,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/e9232edb4ec10313e17c27bd518cb5ffd4107a46/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 695,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1145-1085126-1085129/references/page-0001.json",
+            "rawSha256": "7bf5b5b85c093bc12a2574fde689b2dac0e7ccb2f061e530fee15e4b486b2b80",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/e9232edb4ec10313e17c27bd518cb5ffd4107a46/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:00.079112Z"
+          }
+        ],
+        "remaining": 28,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1109/dsn.2009.5270346",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 20,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/8549c708f1b408ffaeb93f9e8114a7f413665f31/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 807,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1109-dsn-2009-5270346/references/page-0001.json",
+            "rawSha256": "8550c90fe49f381fa1c2cead0ffb779845bd3a798c83aa3b5ff4d5a730668edb",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/8549c708f1b408ffaeb93f9e8114a7f413665f31/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:02.714284Z"
+          }
+        ],
+        "remaining": 20,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1109/tdsc.2007.70207",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 27,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/83fff42b0e4ca09484b2e131cc83fcdd919e6a25/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 724,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1109-tdsc-2007-70207/references/page-0001.json",
+            "rawSha256": "3b83193ad9515662c7226548d7edf193dc8d04ca43cce3da1b6b68d8a8a89076",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/83fff42b0e4ca09484b2e131cc83fcdd919e6a25/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:08.470498Z"
+          }
+        ],
+        "remaining": 27,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1145/1966913.1966983",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 18,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/6f1c430f14360acdd6a399b9752a3b2faf7acdb6/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 724,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1145-1966913-1966983/references/page-0001.json",
+            "rawSha256": "9c5fcf867ed089e93fbbd9ea939f8399c78fa0ef0183a6a73255c66b12001f33",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/6f1c430f14360acdd6a399b9752a3b2faf7acdb6/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:10.903058Z"
+          }
+        ],
+        "remaining": 18,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1109/tifs.2012.2223677",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 49,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/b3304d49e9d651df002d2a85496157950a9de805/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 848,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1109-tifs-2012-2223677/references/page-0001.json",
+            "rawSha256": "baff05a5fabdd67b434bc7fa16b805942d0af06eeadb0375e27169e15d5c264b",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/b3304d49e9d651df002d2a85496157950a9de805/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:14.460590Z"
+          }
+        ],
+        "remaining": 49,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1109/tdsc.2012.75",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 59,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/488e83cfb041d3f6e516de4ec506f473f6efe7ea/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 828,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1109-tdsc-2012-75/references/page-0001.json",
+            "rawSha256": "8448365830136dc4755536fe58c91b14e79ce2f092d5e5fd0a0f7c7022e463af",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/488e83cfb041d3f6e516de4ec506f473f6efe7ea/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:21.121180Z"
+          }
+        ],
+        "remaining": 59,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "DOI:10.1109/eurosp.2016.37",
+      "provider": "semantic-scholar",
+      "state": {
+        "expectedCount": 49,
+        "failure": {
+          "httpStatus": 200,
+          "parser": "cui-semantic-scholar-citation-parser",
+          "parserVersion": "2.0.0",
+          "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+          "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+          "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+          "rateLimitHeaders": {},
+          "reason": "Semantic Scholar returned data=null and citingPaperInfo for a provider-elided references field",
+          "status": "provider-data-elided"
+        },
+        "identifiedProviderIdCount": 0,
+        "nextOffset": 0,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/3662e35ddcbbab123a15f4cde7e5c4d3b09f3b57/references",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "rateLimitHeaders": {},
+            "rawBytes": 779,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/doi-10-1109-eurosp-2016-37/references/page-0001.json",
+            "rawSha256": "4c95b70ebcf3e7a9d60a0998f829705ce25cfae602f27176a6900c712a5dbe9f",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/3662e35ddcbbab123a15f4cde7e5c4d3b09f3b57/references?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "retrievedAt": "2026-08-11T13:39:24.353619Z"
+          }
+        ],
+        "remaining": 49,
+        "retrievedCount": 0,
+        "status": "blocked-provider-data-elided",
+        "uniqueCount": 0
+      }
+    },
+    {
+      "direction": "references",
+      "persistentId": "PMLR:v70/shi17a",
+      "provider": "semantic-scholar",
+      "state": {
+        "remaining": null,
+        "status": "blocked-seed-unresolved"
+      }
+    }
+  ],
+  "builtFromRetrievalWindowCompletedAt": "2026-08-11T13:41:01.249194Z",
+  "checks": {
+    "assertedEdgePartitionReconciles": true,
+    "completeDirectionCountsReconcile": true,
+    "directionStatusCountsReconcile": true,
+    "edgeDirectionFixedCitingToCited": true,
+    "everyAssertionHasCompleteProviderEvidence": true,
+    "everyRawHashReverified": true,
+    "externalWorksMaterialized": true,
+    "noSelfLoops": true,
+    "noTitleOnlyMerge": true,
+    "noUnhandled429": true,
+    "openAlexResolvedDirectionsExhaustedOrExplicit": true,
+    "paperSeedsExactly64": true,
+    "partialOrCompleteWindowExplicit": true,
+    "providerOverlapAndJaccardPresent": true,
+    "rawFrozenRebuildBasis": true,
+    "repositorySeedsExactly4": true,
+    "seedNodesExactly68": true,
+    "semanticScholarDirectionsExhaustedOrExplicit": true,
+    "xpacIsNotRelevance": true,
+    "xpacMembershipClosed": true
+  },
+  "directionStatusCounts": {
+    "openalex": {
+      "incoming": {
+        "blocked": 1,
+        "complete": 63,
+        "partial": 0,
+        "total": 64
+      },
+      "outgoing": {
+        "blocked": 1,
+        "complete": 63,
+        "partial": 0,
+        "total": 64
+      }
+    },
+    "semantic-scholar": {
+      "citations": {
+        "blocked": 2,
+        "complete": 61,
+        "partial": 1,
+        "total": 64
+      },
+      "references": {
+        "blocked": 11,
+        "complete": 53,
+        "partial": 0,
+        "total": 64
+      }
+    }
+  },
+  "metrics": {
+    "assertions": 22117,
+    "blockedDirections": 15,
+    "completeDirections": 240,
+    "conflicts": 25,
+    "externalInvolvedEdges": 21928,
+    "externalNodes": 12864,
+    "nodes": 12932,
+    "openAlexIncomingCompleteSeeds": 63,
+    "openAlexOutgoingCompleteSeeds": 63,
+    "openAlexResolvedSeeds": 63,
+    "partialDirections": 1,
+    "providerEvidenceEntries": 26047,
+    "seedNodes": 68,
+    "seedToSeedEdges": 189,
+    "semanticScholarCompleteCitationLists": 61,
+    "semanticScholarCompleteReferenceLists": 53,
+    "semanticScholarResolvedSeeds": 62,
+    "unhandled429": 0,
+    "verifiedRawResponses": 286,
+    "xpacOnlyNodes": 9
+  },
+  "partialDirections": [
+    {
+      "direction": "citations",
+      "persistentId": "arXiv:1802.08802",
+      "provider": "semantic-scholar",
+      "state": {
+        "duplicateCount": 0,
+        "exhaustionEvidence": "Semantic Scholar next offset is absent after the final stored page",
+        "expectedCount": 354,
+        "identifiedProviderIdCount": 353,
+        "nextOffset": null,
+        "pages": [
+          {
+            "canonicalQuery": "fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "cursor": null,
+            "endpoint": "https://api.semanticscholar.org/graph/v1/paper/7dd8fc595afdd2097b43a5af9a8d9f5e97a65ec1/citations",
+            "httpStatus": 200,
+            "offset": 0,
+            "pageNumber": 1,
+            "parser": "cui-semantic-scholar-citation-parser",
+            "parserVersion": "2.0.0",
+            "providerDataLicense": "Semantic Scholar Dataset License Agreement",
+            "providerDocsUrl": "https://api.semanticscholar.org/api-docs",
+            "providerLicenseUrl": "https://api.semanticscholar.org/license/",
+            "providerNextOffset": null,
+            "providerTotal": null,
+            "rateLimitHeaders": {},
+            "rawBytes": 69485,
+            "rawPrivatePath": "private_data/literature/citation_raw/run-20260811T131537Z/semantic-scholar/arxiv-1802-08802/citations/page-0001.json",
+            "rawSha256": "d109e46601ae64175b76f07b3df26cac771d06e98a8d14b83611936e209a2d43",
+            "requestUrl": "https://api.semanticscholar.org/graph/v1/paper/7dd8fc595afdd2097b43a5af9a8d9f5e97a65ec1/citations?fields=paperId%2CexternalIds&limit=1000&offset=0",
+            "resultCount": 353,
+            "retrievedAt": "2026-08-11T13:40:03.366869Z"
+          }
+        ],
+        "remaining": 1,
+        "retrievedCount": 353,
+        "status": "count-mismatch",
+        "unidentifiedRelationRows": 0,
+        "uniqueCount": 353
+      }
+    }
+  ],
+  "providerOverlap": [
+    {
+      "edgesA": 340,
+      "edgesB": 5184,
+      "intersection": 334,
+      "jaccard": 0.06435453,
+      "providerA": "crossref",
+      "providerB": "openalex",
+      "union": 5190
+    },
+    {
+      "edgesA": 340,
+      "edgesB": 20313,
+      "intersection": 151,
+      "jaccard": 0.00736514,
+      "providerA": "crossref",
+      "providerB": "semantic-scholar",
+      "union": 20502
+    },
+    {
+      "edgesA": 5184,
+      "edgesB": 20313,
+      "intersection": 3384,
+      "jaccard": 0.15303215,
+      "providerA": "openalex",
+      "providerB": "semantic-scholar",
+      "union": 22113
+    }
+  ],
+  "schemaVersion": "cui-citation-qa-v2",
+  "status": "pass"
+}

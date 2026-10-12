@@ -1,0 +1,106 @@
+{
+  "schema_version": "cui-simulator-run-result-v1",
+  "run_id": "phet-pdl-annotated-single-launch-v1-rep-02",
+  "task_id": "phet-pdl-annotated-single-launch-v1",
+  "task_version": "1.0.0",
+  "repetition": 2,
+  "actor_type": "agent",
+  "executor": "puppeteer-cdp",
+  "session_id": "fb0cd236-3fda-4610-841f-c2e2922ef6ea",
+  "simulator": {
+    "name": "PhET Projectile Data Lab",
+    "version": "1.0.7",
+    "requested_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+    "resolved_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+    "html_sha256": "edfef35351e386a778789e8812066114a1b99241a16d4d83d264ae37533cd37c"
+  },
+  "action_started_at": "2026-08-07T14:00:45.478Z",
+  "action_finished_at": "2026-08-07T14:00:53.744Z",
+  "timing": {
+    "time_limit_seconds": 45,
+    "action_duration_ms": 8265,
+    "action_within_time_limit": true
+  },
+  "validator_passed": true,
+  "validator_check_count": 5,
+  "capture": {
+    "event_count": 63,
+    "duration_ms": 4467,
+    "pointer_distance_px": 2477.99,
+    "trusted_input_event_count": 26,
+    "captured_types": [
+      "click",
+      "focusin",
+      "focusout",
+      "gotpointercapture",
+      "keydown",
+      "keyup",
+      "lostpointercapture",
+      "navigation",
+      "pointerdown",
+      "pointerenter",
+      "pointerleave",
+      "pointermove",
+      "pointerout",
+      "pointerover",
+      "pointerup"
+    ],
+    "captured_type_count": 15,
+    "post_stop_negative_control_passed": true,
+    "privacy_safe_export_passed": true
+  },
+  "causal_controls": {
+    "storage_empty_before_start": true,
+    "real_extension_indicator_seen": true,
+    "real_extension_badge_seen": true,
+    "post_stop_event_count_unchanged": true,
+    "dashboard_storage_readback_seen": false
+  },
+  "browser_console_error_count": 0,
+  "browser_console_errors": [],
+  "browser_console_allowlisted_error_count": 2,
+  "browser_console_allowlisted_errors": [
+    {
+      "kind": "console.error",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+      "source_origin": "https://www.google-analytics.com",
+      "source_path": "/g/collect",
+      "allowlist_id": "phet-google-analytics-connection-closed-v1"
+    },
+    {
+      "kind": "console.error",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+      "source_origin": "https://www.google-analytics.com",
+      "source_path": "/g/collect",
+      "allowlist_id": "phet-google-analytics-connection-closed-v1"
+    }
+  ],
+  "browser_console_error_policy": {
+    "id": "phet-google-analytics-connection-closed-v1",
+    "simulator_origin": "https://phet.colorado.edu",
+    "error_kind": "console.error",
+    "error_message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "source_origin": "https://www.google-analytics.com",
+    "source_path": "/g/collect",
+    "rationale": "The optional Google Analytics collection request can be closed by the local network; simulator state and first-party assets remain validated independently."
+  },
+  "artifacts": {
+    "sanitized_trace": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-02/sanitized_trace.json",
+      "sha256": "407d28333450c46d523b6593355e0b83aef4f05b8b310161686729072aac6d7b"
+    },
+    "validator_result": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-02/validator_result.json",
+      "sha256": "0daa84a62a8a123e0b2f47a2a47d4c7bf8462ef57376a06d177259f7450464ff"
+    },
+    "recording_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-02/simulator-recording.png",
+      "sha256": "929c49f84e939a1d3e6f9c106713f97340dc4b67e909c18cc618dec25eecffd4"
+    },
+    "final_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-02/simulator-final-state.png",
+      "sha256": "818842e7d10460c89096fde1296930fa011ad7b81dd6d894b7b77a0afe4fd85a"
+    }
+  },
+  "status": "passed"
+}

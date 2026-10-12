@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/appleweiping/ComputerUseAgent/schemas/cui-citation-assertion-v1.schema.json",
+  "title": "CUI citation assertion v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "assertion_id",
+    "provider",
+    "relation",
+    "evidence_type",
+    "citing_work",
+    "cited_work",
+    "observation",
+    "review_status"
+  ],
+  "properties": {
+    "schema_version": {"const": "cui-citation-assertion-v1"},
+    "assertion_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"},
+    "provider": {"enum": ["openalex", "semantic_scholar", "crossref"]},
+    "relation": {"const": "cites"},
+    "evidence_type": {"const": "explicit_reference"},
+    "citing_work": {"$ref": "#/$defs/workRef"},
+    "cited_work": {"$ref": "#/$defs/workRef"},
+    "observation": {"$ref": "#/$defs/observation"},
+    "review_status": {"enum": ["not_reviewed", "verified", "rejected"]}
+  },
+  "$defs": {
+    "safeHttps": {"type": "string", "pattern": "^https://[^\\s?#]+$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "workRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_id", "provider_id"],
+      "properties": {
+        "canonical_id": {
+          "type": "string",
+          "pattern": "^(doi|arxiv|pmid|pmcid|openalex|s2):[^\\s]+$",
+          "maxLength": 500
+        },
+        "provider_id": {"type": "string", "minLength": 1, "maxLength": 500}
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordinal"],
+      "properties": {
+        "ordinal": {"type": "integer", "minimum": 1},
+        "offset": {"type": "integer", "minimum": 0},
+        "cursor_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_endpoint",
+        "request_sha256",
+        "raw_response_sha256",
+        "retrieved_at_utc",
+        "license_url",
+        "is_xpac"
+      ],
+      "properties": {
+        "source_endpoint": {"$ref": "#/$defs/safeHttps"},
+        "request_sha256": {"$ref": "#/$defs/sha256"},
+        "raw_response_sha256": {"$ref": "#/$defs/sha256"},
+        "retrieved_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+        "provider_record_updated_at_utc": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "string", "format": "date-time", "pattern": "Z$"}
+          ]
+        },
+        "license_url": {"$ref": "#/$defs/safeHttps"},
+        "page": {"$ref": "#/$defs/page"},
+        "is_xpac": {"type": ["boolean", "null"]}
+      }
+    }
+  }
+}

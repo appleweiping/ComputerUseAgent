@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ComputerUseAgent Trace Recorder</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">Local interaction trace recorder</p>
+          <h1>ComputerUseAgent Trace Recorder</h1>
+        </div>
+        <span id="status-chip" class="chip idle">Idle</span>
+      </header>
+
+      <section id="idle-panel">
+        <p class="lead">
+          Record one consented task session. Data stays in this browser until
+          you export or delete it.
+        </p>
+
+        <label>
+          Actor
+          <select id="actor-type">
+            <option value="human">Self (human)</option>
+            <option value="agent">Computer-use agent</option>
+          </select>
+        </label>
+
+        <label>
+          Task ID
+          <input id="task-id" value="task-v1" maxlength="80" required />
+        </label>
+
+        <details id="advanced-settings">
+          <summary>Advanced metadata and privacy settings</summary>
+          <div class="advanced-body">
+            <div class="two-columns">
+              <label>
+                Participant code
+                <input id="participant-code" value="self-run-01" maxlength="80" />
+              </label>
+              <label>
+                Actor / framework label
+                <input id="actor-label" value="self-run-01" maxlength="80" />
+              </label>
+            </div>
+
+            <div class="two-columns">
+              <label>
+                Pair ID
+                <input id="pair-id" value="unpaired" maxlength="80" />
+              </label>
+              <label>
+                Protocol version
+                <input id="protocol-version" value="task-v1" maxlength="80" />
+              </label>
+            </div>
+
+            <div class="two-columns">
+              <label>
+                Executor
+                <input id="executor" value="manual" maxlength="100" />
+              </label>
+              <label>
+                Executor version
+                <input id="executor-version" value="not-recorded" maxlength="60" />
+              </label>
+            </div>
+
+            <div class="two-columns">
+              <label>
+                Capture adapter
+                <input id="capture-adapter" value="browser_mv3" maxlength="60" />
+              </label>
+              <label>
+                Source class
+                <select id="source-class">
+                  <option value="human_self">Human self-run</option>
+                  <option value="cui_agent">Computer-use agent</option>
+                  <option value="scripted_automation_control">Scripted automation control</option>
+                  <option value="synthetic_coverage">Synthetic coverage fixture</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Environment scope
+              <input id="environment-scope" value="active_origin" maxlength="80" />
+            </label>
+
+            <label class="consent-row">
+              <input id="persist-origin-permission" type="checkbox" />
+              <span><strong>Task-origin permission</strong><small>Optional: request only this task origin for iframe/reload capture. No global site access is granted.</small></span>
+            </label>
+
+            <fieldset>
+              <legend>Key capture</legend>
+              <label class="radio-row">
+                <input type="radio" name="key-mode" value="safe" checked />
+                <span><strong>Privacy-safe</strong><small>Store key classes and control keys, never typed text.</small></span>
+              </label>
+              <label class="radio-row warning-option">
+                <input type="radio" name="key-mode" value="raw" />
+                <span><strong>Raw keys (restricted)</strong><small>Password/private fields are still redacted. Use only with explicit approval.</small></span>
+              </label>
+            </fieldset>
+          </div>
+        </details>
+
+        <label class="consent-row">
+          <input id="consent" type="checkbox" />
+          <span>I reviewed the <a href="../privacy/disclosure.html" target="_blank">recording disclosure</a> and agree to this session.</span>
+        </label>
+
+        <p id="scope" class="scope">Capture scope: checking current tab...</p>
+        <p id="error" class="error" role="alert" aria-live="polite"></p>
+        <button id="start" class="primary">Start recording</button>
+      </section>
+
+      <section id="active-panel" hidden>
+        <div class="recording-mark"><span></span> Recording in this origin</div>
+        <dl>
+          <div><dt>Session</dt><dd id="active-session">-</dd></div>
+          <div><dt>Actor</dt><dd id="active-actor">-</dd></div>
+          <div><dt>Task</dt><dd id="active-task">-</dd></div>
+          <div><dt>Events</dt><dd id="active-events">0</dd></div>
+        </dl>
+        <p class="notice">Stop before opening sensitive pages. Queries and typed text are excluded in the default mode.</p>
+        <button id="stop" class="danger">Stop and save</button>
+      </section>
+
+      <footer>
+        <button id="open-dashboard" class="text-button">Sessions &amp; exports</button>
+        <span>Local-only | <span id="recorder-version">v?</span></span>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+# pre-commit hooks: `uv run pre-commit install`, then `uv run pre-commit run --all-files`.
+# Revisions are frozen to commit SHAs (tags are mutable); the comment names the tag.
+# Keep ruff-pre-commit in step with the ruff pin in pyproject.toml [dependency-groups].lint;
+# Dependabot bumps neither, so both move together by hand (see the comment there).
+minimum_pre_commit_version: "3.2.0"
+default_install_hook_types: [pre-commit]
+# Archived, hash-bound bytes are never touched by any hook: research evidence,
+# the literature inputs and generated artifacts (the byte-identical rebuild
+# binds them), the notebook hash-binding manifests, and the adapted upstream
+# runtime_compat sources pinned by RUNTIME_COMPAT_HASHES.
+exclude: |
+  (?x)^(
+    research/evidence/.*|
+    research/literature/(generated|sources|snapshots|archive)/.*|
+    research/(fp_agent|auxiliary_data)/notebooks/.*\.execution\.json|
+    research/scienceboard/runtime_compat/.*
+  )$
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: 44b5042edab9382aba712eed4f9c7bab7a3d6a3e # frozen: v0.17.0
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+        types_or: [python, pyi]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
+    hooks:
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-illegal-windows-names
+      - id: mixed-line-ending
+        args: [--fix=lf]
+        exclude: \.(cmd|bat)$
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: check-added-large-files
+        args: [--maxkb=5000]
+
+  - repo: local
+    hooks:
+      - id: scan-secrets
+        name: scan for credentials (tools/ci/scan_secrets.py)
+        entry: python tools/ci/scan_secrets.py
+        language: python
+        types: [text]
+      - id: check-actions-pinned
+        name: GitHub Actions pinned to commit SHAs (tools/ci/check_actions_pinned.py)
+        entry: python tools/ci/check_actions_pinned.py
+        language: python
+        files: ^\.github/(workflows|actions)/.*\.ya?ml$
+      - id: eslint
+        name: eslint (extension/)
+        entry: npm --prefix extension run lint
+        language: system
+        files: ^extension/.*\.(c|m)?js$
+        pass_filenames: false

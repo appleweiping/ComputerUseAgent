@@ -1,0 +1,35 @@
+{
+  "schema_version": "cui-evidence-correction-v1",
+  "issued_at": "2026-08-08",
+  "applies_to": "results/week3_scientific_simulators",
+  "reason": "The nine runs were produced by a deterministic Puppeteer/CDP action script. They establish recorder compatibility with public browser simulators, but they are not observations of a reasoning CUI agent.",
+  "original_files_immutable": true,
+  "replacement_formal_protocol": {
+    "name": "Official ScienceBoard human/AIO/SeeAct matched matrix",
+    "planned_sessions": 27,
+    "collected_sessions": 0,
+    "status": "not_run"
+  },
+  "corrected_interpretation": {
+    "source_class": "scripted_automation_control",
+    "allowed_claim": "The real Chrome extension captured these scripted browser interactions and the independent task validators passed.",
+    "disallowed_claims": [
+      "reasoning-agent behavior",
+      "human-agent comparison",
+      "ScienceBoard-native experiment",
+      "detector performance"
+    ],
+    "analysis_policy": "Exclude from human-versus-reasoning-agent model training. Retain only as an engineering calibration/control cohort."
+  },
+  "runs": [
+    {"run_id": "netlogo-ca-rule90-v1-rep-01", "executor": "puppeteer-cdp", "trace_path": "runs/netlogo-ca-rule90-v1/rep-01/sanitized_trace.json", "trace_sha256": "b41f5d086b274af760f93219e135cb4bc5e568948ffa46a1c80c2cd3e6dbd38a"},
+    {"run_id": "netlogo-ca-rule90-v1-rep-02", "executor": "puppeteer-cdp", "trace_path": "runs/netlogo-ca-rule90-v1/rep-02/sanitized_trace.json", "trace_sha256": "55a4f4c98bf91f5f042b4af9ec636fb5333af826cc888dd4b1b07f917cf7e333"},
+    {"run_id": "netlogo-ca-rule90-v1-rep-03", "executor": "puppeteer-cdp", "trace_path": "runs/netlogo-ca-rule90-v1/rep-03/sanitized_trace.json", "trace_sha256": "37bc1f1b591b767bfbf87819be0c9a190b6bddd31943e0c44ced8953290991f1"},
+    {"run_id": "phet-bce-ammonia-balance-v1-rep-01", "executor": "puppeteer-cdp", "trace_path": "runs/phet-bce-ammonia-balance-v1/rep-01/sanitized_trace.json", "trace_sha256": "fa13504afd52427b1dbd9276a397c6fe3728bb241e62ead347289490c7b56393"},
+    {"run_id": "phet-bce-ammonia-balance-v1-rep-02", "executor": "puppeteer-cdp", "trace_path": "runs/phet-bce-ammonia-balance-v1/rep-02/sanitized_trace.json", "trace_sha256": "ded4e0f16fe541fbd6441a44592013865fe7bb798b0a016cdd3814b5ad216c1a"},
+    {"run_id": "phet-bce-ammonia-balance-v1-rep-03", "executor": "puppeteer-cdp", "trace_path": "runs/phet-bce-ammonia-balance-v1/rep-03/sanitized_trace.json", "trace_sha256": "66be4c3dfa1c36e144d7ca415781218a3467055d9729dca493a1363595309813"},
+    {"run_id": "phet-pdl-annotated-single-launch-v1-rep-01", "executor": "puppeteer-cdp", "trace_path": "runs/phet-pdl-annotated-single-launch-v1/rep-01/sanitized_trace.json", "trace_sha256": "16b1dc2ad198f4b16ac27955fc4324bdd2cea16665b25890a8773a5a123b33b3"},
+    {"run_id": "phet-pdl-annotated-single-launch-v1-rep-02", "executor": "puppeteer-cdp", "trace_path": "runs/phet-pdl-annotated-single-launch-v1/rep-02/sanitized_trace.json", "trace_sha256": "407d28333450c46d523b6593355e0b83aef4f05b8b310161686729072aac6d7b"},
+    {"run_id": "phet-pdl-annotated-single-launch-v1-rep-03", "executor": "puppeteer-cdp", "trace_path": "runs/phet-pdl-annotated-single-launch-v1/rep-03/sanitized_trace.json", "trace_sha256": "fc78188162f49d4b813b8793c8201dbe483faceee2265259b227b6936706b4c1"}
+  ]
+}

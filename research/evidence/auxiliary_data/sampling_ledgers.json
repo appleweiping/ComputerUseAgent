@@ -1,0 +1,111 @@
+{
+  "ledgers": {
+    "aalto_136m": {
+      "algorithm": "sha256-priority-bottom-k-v1",
+      "dataset": "Aalto 136M Keystrokes",
+      "population_count": 165009,
+      "population_fingerprint_sha256": "fe51e4c7c6e595382b77977ec97858dd2631bb59d08e36619e0ce64250488714",
+      "row_level_identities_exported": false,
+      "sample_count": 5000,
+      "seed": 2026081102,
+      "selected_identity_digests_sha256": "df10c91950bc2f7f26e9899c54cac03919813c5a371009c7a1421ec29f318521",
+      "strata_population_counts": {
+        "full|azerty": 388,
+        "full|dvorak": 68,
+        "full|qwerty": 72313,
+        "full|qwertz": 990,
+        "laptop|azerty": 552,
+        "laptop|dvorak": 93,
+        "laptop|qwerty": 89744,
+        "laptop|qwertz": 861
+      },
+      "strata_sample_counts": {
+        "full|azerty": 12,
+        "full|dvorak": 2,
+        "full|qwerty": 2191,
+        "full|qwertz": 30,
+        "laptop|azerty": 17,
+        "laptop|dvorak": 3,
+        "laptop|qwerty": 2719,
+        "laptop|qwertz": 26
+      }
+    },
+    "captchasolve30k": {
+      "algorithm": "sha256-priority-bottom-k-v1",
+      "dataset": "Capycap-AI/CaptchaSolve30k",
+      "population_count": 26469,
+      "population_fingerprint_sha256": "596199ce648612c1f3b12ae04a0d86ad9d9bd9134579477c6622041d8c59082c",
+      "row_level_identities_exported": false,
+      "sample_count": 5000,
+      "seed": 2026081101,
+      "selected_identity_digests_sha256": "b88cc924b09164d38f65ebf677f54a0e50a7380d1b876bcae12cc17b8711bf1c",
+      "strata_population_counts": {
+        "test|polygon-stacking": 1444,
+        "test|sheep-herding": 1446,
+        "test|thread-the-needle": 1507,
+        "train|polygon-stacking": 5776,
+        "train|sheep-herding": 5689,
+        "train|thread-the-needle": 6206,
+        "validation|polygon-stacking": 1432,
+        "validation|sheep-herding": 1457,
+        "validation|thread-the-needle": 1512
+      },
+      "strata_sample_counts": {
+        "test|polygon-stacking": 273,
+        "test|sheep-herding": 273,
+        "test|thread-the-needle": 285,
+        "train|polygon-stacking": 1091,
+        "train|sheep-herding": 1075,
+        "train|thread-the-needle": 1172,
+        "validation|polygon-stacking": 270,
+        "validation|sheep-herding": 275,
+        "validation|thread-the-needle": 286
+      }
+    },
+    "molmoweb": {
+      "human": {
+        "algorithm": "sha256-priority-bottom-k-v1",
+        "dataset": "allenai/MolmoWeb-HumanTrajs",
+        "population_count": 35971,
+        "population_fingerprint_sha256": "9e0b2e6925ce2fda345f914805235f13ff76956f37285a619ddb76e69b9997a2",
+        "row_level_identities_exported": false,
+        "sample_count": 10000,
+        "seed": 2026081103,
+        "selected_identity_digests_sha256": "f4adaa2f3391461a16d8e19856791c921b7b9aca1ddae111056e5b0f3fe72145",
+        "strata_population_counts": {
+          "human_train": 35971
+        },
+        "strata_sample_counts": {
+          "human_train": 10000
+        }
+      },
+      "synthetic": {
+        "algorithm": "sha256-priority-bottom-k-v1",
+        "dataset": "allenai/MolmoWeb-SyntheticTrajs",
+        "population_count": 108254,
+        "population_fingerprint_sha256": "1b5feca2802a510a9acc21ec02bf9da6fd18d6abefcbc61ebdf9bf69b82fa346",
+        "row_level_identities_exported": false,
+        "sample_count": 10000,
+        "seed": 2026081104,
+        "selected_identity_digests_sha256": "5082008bb70a583b39e86609ad92c98a820ef44077cd2ba932214c5cb4b478d1",
+        "strata_population_counts": {
+          "from_template": 12514,
+          "multi_agent": 32860,
+          "node_traversal": 15853,
+          "task_seeded_om2w": 29553,
+          "task_seeded_wv": 17474
+        },
+        "strata_sample_counts": {
+          "from_template": 1156,
+          "multi_agent": 3036,
+          "node_traversal": 1464,
+          "task_seeded_om2w": 2730,
+          "task_seeded_wv": 1614
+        }
+      }
+    }
+  },
+  "retrieved_at_utc": "2026-08-11T14:15:59Z",
+  "row_level_identities_exported": false,
+  "schema_version": "1.0"
+}

@@ -1,0 +1,61 @@
+# Normalize every text file to LF in the repository and in working trees, on
+# every OS. Several files are hash-pinned (guest bundle, runtime_compat, evidence
+# manifests), so CRLF conversion under core.autocrlf=true must never happen.
+* text=auto eol=lf
+
+# Binary formats: never convert, never diff as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.pdf   binary
+*.zip   binary
+*.pyz   binary
+*.whl   binary
+*.gz    binary
+*.tgz   binary
+*.tar   binary
+*.7z    binary
+*.npz   binary
+*.npy   binary
+*.parquet binary
+*.feather binary
+*.pkl   binary
+*.sqlite binary
+*.sqlite3 binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.webm  binary
+*.mp4   binary
+*.docx  binary
+*.pptx  binary
+*.xlsx  binary
+
+# SVG is text but must keep its exact bytes when used as an icon source.
+*.svg   text eol=lf
+
+# Windows command scripts need CRLF to run under cmd.exe.
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+# Archived, hash-bound research bytes: keep them exactly as recorded (some
+# contain CRLF on purpose, e.g. the Chrome-exported CSV in the E2E bundle).
+research/evidence/**                 -text
+research/literature/generated/**     -text
+# Notebook hash-binding manifests written by research/*/execute_notebook.py:
+# keep their exact bytes.
+research/fp_agent/notebooks/*.execution.json       -text
+research/auxiliary_data/notebooks/*.execution.json -text
+
+# X11 guest capture code is deployed to a Linux guest and hash-pinned.
+src/computer_use_agent/capture/x11/** text eol=lf
+
+# Generated lockfiles: collapse in diffs and code review statistics.
+uv.lock                     linguist-generated=true
+extension/package-lock.json linguist-generated=true
+research/**/package-lock.json linguist-generated=true
+research/**/*.lock          linguist-generated=true

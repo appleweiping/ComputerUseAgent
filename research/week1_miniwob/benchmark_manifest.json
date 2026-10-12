@@ -1,0 +1,200 @@
+{
+  "schema_version": "cui-week1-browsergym-manifest-v1",
+  "protocol_version": "week1-miniwob-matched-v1",
+  "benchmark": {
+    "name": "BrowserGym MiniWoB++",
+    "package": "browsergym-miniwob",
+    "package_version": "0.14.1",
+    "source_repository": "https://github.com/ServiceNow/BrowserGym",
+    "miniwob_repository": "https://github.com/Farama-Foundation/miniwob-plusplus",
+    "miniwob_commit": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "miniwob_html_tree_sha256": "b6541e36c70d6621294edfe0ca3bae7794fb9cfb9def2829dfcda4fd284b3925",
+    "miniwob_static_tree_sha256": "9883c9117804c0865920b3313021a0bd0cccc094f2f707678f6c3a72b3af4f3a",
+    "reward_source": "BrowserGym official task validator"
+  },
+  "model": "gpt-5.5",
+  "model_configuration": {
+    "task_seed_policy": "Each attempt seed initializes the official BrowserGym task for every framework.",
+    "browser-use": {
+      "temperature": 0,
+      "model_seed": "attempt_seed"
+    },
+    "skyvern": {
+      "temperature": 1,
+      "model_seed": null,
+      "max_completion_tokens": 8192,
+      "exception": "Skyvern 1.0.47's pinned OPENAI_GPT5_5 registry requires temperature=1 and its LLMConfig does not expose a model seed."
+    },
+    "stagehand": {
+      "requested_temperature": 0,
+      "temperature": null,
+      "model_seed": null,
+      "exception": "Stagehand 3.7.1 AgentConfig/AgentExecuteOptions expose neither parameter; its OpenAI Responses provider marks seed unsupported and removes temperature for reasoning models."
+    },
+    "comparison_boundary": "The task seed, model name, action cap, and wall-time cap are matched. Unsupported framework model parameters are reported, not silently claimed as fixed."
+  },
+  "repetitions": 3,
+  "seeds": [20260808, 20260809, 20260810],
+  "limits": {
+    "max_actions": 30,
+    "timeout_seconds": 480
+  },
+  "browser": {
+    "engine": "Google Chrome",
+    "product_version": "151.0.7922.108",
+    "viewport": { "width": 332, "height": 214 },
+    "locale": "en-US",
+    "timezone": "UTC",
+    "fresh_context_per_attempt": true
+  },
+  "recorder": {
+    "extension_path": "recorder",
+    "minimum_version": "0.4.0",
+    "required": true,
+    "capture_adapter": "browser_mv3",
+    "source_class": "cui_agent"
+  },
+  "tasks": [
+    {
+      "id": "click-checkboxes",
+      "environment_id": "browsergym/miniwob.click-checkboxes",
+      "interaction_focus": "multi-target clicking",
+      "validator": "official BrowserGym reward"
+    },
+    {
+      "id": "enter-text",
+      "environment_id": "browsergym/miniwob.enter-text",
+      "interaction_focus": "keyboard entry",
+      "validator": "official BrowserGym reward"
+    },
+    {
+      "id": "choose-list",
+      "environment_id": "browsergym/miniwob.choose-list",
+      "interaction_focus": "selection control",
+      "validator": "official BrowserGym reward"
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "browser-use",
+      "version": "0.11.5",
+      "repository": "https://github.com/browser-use/browser-use",
+      "formal_security": {
+        "allowed": true,
+        "reviewed_at": "2026-08-09",
+        "blocking_advisories": [],
+        "resolved_advisories": ["GHSA-4xgf-cpjx-pc3j"],
+        "resolution": "pydantic-settings 2.14.2 is the first fixed release. Both the strict direct-pin audit and a full transitive pip-audit of the Browser-Use environment reported no known vulnerabilities while browser-use remained pinned at 0.11.5."
+      },
+      "adapter_command_env": "CUI_WEEK1_BROWSER_USE_ADAPTER",
+      "default_adapter_command": ["{python}", "experiments/week1/adapters/dispatch.py", "browser-use"]
+    },
+    {
+      "id": "skyvern",
+      "version": "1.0.47",
+      "repository": "https://github.com/Skyvern-AI/skyvern",
+      "formal_security": {
+        "allowed": true,
+        "reviewed_at": "2026-08-09",
+        "blocking_advisories": []
+      },
+      "adapter_command_env": "CUI_WEEK1_SKYVERN_ADAPTER",
+      "default_adapter_command": ["{python}", "experiments/week1/adapters/dispatch.py", "skyvern"]
+    },
+    {
+      "id": "stagehand",
+      "version": "3.7.1",
+      "repository": "https://github.com/browserbase/stagehand",
+      "formal_security": {
+        "allowed": false,
+        "reviewed_at": "2026-08-09",
+        "blocking_advisories": [
+          "GHSA-866g-f22w-33x8",
+          "GHSA-g9mf-h72j-4rw9",
+          "GHSA-2mjp-6q6p-2qxm",
+          "GHSA-vrm6-8vpv-qv8q",
+          "GHSA-v9p9-hfj2-hcw8",
+          "GHSA-4992-7rv2-5pvq",
+          "GHSA-p88m-4jfj-68fv",
+          "GHSA-vxpw-j846-p89q",
+          "GHSA-g8m3-5g58-fq7m",
+          "GHSA-8xcm-r25x-g524",
+          "GHSA-m8rv-5g2x-5cg5",
+          "GHSA-v3r7-h72x-cjcm",
+          "GHSA-35p6-xmwp-9g52"
+        ],
+        "reason": "The latest stable Stagehand remains 3.7.1 and its AI SDK 5 dependency graph resolves provider-utils 3.0.31, which pulls undici 5.29.0. Against the same production locks and official registry, npm 11.17.0 JSON enumerates 18 affected dependency nodes (16 low, one moderate, one high). The historical GitHub Node 20 console report for run 31345287584 records 20 nodes (18 low, one moderate, one high); compared with the JSON node set, its console output additionally includes the Stagehand root and ollama-ai-provider-v2. Both audits fail closed; npm audit fix proposes zero compatible changes, and GHSA-866g-f22w-33x8 lists no patched 3.x release. Provider-utils 4.0.40 is audit-clean but belongs to AI SDK 6/provider spec v3: it removes eight 3.x exports, including several consumed by the pinned AI SDK 5 graph, and changes provider-defined tool semantics. Adding aliases would not establish benchmark-equivalent model behavior. The passing pinned-runtime self-test and no-model CDP probe establish browser compatibility only, not security clearance. Formal attempts remain blocked until Stagehand publishes a compatible stable dependency update.",
+        "resolution_evidence": {
+          "registry": "https://registry.npmjs.org",
+          "npm_audit_production_counts": {
+            "low": 16,
+            "moderate": 1,
+            "high": 1,
+            "critical": 0,
+            "total": 18
+          },
+          "npm_audit_production_counting_basis": "npm 11.17.0 --json affected dependency nodes against the official registry on 2026-08-10",
+          "github_actions_node20_console_counts": {
+            "low": 18,
+            "moderate": 1,
+            "high": 1,
+            "critical": 0,
+            "total": 20
+          },
+          "github_actions_additional_affected_nodes": [
+            "@browserbasehq/stagehand",
+            "ollama-ai-provider-v2"
+          ],
+          "github_actions_audit_evidence": {
+            "run_id": 31345287584,
+            "head_sha": "21d503a098073709a9a5885e6bc2294696a54e06",
+            "node_major": 20,
+            "scripts_e2e_dev_graph_total": 0,
+            "production_lock_sha256": {
+              "experiments/week1/adapters/node/package-lock.json": "28d70a21401de20411e8a4da0fdf1fce3fbe5dc3a1c1e4deddc2d796697fac00",
+              "experiments/stagehand/package-lock.json": "78079db644e4bda185aab177e1e32201f32e8a43f76d50694e2ee17351192aac"
+            }
+          },
+          "npm_audit_fix_compatible_changes": 0,
+          "provider_utils_last_published_3x_version": "3.0.31",
+          "provider_utils_advisory_patched_versions": [],
+          "provider_utils_3_0_31_tarball_sha256": "8b3e538b2e2cbe0d8e22025f729d500a7acb74fc6375a7f0ce785308e3827278",
+          "rejected_override": "@ai-sdk/provider-utils@4.0.40",
+          "rejected_override_tarball_sha256": "8601d354d70a7320a36cb18e02f4f3f541e615fca281312aea423ce867d85df4",
+          "rejected_override_audit_total": 0,
+          "rejected_override_guard_result": "stagehand_bridge self-test failed: missing createProviderDefinedToolFactoryWithOutputSchema export",
+          "rejected_override_removed_exports": [
+            "asValidator",
+            "createJsonStreamResponseHandler",
+            "createProviderDefinedToolFactory",
+            "createProviderDefinedToolFactoryWithOutputSchema",
+            "isValidator",
+            "lazyValidator",
+            "standardSchemaValidator",
+            "validator"
+          ],
+          "rejected_override_semantic_drift": "AI SDK 6/provider spec v3 renames provider-defined tools to provider tools and changes the emitted tool contract; a compatibility alias is insufficient.",
+          "rejected_override_cdp_probe": "not-run: the fail-closed bridge self-test/import must pass before browser construction",
+          "pinned_runtime_self_test": "pass: exact Stagehand 3.7.1 source hashes and guarded API arities verified",
+          "pinned_runtime_no_model_cdp_probe": {
+            "result": "pass",
+            "chrome_version": "151.0.7922.108",
+            "official_target_verified": true,
+            "page_count": 1,
+            "input_events_injected": 0,
+            "client_closed": true,
+            "model_calls": 0
+          }
+        }
+      },
+      "adapter_command_env": "CUI_WEEK1_STAGEHAND_ADAPTER",
+      "default_adapter_command": ["{python}", "experiments/week1/adapters/dispatch.py", "stagehand"]
+    }
+  ],
+  "historical_pilots": [
+    "results/browser_use",
+    "results/skyvern",
+    "results/stagehand"
+  ],
+  "claim_boundary": "The historical public-web tasks remain pilot evidence. Only records produced through this manifest and the official BrowserGym reward belong to the formal 27-attempt matrix."
+}

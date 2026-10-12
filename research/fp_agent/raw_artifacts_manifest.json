@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "access_scope": "OSF project https://osf.io/j6b5p/ reached through the share link in the upstream FP-Agent README; raw files stay in the private data root ($CUA_PRIVATE_ROOT/fp_agent), outside the repository",
+  "license": null,
+  "artifacts": [
+    {"name": "raw_dataset.json", "bytes": 4256528751, "sha256": "8acb0a5cecc7b2a71221ebcc189ba9d517e986774ed7cf1ad878d6463070acf4"},
+    {"name": "feature_vectors.json", "bytes": 15969537, "sha256": "54aa9eb6e74a509b86a3504f97e1f2c6fee99467c1ac935b92a5385e9e1cf641"},
+    {"name": "train_test_split.npz", "bytes": 11161198, "sha256": "463f7779fdd8487dca19b7c5f8c8939383de2cacaf8719c90cabfedafa87c643"}
+  ]
+}

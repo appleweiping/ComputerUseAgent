@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "20260725T122652689Z",
+  "framework": "stagehand",
+  "framework_package": "@browserbasehq/stagehand",
+  "framework_version": "3.7.1",
+  "framework_repository": "https://github.com/browserbase/stagehand",
+  "model": "gpt-5.5",
+  "mode": "dom",
+  "planned_runs": 3,
+  "completed_runs": 3,
+  "successful_runs": 3,
+  "overall_success_rate": 1.0,
+  "median_duration_seconds": 18.58,
+  "median_steps": 4,
+  "reported_cost_usd": null,
+  "runs_with_unreported_cost": 3,
+  "claim_boundary": "Supplemental, single-pass integration smoke only; not a formal Stagehand benchmark and not part of the Browser-Use/Skyvern repeated-run comparison.",
+  "task_summaries": [
+    {
+      "task_id": "example_more_information",
+      "completed_runs": 1,
+      "successful_runs": 1,
+      "success_rate": 1.0,
+      "median_duration_seconds": 18.81,
+      "median_steps": 4
+    },
+    {
+      "task_id": "iana_domains_navigation",
+      "completed_runs": 1,
+      "successful_runs": 1,
+      "success_rate": 1.0,
+      "median_duration_seconds": 18.58,
+      "median_steps": 4
+    },
+    {
+      "task_id": "hn_new_navigation",
+      "completed_runs": 1,
+      "successful_runs": 1,
+      "success_rate": 1.0,
+      "median_duration_seconds": 17.93,
+      "median_steps": 4
+    }
+  ]
+}

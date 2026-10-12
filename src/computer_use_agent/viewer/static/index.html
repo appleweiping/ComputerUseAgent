@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>ComputerUseAgent trace viewer</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Local research evidence</p>
+        <h1>Trace viewer</h1>
+        <p class="lede">Compare session timing and event modalities without exposing raw event payloads.</p>
+      </div>
+      <div class="privacy-badge" id="privacy-mode">Privacy projection loading…</div>
+    </header>
+
+    <main>
+      <section class="notice" aria-labelledby="scope-title">
+        <h2 id="scope-title">Interpretation boundary</h2>
+        <p id="claim-status">This viewer is an inspection aid. A trace is evidence of capture, not evidence that a detector generalizes.</p>
+      </section>
+
+      <section aria-labelledby="sessions-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Evidence inventory</p>
+            <h2 id="sessions-title">Sessions</h2>
+          </div>
+          <p id="session-count" class="muted"></p>
+        </div>
+        <div id="session-cards" class="card-grid"></div>
+      </section>
+
+      <section aria-labelledby="compare-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Matched inspection</p>
+            <h2 id="compare-title">Pair comparison</h2>
+          </div>
+          <div class="selectors">
+            <label>Left <select id="left-session"></select></label>
+            <label>Right <select id="right-session"></select></label>
+          </div>
+        </div>
+        <div id="pair-summary" class="comparison-grid"></div>
+      </section>
+
+      <section aria-labelledby="timeline-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Relative session clock</p>
+            <h2 id="timeline-title">Event timelines</h2>
+          </div>
+          <div id="legend" class="legend" aria-label="Event modalities"></div>
+        </div>
+        <div id="timelines" class="timeline-stack"></div>
+      </section>
+
+      <section id="result-section" hidden aria-labelledby="result-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Exploratory analysis</p>
+            <h2 id="result-title">Detector diagnostics</h2>
+          </div>
+        </div>
+        <div id="metrics" class="metric-grid"></div>
+        <div class="control-grid">
+          <article class="panel">
+            <h3>Task-identification control</h3>
+            <dl id="task-control"></dl>
+          </article>
+          <article class="panel">
+            <h3>Label-permutation control</h3>
+            <dl id="permutation-control"></dl>
+          </article>
+          <article class="panel">
+            <h3>Task-cluster bootstrap, 95% intervals</h3>
+            <dl id="bootstrap-intervals"></dl>
+          </article>
+        </div>
+        <article class="panel descriptive-panel" aria-labelledby="descriptive-title">
+          <div class="section-heading">
+            <div>
+              <h3 id="descriptive-title">Task-internal descriptive statistics</h3>
+              <p class="muted">Per task alias: n, mean and median for each class and the human-minus-agent Hedges g. Run-level descriptions, not population estimates.</p>
+            </div>
+            <label>Task <select id="descriptive-task"></select></label>
+          </div>
+          <div class="table-wrap">
+            <table id="descriptive-table">
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Human n</th>
+                  <th scope="col">Human mean</th>
+                  <th scope="col">Human median</th>
+                  <th scope="col">Agent n</th>
+                  <th scope="col">Agent mean</th>
+                  <th scope="col">Agent median</th>
+                  <th scope="col">Hedges g</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p id="trajectory-binding" class="muted"></p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      Served on loopback only. The browser receives event type, modality, relative time, and aggregate outcomes—not keys, text, URLs, selectors, coordinates, paths, UUIDs, or wall-clock time.
+    </footer>
+  </body>
+</html>

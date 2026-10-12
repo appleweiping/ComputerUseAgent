@@ -1,0 +1,61 @@
+{
+  "schema_version": "scienceboard-driver-v3",
+  "description": "Non-runnable template. Copy it under CUA_PRIVATE_ROOT and replace REPLACE_WITH_PINNED_HOST_PYTHON with the exact Python executable containing ScienceBoard's pinned host dependencies. Every command is a shell-free client of one long-lived host worker; AIO, SeeAct, Task.init/eval, VManager, and validation never execute in the guest.",
+  "commands": {
+    "capability_doctor": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "doctor", "--scienceboard-root", "{scienceboard_root}", "--expected-commit", "{scienceboard_commit}", "--task-bindings-json", "{task_bindings_json}", "--guest-bundle-root", "{guest_bundle_root}"],
+      "timeout_seconds": 60,
+      "shell": false
+    },
+    "prepare_session": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "start", "--spec", "{worker_spec_file}", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--startup-timeout", "120"],
+      "timeout_seconds": 150,
+      "shell": false
+    },
+    "initialize": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "initialize", "--request-id", "{session_id}:initialize", "--timeout", "240"],
+      "timeout_seconds": 270,
+      "shell": false
+    },
+    "start_recorder": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "start_recorder", "--request-id", "{session_id}:start-recorder", "--timeout", "120"],
+      "timeout_seconds": 150,
+      "shell": false
+    },
+    "run_human": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "run_actor", "--request-id", "{session_id}:run-human", "--timeout", "{timeout_seconds}"],
+      "timeout_seconds": 330,
+      "shell": false
+    },
+    "run_aio": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "run_actor", "--request-id", "{session_id}:run-aio", "--timeout", "{timeout_seconds}"],
+      "timeout_seconds": 510,
+      "shell": false
+    },
+    "run_seeact": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "run_actor", "--request-id", "{session_id}:run-seeact", "--timeout", "{timeout_seconds}"],
+      "timeout_seconds": 510,
+      "shell": false
+    },
+    "screenshot": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "screenshot", "--request-id", "{session_id}:screenshot", "--timeout", "60"],
+      "timeout_seconds": 90,
+      "shell": false
+    },
+    "stop_recorder": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "stop_recorder", "--request-id", "{session_id}:stop-recorder", "--timeout", "60"],
+      "timeout_seconds": 90,
+      "shell": false
+    },
+    "validate": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "evaluate", "--request-id", "{session_id}:evaluate", "--timeout", "120"],
+      "timeout_seconds": 150,
+      "shell": false
+    },
+    "fetch_artifacts": {
+      "argv": ["REPLACE_WITH_PINNED_HOST_PYTHON", "{host_worker}", "phase", "--state", "{worker_state_file}", "--nonce-file", "{worker_nonce_file}", "--name", "finalize", "--request-id", "{session_id}:finalize", "--timeout", "120"],
+      "timeout_seconds": 150,
+      "shell": false
+    }
+  }
+}

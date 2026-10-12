@@ -1,0 +1,37 @@
+{
+  "schema_version": "scienceboard-runtime-compat-provenance-v1",
+  "upstream": {
+    "distribution": "desktop-env",
+    "version": "0.1.22",
+    "project_url": "https://pypi.org/project/desktop-env/0.1.22/",
+    "wheel": "desktop_env-0.1.22-py3-none-any.whl",
+    "wheel_sha256": "ca7d3c5bc5f219e073af404709528968301ad84de32cb7fca7a2144ae1ee92cd",
+    "reference_files": {
+      "desktop_env/desktop_env.py": "688239604c0261fcee871de599b78aeadea118aad6808e31e1500c0e52df57ce",
+      "desktop_env/controllers/python.py": "852f46737401d210485e3fc3760d822c0e8ad8dafb071b936aee2e8df27ed1f3",
+      "desktop_env/providers/vmware/provider.py": "16f2d8fbc85e476c8c1eaeb5a4d809b485bd38d1ae7472631da609c513efcac4"
+    }
+  },
+  "compatibility_boundary": {
+    "consumer": "ScienceBoard commit c8d5010bdba32afc5dfb16472873bed148c39a45",
+    "official_consumer_file": "sci/vm/vmanager.py",
+    "provided_class": "desktop_env.desktop_env.DesktopEnv",
+    "provided_members": [
+      "controller",
+      "snapshot_name",
+      "_revert_to_snapshot",
+      "_start_emulator",
+      "close"
+    ],
+    "provider": "vmware",
+    "guest_os": "Ubuntu",
+    "action_space": "pyautogui"
+  },
+  "excluded_upstream_surfaces": [
+    "cloud providers",
+    "model agents",
+    "dataset downloaders",
+    "Gym task evaluation",
+    "document and media evaluators"
+  ]
+}

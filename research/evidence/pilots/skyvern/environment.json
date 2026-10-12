@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-07-27",
+  "framework": "Skyvern",
+  "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+  "framework_source_checkout_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+  "framework_source_checkout_commit_date": "2026-07-26T19:33:10-05:00",
+  "framework_source_checkout_scope": "Official source checkout used to review deployment and API behavior; it is not asserted to be the source commit of the published image.",
+  "runtime_version": "1.0.47",
+  "runtime_image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+  "runtime_image_source_commit": "Not reported in image metadata",
+  "postgres_image": "postgres@sha256:f1341c01408dc7278e9d365ed4f860cd3f87dd16b4464ac326fc0f422083a579",
+  "docker_engine_version": "29.4.1",
+  "host_os": "Microsoft Windows NT 10.0.26200.0",
+  "runner_python_version": "3.14.5",
+  "skyvern_engine": "skyvern-2.0",
+  "model_configuration": "OPENAI_GPT5_5",
+  "provider_model_observed_in_database": "gpt-5.5",
+  "browser_mode": "headful browser in Skyvern's virtual display",
+  "api_endpoints": {
+    "create_task": "/v1/run/tasks",
+    "read_run": "/v1/runs/{run_id}",
+    "heartbeat": "/api/v1/heartbeat"
+  },
+  "credential_policy": "Existing host credential reused through process environment; no API key, cookie, browser profile, provider origin, or raw DOM is present in public artifacts.",
+  "network_scope": "Public, read-only web pages only",
+  "source_checkout_note": "The interrupted blobless GitHub transport left commit metadata available but did not materialize the complete working tree. The immutable official runtime image, not that checkout, executed the experiment."
+}

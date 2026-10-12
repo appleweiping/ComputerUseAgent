@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/appleweiping/ComputerUseAgent/schemas/cui-trace-v2.schema.json",
+  "title": "ComputerUseAgent TraceEnvelopeV2 browser session export (cui-trace-v2)",
+  "description": "Self-contained, closed, privacy-sanitized browser trace contract with session-global ordering. No external schema registry or network access is required. Since recorder 0.5.0, keydown/keyup events on private targets (target.password_like=true) carry key \"<redacted>\", key_class null, keyboard.repeat/location/hold_ms null, and null modifier flags.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["metadata", "summary", "events"],
+  "properties": {
+    "metadata": { "$ref": "#/$defs/metadata" },
+    "summary": { "$ref": "#/$defs/summary" },
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } }
+  },
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "nullableNumber": { "type": ["number", "null"] },
+    "nullableBoolean": { "type": ["boolean", "null"] },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "session_id", "actor_type", "actor_label",
+        "participant_code", "pair_id", "task_id", "protocol_version",
+        "executor", "executor_version", "recorder_version", "environment",
+        "capture_adapter", "environment_scope", "source_class",
+        "raw_key_capture", "include_query", "scope_origin",
+        "consent_confirmed", "disclosure_version", "retention_policy",
+        "notes", "started_at", "stopped_at", "status", "capture_error",
+        "event_count", "chunk_count", "timing_model", "event_seq_last",
+        "document_epoch_count", "dropped_event_count", "rejected_event_count",
+        "flush_failure_count", "quota_rejection_count"
+      ],
+      "properties": {
+        "schema_version": { "const": "cui-trace-v2" },
+        "session_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "actor_type": { "enum": ["human", "agent"] },
+        "actor_label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "participant_code": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "pair_id": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "task_id": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "protocol_version": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "executor": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "executor_version": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "recorder_version": { "type": "string", "minLength": 1, "maxLength": 24 },
+        "environment": { "type": "string", "minLength": 1, "maxLength": 512 },
+        "capture_adapter": { "enum": ["browser_mv3", "browser_standalone_mirror"] },
+        "environment_scope": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "source_class": {
+          "enum": ["human_self", "self_human", "cui_agent", "scripted_automation_control", "synthetic_coverage"]
+        },
+        "raw_key_capture": { "const": false },
+        "include_query": { "const": false },
+        "scope_origin": { "type": "string", "pattern": "^https?://" },
+        "consent_confirmed": { "const": true },
+        "disclosure_version": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "retention_policy": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "started_at": { "type": "string", "format": "date-time" },
+        "stopped_at": { "type": ["string", "null"], "format": "date-time" },
+        "status": { "enum": ["recording", "complete", "incomplete", "interrupted"] },
+        "capture_error": { "type": ["string", "null"], "maxLength": 300 },
+        "event_count": { "type": "integer", "minimum": 0 },
+        "chunk_count": { "type": "integer", "minimum": 0 },
+        "timing_model": { "const": "session-global-monotonic-v1" },
+        "event_seq_last": { "type": "integer", "minimum": 0 },
+        "document_epoch_count": { "type": "integer", "minimum": 0 },
+        "dropped_event_count": { "type": "integer", "minimum": 0 },
+        "rejected_event_count": { "type": "integer", "minimum": 0 },
+        "flush_failure_count": { "type": "integer", "minimum": 0 },
+        "quota_rejection_count": { "type": "integer", "minimum": 0 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "actor_type": { "const": "human" } }, "required": ["actor_type"] },
+          "then": { "properties": { "source_class": { "enum": ["human_self", "self_human"] } } }
+        },
+        {
+          "if": { "properties": { "actor_type": { "const": "agent" } }, "required": ["actor_type"] },
+          "then": {
+            "properties": {
+              "source_class": { "enum": ["cui_agent", "scripted_automation_control", "synthetic_coverage"] }
+            }
+          }
+        }
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_count", "duration_ms", "pointer_distance_px", "by_type"],
+      "properties": {
+        "event_count": { "type": "integer", "minimum": 0 },
+        "duration_ms": { "type": "number", "minimum": 0 },
+        "pointer_distance_px": { "type": "number", "minimum": 0 },
+        "by_type": {
+          "type": "object",
+          "propertyNames": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "viewport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "device_pixel_ratio"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 0 },
+        "height": { "type": "integer", "minimum": 0 },
+        "device_pixel_ratio": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "pointer": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": [
+        "x", "y", "button", "buttons", "pointer_type", "pointer_id",
+        "width", "height", "pressure", "tangential_pressure", "tilt_x",
+        "tilt_y", "twist", "is_primary"
+      ],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "button": { "type": "integer" },
+        "buttons": { "type": "integer" },
+        "pointer_type": { "$ref": "#/$defs/nullableString" },
+        "pointer_id": { "$ref": "#/$defs/nullableNumber" },
+        "width": { "$ref": "#/$defs/nullableNumber" },
+        "height": { "$ref": "#/$defs/nullableNumber" },
+        "pressure": { "$ref": "#/$defs/nullableNumber" },
+        "tangential_pressure": { "$ref": "#/$defs/nullableNumber" },
+        "tilt_x": { "$ref": "#/$defs/nullableNumber" },
+        "tilt_y": { "$ref": "#/$defs/nullableNumber" },
+        "twist": { "$ref": "#/$defs/nullableNumber" },
+        "is_primary": { "$ref": "#/$defs/nullableBoolean" }
+      }
+    },
+    "wheel": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["delta_x", "delta_y", "delta_mode"],
+      "properties": {
+        "delta_x": { "type": "number" },
+        "delta_y": { "type": "number" },
+        "delta_mode": { "type": "integer", "minimum": 0, "maximum": 2 }
+      }
+    },
+    "scroll": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+    },
+    "keyboard": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["repeat", "location", "is_composing", "hold_ms"],
+      "properties": {
+        "repeat": { "type": ["boolean", "null"], "description": "null when not recorded (private target, recorder >= 0.5.0)" },
+        "location": { "type": ["integer", "null"], "minimum": 0, "maximum": 3, "description": "null when not recorded (private target, recorder >= 0.5.0)" },
+        "is_composing": { "type": "boolean" },
+        "hold_ms": { "type": ["number", "null"], "minimum": 0, "maximum": 600000 }
+      }
+    },
+    "modifiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alt", "ctrl", "meta", "shift"],
+      "description": "Modifier flags; null when not recorded (key events on a private target, recorder >= 0.5.0).",
+      "properties": {
+        "alt": { "$ref": "#/$defs/nullableBoolean" },
+        "ctrl": { "$ref": "#/$defs/nullableBoolean" },
+        "meta": { "$ref": "#/$defs/nullableBoolean" },
+        "shift": { "$ref": "#/$defs/nullableBoolean" }
+      }
+    },
+    "input": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["input_type", "data_length", "is_composing"],
+      "properties": {
+        "input_type": { "$ref": "#/$defs/nullableString" },
+        "data_length": { "type": "integer", "minimum": 0 },
+        "is_composing": { "type": "boolean" }
+      }
+    },
+    "transferSummary": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["types", "item_count", "file_count"],
+      "properties": {
+        "types": {
+          "type": "array",
+          "maxItems": 32,
+          "items": { "type": "string", "maxLength": 80 }
+        },
+        "item_count": { "type": "integer", "minimum": 0 },
+        "file_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "transfer": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["types", "item_count", "file_count", "effect_allowed", "drop_effect"],
+      "properties": {
+        "types": {
+          "type": "array",
+          "maxItems": 32,
+          "items": { "type": "string", "maxLength": 80 }
+        },
+        "item_count": { "type": "integer", "minimum": 0 },
+        "file_count": { "type": "integer", "minimum": 0 },
+        "effect_allowed": {
+          "type": ["string", "null"],
+          "enum": [null, "all", "copy", "copylink", "copymove", "link", "linkmove", "move", "none", "uninitialized"]
+        },
+        "drop_effect": { "type": ["string", "null"], "enum": [null, "copy", "link", "move", "none"] }
+      }
+    },
+    "touch": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["active_count", "changed_count"],
+      "properties": {
+        "active_count": { "type": "integer", "minimum": 0 },
+        "changed_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "form": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["method", "action", "control_count", "has_submitter", "submitter_tag"],
+      "properties": {
+        "method": { "type": ["string", "null"], "enum": [null, "dialog", "get", "post"] },
+        "action": { "type": "string" },
+        "control_count": { "type": "integer", "minimum": 0 },
+        "has_submitter": { "type": "boolean" },
+        "submitter_tag": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "documentState": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["fullscreen", "online"],
+      "properties": {
+        "fullscreen": { "$ref": "#/$defs/nullableBoolean" },
+        "online": { "$ref": "#/$defs/nullableBoolean" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tag", "role", "input_type", "selector_hint", "password_like"],
+      "properties": {
+        "tag": { "type": "string", "maxLength": 24 },
+        "role": { "type": ["string", "null"], "maxLength": 40 },
+        "input_type": { "type": ["string", "null"], "maxLength": 24 },
+        "selector_hint": { "type": "string", "maxLength": 120 },
+        "password_like": { "type": "boolean" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "event_id", "type", "epoch_ms", "monotonic_ms",
+        "event_seq", "document_epoch", "t_session_ms", "t_document_ms",
+        "step_id", "url", "viewport", "pointer", "wheel", "scroll", "key",
+        "key_class", "keyboard", "modifiers", "input", "clipboard",
+        "transfer", "touch", "form", "document_state", "target",
+        "is_trusted", "visibility_state"
+      ],
+      "properties": {
+        "schema_version": { "const": "cui-trace-v2" },
+        "event_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "type": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "epoch_ms": { "type": "integer", "minimum": 0 },
+        "monotonic_ms": { "type": "number", "minimum": 0 },
+        "event_seq": { "type": "integer", "minimum": 1 },
+        "document_epoch": { "type": "integer", "minimum": 0 },
+        "t_session_ms": { "type": "number", "minimum": 0 },
+        "t_document_ms": { "type": "number", "minimum": 0 },
+        "step_id": { "type": ["string", "null"], "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9_.:-]+$" },
+        "url": { "type": "string" },
+        "viewport": { "$ref": "#/$defs/viewport" },
+        "pointer": { "$ref": "#/$defs/pointer" },
+        "wheel": { "$ref": "#/$defs/wheel" },
+        "scroll": { "$ref": "#/$defs/scroll" },
+        "key": {
+          "anyOf": [
+            { "type": "null" },
+            { "const": "<redacted>" },
+            { "enum": ["Alt", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowUp", "Backspace", "CapsLock", "Control", "Delete", "End", "Enter", "Escape", "Home", "Insert", "Meta", "PageDown", "PageUp", "Shift", "Tab"] },
+            { "type": "string", "pattern": "^F[0-9]{1,2}$" }
+          ]
+        },
+        "key_class": { "enum": ["control", "whitespace", "letter", "digit", "punctuation", "other", null] },
+        "keyboard": { "$ref": "#/$defs/keyboard" },
+        "modifiers": { "$ref": "#/$defs/modifiers" },
+        "input": { "$ref": "#/$defs/input" },
+        "clipboard": { "$ref": "#/$defs/transferSummary" },
+        "transfer": { "$ref": "#/$defs/transfer" },
+        "touch": { "$ref": "#/$defs/touch" },
+        "form": { "$ref": "#/$defs/form" },
+        "document_state": { "$ref": "#/$defs/documentState" },
+        "target": { "$ref": "#/$defs/target" },
+        "is_trusted": { "$ref": "#/$defs/nullableBoolean" },
+        "visibility_state": { "type": ["string", "null"], "maxLength": 24 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "enum": ["keydown", "keyup"] } }, "required": ["type"] },
+          "then": { "properties": { "keyboard": { "type": "object" } } }
+        },
+        {
+          "if": { "not": { "properties": { "type": { "enum": ["keydown", "keyup"] } }, "required": ["type"] } },
+          "then": { "properties": { "key": { "const": null }, "key_class": { "const": null }, "keyboard": { "const": null } } }
+        }
+      ]
+    }
+  }
+}

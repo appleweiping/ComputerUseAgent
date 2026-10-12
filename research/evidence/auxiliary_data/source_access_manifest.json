@@ -1,0 +1,543 @@
+{
+  "access_policy": {
+    "authorization_header_used": false,
+    "mode": "public, read-only, no credentials",
+    "raw_or_sampled_rows_tracked": false,
+    "row_level_cache": "none; projected rows are processed in memory",
+    "signed_urls_persisted_or_logged": false
+  },
+  "manifest_sha256": "d14ea43b089ab6554f6ea37ce58247e90ce559a6cbb8e484e51d07f171907574",
+  "retrieved_at_utc": "2026-08-11T14:15:59Z",
+  "schema_version": "1.0",
+  "sources": {
+    "aalto_136m_keystrokes": {
+      "access": "public_read_only_range",
+      "accessed_members": [
+        {
+          "bytes": 3468,
+          "compressed_bytes": 1577,
+          "path": "Keystrokes/files/readme.txt",
+          "sha256": "c81fcbee7e98e53a5bc789074207ec338e66edd204bbf9a160c8edfaf098a08c",
+          "zip_crc32": "7a3729e4"
+        },
+        {
+          "bytes": 21255894,
+          "compressed_bytes": 7366298,
+          "path": "Keystrokes/files/metadata_participants.txt",
+          "sha256": "3ba22e2c23dbcbb5645197b9dd68c17e9ef68a1be7170e1bc1f0cd869a68ac6d",
+          "zip_crc32": "7b9f9444"
+        }
+      ],
+      "archive": {
+        "bytes": 1572785433,
+        "etag": "\"5dbecd19-5688a4ae747c0\"",
+        "last_modified": "Thu, 29 Mar 2018 10:07:35 GMT",
+        "sha256": null,
+        "sha256_status": "not provider-published and not recomputed because the scoped range workflow does not download the 1.57 GB full archive",
+        "url": "https://userinterfaces.aalto.fi/136Mkeystrokes/data/Keystrokes.zip"
+      },
+      "citation": "Dhakal, V.; Feit, A. M.; Kristensson, P. O.; Oulasvirta, A. (2018). Observations on Typing from 136 Million Keystrokes. CHI '18. https://doi.org/10.1145/3173574.3174220",
+      "license": "research and non-commercial use with attribution to the authors",
+      "permitted_scope": "keyboard-only aggregate distribution calibration",
+      "provider": "Aalto University",
+      "provider_page": "https://userinterfaces.aalto.fi/136Mkeystrokes/",
+      "restrictions": [
+        "research/non-commercial use only",
+        "attribute Dhakal, Feit, Kristensson, and Oulasvirta",
+        "do not publish raw or sampled participant rows"
+      ],
+      "retrieved_at_utc": "2026-08-11T14:15:59Z",
+      "source_key": "aalto_136m_keystrokes"
+    },
+    "captchasolve30k_parquet_projection": {
+      "access": "public_ungated_read_only",
+      "artifacts": [
+        {
+          "bytes": 79906899,
+          "path": "default/test/0000.parquet",
+          "sha256": "9c6d4ff4a4f8a029fab7488e8bbafb97989887a4b9c86096abce6b5d11715f2b",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/b0daded215cf660365fd9902a4ed9bade3e65fa8/default/test/0000.parquet"
+        },
+        {
+          "bytes": 108896565,
+          "path": "default/train/0000.parquet",
+          "sha256": "62033956333d4076e5b0dcf345b5d0d203c5a125cb0ca74e6e7f86e597746c28",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/b0daded215cf660365fd9902a4ed9bade3e65fa8/default/train/0000.parquet"
+        },
+        {
+          "bytes": 107164209,
+          "path": "default/train/0001.parquet",
+          "sha256": "e74da27181ad8d0ba2b8932044bf162da131b4a200c2c09fb017a49bf85ae6d0",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/b0daded215cf660365fd9902a4ed9bade3e65fa8/default/train/0001.parquet"
+        },
+        {
+          "bytes": 100697443,
+          "path": "default/train/0002.parquet",
+          "sha256": "6cf0eccf0ea0fa08ac272a71d378bb1ff7ab44398a35c5e186c9c26ca98fe917",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/b0daded215cf660365fd9902a4ed9bade3e65fa8/default/train/0002.parquet"
+        },
+        {
+          "bytes": 79040445,
+          "path": "default/validation/0000.parquet",
+          "sha256": "863025e4c63e4cfddd207a958b723418d8b50edf5d854254bfed788c8d953835",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/b0daded215cf660365fd9902a4ed9bade3e65fa8/default/validation/0000.parquet"
+        }
+      ],
+      "citation": "Capycap Inc. (2026), CaptchaSolve30k: Human Mouse Movement Dataset",
+      "dataset_card": {
+        "bytes": 6327,
+        "sha256": "268e02fcf5d4c3c2b77195743490e22789bf30b120969b906a5ca68c1b160943",
+        "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/46604d2cfed85cd78b88951673445c5447622bfe/README.md"
+      },
+      "license": "inherits CaptchaSolve30k Apache-2.0 plus dataset-card restrictions",
+      "permitted_scope": "projected non-coordinate columns for aggregate mouse calibration",
+      "provider": "Hugging Face Hub",
+      "provider_page": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/tree/refs%2Fconvert%2Fparquet",
+      "repository": "Capycap-AI/CaptchaSolve30k",
+      "restrictions": [
+        "no re-identification or cross-source identity linkage",
+        "no biometric identification, behavioral authentication, surveillance, or tracking",
+        "carry the same restrictions with any redistributed derivatives",
+        "this track must not train or report a person-identification model"
+      ],
+      "retrieved_at_utc": "2026-08-11T14:15:59Z",
+      "revision": "b0daded215cf660365fd9902a4ed9bade3e65fa8",
+      "source_key": "captchasolve30k_parquet_projection",
+      "total_artifact_bytes": 475705561
+    },
+    "captchasolve30k_source": {
+      "access": "public_ungated_read_only",
+      "artifacts": [
+        {
+          "bytes": 812478959,
+          "path": "test.jsonl",
+          "sha256": "5293014de53af1a28f10d89d2556b373460712d45e5a53e520f72c18ae0469af",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/46604d2cfed85cd78b88951673445c5447622bfe/test.jsonl"
+        },
+        {
+          "bytes": 3213022410,
+          "path": "train.jsonl",
+          "sha256": "7681377135bda4d5319835db84e5578b1082630fdc92372db4f1ee56b5da5b8e",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/46604d2cfed85cd78b88951673445c5447622bfe/train.jsonl"
+        },
+        {
+          "bytes": 802495158,
+          "path": "validation.jsonl",
+          "sha256": "19a3146440d2030f942b4c775fdb65cb396a89534afd9b3b54221fd9dc24c992",
+          "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/46604d2cfed85cd78b88951673445c5447622bfe/validation.jsonl"
+        }
+      ],
+      "citation": "Capycap Inc. (2026), CaptchaSolve30k: Human Mouse Movement Dataset",
+      "dataset_card": {
+        "bytes": 6327,
+        "sha256": "268e02fcf5d4c3c2b77195743490e22789bf30b120969b906a5ca68c1b160943",
+        "url": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k/resolve/46604d2cfed85cd78b88951673445c5447622bfe/README.md"
+      },
+      "license": "Apache-2.0 plus dataset-card contractual restrictions",
+      "permitted_scope": "mouse-only aggregate distribution calibration for research",
+      "provider": "Hugging Face Hub",
+      "provider_page": "https://huggingface.co/datasets/Capycap-AI/CaptchaSolve30k",
+      "repository": "Capycap-AI/CaptchaSolve30k",
+      "restrictions": [
+        "no re-identification or cross-source identity linkage",
+        "no biometric identification, behavioral authentication, surveillance, or tracking",
+        "carry the same restrictions with any redistributed derivatives",
+        "this track must not train or report a person-identification model"
+      ],
+      "retrieved_at_utc": "2026-08-11T14:15:59Z",
+      "revision": "46604d2cfed85cd78b88951673445c5447622bfe",
+      "source_key": "captchasolve30k_source",
+      "total_artifact_bytes": 4827996527
+    },
+    "molmoweb_human": {
+      "access": "public_ungated_read_only",
+      "artifacts": [
+        {
+          "bytes": 40779773,
+          "path": "data/preview-00000.parquet",
+          "sha256": "5b6e67ba63ef73d6125392b5a08950662bd91f7ab6c9373ecfe3511e6bc43b78",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/preview-00000.parquet"
+        },
+        {
+          "bytes": 9421397051,
+          "path": "data/train-00000.parquet",
+          "sha256": "48cf1c8aa007f13a9ec17e77f81a3aeff00c969cb5a790f7698381c0c586b632",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00000.parquet"
+        },
+        {
+          "bytes": 9467219183,
+          "path": "data/train-00001.parquet",
+          "sha256": "55f29cdaea52a4cbb0bedb286d6f051860fb7a7d117523697e6b3d9f54aae8a5",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00001.parquet"
+        },
+        {
+          "bytes": 9545387728,
+          "path": "data/train-00002.parquet",
+          "sha256": "d60f76b96e59b07cf59015357a8112230bdfdddfd8b3c9fe624bb1e81a68c1d3",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00002.parquet"
+        },
+        {
+          "bytes": 9606956054,
+          "path": "data/train-00003.parquet",
+          "sha256": "805f9d0c73d9fea40a5dcaa5d2e5199762fb60677afd16fc76b62aee472beb52",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00003.parquet"
+        },
+        {
+          "bytes": 9564460550,
+          "path": "data/train-00004.parquet",
+          "sha256": "e706e7fb26de915765b1cc915e224e83303b71d77f06a65e26fd0c6183c2d892",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00004.parquet"
+        },
+        {
+          "bytes": 9639751321,
+          "path": "data/train-00005.parquet",
+          "sha256": "a3eddf402e3dbbd473d08d4321c79d8293e8d34aa50d4724e898adb280c1af8a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00005.parquet"
+        },
+        {
+          "bytes": 9513043838,
+          "path": "data/train-00006.parquet",
+          "sha256": "2f69b807f1457eb127304df59c596e58b3824191d935a19a33bb7ac8e532a44c",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00006.parquet"
+        },
+        {
+          "bytes": 9578072795,
+          "path": "data/train-00007.parquet",
+          "sha256": "12abd891a58d49c3c65074fe92458a055231d512e45903c9b45eb08926af328f",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00007.parquet"
+        },
+        {
+          "bytes": 9496688111,
+          "path": "data/train-00008.parquet",
+          "sha256": "f5b33684877bc91782b673c292b20e047172fd9aa84fa295e21749791724dedb",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00008.parquet"
+        },
+        {
+          "bytes": 9395137070,
+          "path": "data/train-00009.parquet",
+          "sha256": "7fe568d7492dcb80dd4672a2c8b7eee51ed873b77ab2eeee1c71ba4f8342471a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00009.parquet"
+        },
+        {
+          "bytes": 9379703221,
+          "path": "data/train-00010.parquet",
+          "sha256": "379c6fce8a6baead8156b2caa8c239999b3349ae0db0fc53a6b81c2ad9b9ddbc",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00010.parquet"
+        },
+        {
+          "bytes": 9603294438,
+          "path": "data/train-00011.parquet",
+          "sha256": "e515705c6f3e3de8b7300574548a90a4e381f54d5b7a7f9a23e39f38826c9d68",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00011.parquet"
+        },
+        {
+          "bytes": 9498233418,
+          "path": "data/train-00012.parquet",
+          "sha256": "0bf5731b8d6ec7e375f07401b0ca6be6a0e4a6bb46513c9ea91c784d3c2ddddc",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00012.parquet"
+        },
+        {
+          "bytes": 9552247150,
+          "path": "data/train-00013.parquet",
+          "sha256": "67a7826e544f0a23852c042b9644f38a45976c2e62ace1140e06526a0e5f9d93",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00013.parquet"
+        },
+        {
+          "bytes": 9259305325,
+          "path": "data/train-00014.parquet",
+          "sha256": "292a2b6723a570a28422b2e31fd588d62a7d770739d626caadb11d8b6aa0a184",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00014.parquet"
+        },
+        {
+          "bytes": 9159813211,
+          "path": "data/train-00015.parquet",
+          "sha256": "fbe9ad11e5d38b20a35aa137322ff89a6767764d0d3bcf3e3c347c88cf36fa16",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00015.parquet"
+        },
+        {
+          "bytes": 8997104919,
+          "path": "data/train-00016.parquet",
+          "sha256": "9b4a3c8aa0ae559017e5e6908938c8999b18641d1ab5cd9116052d0e5f8da7fe",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00016.parquet"
+        },
+        {
+          "bytes": 8968829228,
+          "path": "data/train-00017.parquet",
+          "sha256": "c199380ff22cf5226bbb825d0b8c97a9e3f05eaa9622a63205141e4e6c5ef01e",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00017.parquet"
+        },
+        {
+          "bytes": 8955584330,
+          "path": "data/train-00018.parquet",
+          "sha256": "db3f424283f4d9068bb8ddaf744730d6dea75c79cc2bde5b10b00d7d2059b152",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00018.parquet"
+        },
+        {
+          "bytes": 4490042794,
+          "path": "data/train-00019.parquet",
+          "sha256": "e5770850bf4aedeca6b3db5bb61264c500f85b55eef39937ad5104eba1447a16",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/data/train-00019.parquet"
+        }
+      ],
+      "citation": "Gupta et al. (2026), MolmoWeb: Open Visual Web Agent and Open Data for the Open Web, arXiv:2604.08516",
+      "dataset_card": {
+        "bytes": 3891,
+        "sha256": "79b4e054c5720204fd1c847e1eb18b83f7d86e852258175983219ae35eddfefe",
+        "url": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs/resolve/4ab9e1862289641681c7058b09c0901844b217a8/README.md"
+      },
+      "license": "ODC-BY-1.0",
+      "permitted_scope": "research/educational aggregate high-level action-sequence analysis",
+      "provider": "Hugging Face Hub",
+      "provider_page": "https://huggingface.co/datasets/allenai/MolmoWeb-HumanTrajs",
+      "repository": "allenai/MolmoWeb-HumanTrajs",
+      "restrictions": [
+        "follow Ai2 Responsible Use Guidelines",
+        "attribute the MolmoWeb authors and ODC-BY source",
+        "instruction data remains subject to the named model-provider terms",
+        "do not read image columns",
+        "do not use timestamp fields or feed this source to the 23-feature timing model"
+      ],
+      "retrieved_at_utc": "2026-08-11T14:15:59Z",
+      "revision": "4ab9e1862289641681c7058b09c0901844b217a8",
+      "source_key": "molmoweb_human",
+      "total_artifact_bytes": 183133051508
+    },
+    "molmoweb_synthetic": {
+      "access": "public_ungated_read_only",
+      "artifacts": [
+        {
+          "bytes": 8080005352,
+          "path": "data/from_template-00000.parquet",
+          "sha256": "5428c374408559b53bfb6808630b17f23636a0245b44104b61d2605b2c7a72f6",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/from_template-00000.parquet"
+        },
+        {
+          "bytes": 8732554605,
+          "path": "data/from_template-00001.parquet",
+          "sha256": "1fa99922a92a8e02e38d15353234055a3a732b506bc7e8acfdba929d3033b6f3",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/from_template-00001.parquet"
+        },
+        {
+          "bytes": 4157346432,
+          "path": "data/from_template-00002.parquet",
+          "sha256": "fb23f1da3f32c7d13be7681c8a7a357dd94e9c2f4990930f02a35d1c9ea58d91",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/from_template-00002.parquet"
+        },
+        {
+          "bytes": 8296911992,
+          "path": "data/multi_agent-00000.parquet",
+          "sha256": "7f963417f40dfe402e6ad38a04524b1665c731004c418448e05baa72ffab8a9c",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00000.parquet"
+        },
+        {
+          "bytes": 8564921861,
+          "path": "data/multi_agent-00001.parquet",
+          "sha256": "e1ea5deae2d2bbbe2adec33ed210703bc1471289419eea5d1c5434a41b787b2f",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00001.parquet"
+        },
+        {
+          "bytes": 8881953190,
+          "path": "data/multi_agent-00002.parquet",
+          "sha256": "3dd28db275e6a1091394f50b364079141e5132091d8aa713a5931869d5d8a695",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00002.parquet"
+        },
+        {
+          "bytes": 9066755867,
+          "path": "data/multi_agent-00003.parquet",
+          "sha256": "9f110c7a9a4da8f8176ba0a3731a0ede4686669ae4e3f14a0252d067bbdf62c0",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00003.parquet"
+        },
+        {
+          "bytes": 9350067073,
+          "path": "data/multi_agent-00004.parquet",
+          "sha256": "db6605e82db65fa29d25267b3c4b0a15e65c7f3755fe6e6d99efdcf0550b431a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00004.parquet"
+        },
+        {
+          "bytes": 9263251052,
+          "path": "data/multi_agent-00005.parquet",
+          "sha256": "01b341c7a3de8c27751257e5d0e9770e64921be117cf0449adca0c00c8379d9a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00005.parquet"
+        },
+        {
+          "bytes": 8070880222,
+          "path": "data/multi_agent-00006.parquet",
+          "sha256": "c7d3e41d28b3b7c0af7e2c49458ddb8f4f7a6b629d13cab41a4ce1d2691fffcf",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00006.parquet"
+        },
+        {
+          "bytes": 8128080174,
+          "path": "data/multi_agent-00007.parquet",
+          "sha256": "2682060c9c72d7d7f1c6377c31aa2830dd5d0cf597d931496d109437333ac391",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00007.parquet"
+        },
+        {
+          "bytes": 9150208230,
+          "path": "data/multi_agent-00008.parquet",
+          "sha256": "028e0ee6881640f73dfcf62440332f56274489b958f46335783b08f22d39427a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00008.parquet"
+        },
+        {
+          "bytes": 8958400985,
+          "path": "data/multi_agent-00009.parquet",
+          "sha256": "efdecc2cffa1618df618856b5cf4d1b7cafd077a32a8ecb41ce9b5a0123a5765",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00009.parquet"
+        },
+        {
+          "bytes": 3324568498,
+          "path": "data/multi_agent-00010.parquet",
+          "sha256": "f3e538dce605ab9409a535263bac5ec3dd54de86867e4eea7894c65ecfc66b4a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/multi_agent-00010.parquet"
+        },
+        {
+          "bytes": 8652577446,
+          "path": "data/node_traversal-00000.parquet",
+          "sha256": "d3977011104d81e87ccebef9a92ebf410a90bc96815cee4cbf84517ef87a0f02",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/node_traversal-00000.parquet"
+        },
+        {
+          "bytes": 8529982691,
+          "path": "data/node_traversal-00001.parquet",
+          "sha256": "30ba159ac617e802e3d6462d16b968c179b28fbfd67c9073514b7cf91cbd4ea2",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/node_traversal-00001.parquet"
+        },
+        {
+          "bytes": 8512369336,
+          "path": "data/node_traversal-00002.parquet",
+          "sha256": "f643db721d4485c71cb55b03733823581bd38d9f5ff3ccc1a0a523b3a6efc3bf",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/node_traversal-00002.parquet"
+        },
+        {
+          "bytes": 8506890755,
+          "path": "data/node_traversal-00003.parquet",
+          "sha256": "3ce5eebfd3efa744ca27cc978e292c6710e1033e986a643b3e19375917dcccbf",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/node_traversal-00003.parquet"
+        },
+        {
+          "bytes": 4824672474,
+          "path": "data/node_traversal-00004.parquet",
+          "sha256": "dfc6ec9bd3cc911cbabfdb7b3b6e28dca748e2535d111a184dbae4798f99e9e7",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/node_traversal-00004.parquet"
+        },
+        {
+          "bytes": 8818652925,
+          "path": "data/task_seeded_om2w-00000.parquet",
+          "sha256": "788f397991064a0556db67f5610e1625f87de6ceaaee4f20bed555c4dfa0c78d",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00000.parquet"
+        },
+        {
+          "bytes": 8770017361,
+          "path": "data/task_seeded_om2w-00001.parquet",
+          "sha256": "15bc5238f254b7cc6e689af3339fe94cb7cd5be3e97c5420dbd9540b8c0ea41b",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00001.parquet"
+        },
+        {
+          "bytes": 8978348685,
+          "path": "data/task_seeded_om2w-00002.parquet",
+          "sha256": "389fcc317ee750637e5ccd75f13ecf6251644dad26fc12795bb271600536f50f",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00002.parquet"
+        },
+        {
+          "bytes": 8742731812,
+          "path": "data/task_seeded_om2w-00003.parquet",
+          "sha256": "2d8734962ad90a07313e04ab1a8a25ccdcec23a42b2d12ead5f5a5afddfafbe1",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00003.parquet"
+        },
+        {
+          "bytes": 8888200774,
+          "path": "data/task_seeded_om2w-00004.parquet",
+          "sha256": "1cb93c05fa8e72886ce7694cfce0fc72d7f08b67b4d4f8313acbc816df9b0842",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00004.parquet"
+        },
+        {
+          "bytes": 8996635296,
+          "path": "data/task_seeded_om2w-00005.parquet",
+          "sha256": "741b3a571dddf864ce1578a3a66047dd1c2bfa705bebbb2e9a82d8ad250c3d5b",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00005.parquet"
+        },
+        {
+          "bytes": 8750869624,
+          "path": "data/task_seeded_om2w-00006.parquet",
+          "sha256": "283318702f74bc9b47e46171062ef955ff743dddf94458763972e4fe7b963dc4",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00006.parquet"
+        },
+        {
+          "bytes": 9066835328,
+          "path": "data/task_seeded_om2w-00007.parquet",
+          "sha256": "cd4f3c22ed490ee34ecb22b078cc16e95dab8843603c2f6f75d814ff428f6a8b",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00007.parquet"
+        },
+        {
+          "bytes": 8927263451,
+          "path": "data/task_seeded_om2w-00008.parquet",
+          "sha256": "1c6040f20fa2009cf0980bbbf7dc55beec0cbd349684d65bcd9555a52a84f6f5",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00008.parquet"
+        },
+        {
+          "bytes": 9021806624,
+          "path": "data/task_seeded_om2w-00009.parquet",
+          "sha256": "e8c6f962594dc2fd4b2506fec349663a623627a7cddbbd80c111b9be1191630f",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00009.parquet"
+        },
+        {
+          "bytes": 6517477780,
+          "path": "data/task_seeded_om2w-00010.parquet",
+          "sha256": "b9b130e429aba97e534febcd41ebf59b67b8f4b7ace74567a947bf1053dcb48a",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_om2w-00010.parquet"
+        },
+        {
+          "bytes": 9138543023,
+          "path": "data/task_seeded_wv-00000.parquet",
+          "sha256": "18b25f122323581e647f140059a00111334208c13f7e3be25f75841c9d4ab867",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_wv-00000.parquet"
+        },
+        {
+          "bytes": 8163730002,
+          "path": "data/task_seeded_wv-00001.parquet",
+          "sha256": "89e646e48f480f1d19c3d8e67efe2bedd5f6c749fec870e4023bf33518a632a7",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_wv-00001.parquet"
+        },
+        {
+          "bytes": 8609909673,
+          "path": "data/task_seeded_wv-00002.parquet",
+          "sha256": "7b5d4906e20e14a7d00cfad4534486c2f013f011af31fa19f8bdf7ac08e89464",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_wv-00002.parquet"
+        },
+        {
+          "bytes": 8448034512,
+          "path": "data/task_seeded_wv-00003.parquet",
+          "sha256": "5c03db6c173934175c24be5abc9dcfb749aaf9be2324bb2e8460cfe4934d78b6",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_wv-00003.parquet"
+        },
+        {
+          "bytes": 2899924333,
+          "path": "data/task_seeded_wv-00004.parquet",
+          "sha256": "8f3ec1a0c48a7a06eb3dabf99aab623d51acfeb45bc76f3cfa1ba3f9abcfdae6",
+          "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/data/task_seeded_wv-00004.parquet"
+        }
+      ],
+      "citation": "Gupta et al. (2026), MolmoWeb: Open Visual Web Agent and Open Data for the Open Web, arXiv:2604.08516",
+      "dataset_card": {
+        "bytes": 4555,
+        "sha256": "c106fcda4f574582d2c68ea75fbbec83e72da16df556f7bc6b0b9755da9c2f0b",
+        "url": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs/resolve/9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb/README.md"
+      },
+      "license": "ODC-BY-1.0",
+      "permitted_scope": "research/educational aggregate high-level action-sequence analysis",
+      "provider": "Hugging Face Hub",
+      "provider_page": "https://huggingface.co/datasets/allenai/MolmoWeb-SyntheticTrajs",
+      "repository": "allenai/MolmoWeb-SyntheticTrajs",
+      "restrictions": [
+        "follow Ai2 Responsible Use Guidelines",
+        "attribute the MolmoWeb authors and ODC-BY source",
+        "instruction data remains subject to the named model-provider terms",
+        "do not read image columns",
+        "do not use timestamp fields or feed this source to the 23-feature timing model"
+      ],
+      "retrieved_at_utc": "2026-08-11T14:15:59Z",
+      "revision": "9b80ce0271c5fbdcea048f4b2bb4eb0cc457e2eb",
+      "source_key": "molmoweb_synthetic",
+      "total_artifact_bytes": 283791379438
+    }
+  }
+}

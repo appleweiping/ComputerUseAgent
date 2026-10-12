@@ -1,0 +1,21 @@
+{
+  "schema_version": "cui-week3-validation-summary-v1",
+  "generated_at": "2026-08-07T14:01:23.928Z",
+  "status": "passed",
+  "checks": {
+    "pinned_public_simulators": true,
+    "versioned_task_manifests": true,
+    "deterministic_independent_validator": true,
+    "real_extension_popup_start_stop": true,
+    "agent_actor_metadata": true,
+    "trusted_browser_inputs": true,
+    "privacy_safe_sanitized_exports": true,
+    "post_stop_negative_control": true,
+    "agent_only_no_human_participant_data": true
+  },
+  "run_count": 9,
+  "passed_run_count": 9,
+  "task_count": 3,
+  "simulator_count": 3,
+  "total_event_count": 908
+}

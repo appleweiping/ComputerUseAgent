@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/appleweiping/ComputerUseAgent/schemas/cui-codex-case-v1.schema.json",
+  "title": "CUI Codex MiniWoB exploratory case v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "objective",
+    "execution_mode",
+    "benchmark",
+    "task_id",
+    "environment_id",
+    "repetition",
+    "seed",
+    "limits",
+    "actor",
+    "recorder",
+    "validator",
+    "outcome",
+    "fresh_profile",
+    "screenshots",
+    "action_count",
+    "no_manual_rescue",
+    "no_scripted_control",
+    "started_at_utc",
+    "completed_at_utc",
+    "source_manifest",
+    "artifacts",
+    "verification",
+    "formal_claim_permitted",
+    "human_participant_data_included",
+    "secrets_included",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "cui-codex-case-v1"},
+    "case_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"},
+    "objective": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "execution_mode": {"enum": ["exploratory_interaction"]},
+    "benchmark": {"const": "miniwob"},
+    "task_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,127}$"},
+    "environment_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,255}$"},
+    "repetition": {"type": "integer", "minimum": 1, "maximum": 3},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+    "limits": {"$ref": "#/$defs/limits"},
+    "actor": {"$ref": "#/$defs/actor"},
+    "recorder": {"$ref": "#/$defs/recorder"},
+    "validator": {"$ref": "#/$defs/validator"},
+    "outcome": {"$ref": "#/$defs/outcome"},
+    "fresh_profile": {"const": true},
+    "screenshots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/screenshot"}
+    },
+    "action_count": {"type": "integer", "minimum": 0, "maximum": 30},
+    "no_manual_rescue": {"const": true},
+    "no_scripted_control": {"const": true},
+    "started_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "completed_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "source_manifest": {"$ref": "#/$defs/manifestRef"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/artifact"}
+    },
+    "verification": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/check"}
+    },
+    "formal_claim_permitted": {"const": false},
+    "human_participant_data_included": {"const": false},
+    "secrets_included": {"const": false},
+    "claim_boundary": {"type": "string", "minLength": 1, "maxLength": 500}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "repoPath": {
+      "type": "string",
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*$"
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_actions", "timeout_seconds"],
+      "properties": {
+        "max_actions": {"const": 30},
+        "timeout_seconds": {"const": 480}
+      }
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "surface",
+        "app_version",
+        "harness",
+        "observed_at_utc",
+        "backend_snapshot"
+      ],
+      "properties": {
+        "identity": {"const": "Codex Desktop"},
+        "surface": {"const": "app"},
+        "app_version": {"type": "string", "minLength": 1, "maxLength": 100},
+        "harness": {"enum": ["in_app_browser", "computer_control"]},
+        "observed_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+        "backend_snapshot": {
+          "type": ["string", "null"],
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    },
+    "recorder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["implementation", "version", "status", "session_id", "record_sha256", "event_count"],
+      "properties": {
+        "implementation": {"const": "browser_mv3"},
+        "version": {"type": "string", "minLength": 1, "maxLength": 100},
+        "status": {"enum": ["captured", "unavailable"]},
+        "session_id": {
+          "type": ["string", "null"],
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{2,127}$"
+        },
+        "record_sha256": {
+          "anyOf": [
+            {"$ref": "#/$defs/sha256"},
+            {"type": "null"}
+          ]
+        },
+        "event_count": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "validator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["implementation", "reward", "terminated", "truncated"],
+      "properties": {
+        "implementation": {"const": "browsergym_official_reward"},
+        "reward": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "terminated": {"type": "boolean"},
+        "truncated": {"type": "boolean"}
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "failure_code"],
+      "properties": {
+        "status": {"enum": ["success", "failure", "timeout", "error", "blocked"]},
+        "failure_code": {
+          "type": ["string", "null"],
+          "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+        }
+      }
+    },
+    "screenshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_path", "sha256", "caption", "cropped"],
+      "properties": {
+        "repository_path": {"$ref": "#/$defs/repoPath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "caption": {"type": "string", "minLength": 1, "maxLength": 500},
+        "cropped": {"type": "boolean"}
+      }
+    },
+    "manifestRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "manifest_id", "repository_path", "sha256"],
+      "properties": {
+        "schema_version": {"const": "cui-source-manifest-v1"},
+        "manifest_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"},
+        "repository_path": {"$ref": "#/$defs/repoPath"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "kind", "repository_path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"},
+        "kind": {"enum": ["code", "data", "document", "image", "log", "report"]},
+        "repository_path": {"$ref": "#/$defs/repoPath"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "status", "evidence_sha256"],
+      "properties": {
+        "check_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"},
+        "status": {"enum": ["pass", "fail", "blocked"]},
+        "evidence_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "blocked_tracks": [],
+  "completed_tracks": [
+    "aalto",
+    "captcha",
+    "molmoweb"
+  ],
+  "hard_boundaries": {
+    "auxiliary_rows_concatenated_with_fp_agent": false,
+    "headline_cross_dataset_classifier": false,
+    "molmoweb_fed_to_23_feature_timing_model": false,
+    "raw_or_sampled_rows_public": false
+  },
+  "retrieved_at_utc": "2026-08-11T14:15:59Z",
+  "schema_version": "1.0",
+  "tracks": {
+    "aalto": {
+      "blocked_reason": null,
+      "output": "aalto_136m_metrics.json",
+      "status": "complete"
+    },
+    "captcha": {
+      "blocked_reason": null,
+      "output": "captchasolve30k_metrics.json",
+      "status": "complete"
+    },
+    "molmoweb": {
+      "blocked_reason": null,
+      "output": "molmoweb_metrics.json",
+      "status": "complete_with_timestamp_absence_check_failed"
+    }
+  }
+}

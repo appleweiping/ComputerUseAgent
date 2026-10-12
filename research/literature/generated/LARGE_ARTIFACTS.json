@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "cua-large-artifacts-v1",
+  "description": "Generated citation-graph outputs that are too large to commit. They are byte-identical to the files at the pinned commit of the source repository. Fetch and verify them with `python -m research.literature.fetch_large`; they are written to the git-ignored research/literature/generated/large/ directory, where build_citation_artifacts and the literature tests look for them.",
+  "source": {
+    "repository": "https://github.com/appleweiping/cu-detector-research-artifact",
+    "commit": "437070f519d4bd40e9e4e46bf19fcca52b4b7557",
+    "committedAt": "2026-08-18T17:25:36+08:00"
+  },
+  "destination": "research/literature/generated/large",
+  "fetchCommand": "python -m research.literature.fetch_large",
+  "urlCheck": {
+    "checkedOn": "2026-10-11",
+    "result": "The raw.githubusercontent.com URLs below return HTTP 200 with the exact Content-Length and serve bytes whose SHA-256 matches. Both files are ordinary git blobs (not Git LFS) at the pinned commit, so media.githubusercontent.com returns 404; https://github.com/<repository>/raw/<commit>/<path> redirects (302) to the same raw URL."
+  },
+  "artifacts": [
+    {
+      "name": "citation_graph.json",
+      "builderOutput": "graph",
+      "sourcePath": "literature/citation_graph.json",
+      "bytes": 72766360,
+      "sha256": "ed3f7050b257562f8602379fcbbb22d20b29b2e7d4fcf6227291955450754642",
+      "gitBlobSha1": "f02af2acaf41e56d9682aff0f1fee766ac54ad65",
+      "url": "https://raw.githubusercontent.com/appleweiping/cu-detector-research-artifact/437070f519d4bd40e9e4e46bf19fcca52b4b7557/literature/citation_graph.json"
+    },
+    {
+      "name": "citation_assertions.csv",
+      "builderOutput": "assertions_csv",
+      "sourcePath": "literature/citation_assertions.csv",
+      "bytes": 46375030,
+      "sha256": "1bb6e05747ef5051810896765b2c1013d70be8a29988afc5bdb039099d0018b2",
+      "gitBlobSha1": "04b1098f2d4862535f0767d6ed93dccca850e5f2",
+      "url": "https://raw.githubusercontent.com/appleweiping/cu-detector-research-artifact/437070f519d4bd40e9e4e46bf19fcca52b4b7557/literature/citation_assertions.csv"
+    }
+  ]
+}

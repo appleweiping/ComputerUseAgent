@@ -1,0 +1,120 @@
+{
+  "as_of_utc": "2026-08-11T12:20:01.266Z",
+  "attempts": [
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-click-checkboxes-r1-20260811",
+      "case_sha256": "473d0a4bff6fa3be9512be52ad004d59b5a36307227ed2cec7ad04c2ed998e08",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 1,
+      "seed": 20260811,
+      "status": "blocked",
+      "task_id": "click-checkboxes"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-click-checkboxes-r2-20260811",
+      "case_sha256": "2f0885d4df040b20323522bf8fb0a3c01b1677f3bfbbe4824366c4eb9aefe5c6",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 2,
+      "seed": 20260812,
+      "status": "blocked",
+      "task_id": "click-checkboxes"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-click-checkboxes-r3-20260811",
+      "case_sha256": "50687376f658d749f85933b606a5219dc7f5d9ebeaf5ae304c8b32914ace03f1",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 3,
+      "seed": 20260813,
+      "status": "blocked",
+      "task_id": "click-checkboxes"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-enter-text-r1-20260811",
+      "case_sha256": "c2f47732afef1964efe373fe7828de97963e7ffb1f580fe506e6be5d7b26a235",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 1,
+      "seed": 20260811,
+      "status": "blocked",
+      "task_id": "enter-text"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-enter-text-r2-20260811",
+      "case_sha256": "f6e24cd302cdcf53d56373f9f06a62840711adaa56aa783bea5b576f5f31cc39",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 2,
+      "seed": 20260812,
+      "status": "blocked",
+      "task_id": "enter-text"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-enter-text-r3-20260811",
+      "case_sha256": "9a6691bdb06bea4a449d21c5467ce5234a9e3c986597902ac1d734e2006bee66",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 3,
+      "seed": 20260813,
+      "status": "blocked",
+      "task_id": "enter-text"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-choose-list-r1-20260811",
+      "case_sha256": "94c6cab5efb01a57d3e11474f4b3a661ced2cb7064c3c60950f40256988f95f6",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 1,
+      "seed": 20260811,
+      "status": "blocked",
+      "task_id": "choose-list"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-choose-list-r2-20260811",
+      "case_sha256": "18969e00e2d105fe1d62cf6960cbab0b5e84c1ab9b17fff690d829223d36f4b6",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 2,
+      "seed": 20260812,
+      "status": "blocked",
+      "task_id": "choose-list"
+    },
+    {
+      "action_count": 0,
+      "case_id": "codex-miniwob-choose-list-r3-20260811",
+      "case_sha256": "0f28c8fc84fe36897183cb5a73520744a8a47c37e3d824d4954c6d88b973e327",
+      "failure_code": "codex_interaction_surfaces_unavailable",
+      "repetition": 3,
+      "seed": 20260813,
+      "status": "blocked",
+      "task_id": "choose-list"
+    }
+  ],
+  "bundled_attempts": 9,
+  "claim_boundary": "Nine exploratory Codex Desktop cases on three official MiniWoB tasks. These cases are not a framework benchmark, a formal study, a matched human-agent study, or evidence about all computer-use agents.",
+  "eligible_recorder_traces": 0,
+  "formal_claim_permitted": false,
+  "manual_rescue_attempts": 0,
+  "official_rewards_available": 0,
+  "outcomes": {
+    "blocked": 9
+  },
+  "planned_attempts": 9,
+  "protocol_version": "codex-miniwob-exploratory-v1",
+  "schema_version": "cui-codex-case-summary-v1",
+  "screenshots": 9,
+  "scripted_control_attempts": 0,
+  "task_outcomes": {
+    "choose-list": {
+      "blocked": 3
+    },
+    "click-checkboxes": {
+      "blocked": 3
+    },
+    "enter-text": {
+      "blocked": 3
+    }
+  }
+}

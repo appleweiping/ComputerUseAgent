@@ -1,0 +1,620 @@
+{
+  "access": {
+    "artifact_count": 5,
+    "method": "pinned Hugging Face auto-Parquet with HTTP Range projection",
+    "range_request_count": 472,
+    "source_rows_by_artifact": {
+      "default/test/0000.parquet": 5000,
+      "default/train/0000.parquet": 6851,
+      "default/train/0001.parquet": 6827,
+      "default/train/0002.parquet": 6322,
+      "default/validation/0000.parquet": 5000
+    },
+    "transferred_bytes": 61650742
+  },
+  "by_game_type": {
+    "polygon-stacking": {
+      "distribution_calibration": {
+        "duration": {
+          "population": {
+            "max": 59584.200000047684,
+            "mean": 11184.326282939754,
+            "min": 5731.60000000149,
+            "missing_count": 0,
+            "non_missing_count": 8652,
+            "quantiles": {
+              "p05": 6831.430000013113,
+              "p25": 7709.900000001304,
+              "p50": 9086.849999988452,
+              "p75": 12196.274999976158,
+              "p95": 22759.41999998688
+            },
+            "row_count": 8652,
+            "std": 6023.555411921948
+          },
+          "sample": {
+            "max": 59584.200000047684,
+            "mean": 11116.594920441152,
+            "min": 6087.300000000745,
+            "missing_count": 0,
+            "non_missing_count": 1634,
+            "quantiles": {
+              "p05": 6862.25,
+              "p25": 7697.2249999940395,
+              "p50": 8999.900000011548,
+              "p75": 12174.850000023842,
+              "p95": 22161.599999967588
+            },
+            "row_count": 1634,
+            "std": 6040.348222783184
+          },
+          "sample_minus_population_quantiles": {
+            "p05": 30.819999986886614,
+            "p25": -12.675000007264316,
+            "p50": -86.9499999769032,
+            "p75": -21.424999952316284,
+            "p95": -597.8200000192919
+          },
+          "standardized_mean_delta": -0.011244415941546163
+        },
+        "inputSampleCount": {
+          "population": {
+            "max": 14501.0,
+            "mean": 2483.735668053629,
+            "min": 133.0,
+            "missing_count": 0,
+            "non_missing_count": 8652,
+            "quantiles": {
+              "p05": 1397.0,
+              "p25": 1695.0,
+              "p50": 2072.5,
+              "p75": 2743.0,
+              "p95": 5054.0
+            },
+            "row_count": 8652,
+            "std": 1358.8426029739628
+          },
+          "sample": {
+            "max": 14501.0,
+            "mean": 2459.207466340269,
+            "min": 479.0,
+            "missing_count": 0,
+            "non_missing_count": 1634,
+            "quantiles": {
+              "p05": 1395.65,
+              "p25": 1671.25,
+              "p50": 2061.0,
+              "p75": 2702.75,
+              "p95": 4936.499999999999
+            },
+            "row_count": 1634,
+            "std": 1325.1968470366605
+          },
+          "sample_minus_population_quantiles": {
+            "p05": -1.349999999999909,
+            "p25": -23.75,
+            "p50": -11.5,
+            "p75": -40.25,
+            "p95": -117.50000000000091
+          },
+          "standardized_mean_delta": -0.01805080416206966
+        },
+        "physicsTickCount": {
+          "population": {
+            "max": 14299.0,
+            "mean": 2674.3628062875637,
+            "min": 1375.0,
+            "missing_count": 0,
+            "non_missing_count": 8652,
+            "quantiles": {
+              "p05": 1637.0,
+              "p25": 1847.0,
+              "p50": 2178.0,
+              "p75": 2920.25,
+              "p95": 5418.449999999999
+            },
+            "row_count": 8652,
+            "std": 1428.410042635475
+          },
+          "sample": {
+            "max": 14299.0,
+            "mean": 2662.0116279069766,
+            "min": 1460.0,
+            "missing_count": 0,
+            "non_missing_count": 1634,
+            "quantiles": {
+              "p05": 1645.25,
+              "p25": 1845.0,
+              "p50": 2157.5,
+              "p75": 2905.5,
+              "p95": 5315.75
+            },
+            "row_count": 1634,
+            "std": 1448.3213177329385
+          },
+          "sample_minus_population_quantiles": {
+            "p05": 8.25,
+            "p25": -2.0,
+            "p50": -20.5,
+            "p75": -14.75,
+            "p95": -102.69999999999891
+          },
+          "standardized_mean_delta": -0.008646801696940336
+        }
+      },
+      "eligible_population_count": 8652,
+      "sample_count": 1634
+    },
+    "sheep-herding": {
+      "distribution_calibration": {
+        "duration": {
+          "population": {
+            "max": 59990.5,
+            "mean": 13134.273859403278,
+            "min": 5917.39999999851,
+            "missing_count": 0,
+            "non_missing_count": 8592,
+            "quantiles": {
+              "p05": 8374.284999948553,
+              "p25": 9843.374999982305,
+              "p50": 11308.550000011921,
+              "p75": 13791.575000000186,
+              "p95": 25583.615000008045
+            },
+            "row_count": 8592,
+            "std": 6063.011181993506
+          },
+          "sample": {
+            "max": 56928.69999999995,
+            "mean": 12932.370425136802,
+            "min": 5917.39999999851,
+            "missing_count": 0,
+            "non_missing_count": 1623,
+            "quantiles": {
+              "p05": 8338.960000000148,
+              "p25": 9834.350000000559,
+              "p50": 11202.699999928474,
+              "p75": 13608.599999999627,
+              "p95": 24106.24000004269
+            },
+            "row_count": 1623,
+            "std": 5835.420342063199
+          },
+          "sample_minus_population_quantiles": {
+            "p05": -35.32499994840509,
+            "p25": -9.024999981746078,
+            "p50": -105.8500000834465,
+            "p75": -182.9750000005588,
+            "p95": -1477.3749999653555
+          },
+          "standardized_mean_delta": -0.03330085137664068
+        },
+        "inputSampleCount": {
+          "population": {
+            "max": 14060.0,
+            "mean": 2713.6489757914337,
+            "min": 185.0,
+            "missing_count": 0,
+            "non_missing_count": 8592,
+            "quantiles": {
+              "p05": 1588.55,
+              "p25": 1993.0,
+              "p50": 2410.5,
+              "p75": 2973.25,
+              "p95": 5037.45
+            },
+            "row_count": 8592,
+            "std": 1223.845858434978
+          },
+          "sample": {
+            "max": 14060.0,
+            "mean": 2665.7751078250153,
+            "min": 604.0,
+            "missing_count": 0,
+            "non_missing_count": 1623,
+            "quantiles": {
+              "p05": 1599.3,
+              "p25": 1980.5,
+              "p50": 2388.0,
+              "p75": 2933.0,
+              "p95": 4794.199999999999
+            },
+            "row_count": 1623,
+            "std": 1197.2558639519448
+          },
+          "sample_minus_population_quantiles": {
+            "p05": 10.75,
+            "p25": -12.5,
+            "p50": -22.5,
+            "p75": -40.25,
+            "p95": -243.2500000000009
+          },
+          "standardized_mean_delta": -0.03911756340593271
+        },
+        "physicsTickCount": {
+          "population": {
+            "max": 14397.0,
+            "mean": 3146.429818435754,
+            "min": 1419.0,
+            "missing_count": 0,
+            "non_missing_count": 8592,
+            "quantiles": {
+              "p05": 2007.0,
+              "p25": 2360.0,
+              "p50": 2711.0,
+              "p75": 3306.0,
+              "p95": 6110.5999999999985
+            },
+            "row_count": 8592,
+            "std": 1446.1457926482035
+          },
+          "sample": {
+            "max": 13661.0,
+            "mean": 3092.2772643253234,
+            "min": 1419.0,
+            "missing_count": 0,
+            "non_missing_count": 1623,
+            "quantiles": {
+              "p05": 2000.2,
+              "p25": 2357.5,
+              "p50": 2688.0,
+              "p75": 3264.5,
+              "p95": 5750.999999999998
+            },
+            "row_count": 1623,
+            "std": 1373.3509677466393
+          },
+          "sample_minus_population_quantiles": {
+            "p05": -6.7999999999999545,
+            "p25": -2.5,
+            "p50": -23.0,
+            "p75": -41.5,
+            "p95": -359.60000000000036
+          },
+          "standardized_mean_delta": -0.03744612361058402
+        }
+      },
+      "eligible_population_count": 8592,
+      "sample_count": 1623
+    },
+    "thread-the-needle": {
+      "distribution_calibration": {
+        "duration": {
+          "population": {
+            "max": 59525.40000000037,
+            "mean": 7340.17350677546,
+            "min": 3502.699999988079,
+            "missing_count": 0,
+            "non_missing_count": 9225,
+            "quantiles": {
+              "p05": 4744.179999999702,
+              "p25": 5419.199999928474,
+              "p50": 6096.900000002235,
+              "p75": 7203.100000023842,
+              "p95": 14480.260000061966
+            },
+            "row_count": 9225,
+            "std": 4410.065139676811
+          },
+          "sample": {
+            "max": 58486.59999999404,
+            "mean": 7543.685083191485,
+            "min": 3507.0,
+            "missing_count": 0,
+            "non_missing_count": 1743,
+            "quantiles": {
+              "p05": 4738.440000042879,
+              "p25": 5417.699999990873,
+              "p50": 6146.9000000059605,
+              "p75": 7346.850000000559,
+              "p95": 16164.970000000007
+            },
+            "row_count": 1743,
+            "std": 4811.887133989653
+          },
+          "sample_minus_population_quantiles": {
+            "p05": -5.73999995682334,
+            "p25": -1.4999999376013875,
+            "p50": 50.00000000372529,
+            "p75": 143.74999997671694,
+            "p95": 1684.7099999380407
+          },
+          "standardized_mean_delta": 0.04614706812039056
+        },
+        "inputSampleCount": {
+          "population": {
+            "max": 13050.0,
+            "mean": 1634.339295392954,
+            "min": 135.0,
+            "missing_count": 0,
+            "non_missing_count": 9225,
+            "quantiles": {
+              "p05": 973.0,
+              "p25": 1191.0,
+              "p50": 1380.0,
+              "p75": 1654.0,
+              "p95": 3263.399999999994
+            },
+            "row_count": 9225,
+            "std": 980.0881532170808
+          },
+          "sample": {
+            "max": 11962.0,
+            "mean": 1673.616179001721,
+            "min": 149.0,
+            "missing_count": 0,
+            "non_missing_count": 1743,
+            "quantiles": {
+              "p05": 963.1,
+              "p25": 1204.0,
+              "p50": 1391.0,
+              "p75": 1672.0,
+              "p95": 3444.0999999999985
+            },
+            "row_count": 1743,
+            "std": 1056.6470292757158
+          },
+          "sample_minus_population_quantiles": {
+            "p05": -9.899999999999977,
+            "p25": 13.0,
+            "p50": 11.0,
+            "p75": 18.0,
+            "p95": 180.70000000000437
+          },
+          "standardized_mean_delta": 0.040074847838781714
+        },
+        "physicsTickCount": {
+          "population": {
+            "max": 14283.0,
+            "mean": 1757.9588075880758,
+            "min": 840.0,
+            "missing_count": 0,
+            "non_missing_count": 9225,
+            "quantiles": {
+              "p05": 1136.0,
+              "p25": 1299.0,
+              "p50": 1461.0,
+              "p75": 1725.0,
+              "p95": 3462.9999999999964
+            },
+            "row_count": 9225,
+            "std": 1053.6872847907694
+          },
+          "sample": {
+            "max": 14035.0,
+            "mean": 1805.4302925989673,
+            "min": 840.0,
+            "missing_count": 0,
+            "non_missing_count": 1743,
+            "quantiles": {
+              "p05": 1136.1,
+              "p25": 1298.0,
+              "p50": 1473.0,
+              "p75": 1758.0,
+              "p95": 3850.8999999999933
+            },
+            "row_count": 1743,
+            "std": 1149.010187236491
+          },
+          "sample_minus_population_quantiles": {
+            "p05": 0.09999999999990905,
+            "p25": -1.0,
+            "p50": 12.0,
+            "p75": 33.0,
+            "p95": 387.8999999999969
+          },
+          "standardized_mean_delta": 0.04505272645509609
+        }
+      },
+      "eligible_population_count": 9225,
+      "sample_count": 1743
+    }
+  },
+  "data_quality": {
+    "coordinates_read": false,
+    "input_stream_read": false,
+    "prohibited_columns_read": [],
+    "projected_columns": [
+      "index",
+      "inputSampleCount",
+      "duration",
+      "touchscreen",
+      "gameType",
+      "physicsTickCount",
+      "puzzleSeed"
+    ],
+    "source_index_unique": true
+  },
+  "eligible_mouse_row_count": 26469,
+  "excluded_touchscreen_row_count": 3531,
+  "full_source_row_count": 30000,
+  "overall_distribution_calibration": {
+    "duration": {
+      "population": {
+        "max": 59990.5,
+        "mean": 10477.52361630554,
+        "min": 3502.699999988079,
+        "missing_count": 0,
+        "non_missing_count": 26469,
+        "quantiles": {
+          "p05": 5104.0,
+          "p25": 6770.700000047684,
+          "p50": 8986.700000001118,
+          "p75": 11867.79999999702,
+          "p95": 21830.239999998343
+        },
+        "row_count": 26469,
+        "std": 6037.86207280409
+      },
+      "sample": {
+        "max": 59584.200000047684,
+        "mean": 10460.479280000127,
+        "min": 3507.0,
+        "missing_count": 0,
+        "non_missing_count": 5000,
+        "quantiles": {
+          "p05": 5117.905000001192,
+          "p25": 6798.525000009686,
+          "p50": 8998.650000011548,
+          "p75": 11859.42500000028,
+          "p95": 21258.660000022686
+        },
+        "row_count": 5000,
+        "std": 6011.514519876856
+      },
+      "sample_minus_population_quantiles": {
+        "p05": 13.905000001192093,
+        "p25": 27.82499996200204,
+        "p50": 11.950000010430813,
+        "p75": -8.374999996740371,
+        "p95": -571.5799999756564
+      },
+      "standardized_mean_delta": -0.002822909185386063
+    },
+    "inputSampleCount": {
+      "population": {
+        "max": 14501.0,
+        "mean": 2262.33454229476,
+        "min": 133.0,
+        "missing_count": 0,
+        "non_missing_count": 26469,
+        "quantiles": {
+          "p05": 1085.0,
+          "p25": 1473.0,
+          "p50": 1933.0,
+          "p75": 2607.0,
+          "p95": 4626.199999999997
+        },
+        "row_count": 26469,
+        "std": 1282.232065473293
+      },
+      "sample": {
+        "max": 14501.0,
+        "mean": 2252.4022,
+        "min": 149.0,
+        "missing_count": 0,
+        "non_missing_count": 5000,
+        "quantiles": {
+          "p05": 1076.95,
+          "p25": 1479.0,
+          "p50": 1937.0,
+          "p75": 2597.0,
+          "p95": 4519.200000000001
+        },
+        "row_count": 5000,
+        "std": 1270.6818683034553
+      },
+      "sample_minus_population_quantiles": {
+        "p05": -8.049999999999955,
+        "p25": 6.0,
+        "p50": 4.0,
+        "p75": -10.0,
+        "p95": -106.99999999999636
+      },
+      "standardized_mean_delta": -0.00774613469917696
+    },
+    "physicsTickCount": {
+      "population": {
+        "max": 14397.0,
+        "mean": 2508.212701650988,
+        "min": 840.0,
+        "missing_count": 0,
+        "non_missing_count": 26469,
+        "quantiles": {
+          "p05": 1223.0,
+          "p25": 1623.0,
+          "p50": 2154.0,
+          "p75": 2844.0,
+          "p95": 5212.0
+        },
+        "row_count": 26469,
+        "std": 1438.8064589227602
+      },
+      "sample": {
+        "max": 14299.0,
+        "mean": 2503.0716,
+        "min": 840.0,
+        "missing_count": 0,
+        "non_missing_count": 5000,
+        "quantiles": {
+          "p05": 1225.95,
+          "p25": 1629.0,
+          "p50": 2157.0,
+          "p75": 2838.25,
+          "p95": 5065.800000000003
+        },
+        "row_count": 5000,
+        "std": 1431.2835474752862
+      },
+      "sample_minus_population_quantiles": {
+        "p05": 2.9500000000000455,
+        "p25": 6.0,
+        "p50": 3.0,
+        "p75": -5.75,
+        "p95": -146.1999999999971
+      },
+      "standardized_mean_delta": -0.0035731710954626816
+    }
+  },
+  "required_sample_count": 5000,
+  "retrieved_at_utc": "2026-08-11T14:15:59Z",
+  "sample_count": 5000,
+  "sample_game_type_counts": {
+    "polygon-stacking": 1634,
+    "sheep-herding": 1623,
+    "thread-the-needle": 1743
+  },
+  "sample_split_counts": {
+    "test": 831,
+    "train": 3338,
+    "validation": 831
+  },
+  "sample_touchscreen_row_count": 0,
+  "sampling_ledger": {
+    "algorithm": "sha256-priority-bottom-k-v1",
+    "dataset": "Capycap-AI/CaptchaSolve30k",
+    "population_count": 26469,
+    "population_fingerprint_sha256": "596199ce648612c1f3b12ae04a0d86ad9d9bd9134579477c6622041d8c59082c",
+    "row_level_identities_exported": false,
+    "sample_count": 5000,
+    "seed": 2026081101,
+    "selected_identity_digests_sha256": "b88cc924b09164d38f65ebf677f54a0e50a7380d1b876bcae12cc17b8711bf1c",
+    "strata_population_counts": {
+      "test|polygon-stacking": 1444,
+      "test|sheep-herding": 1446,
+      "test|thread-the-needle": 1507,
+      "train|polygon-stacking": 5776,
+      "train|sheep-herding": 5689,
+      "train|thread-the-needle": 6206,
+      "validation|polygon-stacking": 1432,
+      "validation|sheep-herding": 1457,
+      "validation|thread-the-needle": 1512
+    },
+    "strata_sample_counts": {
+      "test|polygon-stacking": 273,
+      "test|sheep-herding": 273,
+      "test|thread-the-needle": 285,
+      "train|polygon-stacking": 1091,
+      "train|sheep-herding": 1075,
+      "train|thread-the-needle": 1172,
+      "validation|polygon-stacking": 270,
+      "validation|sheep-herding": 275,
+      "validation|thread-the-needle": 286
+    }
+  },
+  "schema_version": "1.0",
+  "scope": "mouse-only aggregate distribution calibration",
+  "seed": 2026081101,
+  "status": "complete",
+  "stratification": [
+    "split",
+    "gameType"
+  ],
+  "track": "captchasolve30k_mouse_distribution_calibration",
+  "use_restrictions_enforced": {
+    "biometric_or_reidentification_use": false,
+    "classifier_trained": false,
+    "combined_with_fp_agent": false,
+    "row_level_output": false
+  }
+}

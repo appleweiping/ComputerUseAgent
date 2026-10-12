@@ -1,0 +1,95 @@
+{
+  "schema_version": "cui-week3-run-manifest-v1",
+  "started_at": "2026-08-07T13:58:06.356Z",
+  "finished_at": "2026-08-07T14:01:23.935Z",
+  "project_week": "Project Week 3",
+  "program_week": "Program Week 2",
+  "date_window": "2026-08-03/2026-08-09",
+  "actor_scope": "agent-only engineering pilot",
+  "mentor_selection_status": "pending mentor confirmation",
+  "browser": {
+    "product_version": "Chrome/150.0.7871.187",
+    "executable_path_role": "local Chrome selected by runner; absolute path intentionally omitted from public evidence",
+    "isolated_profile": true
+  },
+  "extension": {
+    "id": "dagbagkhhdpjmfgdgobghjjjcgdclekl",
+    "name": "CUI Trace Recorder",
+    "version": "0.2.1",
+    "manifest_version": 3
+  },
+  "repetitions_per_task": 3,
+  "task_ids": [
+    "netlogo-ca-rule90-v1",
+    "phet-bce-ammonia-balance-v1",
+    "phet-pdl-annotated-single-launch-v1"
+  ],
+  "simulator_digests": {
+    "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox": {
+      "requested_url": "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox",
+      "resolved_url": "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox",
+      "status": 200,
+      "byte_length": 4599707,
+      "sha256": "760123f4996da8f248b4307131d5952147fb6ce37c3cbd7bac4fccfb68717c6a",
+      "etag": "W/\"9242ab19fee0cb1dec7d03f84c1e7c25\"",
+      "last_modified": "Thu, 14 May 2026 16:14:56 GMT",
+      "content_type": "text/html; charset=utf-8"
+    },
+    "https://phet.colorado.edu/sims/html/balancing-chemical-equations/1.3.1/balancing-chemical-equations_en.html": {
+      "requested_url": "https://phet.colorado.edu/sims/html/balancing-chemical-equations/1.3.1/balancing-chemical-equations_en.html",
+      "resolved_url": "https://phet.colorado.edu/sims/html/balancing-chemical-equations/1.3.1/balancing-chemical-equations_en.html",
+      "status": 200,
+      "byte_length": 2472531,
+      "sha256": "cbe5fef2e07f83321e88d747bc150c06326233e286c8f246aada727b2bf0053b",
+      "etag": null,
+      "last_modified": "Wed, 07 May 2025 00:04:54 GMT",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html": {
+      "requested_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+      "resolved_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+      "status": 200,
+      "byte_length": 3024400,
+      "sha256": "edfef35351e386a778789e8812066114a1b99241a16d4d83d264ae37533cd37c",
+      "etag": null,
+      "last_modified": "Wed, 07 May 2025 03:45:36 GMT",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  },
+  "simulator_artifact_digests": {
+    "https://raw.githubusercontent.com/NetLogo/models/ca8e0e1611aef188fadeebd2097b70d1e5fa4e00/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Elementary.nlogox": {
+      "requested_url": "https://raw.githubusercontent.com/NetLogo/models/ca8e0e1611aef188fadeebd2097b70d1e5fa4e00/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Elementary.nlogox",
+      "resolved_url": "https://raw.githubusercontent.com/NetLogo/models/ca8e0e1611aef188fadeebd2097b70d1e5fa4e00/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Elementary.nlogox",
+      "status": 200,
+      "byte_length": 52369,
+      "sha256": "36c2d8020692b8d438e921255635437939eb6625b4ffd50184cce8ed34e32c27",
+      "etag": "W/\"16280d753dd54f40d195bd82ad2e20571b38734091675ffd30caadb1476e312f\"",
+      "last_modified": null,
+      "content_type": "text/plain; charset=utf-8",
+      "role": "model"
+    }
+  },
+  "source_provenance": {
+    "snapshot_kind": "git-base-plus-content-hashes-v1",
+    "git_commit": "185e283b0d0eb2e38941c733b37a0ff9978bd76e",
+    "git_status": "M experiments/scientific_simulators/tasks/phet-pdl-annotated-single-launch-v1.json\n M scripts/e2e/scientific_simulator_extension_e2e.mjs\n?? experiments/scientific_simulators/runner_policy.mjs",
+    "runner_sha256": "d784b6cb1cf60f161a436636671bd4c60132fd3c370a421cab6cb94ea87239d4",
+    "runner_policy_sha256": "97bda078ebc1713075ebf2d5bb2d5d72a09e69d1552e1a123fb4fdbea02bba61",
+    "validator_sha256": "c3ecb1dc190b75114e4d625ca3fb9658b99ee7beb181e613a957da671d0592e9",
+    "extension": {
+      "sha256": "da2db7deadcd7cba2c45d7b12b9715025a272247c546a1fcdacfe7e576651d86",
+      "file_count": 25
+    },
+    "task_manifests": {
+      "netlogo-ca-rule90-v1": "282d8c32a81c4f46b27b3e0ce70c5f5600f96f88537086a1952d6ecedc85e6a1",
+      "phet-bce-ammonia-balance-v1": "53e2f97cbe994feeb2482286e1e0ecdc93bcd5230c1384aa70db35fc1995cb33",
+      "phet-pdl-annotated-single-launch-v1": "eeb6294b83899f1cee2913ac655d1fa62fc08574dd9fecfbbb6e63f3273f0929"
+    },
+    "browser_executable_sha256": "115a87374083a409eb4b3d0204cbaea8a0e27eeb264cb0b9d3e4c19c378f54d1"
+  },
+  "result_files": {
+    "aggregate_metrics": "results/week3_scientific_simulators/aggregate_metrics.json",
+    "validation_summary": "results/week3_scientific_simulators/validation_summary.json",
+    "runs_root": "results/week3_scientific_simulators/runs"
+  }
+}

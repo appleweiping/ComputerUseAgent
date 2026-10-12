@@ -1,0 +1,36 @@
+{
+  "builtFromSnapshotAt": "2026-08-11T12:11:52.660499Z",
+  "checks": {
+    "accessBlockedDoiSetExact": true,
+    "accessBlockedExactly4": true,
+    "claimIdsUnique": true,
+    "corpusCount68": true,
+    "everyClaimHasLocator": true,
+    "everyReviewHasLicense": true,
+    "foundationalExpansionPreserved": true,
+    "fullTextReviewed60": true,
+    "latestPaperPresent": true,
+    "noCredentialLikeQueryInPublicUrls": true,
+    "noNumericClaimFromAbstract": true,
+    "normalizedPersistentIdsUnique": true,
+    "originCounts43Plus24Plus1": true,
+    "paperCount64": true,
+    "repositoriesReviewed4": true,
+    "repositoryCount4": true
+  },
+  "metrics": {
+    "claims": 98,
+    "inputFiles": 7,
+    "licenses": 68,
+    "locators": 98,
+    "numericClaims": 8,
+    "rows": 68
+  },
+  "schemaVersion": "cui-literature-qa-v2",
+  "sourceSchemas": {
+    "fullTextManifest": "cui-literature-fulltext-evidence-manifest-v1",
+    "manualClaims": "cui-literature-manual-claims-v1",
+    "repositorySnapshots": "cui-literature-repository-review-snapshots-v1"
+  },
+  "status": "pass"
+}

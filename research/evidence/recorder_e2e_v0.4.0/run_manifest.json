@@ -1,0 +1,53 @@
+{
+  "schema_version": "cui-recorder-extension-e2e-run-v1",
+  "started_at": "2026-08-09T23:15:24.512Z",
+  "finished_at": "2026-08-09T23:17:00.984Z",
+  "runner": "scripts/e2e/recorder_extension_e2e.mjs",
+  "repository_commit": "621ad8ac7a609b6db9e1f675284c25f10521df67",
+  "repository_status_before_run": "",
+  "node_version": "v22.21.1",
+  "platform": "win32-x64",
+  "puppeteer_version": "25.4.0",
+  "reproducibility": {
+    "runner_sha256": "dda24d85504985410002c84fee9356b9361b3dbc847d334467be97c47ebf85af",
+    "launch_policy_sha256": "9f2a26fa60717bea10404d3272cf4b0e5fec3cac8f1350e5349a63cd097c3fa8",
+    "package_json_sha256": "e75b0377762a3c25a84f2b5d0e998210d4056f6b6eb4b4a4707c004a3d559695",
+    "package_lock_sha256": "5cfff81330d836d156cb52791f3f4407674ec1e27edee00599298f84af5ba830"
+  },
+  "browser_runtime": {
+    "product_version": "Chrome/151.0.7922.108",
+    "executable_name": "chrome.exe",
+    "executable_bytes": 4074648,
+    "executable_sha256": "ae6d512ada124b63d51f13e5bf79ad514024bc08fa6666d93b0481e18eaa02a3",
+    "provenance": "system Chrome with a new isolated profile",
+    "puppeteer_managed_default_used": false,
+    "sandbox_mode": "browser_default",
+    "ci_no_sandbox_enabled": false
+  },
+  "extension": {
+    "id": "dagbagkhhdpjmfgdgobghjjjcgdclekl",
+    "name": "CUI Trace Recorder",
+    "version": "0.4.0",
+    "source_tree_sha256": "fa5cfc61516551f3756166b6cd8c5f764d4f1305ed3704d1dcd6f8d571e0bfc0",
+    "source_file_count": 32
+  },
+  "isolation": {
+    "user_chrome_profile_used": false,
+    "user_chrome_process_touched": false,
+    "unique_profile_under_configured_runtime": true,
+    "loopback_fixture_only": true,
+    "fixture_origins": [
+      "http://127.0.0.1:53708",
+      "http://127.0.0.1:53709"
+    ]
+  },
+  "actor_claim": {
+    "actor_type": "agent",
+    "actor_label": "puppeteer-isolated-chrome",
+    "source_class": "synthetic_coverage",
+    "cui_framework_claimed": false,
+    "human_data_claimed": false,
+    "comparison_claimed": false
+  },
+  "fatal_error": null
+}

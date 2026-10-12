@@ -1,0 +1,49 @@
+{
+  "schema_version": "cui-detector-dataset-v2",
+  "source_manifest": {
+    "schema_version": "cui-source-manifest-v1",
+    "manifest_id": "fixture-sources",
+    "repository_path": "experiments/contracts/tests/fixtures/source_manifest.valid.json",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "records": [
+    {
+      "schema_version": "cui-detector-record-v2",
+      "record_ref": "0123456789abcdef",
+      "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "label": "agent",
+      "task_group": "fixture-task",
+      "agent_family": "fixture-agent",
+      "evidence_class": "external_restricted",
+      "participant_scope": "third_party_existing_data",
+      "features": {
+        "event_count": 0,
+        "duration_ms": 0,
+        "event_rate_hz": 0,
+        "inter_event_median_ms": 0,
+        "inter_event_p90_ms": 0,
+        "inter_event_cv": 0,
+        "inter_event_burstiness": 0,
+        "time_to_first_input_ms": 0,
+        "pointer_path_px": 0,
+        "pointer_speed_px_s": 0,
+        "pointer_straightness": 0,
+        "pointer_turning_entropy": 0,
+        "click_dwell_median_ms": 0,
+        "pre_click_movement_median_px": 0,
+        "inter_key_median_ms": 0,
+        "key_hold_median_ms": 0,
+        "correction_ratio": 0,
+        "focus_transition_count": 0,
+        "event_type_entropy": 0,
+        "missing_pointer": 0,
+        "missing_keyboard": 0,
+        "missing_click_dwell": 0,
+        "missing_focus": 0
+      },
+      "quality": {
+        "reviewed": true
+      }
+    }
+  ]
+}

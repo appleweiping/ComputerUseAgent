@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-08-10T04:41:34.199Z",
+  "status": "pass_for_integrated_workbook_and_companions",
+  "selection": {
+    "rule": "Taxonomy Confidence=High and Persistent ID absent from the pre-integration 12-row Deep Read matrix",
+    "canonicalShape": "43x41",
+    "existingDeepReadRows": 12,
+    "selectedGapCount": 5,
+    "finalDeepReadRows": 17,
+    "selectedPersistentIds": [
+      "DOI:10.1093/jcr/ucag006",
+      "IEEE-S&P-2026:WebCloak",
+      "arXiv:2511.13725",
+      "arXiv:2506.21506",
+      "arXiv:2504.12516"
+    ]
+  },
+  "payloadChecks": {
+    "jsonParse": true,
+    "canonicalUpdateRows": 5,
+    "canonicalUpdateFieldCount": 14,
+    "deepReadRows": 5,
+    "selectedIdsMatchPayloadIds": true,
+    "duplicatePersistentIds": [],
+    "canonicalUpdateFieldsOutsideCanonicalSchema": [],
+    "canonicalUpdateRowsWithSchemaMismatch": [],
+    "deepReadRowsWithSchemaMismatch": [],
+    "deepReadColumnCount": 14,
+    "primarySourceRecords": 10,
+    "repositoryMutationBoundary": "literature/** only; Git and cloud/native Google Sheet were not invoked"
+  },
+  "integratedCanonicalArtifacts": {
+    "xlsxSha256": "b0c91ddef6512336aa42178f8ea9b9f5281d7d3fda767d6e84f423409a30f670",
+    "csvSha256": "4e3296dd08f4e51b2ef096c51bd45dd60fd1a7229d05c35770e1bd4990d8f6de",
+    "upsertCsvSha256": "4e3296dd08f4e51b2ef096c51bd45dd60fd1a7229d05c35770e1bd4990d8f6de",
+    "upsertJsonSha256": "15e39f7fde8ea81ce98ed22f2faeaea5fe001754f125752610aea40eb65945bc",
+    "deepReadCsvSha256": "0cab972cef9ba2299e242c23a28db37e2d0e5f107b03c43d06367217e516cf14",
+    "surveyQaSha256": "f80d75cf09d8a9aabe1e23d199f90f9aeb64975745ed8398b804b8b49bc8afe5",
+    "workbookDeepReadRows": 17
+  },
+  "addendumArtifacts": {
+    "markdownSha256": "c6e7b25eeac1d3e82535acc45ee4d10374e7829c69cf3fb5d3774e406415b8bd",
+    "markdownSha256AtOriginalQa": "76a6fbdea52c6780da08e721922693487e141690c9a4572c4e50736789662120",
+    "postQaChangeBoundary": "The current file adds only an explicit historical-provenance banner; the five-row integration payload and scientific content remain unchanged.",
+    "payloadJsonSha256": "687990d8372e7585b80d4cb0379be062fa1bb6714de61f2421fa64f6c37f8635"
+  },
+  "workbookIntegration": {
+    "complete": true,
+    "authoringRuntime": "loader-verified bundled @oai/artifact-tool",
+    "alternateXlsxWriterUsed": false,
+    "canonicalTablePreserved": true,
+    "finalDeepReadShape": "17x14",
+    "formulasPreserved": true,
+    "formulaErrorScanPassed": true,
+    "csvAndUpsertRoundTripsPassed": true,
+    "allSheetRendersGenerated": true,
+    "manualVisualInspection": "pass",
+    "visualInspectionCompletedAt": "2026-08-10T04:42:39.118Z"
+  },
+  "cloudBoundary": {
+    "writePerformed": false,
+    "readbackPerformed": false,
+    "baselineCommit": "adb57a04a7f197d32842c2b4dcb20f18f31a44d0",
+    "note": "This QA establishes local artifact integration only."
+  },
+  "primarySourceUrls": [
+    "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+    "https://osf.io/f2jhx/",
+    "https://letterligo.netlify.app/paper/SP26_WebAgent.pdf",
+    "https://github.com/LetterLiGO/Agent-WebCloak",
+    "https://zenodo.org/records/17251212",
+    "https://arxiv.org/pdf/2511.13725",
+    "https://arxiv.org/pdf/2506.21506",
+    "https://github.com/OSU-NLP-Group/Mind2Web-2",
+    "https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf",
+    "https://github.com/openai/simple-evals/blob/main/browsecomp_eval.py"
+  ]
+}

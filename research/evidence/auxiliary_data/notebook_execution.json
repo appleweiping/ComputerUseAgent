@@ -1,0 +1,98 @@
+{
+  "allow_errors": false,
+  "boundary_checks": {
+    "auxiliary_rows_concatenated_with_fp_agent": false,
+    "headline_cross_dataset_classifier": false,
+    "molmoweb_fed_to_23_feature_timing_model": false,
+    "molmoweb_timestamp_values_retained": false,
+    "row_level_data_loaded": false
+  },
+  "clean_kernel": true,
+  "code_cell_count": 5,
+  "environment": {
+    "implementation": "CPython",
+    "isolated_python": true,
+    "lock": {
+      "bytes": 106937,
+      "path": "experiments/auxiliary_data/notebook-requirements.lock",
+      "sha256": "1b81367ea837c3f87536c463b8c3467bdcfd4f56192b99961768640a76586ea1"
+    },
+    "machine": "AMD64",
+    "operating_system": "Windows",
+    "operating_system_release": "11",
+    "packages": {
+      "ipykernel": "7.3.0",
+      "jupytext": "1.19.5",
+      "matplotlib": "3.10.9",
+      "nbclient": "0.11.0",
+      "nbformat": "5.11.0"
+    },
+    "python": "3.12.3"
+  },
+  "error_output_count": 0,
+  "executed_at_utc": "2026-08-11T15:26:22.746120+00:00",
+  "executed_code_cell_count": 5,
+  "inputs": [
+    {
+      "bytes": 18429,
+      "path": "results/auxiliary_data/captchasolve30k_metrics.json",
+      "sha256": "05c28b2313908f2d5d70062830d07f516028ef36b103c29205506601517cb24e"
+    },
+    {
+      "bytes": 9738,
+      "path": "results/auxiliary_data/aalto_136m_metrics.json",
+      "sha256": "59d1819bf42f69f97aa64c90ccfab109ddce7d0fdd651c5fd6d9f72e7c92bc47"
+    },
+    {
+      "bytes": 16581,
+      "path": "results/auxiliary_data/molmoweb_metrics.json",
+      "sha256": "286b961406d25011423291848cb08334918a53f8f967013354da9d8217789878"
+    },
+    {
+      "bytes": 826,
+      "path": "results/auxiliary_data/summary.json",
+      "sha256": "e2786d45b409d66bcf2777e38409cfa0211157ca8cf442251d504e2adb43278c"
+    },
+    {
+      "bytes": 30136,
+      "path": "results/auxiliary_data/source_access_manifest.json",
+      "sha256": "82333ec66dd7fe4bf3d4a5a0927d07f38a535d6ea7256c835a6805d176c0d14c"
+    },
+    {
+      "bytes": 4040,
+      "path": "results/auxiliary_data/sampling_ledgers.json",
+      "sha256": "d59f453f884466c99c156b021f1ce56cec5309976e50dcefc846848a7311fc59"
+    }
+  ],
+  "notebook": {
+    "bytes": 13544,
+    "path": "experiments/auxiliary_data/notebooks/auxiliary_calibration.executed.ipynb",
+    "sha256": "91a9da991abe3f0b272c02daad72b997b770e677d64836da69b49966ec39bd61"
+  },
+  "outputs": [
+    {
+      "bytes": 62242,
+      "path": "results/auxiliary_data/auxiliary_calibration.svg",
+      "sha256": "e3d886d69199a71e4a5b1e6e62afc2e2e1c9492d71d24431713c6a994deff78e"
+    },
+    {
+      "bytes": 91558,
+      "path": "results/auxiliary_data/auxiliary_calibration.png",
+      "sha256": "0d91ede2bcfe812b3e03be1875b9999fcba8b5934815bde7fc6559a0d8f5c629"
+    }
+  ],
+  "schema_version": "cui-notebook-execution-v1",
+  "seeds": {
+    "aalto_seed": 2026081102,
+    "captcha_seed": 2026081101,
+    "molmoweb_fold_seed": 2026081105,
+    "molmoweb_human_seed": 2026081103,
+    "molmoweb_synthetic_seed": 2026081104
+  },
+  "source": {
+    "bytes": 7312,
+    "path": "experiments/auxiliary_data/notebooks/auxiliary_calibration.py",
+    "sha256": "5d7dd8ac108fd796459e3ec43a235d6fd96bae29f9b2d6d0a30f4fb286569677"
+  },
+  "status": "complete"
+}

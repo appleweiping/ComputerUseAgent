@@ -1,0 +1,147 @@
+name: Extension E2E
+
+on:
+  pull_request:
+    paths:
+      - "extension/**"
+      - "src/computer_use_agent/schemas/**"
+      - "tools/ci/validate_e2e_bundle.py"
+      - ".github/workflows/e2e.yml"
+  push:
+    branches: [main]
+    paths:
+      - "extension/**"
+      - "src/computer_use_agent/schemas/**"
+      - "tools/ci/validate_e2e_bundle.py"
+      - ".github/workflows/e2e.yml"
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  FORCE_COLOR: "1"
+  NODE_VERSION: "22"
+
+jobs:
+  e2e-linux:
+    name: Recorder E2E (ubuntu, Chrome for Testing, Xvfb)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+
+      - name: Cache Puppeteer's Chrome for Testing
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('extension/package-lock.json') }}
+
+      - name: npm ci (downloads the pinned Chrome for Testing)
+        working-directory: extension
+        env:
+          # The harness never uses chrome-headless-shell.
+          PUPPETEER_CHROME_HEADLESS_SHELL_SKIP_DOWNLOAD: "true"
+        run: npm ci --no-audit --no-fund
+
+      - name: Ensure the pinned Chrome for Testing is installed
+        working-directory: extension
+        run: npx --no-install puppeteer browsers install chrome
+
+      - name: Ensure Xvfb is available
+        run: |
+          if ! command -v xvfb-run >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends xvfb
+          fi
+
+      - name: Run the 15-case recorder E2E suite (T00-T14)
+        working-directory: extension
+        env:
+          CUA_E2E_CI_NO_SANDBOX: "1"
+          CUA_E2E_RESULT_DIR: ${{ runner.temp }}/e2e
+        run: xvfb-run -a npm run e2e
+
+      - name: Upload the E2E bundle
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: e2e-bundle-linux
+          path: ${{ runner.temp }}/e2e
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Validate the E2E bundle (15/15, zero browser errors, version == manifest)
+        env:
+          CUA_E2E_RESULT_DIR: ${{ runner.temp }}/e2e
+        run: python3 tools/ci/validate_e2e_bundle.py "${CUA_E2E_RESULT_DIR}"
+
+  e2e-windows:
+    name: Recorder E2E (windows, informational)
+    # Optional nightly signal; never required for merging.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: windows-latest
+    timeout-minutes: 40
+    continue-on-error: true
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+
+      - name: npm ci (downloads the pinned Chrome for Testing)
+        working-directory: extension
+        env:
+          PUPPETEER_CHROME_HEADLESS_SHELL_SKIP_DOWNLOAD: "true"
+        run: npm ci --no-audit --no-fund
+
+      - name: Ensure the pinned Chrome for Testing is installed
+        working-directory: extension
+        run: npx --no-install puppeteer browsers install chrome
+
+      - name: Run the recorder E2E suite
+        working-directory: extension
+        env:
+          CUA_E2E_RESULT_DIR: ${{ runner.temp }}/e2e
+        run: npm run e2e
+
+      - name: Upload the E2E bundle
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: e2e-bundle-windows
+          path: ${{ runner.temp }}/e2e
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Validate the E2E bundle
+        env:
+          CUA_E2E_RESULT_DIR: ${{ runner.temp }}/e2e
+        run: python tools/ci/validate_e2e_bundle.py "${CUA_E2E_RESULT_DIR}"

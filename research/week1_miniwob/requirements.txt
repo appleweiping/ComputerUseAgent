@@ -1,0 +1,4 @@
+# Shared benchmark dependency only. Use adapters/setup_environments.py to
+# create isolated framework environments: Browser-Use 0.11.5 requires
+# rich>=14 while Skyvern 1.0.47 requires rich<14.
+browsergym-miniwob==0.14.1

@@ -1,0 +1,380 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  FORCE_COLOR: "1"
+  UV_VERSION: "0.11.21"
+  NODE_VERSION: "22"
+  # Unit tests, lint and packaging never launch a browser.
+  PUPPETEER_SKIP_DOWNLOAD: "true"
+  ACTIONLINT_VERSION: "1.7.12"
+  ACTIONLINT_SHA256: "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      - name: Install lint tools from uv.lock
+        run: uv sync --locked --only-group lint
+
+      - name: ruff check
+        run: uv run --no-sync ruff check --output-format=github .
+
+      - name: ruff format --check
+        run: uv run --no-sync ruff format --check --diff .
+
+      - name: GitHub Actions are pinned to commit SHAs
+        run: uv run --no-sync python tools/ci/check_actions_pinned.py
+
+      - name: Secret scan
+        run: uv run --no-sync python tools/ci/scan_secrets.py
+
+      - name: actionlint
+        run: |
+          archive="actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          curl -fsSL -o "${RUNNER_TEMP}/${archive}" \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/${archive}"
+          echo "${ACTIONLINT_SHA256}  ${RUNNER_TEMP}/${archive}" | sha256sum --check --strict
+          tar -xzf "${RUNNER_TEMP}/${archive}" -C "${RUNNER_TEMP}" actionlint
+          "${RUNNER_TEMP}/actionlint" -color
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+
+      - name: ESLint (extension)
+        working-directory: extension
+        run: |
+          npm ci --no-audit --no-fund
+          npm run lint
+
+  typecheck:
+    name: Type check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      - name: Install the project and lint tools from uv.lock
+        run: uv sync --locked --no-default-groups --group lint --group test
+
+      - name: mypy --strict (src/computer_use_agent)
+        run: uv run --no-sync mypy
+
+      - name: mypy research/ (non-blocking)
+        continue-on-error: true
+        run: uv run --no-sync mypy research --ignore-missing-imports --no-strict-optional
+
+  test-python:
+    name: Python ${{ matrix.python }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.12", "3.13"]
+    env:
+      COVERAGE_RUN: ${{ matrix.os == 'ubuntu-latest' && matrix.python == '3.12' }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      - name: Install the project and test tools from uv.lock
+        run: uv sync --locked --no-default-groups --group test
+
+      - name: Guest Python 3.10 for the X11 bundle smoke test (ubuntu)
+        # tests/capture/test_bundle.py runs the guest zipapp under the guest's
+        # Python (Ubuntu 22.04 ships 3.10) when CUA_GUEST_PYTHON is set.
+        if: runner.os == 'Linux'
+        run: |
+          uv python install 3.10
+          echo "CUA_GUEST_PYTHON=$(uv python find --no-project 3.10)" >> "${GITHUB_ENV}"
+
+      - name: pytest
+        if: env.COVERAGE_RUN != 'true'
+        run: uv run --no-sync pytest
+
+      - name: pytest with branch coverage (gate fail_under=75)
+        if: env.COVERAGE_RUN == 'true'
+        run: |
+          uv run --no-sync coverage run -m pytest
+          uv run --no-sync coverage xml
+          uv run --no-sync coverage report
+          uv run --no-sync coverage report --format=markdown >> "${GITHUB_STEP_SUMMARY}" || true
+
+      - name: Upload coverage report
+        if: always() && env.COVERAGE_RUN == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: coverage-python
+          path: coverage.xml
+          if-no-files-found: warn
+          retention-days: 14
+
+  test-research:
+    name: Research (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      - name: Install the project, research extra and test tools from uv.lock
+        run: uv sync --locked --no-default-groups --group test --extra research
+
+      - name: pytest research (public data only)
+        run: >-
+          uv run --no-sync pytest research
+          -m "not requires_private_data and not requires_large_artifacts and not requires_network"
+
+      - name: Notebook and retrospective-config bindings (stdlib only)
+        run: |
+          uv run --no-sync python -B -m research.fp_agent.execute_notebook --check
+          uv run --no-sync python -B -m research.auxiliary_data.execute_notebook --check
+          uv run --no-sync python -B -m research.fp_agent.validate_config
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Scientific-simulator node tests
+        run: node --test research/scientific_simulators/*.test.mjs
+
+  test-node:
+    name: Extension (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: extension
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+
+      - name: npm ci
+        run: npm ci --no-audit --no-fund
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Unit tests with coverage gate
+        run: npm run test:coverage
+
+      - name: Extension version matches the release version
+        run: npm run version:check
+
+  evidence:
+    name: Evidence integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          # Standard library only: there is nothing to cache, and the cache this
+          # short job would save (auto-enabled on push and PR) is near-empty.
+          enable-cache: false
+
+      - name: Verify research/evidence/MANIFEST.sha256
+        run: uv run --no-project python tools/ci/verify_evidence.py
+
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+
+      # No Node.js here: check_readme.py reads extension/package.json but never
+      # runs npm, and an npm cache saved by this job would hold only ~/.npm/_logs.
+      - name: Install the project from uv.lock
+        run: uv sync --locked --no-default-groups --group test
+
+      - name: README links, commands and headline numbers
+        run: uv run --no-sync python tools/ci/check_readme.py
+
+  build:
+    name: Build and package
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          python-version: "3.12"
+          enable-cache: true
+          cache-suffix: ${{ github.job }}
+          activate-environment: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+
+      - name: Install release tooling from uv.lock
+        run: uv sync --locked --no-default-groups --group dev
+
+      - name: One version everywhere
+        run: python tools/ci/check_versions.py
+
+      - name: Build wheel and sdist
+        run: uv build --out-dir dist
+
+      - name: twine check
+        run: twine check --strict dist/*.whl dist/*.tar.gz
+
+      - name: Wheel and sdist contents
+        run: |
+          python - <<'PY'
+          import pathlib, tarfile, zipfile
+          wheel = next(pathlib.Path("dist").glob("*.whl"))
+          names = zipfile.ZipFile(wheel).namelist()
+          schemas = [n for n in names if n.startswith("computer_use_agent/schemas/") and n.endswith(".json")]
+          static = [n for n in names if n.startswith("computer_use_agent/viewer/static/")]
+          assert schemas, "wheel is missing computer_use_agent/schemas/*.json"
+          assert static, "wheel is missing computer_use_agent/viewer/static/*"
+          assert not [n for n in names if n.startswith(("research/", "extension/", "tests/"))], names
+          sdist = next(pathlib.Path("dist").glob("*.tar.gz"))
+          members = tarfile.open(sdist).getnames()
+          # Repository-only trees; tests/ needs a checkout (tools/, research/, extension/).
+          repo_only = (["research"], ["extension"], ["tests"], ["tools"], [".github"])
+          leaked = [m for m in members if m.split("/")[1:2] in repo_only]
+          assert not leaked, leaked
+          print(f"{wheel.name}: {len(names)} entries ({len(schemas)} schemas, {len(static)} static files)")
+          print(f"{sdist.name}: {len(members)} entries")
+          PY
+
+      - name: Package the extension (twice, must be byte-identical)
+        run: |
+          npm --prefix extension ci --no-audit --no-fund
+          npm --prefix extension run package
+          shopt -s nullglob
+          zips=(dist/computer-use-agent-recorder-*.zip)
+          [ "${#zips[@]}" -eq 1 ] || { echo "::error::expected one extension ZIP, found ${#zips[@]}"; exit 1; }
+          first="$(sha256sum "${zips[0]}" | cut -d' ' -f1)"
+          rm -f "${zips[0]}"
+          npm --prefix extension run package
+          second="$(sha256sum "${zips[0]}" | cut -d' ' -f1)"
+          [ "${first}" = "${second}" ] || { echo "::error::extension ZIP is not reproducible"; exit 1; }
+          unzip -l "${zips[0]}"
+
+      - name: SBOM inputs are exactly pinned and the SBOM validates
+        run: python tools/ci/supply_chain.py --check
+
+      - name: Upload build outputs
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

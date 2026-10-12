@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "diagnostic_scope": "Pre-formal-run setup and smoke diagnostics",
+  "events": [
+    {
+      "stage": "official_source_checkout",
+      "status": "partial",
+      "observation": "Official Git metadata and commit refs were fetched, but the blobless working-tree checkout timed out during GitHub transport.",
+      "mitigation": "Pinned the executable environment to the official Skyvern image digest and retained the source metadata checkout for traceability.",
+      "paid_cost_usd": 0.0
+    },
+    {
+      "stage": "provider_authentication_smoke",
+      "status": "failed",
+      "observation": "The first container inherited the key but not the existing OpenAI-compatible base configuration, so the request reached the wrong provider endpoint and returned HTTP 401.",
+      "mitigation": "Recreated the container while mapping the existing base setting to both OPENAI_BASE_URL and Skyvern's OPENAI_API_BASE variable. No secret or provider origin was written to public files.",
+      "paid_cost_usd": 0.0
+    },
+    {
+      "stage": "skyvern_1_0_navigation_smoke",
+      "status": "strict_validation_failed",
+      "provider_status": "completed",
+      "observation": "A visible click was recorded, but the agent completed before destination evidence and structured output were available.",
+      "mitigation": "Switched to the official skyvern-2.0 engine and strengthened the instruction to wait for destination-page evidence before COMPLETE.",
+      "reported_cost_usd": 0.040425
+    },
+    {
+      "stage": "skyvern_2_0_navigation_smoke",
+      "status": "success",
+      "provider_run_id": "tsk_v2_556029981699311752",
+      "workflow_run_id": "wr_556029994584213646",
+      "steps": 3,
+      "reported_cost_usd": 0.034814,
+      "observed_actions": [
+        "click",
+        "complete"
+      ],
+      "observed_target_url": "https://www.iana.org/help/example-domains",
+      "structured_output": {
+        "heading": "Example Domains"
+      },
+      "independent_dom_match": true
+    },
+    {
+      "stage": "formal_hn_r1_publication_validator_recovery",
+      "status": "recovered_without_rerun",
+      "provider_run_id": "tsk_v2_556039207289064858",
+      "workflow_run_id": "wr_556039211584032160",
+      "observation": "Skyvern completed successfully, but the host-side public validator bypassed the configured proxy and timed out while fetching Hacker News.",
+      "mitigation": "The completed provider run was re-audited in place against its timestamped pre-extraction DOM. The DOM title and structured output both equal Why I Left Google DeepMind; the private DOM SHA-256 is 3a9fe4cd25ef9c36a38dd63a7ef98f5fb46cbc18df7a9f2f22e45affedf7685b.",
+      "formal_record_reported_cost_usd": 0.086236,
+      "overhead_cost_usd": 0.0
+    },
+    {
+      "stage": "legacy_runner_post_error_attempt",
+      "status": "canceled",
+      "provider_run_id": "tsk_v2_556040899506179802",
+      "workflow_run_id": "wr_556040903801147104",
+      "observation": "The pre-fix process started the next repetition after the validator exception.",
+      "mitigation": "The host runner was stopped immediately and the provider run was canceled before resuming the formal matrix. This canceled attempt is not a formal repetition.",
+      "steps": 1,
+      "reported_cost_usd": 0.001942
+    },
+    {
+      "stage": "formal_hn_r2_dom_locator_recovery",
+      "status": "recovered_without_rerun",
+      "provider_run_id": "tsk_v2_556044563113283360",
+      "workflow_run_id": "wr_556044563113283366",
+      "observation": "Skyvern completed successfully using navigation and goto blocks without a separate extraction block, so the first DOM locator did not find its expected artifact path.",
+      "mitigation": "The completed provider run was re-audited in place against the navigation snapshot captured before completion. The DOM title and structured output both equal Big Companies Are Starting to Hire Again, Defying Predictions of AI Wipeout; the private DOM SHA-256 is 6502af917bb4df1e94caae29b76ce36ab2a1f44d559cef954d8200273db93837.",
+      "formal_record_reported_cost_usd": 0.057691,
+      "overhead_cost_usd": 0.0
+    }
+  ],
+  "total_smoke_reported_cost_usd": 0.075239,
+  "total_canceled_attempt_reported_cost_usd": 0.001942,
+  "total_nonformal_overhead_reported_cost_usd": 0.077181,
+  "formal_run_cost_cap_usd": 2.5,
+  "publication_policy": "Formal aggregate excludes smoke and canceled attempts; README reports formal cost, nonformal overhead, and the Skyvern total separately."
+}

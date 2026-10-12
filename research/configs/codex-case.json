@@ -1,0 +1,74 @@
+{
+  "schema_version": "cui-codex-case-study-v1",
+  "protocol_version": "codex-miniwob-exploratory-v1",
+  "claim_boundary": "Nine exploratory Codex Desktop cases on three official MiniWoB tasks. These cases are not a framework benchmark, a formal study, a matched human-agent study, or evidence about all computer-use agents.",
+  "actor": {
+    "surface": "Codex Desktop",
+    "harness": "computer_control",
+    "backend_snapshot": null,
+    "backend_snapshot_status": "unavailable"
+  },
+  "benchmark": {
+    "name": "BrowserGym MiniWoB++",
+    "package": "browsergym-miniwob",
+    "package_version": "0.14.1",
+    "source_repository": "https://github.com/Farama-Foundation/miniwob-plusplus",
+    "source_commit": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "html_tree_sha256": "b6541e36c70d6621294edfe0ca3bae7794fb9cfb9def2829dfcda4fd284b3925",
+    "static_tree_sha256": "9883c9117804c0865920b3313021a0bd0cccc094f2f707678f6c3a72b3af4f3a",
+    "validator": "BrowserGym official task validator"
+  },
+  "browser": {
+    "engine": "Google Chrome",
+    "product_version": "151.0.7922.108",
+    "viewport": {"width": 332, "height": 214},
+    "locale": "en-US",
+    "timezone": "UTC",
+    "fresh_profile_per_attempt": true
+  },
+  "recorder": {
+    "capture_adapter": "browser_mv3",
+    "extension_path": "recorder",
+    "version": "0.4.0",
+    "raw_key_capture": false,
+    "include_query": false
+  },
+  "limits": {"max_actions": 30, "timeout_seconds": 480},
+  "tasks": [
+    {
+      "task_id": "click-checkboxes",
+      "environment_id": "browsergym/miniwob.click-checkboxes",
+      "repetitions": [
+        {"repetition": 1, "seed": 20260811},
+        {"repetition": 2, "seed": 20260812},
+        {"repetition": 3, "seed": 20260813}
+      ]
+    },
+    {
+      "task_id": "enter-text",
+      "environment_id": "browsergym/miniwob.enter-text",
+      "repetitions": [
+        {"repetition": 1, "seed": 20260811},
+        {"repetition": 2, "seed": 20260812},
+        {"repetition": 3, "seed": 20260813}
+      ]
+    },
+    {
+      "task_id": "choose-list",
+      "environment_id": "browsergym/miniwob.choose-list",
+      "repetitions": [
+        {"repetition": 1, "seed": 20260811},
+        {"repetition": 2, "seed": 20260812},
+        {"repetition": 3, "seed": 20260813}
+      ]
+    }
+  ],
+  "controls": {
+    "manual_rescue_allowed": false,
+    "scripted_control_allowed": false,
+    "success_required": false,
+    "retain_failures": true,
+    "formal_claim_permitted": false,
+    "human_participant_data_included": false
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "20260727T081143Z",
+  "runs": [
+    {
+      "run_id": "20260727T081143Z-example_follow_more_information-r01",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "example_follow_more_information",
+      "task": "Open Example Domain, follow its visible information link, and extract the destination heading.",
+      "repetition": 1,
+      "started_at": "2026-07-27T08:11:43.778545Z",
+      "duration_seconds": 111.48,
+      "steps": 3,
+      "reported_cost_usd": 0.034932,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "destination heading is Example Domains",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-example_follow_more_information-r02",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "example_follow_more_information",
+      "task": "Open Example Domain, follow its visible information link, and extract the destination heading.",
+      "repetition": 2,
+      "started_at": "2026-07-27T08:13:41.187886Z",
+      "duration_seconds": 71.13,
+      "steps": 4,
+      "reported_cost_usd": 0.058319,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "destination heading is Example Domains",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "extract",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-example_follow_more_information-r03",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "example_follow_more_information",
+      "task": "Open Example Domain, follow its visible information link, and extract the destination heading.",
+      "repetition": 3,
+      "started_at": "2026-07-27T08:14:58.181758Z",
+      "duration_seconds": 56.91,
+      "steps": 4,
+      "reported_cost_usd": 0.060484,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "destination heading is Example Domains",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "extract",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-iana_follow_root_zone-r01",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "iana_follow_root_zone",
+      "task": "Open the IANA homepage, follow the visible Root Zone Management link, and extract the destination heading.",
+      "repetition": 1,
+      "started_at": "2026-07-27T08:16:02.261464Z",
+      "duration_seconds": 43.83,
+      "steps": 3,
+      "reported_cost_usd": 0.037991,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "destination heading is Root Zone Management",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-iana_follow_root_zone-r02",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "iana_follow_root_zone",
+      "task": "Open the IANA homepage, follow the visible Root Zone Management link, and extract the destination heading.",
+      "repetition": 2,
+      "started_at": "2026-07-27T08:16:46.788602Z",
+      "duration_seconds": 28.31,
+      "steps": 3,
+      "reported_cost_usd": 0.037373,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "destination heading is Root Zone Management",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-iana_follow_root_zone-r03",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "iana_follow_root_zone",
+      "task": "Open the IANA homepage, follow the visible Root Zone Management link, and extract the destination heading.",
+      "repetition": 3,
+      "started_at": "2026-07-27T08:17:15.387874Z",
+      "duration_seconds": 34.19,
+      "steps": 3,
+      "reported_cost_usd": 0.036803,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "destination heading is Root Zone Management",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-hn_follow_newest-r01",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "hn_follow_newest",
+      "task": "Open Hacker News, follow the visible new/newest navigation link, and extract the first story title.",
+      "repetition": 1,
+      "started_at": "2026-07-27T08:17:49.923655Z",
+      "duration_seconds": 29.49,
+      "steps": 3,
+      "reported_cost_usd": 0.05658,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "live page contains a first story",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-hn_follow_newest-r02",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "hn_follow_newest",
+      "task": "Open Hacker News, follow the visible new/newest navigation link, and extract the first story title.",
+      "repetition": 2,
+      "started_at": "2026-07-27T08:18:19.730265Z",
+      "duration_seconds": 30.07,
+      "steps": 3,
+      "reported_cost_usd": 0.056663,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "live page contains a first story",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    },
+    {
+      "run_id": "20260727T081143Z-hn_follow_newest-r03",
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "framework_repository": "https://github.com/browser-use/browser-use",
+      "framework_commit": "eed197835cb6e5023716ddbad5bb11975c856232",
+      "model": "gpt-5.5",
+      "task_id": "hn_follow_newest",
+      "task": "Open Hacker News, follow the visible new/newest navigation link, and extract the first story title.",
+      "repetition": 3,
+      "started_at": "2026-07-27T08:18:50.136494Z",
+      "duration_seconds": 26.5,
+      "steps": 3,
+      "reported_cost_usd": 0.057374,
+      "status": "success",
+      "success": true,
+      "agent_done": true,
+      "agent_reported_success": true,
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "start page observed in agent history",
+          "passed": true
+        },
+        {
+          "name": "target page reached",
+          "passed": true
+        },
+        {
+          "name": "visible link click recorded",
+          "passed": true
+        },
+        {
+          "name": "live page contains a first story",
+          "passed": true
+        },
+        {
+          "name": "answer uses requested prefix",
+          "passed": true
+        },
+        {
+          "name": "answer matches live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "navigate",
+        "click",
+        "done"
+      ],
+      "error_type": null
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "cui-sim-task-v1",
+  "task_id": "phet-pdl-annotated-single-launch-v1",
+  "task_version": "1.0.0",
+  "title": "Record one annotated projectile launch",
+  "status": "historical-scripted-control-provisional-task-selection",
+  "simulator": {
+    "name": "PhET Projectile Data Lab",
+    "publisher": "University of Colorado Boulder",
+    "version": "1.0.7",
+    "locale": "en",
+    "public_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+    "source_url": "https://github.com/phetsims/projectile-data-lab",
+    "expected_html_sha256": "edfef35351e386a778789e8812066114a1b99241a16d4d83d264ae37533cd37c"
+  },
+  "environment": {
+    "capture_mode": "top-level-browser-extension",
+    "viewport": { "width": 1440, "height": 1000, "device_scale_factor": 1 }
+  },
+  "ready": { "kind": "text_button", "text": "Variability Screen" },
+  "instruction": "Open Variability, show path, launch angle, and launch speed, then fire exactly one projectile.",
+  "reset_procedure": "Open the pinned simulator URL in a new tab and enter Variability from the home screen.",
+  "allowed_inputs": ["mouse", "keyboard"],
+  "time_limit_seconds": 45,
+  "actions": [
+    { "type": "focus_text_button_press", "text": "Variability Screen", "key": "Enter" },
+    { "type": "wait_ms", "value": 3000 },
+    { "type": "mouse_click", "x": 1208, "y": 32, "move_steps": 6 },
+    { "type": "mouse_click", "x": 1208, "y": 75, "move_steps": 6 },
+    { "type": "mouse_click", "x": 1208, "y": 116, "move_steps": 6 },
+    { "type": "mouse_click", "x": 304, "y": 882, "move_steps": 12 },
+    { "type": "wait_ms", "value": 4000 }
+  ],
+  "validator": {
+    "validator_id": "phet-pdom-state-validator",
+    "validator_version": "1.0.0",
+    "checks": [
+      { "id": "paths_enabled", "kind": "checked_equals", "selector": "input[data-unique-id='47-61-689-696-692-613-612-594']", "expected": true },
+      { "id": "launch_angle_enabled", "kind": "checked_equals", "selector": "input[data-unique-id='47-61-689-696-692-613-612-600']", "expected": true },
+      { "id": "launch_speed_enabled", "kind": "checked_equals", "selector": "input[data-unique-id='47-61-689-696-692-613-612-606']", "expected": true },
+      { "id": "exactly_one_sample", "kind": "number_value_equals", "selector": "input[data-unique-id='47-61-689-696-691-1732-1734-1268']", "expected": 1 },
+      { "id": "field_card_updated", "kind": "body_text_includes", "expected": "1 of 1" }
+    ]
+  },
+  "success_condition": "All five independent PDOM checks pass after one launch.",
+  "research_boundary": "Scripted-automation engineering control. No human trace is collected; the simulator and task selection was provisional and was never confirmed for a formal study."
+}

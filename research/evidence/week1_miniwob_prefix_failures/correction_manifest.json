@@ -1,0 +1,54 @@
+{
+  "schema_version": "cui-week1-pre-fix-correction-v1",
+  "archive_status": "retained_operational_failure_evidence",
+  "source_commit": "c56a7b5fe01126ef00157e123738ae280292422b",
+  "records": [
+    {
+      "attempt_id": "browser-use__click-checkboxes__r01__s20260808",
+      "published_record": "attempts/browser-use__click-checkboxes__r01__s20260808.json",
+      "task_outcome": "not_reached",
+      "primary_operational_cause": "model_provider_error",
+      "secondary_observation": "screenshot_timeout_consistent_with_pre_fix_windows_capture_weakness",
+      "window_state_at_timeout_measured": false,
+      "artifact_bundle_complete": false,
+      "formal_matrix_eligible": false,
+      "analysis_eligible": false
+    },
+    {
+      "attempt_id": "browser-use__click-checkboxes__r02__s20260809",
+      "published_record": "attempts/browser-use__click-checkboxes__r02__s20260809.json",
+      "task_outcome": "not_reached",
+      "primary_operational_cause": "model_provider_error",
+      "secondary_observation": null,
+      "artifact_bundle_complete": false,
+      "formal_matrix_eligible": false,
+      "analysis_eligible": false
+    }
+  ],
+  "private_only_interrupted_attempt": {
+    "attempt_id": "browser-use__click-checkboxes__r03__s20260810",
+    "reason": "operator_stopped_matrix_after_repeated_zero_action_provider_failures",
+    "public_record_exists": false
+  },
+  "matrix_disposition": {
+    "planned_attempts": 27,
+    "published_records": 2,
+    "formal_attempts_completed": 0,
+    "stopped_early": true,
+    "excluded_from_success_rate": true,
+    "excluded_from_behavior_analysis": true
+  },
+  "subsequent_provider_preflight": {
+    "model": "gpt-5.5",
+    "passed": false,
+    "safe_error_class": "model_provider_error",
+    "last_observed_http_status": 502,
+    "response_content_retained_publicly": false
+  },
+  "publication_boundary": {
+    "raw_traces_published": false,
+    "framework_stderr_published": false,
+    "prompts_or_page_text_published": false,
+    "profiles_or_credentials_published": false
+  }
+}

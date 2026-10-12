@@ -1,0 +1,2487 @@
+{
+  "schema_version": "fp-agent-retrospective-v1",
+  "status": "complete",
+  "generated_at": "2026-08-11T14:01:17.289474+00:00",
+  "protocol": {
+    "seed": 20260811,
+    "bootstrap_repetitions": 2000,
+    "permutation_repetitions": 1000,
+    "permutation_workers": 4,
+    "calibration_bins": 10,
+    "calibration_splits": 3,
+    "human_test_fraction": 0.2,
+    "outer_group_purge": true,
+    "permutation_unit": "group_within_task_coverage"
+  },
+  "execution_environment": {
+    "python": "3.12.3",
+    "implementation": "CPython",
+    "operating_system": "Windows",
+    "operating_system_release": "11",
+    "machine": "AMD64",
+    "packages": {
+      "ijson": "3.4.0.post0",
+      "numpy": "2.4.4",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.18.0",
+      "xgboost": "3.2.0"
+    },
+    "requirements_lock_sha256": "cb894c571616bddb95d6e8671d609a527691e6652988452863f6160618db6e66",
+    "isolated_python": true
+  },
+  "sampling_ledger": {
+    "dataset_sha256": "73ea42a89eb3b2afc325affb2d248968bb03b7649270bc00e370c1865e7ded39",
+    "seed": 20260811,
+    "rows": 7728,
+    "counts_by_family": {
+      "Atlas Agent": 994,
+      "Browser Use": 1139,
+      "ChatGPT Agent": 997,
+      "Claude": 1002,
+      "Comet": 1026,
+      "Human": 546,
+      "Manus": 995,
+      "Skyvern": 1029
+    },
+    "counts_by_task": {
+      "Flight-booking": 2594,
+      "Forums": 2525,
+      "Shopping": 2609
+    }
+  },
+  "split_audit": {
+    "group_semantics": "human participant token or agent trial index, irreversibly hashed",
+    "groups": 1811,
+    "multi_task_groups": 1721,
+    "outer_policy": "held-out task plus participant/trial-group purge",
+    "calibration_policy": "training-only stratified group-disjoint OOF Platt",
+    "task_folds": [
+      {
+        "fold": "Flight-booking",
+        "train_rows": 79,
+        "test_rows": 2594,
+        "purged_rows": 5055,
+        "train_groups": 66,
+        "test_groups": 1745,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Forums",
+        "train_rows": 212,
+        "test_rows": 2525,
+        "purged_rows": 4991,
+        "train_groups": 147,
+        "test_groups": 1664,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Shopping",
+        "train_rows": 37,
+        "test_rows": 2609,
+        "purged_rows": 5082,
+        "train_groups": 33,
+        "test_groups": 1778,
+        "group_overlap": 0
+      }
+    ],
+    "agent_family_folds": [
+      {
+        "fold": "Atlas Agent",
+        "train_rows": 6629,
+        "test_rows": 1099,
+        "purged_rows": 0,
+        "train_groups": 1465,
+        "test_groups": 346,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Browser Use",
+        "train_rows": 6484,
+        "test_rows": 1244,
+        "purged_rows": 0,
+        "train_groups": 1604,
+        "test_groups": 207,
+        "group_overlap": 0
+      },
+      {
+        "fold": "ChatGPT Agent",
+        "train_rows": 6626,
+        "test_rows": 1102,
+        "purged_rows": 0,
+        "train_groups": 1465,
+        "test_groups": 346,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Claude",
+        "train_rows": 6621,
+        "test_rows": 1107,
+        "purged_rows": 0,
+        "train_groups": 1631,
+        "test_groups": 180,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Comet",
+        "train_rows": 6597,
+        "test_rows": 1131,
+        "purged_rows": 0,
+        "train_groups": 1607,
+        "test_groups": 204,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Manus",
+        "train_rows": 6628,
+        "test_rows": 1100,
+        "purged_rows": 0,
+        "train_groups": 1465,
+        "test_groups": 346,
+        "group_overlap": 0
+      },
+      {
+        "fold": "Skyvern",
+        "train_rows": 6594,
+        "test_rows": 1134,
+        "purged_rows": 0,
+        "train_groups": 1604,
+        "test_groups": 207,
+        "group_overlap": 0
+      }
+    ]
+  },
+  "headline_scope": "raw-derived 23-feature FP-Agent corpus only",
+  "released_80_20_reproduction": {
+    "experiment": "FP-Agent released-model inference reproduction",
+    "scope": "Inference-only evaluation of the three released all-class classifiers on the released random test split; no retraining.",
+    "timestamp_utc": "2026-08-11T14:01:19.773669+00:00",
+    "repository": "https://github.com/ethanbwang/fp-agent",
+    "repository_commit": "e614e2f0f935211e22d856195d56e91fa88a7b16",
+    "dataset": {
+      "source": "https://osf.io/j6b5p/overview",
+      "feature_vectors_file": "feature_vectors.json",
+      "feature_vectors_sha256": "54aa9eb6e74a509b86a3504f97e1f2c6fee99467c1ac935b92a5385e9e1cf641",
+      "split_file": "train_test_split.npz",
+      "split_sha256": "463f7779fdd8487dca19b7c5f8c8939383de2cacaf8719c90cabfedafa87c643",
+      "train_examples": 6175,
+      "validation_examples": 0,
+      "test_examples": 1544,
+      "classes": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Human",
+        "Manus",
+        "Skyvern"
+      ],
+      "class_mapping": {
+        "Atlas Agent": 0,
+        "Browser Use": 1,
+        "ChatGPT Agent": 2,
+        "Claude": 3,
+        "Comet": 4,
+        "Human": 5,
+        "Manus": 6,
+        "Skyvern": 7
+      }
+    },
+    "results": {
+      "browser": {
+        "model_file": "classifier_training/classifiers/browser_fingerprint_all_classes.json",
+        "model_sha256": "ac757440a8635b304c2f7fa0cbd541d4c4b17dd81888257c091bfbfd525c41b9",
+        "feature_dimensions": 418,
+        "train_examples": 6175,
+        "test_examples": 1544,
+        "accuracy": 0.8212435233,
+        "macro_precision": 0.8839957456,
+        "macro_recall": 0.8407017544,
+        "macro_f1": 0.8222806043,
+        "errors": 276,
+        "per_class": {
+          "Atlas Agent": {
+            "precision": 0.4901477833,
+            "recall": 1.0,
+            "f1": 0.6578512397,
+            "support": 199
+          },
+          "Browser Use": {
+            "precision": 1.0,
+            "recall": 0.2456140351,
+            "f1": 0.3943661972,
+            "support": 228
+          },
+          "ChatGPT Agent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 199
+          },
+          "Claude": {
+            "precision": 0.5818181818,
+            "recall": 0.48,
+            "f1": 0.5260273973,
+            "support": 200
+          },
+          "Comet": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 205
+          },
+          "Human": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 109
+          },
+          "Manus": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 198
+          },
+          "Skyvern": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 206
+          }
+        },
+        "confusion_matrix": [
+          [
+            199,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            103,
+            56,
+            0,
+            69,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            199,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            104,
+            0,
+            0,
+            96,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            205,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            109,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            198,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            206
+          ]
+        ]
+      },
+      "behavioral": {
+        "model_file": "classifier_training/classifiers/behavioral_fingerprint_all_classes.json",
+        "model_sha256": "c1540ba80dfb52b1a5c4ab48b40653877b34fd16e606421aba4da34be34a01e5",
+        "feature_dimensions": 50,
+        "train_examples": 6175,
+        "test_examples": 1544,
+        "accuracy": 0.9993523316,
+        "macro_precision": 0.9993961353,
+        "macro_recall": 0.9993686869,
+        "macro_f1": 0.9993808809,
+        "errors": 1,
+        "per_class": {
+          "Atlas Agent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 199
+          },
+          "Browser Use": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 228
+          },
+          "ChatGPT Agent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 199
+          },
+          "Claude": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 200
+          },
+          "Comet": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 205
+          },
+          "Human": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 109
+          },
+          "Manus": {
+            "precision": 1.0,
+            "recall": 0.9949494949,
+            "f1": 0.9974683544,
+            "support": 198
+          },
+          "Skyvern": {
+            "precision": 0.9951690821,
+            "recall": 1.0,
+            "f1": 0.9975786925,
+            "support": 206
+          }
+        },
+        "confusion_matrix": [
+          [
+            199,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            228,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            199,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            200,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            205,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            109,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            197,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            206
+          ]
+        ]
+      },
+      "combined": {
+        "model_file": "classifier_training/classifiers/combined_fingerprint_all_classes.json",
+        "model_sha256": "8997b6160f712071fc06f50a7d1ec607993cedeb251804524d3d3e2c29c1b55f",
+        "feature_dimensions": 468,
+        "train_examples": 6175,
+        "test_examples": 1544,
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "errors": 0,
+        "per_class": {
+          "Atlas Agent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 199
+          },
+          "Browser Use": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 228
+          },
+          "ChatGPT Agent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 199
+          },
+          "Claude": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 200
+          },
+          "Comet": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 205
+          },
+          "Human": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 109
+          },
+          "Manus": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 198
+          },
+          "Skyvern": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 206
+          }
+        },
+        "confusion_matrix": [
+          [
+            199,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            228,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            199,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            200,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            205,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            109,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            198,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            206
+          ]
+        ]
+      }
+    },
+    "interpretation_limit": "Scores quantify re-execution on the released within-corpus split. They do not measure out-of-distribution or future-agent generalization."
+  },
+  "primary_3_fold_loto_logistic": {
+    "model": "logistic",
+    "features": [
+      "event_count",
+      "duration_ms",
+      "event_rate_hz",
+      "inter_event_median_ms",
+      "inter_event_p90_ms",
+      "inter_event_cv",
+      "inter_event_burstiness",
+      "time_to_first_input_ms",
+      "pointer_path_px",
+      "pointer_speed_px_s",
+      "pointer_straightness",
+      "pointer_turning_entropy",
+      "click_dwell_median_ms",
+      "pre_click_movement_median_px",
+      "inter_key_median_ms",
+      "key_hold_median_ms",
+      "correction_ratio",
+      "focus_transition_count",
+      "event_type_entropy",
+      "missing_pointer",
+      "missing_keyboard",
+      "missing_click_dwell",
+      "missing_focus"
+    ],
+    "folds": [
+      {
+        "fold": "Flight-booking",
+        "status": "complete",
+        "train": 79,
+        "test": 2594,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 51,
+              "calibration": 28,
+              "train_groups": 44,
+              "calibration_groups": 22,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 53,
+              "calibration": 26,
+              "train_groups": 44,
+              "calibration_groups": 22,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 54,
+              "calibration": 25,
+              "train_groups": 44,
+              "calibration_groups": 22,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.006183456101157797,
+          "intercept": 2.0586676415775043,
+          "train_mean_sha256": "901fec4352464c93c294f01b503a026b5db5324c3017486ac5d15591d856d1fe",
+          "train_scale_sha256": "02fca28d5e41f062e7e54b27803006aebe1314741e4250d39a4022514d6fbd0f"
+        },
+        "split_audit": {
+          "train_groups": 66,
+          "test_groups": 1745,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 2594,
+          "macro_f1": 0.4812,
+          "balanced_accuracy": 0.5,
+          "auroc": 0.998222528784422,
+          "auprc": 0.9998676141028666,
+          "brier": 0.06719769118189686,
+          "ece": 0.04082428336198414,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                0,
+                188
+              ],
+              [
+                0,
+                2406
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.7830823687204093,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.8886341397395491,
+              "observed_fraction": 0.9285989965264376
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Forums",
+        "status": "complete",
+        "train": 212,
+        "test": 2525,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 141,
+              "calibration": 71,
+              "train_groups": 98,
+              "calibration_groups": 49,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 142,
+              "calibration": 70,
+              "train_groups": 99,
+              "calibration_groups": 48,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 141,
+              "calibration": 71,
+              "train_groups": 97,
+              "calibration_groups": 50,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.0027742405059791877,
+          "intercept": 2.373840210594914,
+          "train_mean_sha256": "5fd975f10ce36a7bafd1a6791fe369b9765d7180e94150f3ed639ca1f4f9ae39",
+          "train_scale_sha256": "d2f1da76773d76388b05abaee177ee1d5418e22dcc841a01e05c10496ab49837"
+        },
+        "split_audit": {
+          "train_groups": 147,
+          "test_groups": 1664,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 2525,
+          "macro_f1": 0.478844169246646,
+          "balanced_accuracy": 0.4974271012006861,
+          "auroc": 0.8294243638852105,
+          "auprc": 0.9849154160805559,
+          "brier": 0.07390269688485308,
+          "ece": 0.012748049722076667,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                0,
+                193
+              ],
+              [
+                12,
+                2320
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.00676347109783119,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.14049923659453695,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.2526208112507543,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.37261666307504937,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.425211041236623,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.5101810814200232,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.7843200731696603,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.914541636759833,
+              "observed_fraction": 0.9231381919553963
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Shopping",
+        "status": "complete",
+        "train": 37,
+        "test": 2609,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 24,
+              "calibration": 13,
+              "train_groups": 21,
+              "calibration_groups": 12,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 25,
+              "calibration": 12,
+              "train_groups": 22,
+              "calibration_groups": 11,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 25,
+              "calibration": 12,
+              "train_groups": 23,
+              "calibration_groups": 10,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.6688786504758041,
+          "intercept": -0.19459067367591903,
+          "train_mean_sha256": "f3d78be143f690882b153477aa328e524c29e0a5ce8bc06f193b7af6bbe2b5a8",
+          "train_scale_sha256": "09a9d5cc37fb1cf8c21b2f9d6d8d709f0f2b744dfc538b1c55935e3ce705b8be"
+        },
+        "split_audit": {
+          "train_groups": 33,
+          "test_groups": 1778,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 2609,
+          "macro_f1": 0.5707704962983273,
+          "balanced_accuracy": 0.8527004909983633,
+          "auroc": 0.9674539999008084,
+          "auprc": 0.997880475426695,
+          "brier": 0.19967198201914182,
+          "ece": 0.3563072521947001,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                165,
+                0
+              ],
+              [
+                720,
+                1724
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.02203072559751399,
+              "observed_fraction": 0.39325842696629215
+            },
+            {
+              "mean_probability": 0.13314661320427792,
+              "observed_fraction": 0.9902912621359223
+            },
+            {
+              "mean_probability": 0.25732484903700104,
+              "observed_fraction": 0.9953703703703703
+            },
+            {
+              "mean_probability": 0.35111778554979617,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.4518823877416692,
+              "observed_fraction": 0.9914529914529915
+            },
+            {
+              "mean_probability": 0.5523812835087927,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.6552444982372037,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.7535262591792117,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.8442723579663053,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.9455018366410929,
+              "observed_fraction": 1.0
+            }
+          ]
+        }
+      }
+    ],
+    "failed_fold_count": 0,
+    "aggregate": {
+      "count": 7728,
+      "macro_f1": 0.5746319908169619,
+      "balanced_accuracy": 0.6001381659276396,
+      "auroc": 0.6357674048776806,
+      "auprc": 0.9583912537193406,
+      "brier": 0.11411223106211639,
+      "ece": 0.13755100198665635,
+      "confusion": {
+        "labels": [
+          "human",
+          "agent"
+        ],
+        "values": [
+          [
+            165,
+            381
+          ],
+          [
+            732,
+            6450
+          ]
+        ]
+      },
+      "calibration_curve": [
+        {
+          "mean_probability": 0.021750077536858058,
+          "observed_fraction": 0.40441176470588236
+        },
+        {
+          "mean_probability": 0.13321731150610733,
+          "observed_fraction": 0.9903846153846154
+        },
+        {
+          "mean_probability": 0.2572604101632168,
+          "observed_fraction": 0.9954337899543378
+        },
+        {
+          "mean_probability": 0.35135146900115766,
+          "observed_fraction": 1.0
+        },
+        {
+          "mean_probability": 0.45165635938145693,
+          "observed_fraction": 0.9915254237288136
+        },
+        {
+          "mean_probability": 0.5520861772004796,
+          "observed_fraction": 1.0
+        },
+        {
+          "mean_probability": 0.6552444982372037,
+          "observed_fraction": 1.0
+        },
+        {
+          "mean_probability": 0.7537474853692379,
+          "observed_fraction": 0.9944444444444445
+        },
+        {
+          "mean_probability": 0.8800462068845983,
+          "observed_fraction": 0.9424214130096483
+        },
+        {
+          "mean_probability": 0.9160433061743092,
+          "observed_fraction": 0.9268662372110648
+        }
+      ]
+    }
+  },
+  "primary_group_bootstrap": {
+    "method": "whole_outer_group_percentile",
+    "groups": [
+      "Flight-booking",
+      "Forums",
+      "Shopping"
+    ],
+    "repetitions": 2000,
+    "seed": 20260811,
+    "intervals_95": {
+      "macro_f1": {
+        "lower": 0.478844169246646,
+        "upper": 0.5831929767892575
+      },
+      "balanced_accuracy": {
+        "lower": 0.4974271012006861,
+        "upper": 0.8527004909983633
+      },
+      "auroc": {
+        "lower": 0.6357674048776806,
+        "upper": 0.998222528784422
+      },
+      "auprc": {
+        "lower": 0.9583912537193406,
+        "upper": 0.9998676141028666
+      },
+      "brier": {
+        "lower": 0.06719769118189686,
+        "upper": 0.19967198201914177
+      },
+      "ece": {
+        "lower": 0.012748049722076556,
+        "upper": 0.35630725219470005
+      }
+    }
+  },
+  "secondary_3_fold_loto_xgboost": {
+    "model": "xgboost",
+    "features": [
+      "event_count",
+      "duration_ms",
+      "event_rate_hz",
+      "inter_event_median_ms",
+      "inter_event_p90_ms",
+      "inter_event_cv",
+      "inter_event_burstiness",
+      "time_to_first_input_ms",
+      "pointer_path_px",
+      "pointer_speed_px_s",
+      "pointer_straightness",
+      "pointer_turning_entropy",
+      "click_dwell_median_ms",
+      "pre_click_movement_median_px",
+      "inter_key_median_ms",
+      "key_hold_median_ms",
+      "correction_ratio",
+      "focus_transition_count",
+      "event_type_entropy",
+      "missing_pointer",
+      "missing_keyboard",
+      "missing_click_dwell",
+      "missing_focus"
+    ],
+    "folds": [
+      {
+        "fold": "Flight-booking",
+        "status": "complete",
+        "train": 79,
+        "test": 2594,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 51,
+              "calibration": 28,
+              "train_groups": 44,
+              "calibration_groups": 22,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 53,
+              "calibration": 26,
+              "train_groups": 44,
+              "calibration_groups": 22,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 54,
+              "calibration": 25,
+              "train_groups": 44,
+              "calibration_groups": 22,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 1.4007959328891748,
+          "intercept": -1.9356894621957925,
+          "train_mean_sha256": "901fec4352464c93c294f01b503a026b5db5324c3017486ac5d15591d856d1fe",
+          "train_scale_sha256": "02fca28d5e41f062e7e54b27803006aebe1314741e4250d39a4022514d6fbd0f"
+        },
+        "split_audit": {
+          "train_groups": 66,
+          "test_groups": 1745,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 2594,
+          "macro_f1": 0.9595999333183742,
+          "balanced_accuracy": 0.9404502927079464,
+          "auroc": 0.9866446472471304,
+          "auprc": 0.9986692268993733,
+          "brier": 0.02879001210944138,
+          "ece": 0.0626291600587081,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                166,
+                22
+              ],
+              [
+                5,
+                2401
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.013458861950985926,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.3855929371231486,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.434112674342213,
+              "observed_fraction": 0.12195121951219512
+            },
+            {
+              "mean_probability": 0.5810250548817422,
+              "observed_fraction": 0.8295454545454546
+            },
+            {
+              "mean_probability": 0.6078199724686146,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.9879512948184627,
+              "observed_fraction": 0.9966019417475728
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Forums",
+        "status": "complete",
+        "train": 212,
+        "test": 2525,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 141,
+              "calibration": 71,
+              "train_groups": 98,
+              "calibration_groups": 49,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 142,
+              "calibration": 70,
+              "train_groups": 99,
+              "calibration_groups": 48,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 141,
+              "calibration": 71,
+              "train_groups": 97,
+              "calibration_groups": 50,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 1.9878664369815204,
+          "intercept": 1.8469103805066576,
+          "train_mean_sha256": "5fd975f10ce36a7bafd1a6791fe369b9765d7180e94150f3ed639ca1f4f9ae39",
+          "train_scale_sha256": "d2f1da76773d76388b05abaee177ee1d5418e22dcc841a01e05c10496ab49837"
+        },
+        "split_audit": {
+          "train_groups": 147,
+          "test_groups": 1664,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 2525,
+          "macro_f1": 0.29106512150262864,
+          "balanced_accuracy": 0.3978083701419316,
+          "auroc": 0.5710913267981408,
+          "auprc": 0.9449373122958491,
+          "brier": 0.6285525999269611,
+          "ece": 0.6412930818532442,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                89,
+                104
+              ],
+              [
+                1552,
+                780
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.022383038075119165,
+              "observed_fraction": 0.9457647775746496
+            },
+            {
+              "mean_probability": 0.9999950194125781,
+              "observed_fraction": 0.8823529411764706
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Shopping",
+        "status": "complete",
+        "train": 37,
+        "test": 2609,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 24,
+              "calibration": 13,
+              "train_groups": 21,
+              "calibration_groups": 12,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 25,
+              "calibration": 12,
+              "train_groups": 22,
+              "calibration_groups": 11,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 25,
+              "calibration": 12,
+              "train_groups": 23,
+              "calibration_groups": 10,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 410.5533230588577,
+          "intercept": -1069.942075364301,
+          "train_mean_sha256": "f3d78be143f690882b153477aa328e524c29e0a5ce8bc06f193b7af6bbe2b5a8",
+          "train_scale_sha256": "09a9d5cc37fb1cf8c21b2f9d6d8d709f0f2b744dfc538b1c55935e3ce705b8be"
+        },
+        "split_audit": {
+          "train_groups": 33,
+          "test_groups": 1778,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 2609,
+          "macro_f1": 0.4357296141845044,
+          "balanced_accuracy": 0.7443101225016119,
+          "auroc": 0.7443101225016119,
+          "auprc": 0.9676334650793876,
+          "brier": 0.4737447297815255,
+          "ece": 0.4737447297815255,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                164,
+                1
+              ],
+              [
+                1235,
+                1209
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.0,
+              "observed_fraction": 0.8827734095782702
+            },
+            {
+              "mean_probability": 1.0,
+              "observed_fraction": 0.9991735537190083
+            }
+          ]
+        }
+      }
+    ],
+    "failed_fold_count": 0,
+    "aggregate": {
+      "count": 7728,
+      "macro_f1": 0.48677090054743066,
+      "balanced_accuracy": 0.6893248077458605,
+      "auroc": 0.7145323116501061,
+      "auprc": 0.9696441956693058,
+      "brier": 0.37497109293833697,
+      "ece": 0.3854311621558665,
+      "confusion": {
+        "labels": [
+          "human",
+          "agent"
+        ],
+        "values": [
+          [
+            419,
+            127
+          ],
+          [
+            2792,
+            4390
+          ]
+        ]
+      },
+      "calibration_curve": [
+        {
+          "mean_probability": 0.012138453352145055,
+          "observed_fraction": 0.8794572420321868
+        },
+        {
+          "mean_probability": 0.3855929371231486,
+          "observed_fraction": 0.0
+        },
+        {
+          "mean_probability": 0.434112674342213,
+          "observed_fraction": 0.12195121951219512
+        },
+        {
+          "mean_probability": 0.5810250548817422,
+          "observed_fraction": 0.8295454545454546
+        },
+        {
+          "mean_probability": 0.6078199724686146,
+          "observed_fraction": 1.0
+        },
+        {
+          "mean_probability": 0.9940238961210293,
+          "observed_fraction": 0.97303803562831
+        }
+      ]
+    }
+  },
+  "seven_fold_agent_family_logistic": {
+    "model": "logistic",
+    "features": [
+      "event_count",
+      "duration_ms",
+      "event_rate_hz",
+      "inter_event_median_ms",
+      "inter_event_p90_ms",
+      "inter_event_cv",
+      "inter_event_burstiness",
+      "time_to_first_input_ms",
+      "pointer_path_px",
+      "pointer_speed_px_s",
+      "pointer_straightness",
+      "pointer_turning_entropy",
+      "click_dwell_median_ms",
+      "pre_click_movement_median_px",
+      "inter_key_median_ms",
+      "key_hold_median_ms",
+      "correction_ratio",
+      "focus_transition_count",
+      "event_type_entropy",
+      "missing_pointer",
+      "missing_keyboard",
+      "missing_click_dwell",
+      "missing_focus"
+    ],
+    "folds": [
+      {
+        "fold": "Atlas Agent",
+        "status": "complete",
+        "train": 6629,
+        "test": 1099,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4419,
+              "calibration": 2210,
+              "train_groups": 978,
+              "calibration_groups": 487,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4419,
+              "calibration": 2210,
+              "train_groups": 976,
+              "calibration_groups": 489,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4420,
+              "calibration": 2209,
+              "train_groups": 976,
+              "calibration_groups": 489,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.9295113844677266,
+          "intercept": 2.0978747771394044,
+          "train_mean_sha256": "36a5dac711ed3dadce5758e284d223cb253544759e666211c0544a360bd1fe6d",
+          "train_scale_sha256": "ab11fc837094d307a1b57b7ab1721085709592669cf31dfdb411063c9e65c7f7"
+        },
+        "split_audit": {
+          "train_groups": 1465,
+          "test_groups": 346,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1099,
+          "macro_f1": 0.9760006987967593,
+          "balanced_accuracy": 0.9699195171026157,
+          "auroc": 0.9979783462680847,
+          "auprc": 0.9998043007158527,
+          "brier": 0.006196413340801608,
+          "ece": 0.006127949537386319,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                99,
+                6
+              ],
+              [
+                3,
+                991
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.009871203491417718,
+              "observed_fraction": 0.022222222222222223
+            },
+            {
+              "mean_probability": 0.14061447875719985,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.26619576196507794,
+              "observed_fraction": 0.5
+            },
+            {
+              "mean_probability": 0.30115650224113627,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.46788602374255406,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.5207108991525258,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.6508836520351132,
+              "observed_fraction": 0.5
+            },
+            {
+              "mean_probability": 0.8314648238579556,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.9987495287827483,
+              "observed_fraction": 0.9979838709677419
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Browser Use",
+        "status": "complete",
+        "train": 6484,
+        "test": 1244,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4323,
+              "calibration": 2161,
+              "train_groups": 1071,
+              "calibration_groups": 533,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4323,
+              "calibration": 2161,
+              "train_groups": 1069,
+              "calibration_groups": 535,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4322,
+              "calibration": 2162,
+              "train_groups": 1068,
+              "calibration_groups": 536,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.7458733954261629,
+          "intercept": 1.8075509716932605,
+          "train_mean_sha256": "6bc4d451be42137e63e5bbd6d99b9ae0eb9b3da7bb693dc767afc8518e896fe9",
+          "train_scale_sha256": "bc8223f9384dbfed1342fbbd980f2dae5145b0a43ee308e7dc15864e5512a304"
+        },
+        "split_audit": {
+          "train_groups": 1604,
+          "test_groups": 207,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1244,
+          "macro_f1": 0.5870671948356807,
+          "balanced_accuracy": 0.8324428278774196,
+          "auroc": 0.7659601153894394,
+          "auprc": 0.9765427896538006,
+          "brier": 0.29053708321962174,
+          "ece": 0.2961637520284698,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                103,
+                2
+              ],
+              [
+                360,
+                779
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.0009535277882266562,
+              "observed_fraction": 0.7880794701986755
+            },
+            {
+              "mean_probability": 0.13538982820682693,
+              "observed_fraction": 0.2857142857142857
+            },
+            {
+              "mean_probability": 0.3783960582747389,
+              "observed_fraction": 0.5
+            },
+            {
+              "mean_probability": 0.46413349397790066,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.747397886038561,
+              "observed_fraction": 0.8
+            },
+            {
+              "mean_probability": 0.8602678855993482,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.9876766170787346,
+              "observed_fraction": 0.9986945169712794
+            }
+          ]
+        }
+      },
+      {
+        "fold": "ChatGPT Agent",
+        "status": "complete",
+        "train": 6626,
+        "test": 1102,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4417,
+              "calibration": 2209,
+              "train_groups": 977,
+              "calibration_groups": 488,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4418,
+              "calibration": 2208,
+              "train_groups": 977,
+              "calibration_groups": 488,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4417,
+              "calibration": 2209,
+              "train_groups": 976,
+              "calibration_groups": 489,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.8048901391987798,
+          "intercept": 1.642374360533322,
+          "train_mean_sha256": "dbf398bbbaa3404c0e0e02223799d289a913b7ace6e4de2c910ed06fca7de814",
+          "train_scale_sha256": "66c21956967efd33a69451f6f5d1049f2c465dcd5adc3ee177babc530d29b710"
+        },
+        "split_audit": {
+          "train_groups": 1465,
+          "test_groups": 346,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1102,
+          "macro_f1": 0.6839532289298644,
+          "balanced_accuracy": 0.8906720160481445,
+          "auroc": 0.9559631274776711,
+          "auprc": 0.9955550612748075,
+          "brier": 0.16394415054871375,
+          "ece": 0.23516758310295882,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                105,
+                0
+              ],
+              [
+                218,
+                779
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.019855761877592,
+              "observed_fraction": 0.5145631067961165
+            },
+            {
+              "mean_probability": 0.1484672698685445,
+              "observed_fraction": 0.9347826086956522
+            },
+            {
+              "mean_probability": 0.24224631409356626,
+              "observed_fraction": 0.9047619047619048
+            },
+            {
+              "mean_probability": 0.3486326560054607,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.45065732705957645,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.5573573337227756,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.6524934963737287,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.7481779896323242,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.8601373992994649,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.9719750742248775,
+              "observed_fraction": 1.0
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Claude",
+        "status": "complete",
+        "train": 6621,
+        "test": 1107,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4414,
+              "calibration": 2207,
+              "train_groups": 1088,
+              "calibration_groups": 543,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4414,
+              "calibration": 2207,
+              "train_groups": 1087,
+              "calibration_groups": 544,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4414,
+              "calibration": 2207,
+              "train_groups": 1087,
+              "calibration_groups": 544,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.8423492148118393,
+          "intercept": 2.0763345783121263,
+          "train_mean_sha256": "1349041e176ddaabf9e418e58ec29aecedf4b217ea033da6faa8243d046915d5",
+          "train_scale_sha256": "3b87fd9a0ca794990f5015cec4d0e474703de032006ccf234687e28ca6cd2e44"
+        },
+        "split_audit": {
+          "train_groups": 1631,
+          "test_groups": 180,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1107,
+          "macro_f1": 0.6440757499581029,
+          "balanced_accuracy": 0.8494439692044482,
+          "auroc": 0.8739758578081931,
+          "auprc": 0.9865143402604942,
+          "brier": 0.21217357019952285,
+          "ece": 0.22539223801324332,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                100,
+                5
+              ],
+              [
+                254,
+                748
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.011553570212328772,
+              "observed_fraction": 0.6912280701754386
+            },
+            {
+              "mean_probability": 0.1490328275914808,
+              "observed_fraction": 0.7586206896551724
+            },
+            {
+              "mean_probability": 0.23194498673617106,
+              "observed_fraction": 0.8095238095238095
+            },
+            {
+              "mean_probability": 0.3546428087803623,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.4549788048384481,
+              "observed_fraction": 0.9
+            },
+            {
+              "mean_probability": 0.5544276377032772,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.6521883606027253,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.7421907950335516,
+              "observed_fraction": 0.8666666666666667
+            },
+            {
+              "mean_probability": 0.8433897950429217,
+              "observed_fraction": 0.9333333333333333
+            },
+            {
+              "mean_probability": 0.9982897767846031,
+              "observed_fraction": 0.9971139971139971
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Comet",
+        "status": "complete",
+        "train": 6597,
+        "test": 1131,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4398,
+              "calibration": 2199,
+              "train_groups": 1072,
+              "calibration_groups": 535,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4398,
+              "calibration": 2199,
+              "train_groups": 1071,
+              "calibration_groups": 536,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4398,
+              "calibration": 2199,
+              "train_groups": 1071,
+              "calibration_groups": 536,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.8297691378143593,
+          "intercept": 2.0189917572563565,
+          "train_mean_sha256": "183556b9ad4822c2ba0d6313ab28c694eec7d0ee9caf9810ec167943a97f7604",
+          "train_scale_sha256": "7c1a4d90e960e71d43d8517e0069cf565715b59711b449e8817fba015a62d494"
+        },
+        "split_audit": {
+          "train_groups": 1607,
+          "test_groups": 204,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1131,
+          "macro_f1": 0.983836391699537,
+          "balanced_accuracy": 0.9714285714285714,
+          "auroc": 1.0,
+          "auprc": 1.0,
+          "brier": 0.0038926431156973158,
+          "ece": 0.007817934239047246,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                99,
+                6
+              ],
+              [
+                0,
+                1026
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.014808693231497482,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.14173155415273092,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.259310641130237,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.31480131562843733,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.4997797916070876,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.5373344355183375,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.6478871446277021,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.8072540099760946,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.999736133680917,
+              "observed_fraction": 0.9980544747081712
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Manus",
+        "status": "complete",
+        "train": 6628,
+        "test": 1100,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4418,
+              "calibration": 2210,
+              "train_groups": 978,
+              "calibration_groups": 487,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4419,
+              "calibration": 2209,
+              "train_groups": 976,
+              "calibration_groups": 489,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4419,
+              "calibration": 2209,
+              "train_groups": 976,
+              "calibration_groups": 489,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.900957022263416,
+          "intercept": 1.8840512919295926,
+          "train_mean_sha256": "cec2ed61d06d464852b33fafb0d2445704e75c81798383d8962738f9f32a4ebe",
+          "train_scale_sha256": "2b2abf2a901def21e975e8378bafe5974940d0408a1234bea1eba81c688712a2"
+        },
+        "split_audit": {
+          "train_groups": 1465,
+          "test_groups": 346,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1100,
+          "macro_f1": 0.7731305366952355,
+          "balanced_accuracy": 0.9153864560899736,
+          "auroc": 0.984517827231395,
+          "auprc": 0.998304052502291,
+          "brier": 0.07082581063171603,
+          "ece": 0.09015898443253037,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                100,
+                5
+              ],
+              [
+                121,
+                874
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.008927689130334353,
+              "observed_fraction": 0.07216494845360824
+            },
+            {
+              "mean_probability": 0.17076389608359585,
+              "observed_fraction": 0.9047619047619048
+            },
+            {
+              "mean_probability": 0.24682480667358372,
+              "observed_fraction": 0.9117647058823529
+            },
+            {
+              "mean_probability": 0.34214421768898645,
+              "observed_fraction": 0.9428571428571428
+            },
+            {
+              "mean_probability": 0.4416097274262688,
+              "observed_fraction": 0.9230769230769231
+            },
+            {
+              "mean_probability": 0.5533963979663924,
+              "observed_fraction": 0.9444444444444444
+            },
+            {
+              "mean_probability": 0.6278231861367152,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.7391306383132137,
+              "observed_fraction": 1.0
+            },
+            {
+              "mean_probability": 0.8542250580626838,
+              "observed_fraction": 0.9
+            },
+            {
+              "mean_probability": 0.9968595378455714,
+              "observed_fraction": 0.9975903614457832
+            }
+          ]
+        }
+      },
+      {
+        "fold": "Skyvern",
+        "status": "complete",
+        "train": 6594,
+        "test": 1134,
+        "calibration": {
+          "method": "nested_group_disjoint_oof_platt",
+          "folds": [
+            {
+              "fold": 0,
+              "train": 4396,
+              "calibration": 2198,
+              "train_groups": 1070,
+              "calibration_groups": 534,
+              "group_overlap": 0
+            },
+            {
+              "fold": 1,
+              "train": 4396,
+              "calibration": 2198,
+              "train_groups": 1069,
+              "calibration_groups": 535,
+              "group_overlap": 0
+            },
+            {
+              "fold": 2,
+              "train": 4396,
+              "calibration": 2198,
+              "train_groups": 1069,
+              "calibration_groups": 535,
+              "group_overlap": 0
+            }
+          ],
+          "slope": 0.8903031947621477,
+          "intercept": 2.0612680681862043,
+          "train_mean_sha256": "230920d944290a22f2145c554249242c91ec88ddc6b099e8a67d71a9ee1a31e7",
+          "train_scale_sha256": "6287a594f348049b9a64bbb3be9254a053120ffc2878b2acc16fe62ee3aa8b28"
+        },
+        "split_audit": {
+          "train_groups": 1604,
+          "test_groups": 207,
+          "group_overlap": 0
+        },
+        "metrics": {
+          "count": 1134,
+          "macro_f1": 0.9838406292749657,
+          "balanced_accuracy": 0.9714285714285714,
+          "auroc": 1.0,
+          "auprc": 1.0,
+          "brier": 0.0037182238417479948,
+          "ece": 0.007149496178374401,
+          "confusion": {
+            "labels": [
+              "human",
+              "agent"
+            ],
+            "values": [
+              [
+                99,
+                6
+              ],
+              [
+                0,
+                1029
+              ]
+            ]
+          },
+          "calibration_curve": [
+            {
+              "mean_probability": 0.01372437269153658,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.1350966650784194,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.2420213011730258,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.3436893534851519,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.4715198505655961,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.5612332681522247,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.6690408182313786,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.8158539881636913,
+              "observed_fraction": 0.0
+            },
+            {
+              "mean_probability": 0.9997349371062001,
+              "observed_fraction": 0.9980601357904947
+            }
+          ]
+        }
+      }
+    ],
+    "failed_fold_count": 0,
+    "aggregate": {
+      "count": 7917,
+      "macro_f1": 0.757553393672691,
+      "balanced_accuracy": 0.9130365596531009,
+      "auroc": 0.9318048522667213,
+      "auprc": 0.9932178280774078,
+      "brier": 0.10992901639479453,
+      "ece": 0.12039696202341303,
+      "confusion": {
+        "labels": [
+          "human",
+          "agent"
+        ],
+        "values": [
+          [
+            705,
+            30
+          ],
+          [
+            956,
+            6226
+          ]
+        ]
+      },
+      "calibration_curve": [
+        {
+          "mean_probability": 0.00922996965242856,
+          "observed_fraction": 0.5130368098159509
+        },
+        {
+          "mean_probability": 0.15343709674470427,
+          "observed_fraction": 0.7394366197183099
+        },
+        {
+          "mean_probability": 0.24268012438967826,
+          "observed_fraction": 0.7906976744186046
+        },
+        {
+          "mean_probability": 0.3449697705399864,
+          "observed_fraction": 0.8904109589041096
+        },
+        {
+          "mean_probability": 0.4514343722541036,
+          "observed_fraction": 0.875
+        },
+        {
+          "mean_probability": 0.5548255572246665,
+          "observed_fraction": 0.922077922077922
+        },
+        {
+          "mean_probability": 0.6501311766080761,
+          "observed_fraction": 0.9523809523809523
+        },
+        {
+          "mean_probability": 0.7465448748903281,
+          "observed_fraction": 0.9594594594594594
+        },
+        {
+          "mean_probability": 0.8565315934492049,
+          "observed_fraction": 0.9562043795620438
+        },
+        {
+          "mean_probability": 0.9948568930858535,
+          "observed_fraction": 0.998130523453433
+        }
+      ]
+    }
+  },
+  "task_confound": {
+    "purpose": "negative_control_for_task_encoding",
+    "folds": [
+      {
+        "fold": 0,
+        "train": 5155,
+        "test": 2573
+      },
+      {
+        "fold": 1,
+        "train": 5148,
+        "test": 2580
+      },
+      {
+        "fold": 2,
+        "train": 5153,
+        "test": 2575
+      }
+    ],
+    "macro_f1": 0.8655836007557108,
+    "balanced_accuracy": 0.8661804407750133,
+    "labels": [
+      "Flight-booking",
+      "Forums",
+      "Shopping"
+    ]
+  },
+  "source_confound": {
+    "purpose": "negative_control_for_family_encoding",
+    "folds": [
+      {
+        "fold": 0,
+        "train": 4786,
+        "test": 2396
+      },
+      {
+        "fold": 1,
+        "train": 4786,
+        "test": 2396
+      },
+      {
+        "fold": 2,
+        "train": 4792,
+        "test": 2390
+      }
+    ],
+    "macro_f1": 0.9743571322085843,
+    "balanced_accuracy": 0.974363242391672,
+    "labels": [
+      "Atlas Agent",
+      "Browser Use",
+      "ChatGPT Agent",
+      "Claude",
+      "Comet",
+      "Manus",
+      "Skyvern"
+    ]
+  },
+  "permutation": {
+    "method": "group_label_within_task_coverage_full_purged_loto",
+    "unit": "participant_or_trial_group",
+    "stratum": "observed_task_coverage",
+    "requested": 1000,
+    "workers": 4,
+    "successful": 1000,
+    "failed": 0,
+    "p_value": 0.000999000999000999,
+    "null_mean": 0.49899914588755756
+  },
+  "ablations": {
+    "group_drop": [
+      {
+        "dropped": "timing",
+        "balanced_accuracy": 0.5766767345714714,
+        "delta": -0.023461431356168183,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "pointer",
+        "balanced_accuracy": 0.6344600818285029,
+        "delta": 0.03432191590086331,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "keyboard",
+        "balanced_accuracy": 0.7814032945611893,
+        "delta": 0.1812651286335497,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "focus_and_mix",
+        "balanced_accuracy": 0.5927478953794744,
+        "delta": -0.007390270548165212,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "missingness",
+        "balanced_accuracy": 0.5941188441188441,
+        "delta": -0.006019321808795497,
+        "failed_folds": 0
+      }
+    ],
+    "single_feature_drop": [
+      {
+        "dropped": "event_count",
+        "balanced_accuracy": 0.5988850330955594,
+        "delta": -0.0012531328320801727,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "duration_ms",
+        "balanced_accuracy": 0.6027140500824711,
+        "delta": 0.0025758841548315647,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "event_rate_hz",
+        "balanced_accuracy": 0.5976319002634792,
+        "delta": -0.0025062656641603454,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "inter_event_median_ms",
+        "balanced_accuracy": 0.6031799584431163,
+        "delta": 0.00304179251547676,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "inter_event_p90_ms",
+        "balanced_accuracy": 0.5961592014223593,
+        "delta": -0.003978964505280236,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "inter_event_cv",
+        "balanced_accuracy": 0.6012520617783775,
+        "delta": 0.001113895850737956,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "inter_event_burstiness",
+        "balanced_accuracy": 0.6001381659276396,
+        "delta": 0.0,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "time_to_first_input_ms",
+        "balanced_accuracy": 0.5689490821069768,
+        "delta": -0.031189083820662766,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "pointer_path_px",
+        "balanced_accuracy": 0.5993723625302573,
+        "delta": -0.0007658033973823031,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "pointer_speed_px_s",
+        "balanced_accuracy": 0.5997204549836128,
+        "delta": -0.00041771094402676123,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "pointer_straightness",
+        "balanced_accuracy": 0.6123910202857571,
+        "delta": 0.012252854358117515,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "pointer_turning_entropy",
+        "balanced_accuracy": 0.6169055116423537,
+        "delta": 0.016767345714714166,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "click_dwell_median_ms",
+        "balanced_accuracy": 0.5984673221515326,
+        "delta": -0.001670843776106934,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "pre_click_movement_median_px",
+        "balanced_accuracy": 0.5943598312019365,
+        "delta": -0.005778334725703105,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "inter_key_median_ms",
+        "balanced_accuracy": 0.7820137951716899,
+        "delta": 0.18187562924405032,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "key_hold_median_ms",
+        "balanced_accuracy": 0.6022267206477733,
+        "delta": 0.002088554720133695,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "correction_ratio",
+        "balanced_accuracy": 0.6002774029089818,
+        "delta": 0.00013923698134221674,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "focus_transition_count",
+        "balanced_accuracy": 0.6001381659276396,
+        "delta": 0.0,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "event_type_entropy",
+        "balanced_accuracy": 0.5940010282115545,
+        "delta": -0.006137137716085039,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "missing_pointer",
+        "balanced_accuracy": 0.5983280851701904,
+        "delta": -0.0018100807574491506,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "missing_keyboard",
+        "balanced_accuracy": 0.6001381659276396,
+        "delta": 0.0,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "missing_click_dwell",
+        "balanced_accuracy": 0.5964376753850438,
+        "delta": -0.0037004905425958023,
+        "failed_folds": 0
+      },
+      {
+        "dropped": "missing_focus",
+        "balanced_accuracy": 0.6001381659276396,
+        "delta": 0.0,
+        "failed_folds": 0
+      }
+    ]
+  },
+  "auxiliary_datasets": {
+    "status": "not_combined",
+    "headline_inclusion": false,
+    "reason": "No separately licensed fixed-sample auxiliary cache was supplied."
+  }
+}

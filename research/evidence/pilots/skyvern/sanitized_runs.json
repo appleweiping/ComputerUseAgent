@@ -1,0 +1,650 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "20260727T093330Z",
+  "runs": [
+    {
+      "run_id": "20260727T093330Z-example_follow_more_information-r01",
+      "provider_run_id": "tsk_v2_556033387608377662",
+      "workflow_run_id": "wr_556033387608377668",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "example_follow_more_information",
+      "task": "Open Example Domain, follow its visible information link, and extract the destination heading.",
+      "repetition": 1,
+      "started_at": "2026-07-27T09:33:30.913489Z",
+      "duration_seconds": 220.9,
+      "steps": 3,
+      "reported_cost_usd": 0.037698,
+      "llm_cost_usd": 0.037698,
+      "input_tokens": 12095,
+      "output_tokens": 579,
+      "reasoning_tokens": 0,
+      "cached_tokens": 9984,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches independently fetched live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://example.com/",
+        "https://www.iana.org/help/example-domains"
+      ],
+      "observed_value": "Example Domains",
+      "expected_live_value": "Example Domains",
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata"
+    },
+    {
+      "run_id": "20260727T093330Z-example_follow_more_information-r02",
+      "provider_run_id": "tsk_v2_556034332501182964",
+      "workflow_run_id": "wr_556034336796150266",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "example_follow_more_information",
+      "task": "Open Example Domain, follow its visible information link, and extract the destination heading.",
+      "repetition": 2,
+      "started_at": "2026-07-27T09:37:11.841381Z",
+      "duration_seconds": 156.51,
+      "steps": 3,
+      "reported_cost_usd": 0.0366925,
+      "llm_cost_usd": 0.0366925,
+      "input_tokens": 12068,
+      "output_tokens": 524,
+      "reasoning_tokens": 0,
+      "cached_tokens": 9856,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches independently fetched live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://example.com/",
+        "https://www.iana.org/help/example-domains"
+      ],
+      "observed_value": "Example Domains",
+      "expected_live_value": "Example Domains",
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata"
+    },
+    {
+      "run_id": "20260727T093330Z-example_follow_more_information-r03",
+      "provider_run_id": "tsk_v2_556035006811048618",
+      "workflow_run_id": "wr_556035006811048624",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "example_follow_more_information",
+      "task": "Open Example Domain, follow its visible information link, and extract the destination heading.",
+      "repetition": 3,
+      "started_at": "2026-07-27T09:39:48.382035Z",
+      "duration_seconds": 207.28,
+      "steps": 3,
+      "reported_cost_usd": 0.034706,
+      "llm_cost_usd": 0.034706,
+      "input_tokens": 12074,
+      "output_tokens": 497,
+      "reasoning_tokens": 0,
+      "cached_tokens": 10112,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches independently fetched live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://example.com/",
+        "https://www.iana.org/help/example-domains"
+      ],
+      "observed_value": "Example Domains",
+      "expected_live_value": "Example Domains",
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata"
+    },
+    {
+      "run_id": "20260727T093330Z-iana_follow_root_zone-r01",
+      "provider_run_id": "tsk_v2_556035895869279072",
+      "workflow_run_id": "wr_556035895869279078",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "iana_follow_root_zone",
+      "task": "Open the IANA homepage, follow the visible Root Zone Management link, and extract the destination heading.",
+      "repetition": 1,
+      "started_at": "2026-07-27T09:43:15.667913Z",
+      "duration_seconds": 278.87,
+      "steps": 3,
+      "reported_cost_usd": 0.041214,
+      "llm_cost_usd": 0.041214,
+      "input_tokens": 14961,
+      "output_tokens": 539,
+      "reasoning_tokens": 0,
+      "cached_tokens": 12160,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches independently fetched live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://www.iana.org/",
+        "https://www.iana.org/domains/root"
+      ],
+      "observed_value": "Root Zone Management",
+      "expected_live_value": "Root Zone Management",
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata"
+    },
+    {
+      "run_id": "20260727T093330Z-iana_follow_root_zone-r02",
+      "provider_run_id": "tsk_v2_556037094165154846",
+      "workflow_run_id": "wr_556037094165154852",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "iana_follow_root_zone",
+      "task": "Open the IANA homepage, follow the visible Root Zone Management link, and extract the destination heading.",
+      "repetition": 2,
+      "started_at": "2026-07-27T09:47:54.548643Z",
+      "duration_seconds": 297.5,
+      "steps": 3,
+      "reported_cost_usd": 0.039143,
+      "llm_cost_usd": 0.039143,
+      "input_tokens": 14938,
+      "output_tokens": 484,
+      "reasoning_tokens": 0,
+      "cached_tokens": 12160,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches independently fetched live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://www.iana.org/",
+        "https://www.iana.org/domains/root"
+      ],
+      "observed_value": "Root Zone Management",
+      "expected_live_value": "Root Zone Management",
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata"
+    },
+    {
+      "run_id": "20260727T093330Z-iana_follow_root_zone-r03",
+      "provider_run_id": "tsk_v2_556038374065409244",
+      "workflow_run_id": "wr_556038374065409250",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "iana_follow_root_zone",
+      "task": "Open the IANA homepage, follow the visible Root Zone Management link, and extract the destination heading.",
+      "repetition": 3,
+      "started_at": "2026-07-27T09:52:52.056803Z",
+      "duration_seconds": 194.62,
+      "steps": 3,
+      "reported_cost_usd": 0.0401335,
+      "llm_cost_usd": 0.0401335,
+      "input_tokens": 14886,
+      "output_tokens": 520,
+      "reasoning_tokens": 0,
+      "cached_tokens": 12160,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches independently fetched live DOM",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://www.iana.org/",
+        "https://www.iana.org/domains/root"
+      ],
+      "observed_value": "Root Zone Management",
+      "expected_live_value": "Root Zone Management",
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata"
+    },
+    {
+      "run_id": "20260727T093330Z-hn_follow_newest-r01",
+      "provider_run_id": "tsk_v2_556039207289064858",
+      "workflow_run_id": "wr_556039211584032160",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "hn_follow_newest",
+      "task": "Open Hacker News, follow the visible new/newest navigation link, and extract the first story title.",
+      "repetition": 1,
+      "started_at": "2026-07-27T09:56:06.684540Z",
+      "duration_seconds": 393.46,
+      "steps": 4,
+      "reported_cost_usd": 0.086236,
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches deterministic DOM validator",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete",
+        "extract"
+      ],
+      "observed_urls": [
+        "https://news.ycombinator.com/newest",
+        "https://news.ycombinator.com/news"
+      ],
+      "error_type": null,
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata",
+      "llm_cost_usd": 0.08623600000000001,
+      "input_tokens": 46421,
+      "output_tokens": 642,
+      "reasoning_tokens": 0,
+      "cached_tokens": 38272,
+      "models": [
+        "gpt-5.5"
+      ],
+      "observed_value": "Why I Left Google DeepMind",
+      "expected_dom_value": "Why I Left Google DeepMind",
+      "dom_validator_source": "timestamped_browser_dom_before_structured_extraction",
+      "dom_evidence_captured_at": "2026-07-27T10:00:43.843482",
+      "dom_evidence_sha256": "3a9fe4cd25ef9c36a38dd63a7ef98f5fb46cbc18df7a9f2f22e45affedf7685b",
+      "recovered_from_provider_evidence": true,
+      "recovery_reason": "Original publication pass could not reach the public DOM validator because it bypassed the host proxy."
+    },
+    {
+      "run_id": "20260727T093330Z-hn_follow_newest-r02",
+      "provider_run_id": "tsk_v2_556044563113283360",
+      "workflow_run_id": "wr_556044563113283366",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "hn_follow_newest",
+      "task": "Open Hacker News, follow the visible new/newest navigation link, and extract the first story title.",
+      "repetition": 2,
+      "started_at": "2026-07-27T10:16:53.010255Z",
+      "duration_seconds": 312.33,
+      "steps": 3,
+      "reported_cost_usd": 0.057691,
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches deterministic DOM validator",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://news.ycombinator.com/newest",
+        "https://news.ycombinator.com/news"
+      ],
+      "error_type": null,
+      "llm_cost_usd": 0.05769099999999999,
+      "input_tokens": 32582,
+      "output_tokens": 615,
+      "reasoning_tokens": 0,
+      "cached_tokens": 28416,
+      "models": [
+        "gpt-5.5"
+      ],
+      "observed_value": "Big Companies Are Starting to Hire Again, Defying Predictions of AI Wipeout",
+      "expected_dom_value": "Big Companies Are Starting to Hire Again, Defying Predictions of AI Wipeout",
+      "dom_validator_source": "timestamped_browser_dom_navigation_snapshot_before_completion",
+      "dom_evidence_captured_at": "2026-07-27T10:20:52.017161",
+      "dom_evidence_sha256": "6502af917bb4df1e94caae29b76ce36ab2a1f44d559cef954d8200273db93837",
+      "recovered_from_provider_evidence": true,
+      "recovery_reason": "Original publication pass could not reach the public DOM validator because it bypassed the host proxy."
+    },
+    {
+      "run_id": "20260727T093330Z-hn_follow_newest-r03",
+      "provider_run_id": "tsk_v2_556046921050329070",
+      "workflow_run_id": "wr_556046921050329076",
+      "framework": "skyvern",
+      "framework_version": "1.0.47",
+      "framework_repository": "https://github.com/Skyvern-AI/skyvern",
+      "framework_commit": "8e3b40ae072c8d954879f26460b710367db723cb",
+      "framework_commit_scope": "official source checkout used for API and deployment review",
+      "runtime_image_source_commit": "Not reported in image metadata",
+      "image": "public.ecr.aws/skyvern/skyvern@sha256:ff9ae1aa20f27d90115614f98fc0a796dcb86ee218aedde9f035cd9c2a89b95b",
+      "engine": "skyvern-2.0",
+      "model_configuration": "OPENAI_GPT5_5",
+      "task_id": "hn_follow_newest",
+      "task": "Open Hacker News, follow the visible new/newest navigation link, and extract the first story title.",
+      "repetition": 3,
+      "started_at": "2026-07-27T10:26:02.191975Z",
+      "duration_seconds": 335.44,
+      "steps": 3,
+      "reported_cost_usd": 0.058905,
+      "llm_cost_usd": 0.058905,
+      "input_tokens": 32620,
+      "output_tokens": 558,
+      "reasoning_tokens": 0,
+      "cached_tokens": 27904,
+      "models": [
+        "gpt-5.5"
+      ],
+      "status": "success",
+      "success": true,
+      "provider_status": "completed",
+      "validator_passed": true,
+      "validator_checks": [
+        {
+          "name": "Skyvern reports completed",
+          "passed": true
+        },
+        {
+          "name": "start page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "exact target page observed in step evidence",
+          "passed": true
+        },
+        {
+          "name": "visible-link click action recorded",
+          "passed": true
+        },
+        {
+          "name": "structured output field present",
+          "passed": true
+        },
+        {
+          "name": "output matches deterministic DOM validator",
+          "passed": true
+        }
+      ],
+      "action_names": [
+        "click",
+        "complete"
+      ],
+      "observed_urls": [
+        "https://news.ycombinator.com/newest",
+        "https://news.ycombinator.com/news"
+      ],
+      "observed_value": "Show HN: Spsc-ring-threadsafe Python C ext. 100x faster as multiprocessing.Queue",
+      "expected_dom_value": "Show HN: Spsc-ring-threadsafe Python C ext. 100x faster as multiprocessing.Queue",
+      "dom_validator_source": "timestamped_browser_dom_navigation_snapshot_before_completion",
+      "dom_evidence_captured_at": "2026-07-27T10:29:57.016711",
+      "dom_evidence_sha256": "e8893ccb002f8e20e31851bb00730b9ece4004d0ade5e92a05ff903c870aa2e8",
+      "error_type": null
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "cui-simulator-run-result-v1",
+  "run_id": "phet-pdl-annotated-single-launch-v1-rep-01",
+  "task_id": "phet-pdl-annotated-single-launch-v1",
+  "task_version": "1.0.0",
+  "repetition": 1,
+  "actor_type": "agent",
+  "executor": "puppeteer-cdp",
+  "session_id": "22e9b3c6-c0b8-409e-a5aa-0519f3e712fd",
+  "simulator": {
+    "name": "PhET Projectile Data Lab",
+    "version": "1.0.7",
+    "requested_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+    "resolved_url": "https://phet.colorado.edu/sims/html/projectile-data-lab/1.0.7/projectile-data-lab_en.html",
+    "html_sha256": "edfef35351e386a778789e8812066114a1b99241a16d4d83d264ae37533cd37c"
+  },
+  "action_started_at": "2026-08-07T14:00:17.339Z",
+  "action_finished_at": "2026-08-07T14:00:25.880Z",
+  "timing": {
+    "time_limit_seconds": 45,
+    "action_duration_ms": 8541,
+    "action_within_time_limit": true
+  },
+  "validator_passed": true,
+  "validator_check_count": 5,
+  "capture": {
+    "event_count": 65,
+    "duration_ms": 4942,
+    "pointer_distance_px": 2477.99,
+    "trusted_input_event_count": 28,
+    "captured_types": [
+      "click",
+      "focusin",
+      "focusout",
+      "gotpointercapture",
+      "keydown",
+      "keyup",
+      "lostpointercapture",
+      "navigation",
+      "pointerdown",
+      "pointerenter",
+      "pointerleave",
+      "pointermove",
+      "pointerout",
+      "pointerover",
+      "pointerup"
+    ],
+    "captured_type_count": 15,
+    "post_stop_negative_control_passed": true,
+    "privacy_safe_export_passed": true
+  },
+  "causal_controls": {
+    "storage_empty_before_start": true,
+    "real_extension_indicator_seen": true,
+    "real_extension_badge_seen": true,
+    "post_stop_event_count_unchanged": true,
+    "dashboard_storage_readback_seen": true
+  },
+  "browser_console_error_count": 0,
+  "browser_console_errors": [],
+  "browser_console_allowlisted_error_count": 2,
+  "browser_console_allowlisted_errors": [
+    {
+      "kind": "console.error",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+      "source_origin": "https://www.google-analytics.com",
+      "source_path": "/g/collect",
+      "allowlist_id": "phet-google-analytics-connection-closed-v1"
+    },
+    {
+      "kind": "console.error",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+      "source_origin": "https://www.google-analytics.com",
+      "source_path": "/g/collect",
+      "allowlist_id": "phet-google-analytics-connection-closed-v1"
+    }
+  ],
+  "browser_console_error_policy": {
+    "id": "phet-google-analytics-connection-closed-v1",
+    "simulator_origin": "https://phet.colorado.edu",
+    "error_kind": "console.error",
+    "error_message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "source_origin": "https://www.google-analytics.com",
+    "source_path": "/g/collect",
+    "rationale": "The optional Google Analytics collection request can be closed by the local network; simulator state and first-party assets remain validated independently."
+  },
+  "artifacts": {
+    "sanitized_trace": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-01/sanitized_trace.json",
+      "sha256": "16b1dc2ad198f4b16ac27955fc4324bdd2cea16665b25890a8773a5a123b33b3"
+    },
+    "validator_result": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-01/validator_result.json",
+      "sha256": "dd9ae110c462b4bbfbc8ad481b7d44c3de793e2a2836c1fd1c27228bd0a2981f"
+    },
+    "recording_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-01/simulator-recording.png",
+      "sha256": "06fa083e5665d40626c92a030e25fe9b49165b34b1bcce0b02893ffba22d7257"
+    },
+    "final_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-01/simulator-final-state.png",
+      "sha256": "7fcb8b492173acb361e8df6c009b103e92a1eeddbb641bb83bce087d87a90aa3"
+    },
+    "recorder_popup_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-01/recorder-agent-metadata.png",
+      "sha256": "675a43180660fd4d853788d8b628e124b0c55dd51fc4b3e9ac836e21b4c9b223"
+    },
+    "dashboard_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-pdl-annotated-single-launch-v1/rep-01/dashboard-inspect.png",
+      "sha256": "0bda065d5e783626f3205cccfef60d4ec506886da4266e6a05aa70d3613dd4cc"
+    }
+  },
+  "status": "passed"
+}

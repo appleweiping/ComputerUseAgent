@@ -1,0 +1,209 @@
+{
+  "schema_version": "cui-run-capsule-v2",
+  "sealed": false,
+  "capsule_role": "immutable_pre_run_provenance",
+  "run_name": "unsealed-research-candidate",
+  "claim_boundary": "This draft records formal-run pins only. Result counts and publication status live in status/project_status.json and never mutate a run capsule.",
+  "publication_authority": "pending_umn_organization_decision",
+  "pins": {
+    "model": "gpt-5.5",
+    "model_snapshot": "gpt-5.5-2026-04-23",
+    "provider": "openai",
+    "provider_endpoint": "https://api.openai.com/v1/responses",
+    "browser_product": "Google Chrome 151.0.7922.108",
+    "browsergym_miniwob": "0.14.1",
+    "miniwob_commit": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "browser_use": "0.11.5",
+    "skyvern": "1.0.47",
+    "stagehand": "3.7.1",
+    "scienceboard_commit": "c8d5010bdba32afc5dfb16472873bed148c39a45",
+    "scienceboard_vm_zip_sha256": "6795b1e5b3c14a45250c9cad972d86278cceef703c29c84a957df3b567b4a24e",
+    "scienceboard_snapshot": "sci_bench",
+    "scienceboard_provider_endpoint": "https://api.openai.com/v1/chat/completions",
+    "recorder_minimum_version": "0.4.0"
+  },
+  "required_environment_references": [
+    "env:OPENAI_API_KEY",
+    "env:CUI_WEEK1_PROVIDER_CERT",
+    "env:CUI_WEEK1_PRIVATE_ROOT",
+    "env:VMRUN_PATH",
+    "env:VM_PATH",
+    "env:SCIENCEBOARD_ROOT",
+    "env:SCIENCEBOARD_VM_PROVENANCE",
+    "env:SCIENCEBOARD_MODEL",
+    "env:SCIENCEBOARD_CALIBRATION_EVIDENCE",
+    "env:SCIENCEBOARD_CALIBRATION_CERT",
+    "env:SCIENCEBOARD_DRIVER_CONFIG",
+    "env:UMN_HUMAN_RESEARCH_DETERMINATION_RECORD",
+    "env:SCIENCEBOARD_SELF_CONSENT_SESSION_ID"
+  ],
+  "immutable_inputs": {
+    "configs/formal-study.yaml": {
+      "path": "configs/formal-study.yaml",
+      "bytes": 4826,
+      "sha256": "1a69495e8f4202002cd08cf25b140df183916566964ee729f6bc7588653ca6ee"
+    },
+    "experiments/week1/benchmark_manifest.json": {
+      "path": "experiments/week1/benchmark_manifest.json",
+      "bytes": 9443,
+      "sha256": "d41677d0113adb732045075514a0d4f55a4d57048f92265ef2fb65ae6886b987"
+    },
+    "experiments/week1/provider_probe.py": {
+      "path": "experiments/week1/provider_probe.py",
+      "bytes": 22033,
+      "sha256": "b16eb1837731ae65e221c81b9356144e48a030d76a8ae7d90a5917119a9c1914"
+    },
+    "experiments/week1/adapters/archive/stagehand-3.7.1/node-package-lock.json": {
+      "path": "experiments/week1/adapters/archive/stagehand-3.7.1/node-package-lock.json",
+      "bytes": 131290,
+      "sha256": "28d70a21401de20411e8a4da0fdf1fce3fbe5dc3a1c1e4deddc2d796697fac00"
+    },
+    "experiments/week1/adapters/requirements-browser-use.txt": {
+      "path": "experiments/week1/adapters/requirements-browser-use.txt",
+      "bytes": 149,
+      "sha256": "b6a65fe3d5116194c22791fdc403562c5f4c3e3efb551051f5737f12ee683ace"
+    },
+    "experiments/week1/adapters/requirements-orchestrator.lock": {
+      "path": "experiments/week1/adapters/requirements-orchestrator.lock",
+      "bytes": 73149,
+      "sha256": "aecc2a3c56338bfab12265f6b7de609309088b46a5883d8a90ffdefcc0c24c56"
+    },
+    "experiments/week1/adapters/requirements-skyvern.txt": {
+      "path": "experiments/week1/adapters/requirements-skyvern.txt",
+      "bytes": 42,
+      "sha256": "22f9b299b9755d52ca179bca4e61f120d78c97d170b384863d0b1320b193afc3"
+    },
+    "experiments/week1/adapters/archive/stagehand-3.7.1/requirements-stagehand.txt": {
+      "path": "experiments/week1/adapters/archive/stagehand-3.7.1/requirements-stagehand.txt",
+      "bytes": 27,
+      "sha256": "5741f6ebc11a3df103fe8ed5bc9cb06858d71f6131de26b1f1205ba3ac3716f2"
+    },
+    "experiments/fp_agent/requirements.lock": {
+      "path": "experiments/fp_agent/requirements.lock",
+      "bytes": 22486,
+      "sha256": "cb894c571616bddb95d6e8671d609a527691e6652988452863f6160618db6e66"
+    },
+    "experiments/scienceboard/tasks/manifest.json": {
+      "path": "experiments/scienceboard/tasks/manifest.json",
+      "bytes": 3770,
+      "sha256": "dcc16aae87a5576a56a6700a9887855e51f59edc5eb6350744b4293d8c56d341"
+    },
+    "experiments/scienceboard/artifacts.py": {
+      "path": "experiments/scienceboard/artifacts.py",
+      "bytes": 20583,
+      "sha256": "c48ee323d0dffcc91241061d56f489f96d742ce090c3714cb571c75504d2f24a"
+    },
+    "experiments/scienceboard/driver.example.json": {
+      "path": "experiments/scienceboard/driver.example.json",
+      "bytes": 3940,
+      "sha256": "c0418a4a56682b7f7da2011d1eb57c3e48f42fe665912220e58a12fb8c608d93"
+    },
+    "experiments/scienceboard/guest_controller.py": {
+      "path": "experiments/scienceboard/guest_controller.py",
+      "bytes": 13887,
+      "sha256": "f78d788bf790cd0d0c77de4f53207cd43e4f1a1ceec852a07f4a5742c8fe97df"
+    },
+    "experiments/scienceboard/host_worker.py": {
+      "path": "experiments/scienceboard/host_worker.py",
+      "bytes": 18195,
+      "sha256": "ef89c908616a2ad8124cdfc1e60b9a2aebe97c6a8f27a284d50a97b3cc5bd0a6"
+    },
+    "experiments/scienceboard/worker_contract.py": {
+      "path": "experiments/scienceboard/worker_contract.py",
+      "bytes": 10446,
+      "sha256": "4c6bcd451e486a18f5adcd432ff3de39e0e69e352bb9a0cccf1029915e96bada"
+    },
+    "experiments/scienceboard/runtime_doctor.py": {
+      "path": "experiments/scienceboard/runtime_doctor.py",
+      "bytes": 17225,
+      "sha256": "44f221b4c391726e1b2879b21e777fac0a089304dccb13a276b69dac06f7c8c6"
+    },
+    "experiments/scienceboard/official_runtime.py": {
+      "path": "experiments/scienceboard/official_runtime.py",
+      "bytes": 22153,
+      "sha256": "eed3f6a2544527626304e1de86252f056ef58f8ec3d3995779d8062cccb5ef83"
+    },
+    "experiments/scienceboard/orchestrate.py": {
+      "path": "experiments/scienceboard/orchestrate.py",
+      "bytes": 39053,
+      "sha256": "8e16860204f3f720fe33e281a6e009592fe4fe067d183a68c13e1c0885d10d41"
+    },
+    "experiments/scienceboard/preflight.py": {
+      "path": "experiments/scienceboard/preflight.py",
+      "bytes": 23731,
+      "sha256": "9db502b54b2c29c8acd84e1e7384f39cdbd8b1dfc0573358e0c77a9bcdac4a0b"
+    },
+    "experiments/scienceboard/requirements-host.txt": {
+      "path": "experiments/scienceboard/requirements-host.txt",
+      "bytes": 599,
+      "sha256": "0a3a85691a04bec9ba6805c4e540dd8e8c1843b0a93f2d17b82c0a69f02d01f5"
+    },
+    "experiments/scienceboard/requirements-host.lock": {
+      "path": "experiments/scienceboard/requirements-host.lock",
+      "bytes": 31210,
+      "sha256": "499d326bc81e435da362c379f3a2e61efdf992cf6c8acfce9fbdb800e6a2bbc4"
+    },
+    "experiments/scienceboard/runtime_compat/NOTICE.md": {
+      "path": "experiments/scienceboard/runtime_compat/NOTICE.md",
+      "bytes": 941,
+      "sha256": "5222d5cbb3b0d32b073e6ebce20f66d86d540a39599d617bb391ea8542afbc94"
+    },
+    "experiments/scienceboard/runtime_compat/provenance.json": {
+      "path": "experiments/scienceboard/runtime_compat/provenance.json",
+      "bytes": 1346,
+      "sha256": "83ef34f31c4fa6ff511380d5db088436592a8a2db002df6a363b4d952bdbce3a"
+    },
+    "experiments/scienceboard/runtime_compat/desktop_env/__init__.py": {
+      "path": "experiments/scienceboard/runtime_compat/desktop_env/__init__.py",
+      "bytes": 139,
+      "sha256": "2fc939f79850817e64269269d58f53d162577af2708f44f0acb4a0cff2657732"
+    },
+    "experiments/scienceboard/runtime_compat/desktop_env/controller.py": {
+      "path": "experiments/scienceboard/runtime_compat/desktop_env/controller.py",
+      "bytes": 4388,
+      "sha256": "6855d1d9d2343511b5df9fa820800aac16e1092d0c3dcf8a485aae234d6328e1"
+    },
+    "experiments/scienceboard/runtime_compat/desktop_env/desktop_env.py": {
+      "path": "experiments/scienceboard/runtime_compat/desktop_env/desktop_env.py",
+      "bytes": 3247,
+      "sha256": "08ad50edf2a9141b750e6c8145aa87863f5020c09adaa0304d4d8522adb3884a"
+    },
+    "experiments/scienceboard/runtime_compat/desktop_env/vmware.py": {
+      "path": "experiments/scienceboard/runtime_compat/desktop_env/vmware.py",
+      "bytes": 4394,
+      "sha256": "ce5a05cedb15aad1395c8451aba2c750ba5a253cececa7eee0aeefdae79427d4"
+    },
+    "experiments/scienceboard/requirements-x11.txt": {
+      "path": "experiments/scienceboard/requirements-x11.txt",
+      "bytes": 36,
+      "sha256": "a392253f2128c9960afddc9f037291f96e0941cb208ab910e12940df4b337d04"
+    },
+    "experiments/scienceboard/x11_trace.schema.json": {
+      "path": "experiments/scienceboard/x11_trace.schema.json",
+      "bytes": 10926,
+      "sha256": "daeebc61101515951d957343de7947e6a89abe103a88297e13b4394ac0e65463"
+    },
+    "recorder/manifest.json": {
+      "path": "recorder/manifest.json",
+      "bytes": 630,
+      "sha256": "d773c5b27cfe7c792ca4e8ce6bc84098f83b5949be5bbc000f626bfaf95afa7f"
+    },
+    "recorder/schema/cui-trace-v1.schema.json": {
+      "path": "recorder/schema/cui-trace-v1.schema.json",
+      "bytes": 13824,
+      "sha256": "c2fdef2095a17601d28b2b6ac9fcd18122bf02c139cf5dc4d9e2023b9163256e"
+    },
+    "recorder/schema/cui-trace-v2.schema.json": {
+      "path": "recorder/schema/cui-trace-v2.schema.json",
+      "bytes": 14347,
+      "sha256": "979f93285bf44986a127a48221de0887085b094b6e0a5b12ebf6db82f472d8b2"
+    }
+  },
+  "seal_requirements": [
+    "immutable input hashes are current",
+    "capsule is committed before a formal run",
+    "formal execution starts from a clean tracked worktree",
+    "model and provider preflight passes without fallback",
+    "dependency snapshots match the pinned framework environments"
+  ]
+}

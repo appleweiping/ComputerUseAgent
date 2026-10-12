@@ -1,0 +1,63 @@
+{
+  "schema_version": "cui-sim-task-v1",
+  "task_id": "netlogo-ca-rule90-v1",
+  "task_version": "1.0.0",
+  "title": "Run the elementary cellular automaton with Rule 90",
+  "status": "historical-scripted-control-provisional-task-selection",
+  "simulator": {
+    "name": "NetLogo Web CA 1D Elementary",
+    "publisher": "Center for Connected Learning and Computer-Based Modeling, Northwestern University",
+    "version": "NetLogo Web 2.15.0 / model commit ca8e0e1611aef188fadeebd2097b70d1e5fa4e00",
+    "locale": "en",
+    "public_url": "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox",
+    "source_url": "https://github.com/NetLogo/models/blob/ca8e0e1611aef188fadeebd2097b70d1e5fa4e00/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Elementary.nlogox",
+    "expected_html_sha256": "760123f4996da8f248b4307131d5952147fb6ce37c3cbd7bac4fccfb68717c6a",
+    "artifacts": [
+      {
+        "role": "model",
+        "url": "https://raw.githubusercontent.com/NetLogo/models/ca8e0e1611aef188fadeebd2097b70d1e5fa4e00/Sample%20Models/Computer%20Science/Cellular%20Automata/CA%201D%20Elementary.nlogox",
+        "expected_sha256": "36c2d8020692b8d438e921255635437939eb6625b4ffd50184cce8ed34e32c27"
+      }
+    ]
+  },
+  "environment": {
+    "capture_mode": "top-level-browser-extension",
+    "viewport": { "width": 1440, "height": 1000, "device_scale_factor": 1 },
+    "zoom_percent": 100
+  },
+  "ready": { "kind": "netlogo_rule90" },
+  "instruction": "Set rule to 90, run setup single, then run go until the model stops at tick 128.",
+  "reset_procedure": "Open the pinned NetLogo Web runtime with the model URL fixed to commit ca8e0e1611aef188fadeebd2097b70d1e5fa4e00.",
+  "allowed_inputs": ["mouse", "keyboard"],
+  "time_limit_seconds": 120,
+  "actions": [
+    { "type": "focus_selector_replace_text", "selector": "label[aria-label='rule slider'] input[type='number']", "value": "90" },
+    { "type": "wait_for_netlogo_rule", "value": 90 },
+    { "type": "mouse_click_text", "selector": "button.netlogo-widget.netlogo-button.netlogo-command", "text": "setup single" },
+    { "type": "wait_for_netlogo_setup" },
+    { "type": "mouse_click_text", "selector": "label.netlogo-widget.netlogo-button.netlogo-forever-button.netlogo-command[role='button']", "text": "go" },
+    { "type": "wait_for_netlogo_rule90_complete" },
+    { "type": "wait_ms", "value": 500 }
+  ],
+  "validator": {
+    "validator_id": "netlogo-scientific-state-validator",
+    "validator_version": "1.1.0",
+    "checks": [
+      {
+        "id": "rule90_terminal_state",
+        "kind": "netlogo_rule90_oracle",
+        "expected": {
+          "rule": 90,
+          "row": -64,
+          "ticks": 128,
+          "on_cell_count": 2189,
+          "patch_bit_count": 33153,
+          "patch_state_sha256": "669dd8381d3bdcf0d93e40170ccf3237a194e213344da0d024ec1ee5770d1a27",
+          "go_pressed": false
+        }
+      }
+    ]
+  },
+  "success_condition": "The model stops at tick 128 with the pinned Rule 90 patch-state hash and 2,189 on cells.",
+  "research_boundary": "Scripted-automation engineering control. No human trace is collected; the simulator and task selection was provisional and was never confirmed for a formal study."
+}

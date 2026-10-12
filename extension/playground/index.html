@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ComputerUseAgent Trace Recorder · Matched-task playground</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Standalone recorder playground</p>
+        <h1>Matched-task playground</h1>
+      </div>
+      <div class="live-state"><span></span><strong id="record-state">Recorder ready</strong><small id="event-count">0 events</small></div>
+    </header>
+
+    <main>
+      <section class="brief">
+        <div>
+          <p class="step-label">Task PLAYGROUND-MATCHED-01</p>
+          <h2>Configure the requested scientific instrument run</h2>
+          <ol>
+            <li>Search the catalog for <strong>spectra</strong>.</li>
+            <li>Open <strong>SpectraScope</strong>.</li>
+            <li>Enter run code <strong>PG-DEMO</strong>, choose <strong>3 replications</strong>, and complete the task.</li>
+          </ol>
+        </div>
+        <div class="recorder-controls">
+          <label>Actor label <input id="actor-label" value="playground-run-01" /></label>
+          <button id="start-recording">Start mirrored recording</button>
+          <button id="reset-task" class="secondary">Reset task</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside>
+          <label for="catalog-search">Catalog search</label>
+          <input id="catalog-search" type="search" placeholder="Search instruments" autocomplete="off" />
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="all">All categories</option>
+            <option value="imaging">Imaging</option>
+            <option value="spectroscopy">Spectroscopy</option>
+            <option value="sensing">Sensing</option>
+          </select>
+          <p class="privacy-note">This playground runs the extension's own normalization core in the page. Nothing is stored or sent; field values are never captured.</p>
+        </aside>
+
+        <section>
+          <div class="catalog-heading"><h3>Instrument catalog</h3><span id="result-count">6 results</span></div>
+          <div id="catalog" class="catalog"></div>
+        </section>
+      </section>
+
+      <section id="configuration" class="configuration" hidden>
+        <div>
+          <p class="step-label">Selected instrument</p>
+          <h2 id="selected-name">—</h2>
+          <p id="selected-description"></p>
+        </div>
+        <form id="run-form">
+          <label>Run code <input id="run-code" autocomplete="off" required /></label>
+          <label>Replications
+            <select id="replications" required>
+              <option value="">Choose…</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="5">5</option>
+            </select>
+          </label>
+          <button type="submit">Complete task</button>
+        </form>
+      </section>
+
+      <section id="success" class="success" hidden>
+        <p class="eyebrow">Deterministic validator passed</p>
+        <h2>Matched task complete</h2>
+        <p id="success-summary"></p>
+        <div class="summary-grid" id="summary-grid"></div>
+        <button id="download-trace">Download sanitized trace</button>
+      </section>
+
+      <section class="event-preview">
+        <div><p class="step-label">Live evidence</p><h2>Latest sanitized events</h2></div>
+        <pre id="event-preview">Start the mirrored recorder to inspect events.</pre>
+      </section>
+    </main>
+    <script id="session-export" type="application/json"></script>
+    <script src="../app/src/core.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

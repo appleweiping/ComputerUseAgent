@@ -1,0 +1,3661 @@
+{
+  "data_quality": {
+    "cross_family_exact_combined_duplicate_vectors": 0,
+    "deduplicated_rows": 7527,
+    "exact_combined_duplicates_removed_by_family": {
+      "Atlas Agent": 0,
+      "Browser Use": 0,
+      "ChatGPT Agent": 0,
+      "Claude": 0,
+      "Comet": 136,
+      "Human": 6,
+      "Manus": 50,
+      "Skyvern": 0
+    },
+    "feature_dimensions": {
+      "behavioral": 50,
+      "browser": 418,
+      "combined": 468
+    },
+    "nonfinite_feature_values": 0,
+    "raw_source_labels_by_normalized_family": {
+      "Atlas Agent": {
+        "ChatGPT Atlas": 994
+      },
+      "Browser Use": {
+        "Browser Use": 1139
+      },
+      "ChatGPT Agent": {
+        "ChatGPT": 995
+      },
+      "Claude": {
+        "Claude for Chrome": 1002
+      },
+      "Comet": {
+        "Comet": 1026
+      },
+      "Human": {
+        "Human": 546
+      },
+      "Manus": {
+        "Manus": 988
+      },
+      "Skyvern": {
+        "Skyvern": 1029
+      }
+    },
+    "source_rows": 7719,
+    "source_rows_by_family": {
+      "Atlas Agent": 994,
+      "Browser Use": 1139,
+      "ChatGPT Agent": 995,
+      "Claude": 1002,
+      "Comet": 1026,
+      "Human": 546,
+      "Manus": 988,
+      "Skyvern": 1029
+    },
+    "task_counts_after_deduplication": {
+      "Atlas Agent": {
+        "Flight-booking": 330,
+        "Forums": 331,
+        "Shopping": 333
+      },
+      "Browser Use": {
+        "Flight-booking": 390,
+        "Forums": 333,
+        "Shopping": 416
+      },
+      "ChatGPT Agent": {
+        "Flight-booking": 329,
+        "Forums": 333,
+        "Shopping": 333
+      },
+      "Claude": {
+        "Flight-booking": 334,
+        "Forums": 334,
+        "Shopping": 334
+      },
+      "Comet": {
+        "Flight-booking": 358,
+        "Forums": 205,
+        "Shopping": 327
+      },
+      "Human": {
+        "Flight-booking": 186,
+        "Forums": 193,
+        "Shopping": 161
+      },
+      "Manus": {
+        "Flight-booking": 322,
+        "Forums": 283,
+        "Shopping": 333
+      },
+      "Skyvern": {
+        "Flight-booking": 334,
+        "Forums": 334,
+        "Shopping": 361
+      }
+    }
+  },
+  "determinism": "Rows, families, and output keys use stable ordering; the model uses one thread and a fixed seed; runtime timestamps are intentionally omitted.",
+  "folds": [
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              330
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 330
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              331
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 331
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "Atlas Agent",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            994
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 994
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 994,
+        "human": 109,
+        "total": 1103
+      },
+      "train_examples": {
+        "agent": 5993,
+        "human": 431,
+        "total": 6424
+      },
+      "training_agent_families": [
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              390
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 390
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              416
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 416
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "Browser Use",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            1139
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1139
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1139,
+        "human": 109,
+        "total": 1248
+      },
+      "train_examples": {
+        "agent": 5848,
+        "human": 431,
+        "total": 6279
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              329
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 329
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "ChatGPT Agent",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            995
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 995
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 995,
+        "human": 109,
+        "total": 1104
+      },
+      "train_examples": {
+        "agent": 5992,
+        "human": 431,
+        "total": 6423
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "Claude",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            1002
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1002
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1002,
+        "human": 109,
+        "total": 1111
+      },
+      "train_examples": {
+        "agent": 5985,
+        "human": 431,
+        "total": 6416
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              358
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 358
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              205
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 205
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              327
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 327
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "Comet",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            890
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 890
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 890,
+        "human": 109,
+        "total": 999
+      },
+      "train_examples": {
+        "agent": 6097,
+        "human": 431,
+        "total": 6528
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.1005586592,
+          "average_precision": 0.9850895843,
+          "balanced_accuracy": 0.5,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              322,
+              0
+            ]
+          ],
+          "heldout_agent_recall": 0.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.0913705584,
+          "per_class": {
+            "agent": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 322
+            },
+            "human": {
+              "f1": 0.1827411168,
+              "precision": 0.1005586592,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 0.9166666667
+        },
+        "Forums": {
+          "accuracy": 0.1238390093,
+          "average_precision": 0.9895104895,
+          "balanced_accuracy": 0.5,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              283,
+              0
+            ]
+          ],
+          "heldout_agent_recall": 0.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.1101928375,
+          "per_class": {
+            "agent": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 283
+            },
+            "human": {
+              "f1": 0.2203856749,
+              "precision": 0.1238390093,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 0.925
+        },
+        "Shopping": {
+          "accuracy": 0.0901639344,
+          "average_precision": 0.9910714286,
+          "balanced_accuracy": 0.5,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              333,
+              0
+            ]
+          ],
+          "heldout_agent_recall": 0.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.0827067669,
+          "per_class": {
+            "agent": {
+              "f1": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 0.1654135338,
+              "precision": 0.0901639344,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 0.9090909091
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "Manus",
+      "metrics": {
+        "accuracy": 0.1041069723,
+        "average_precision": 0.9871202196,
+        "balanced_accuracy": 0.5,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            938,
+            0
+          ]
+        ],
+        "heldout_agent_recall": 0.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.0942906574,
+        "per_class": {
+          "agent": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 938
+          },
+          "human": {
+            "f1": 0.1885813149,
+            "precision": 0.1041069723,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 0.9174311927
+      },
+      "test_examples": {
+        "heldout_agent": 938,
+        "human": 109,
+        "total": 1047
+      },
+      "train_examples": {
+        "agent": 6049,
+        "human": 431,
+        "total": 6480
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              361
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 361
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "browser",
+      "heldout_agent_family": "Skyvern",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            1029
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1029
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1029,
+        "human": 109,
+        "total": 1138
+      },
+      "train_examples": {
+        "agent": 5958,
+        "human": 431,
+        "total": 6389
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              330
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 330
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 0.9946091644,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.996978852,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              2,
+              329
+            ]
+          ],
+          "heldout_agent_recall": 0.9939577039,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9862897265,
+          "per_class": {
+            "agent": {
+              "f1": 0.996969697,
+              "precision": 1.0,
+              "recall": 0.9939577039,
+              "support": 331
+            },
+            "human": {
+              "f1": 0.9756097561,
+              "precision": 0.9523809524,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "Atlas Agent",
+      "metrics": {
+        "accuracy": 0.9981867634,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9989939638,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            2,
+            992
+          ]
+        ],
+        "heldout_agent_recall": 0.9979879276,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9949510208,
+        "per_class": {
+          "agent": {
+            "f1": 0.9989929507,
+            "precision": 1.0,
+            "recall": 0.9979879276,
+            "support": 994
+          },
+          "human": {
+            "f1": 0.9909090909,
+            "precision": 0.981981982,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 994,
+        "human": 109,
+        "total": 1103
+      },
+      "train_examples": {
+        "agent": 5993,
+        "human": 431,
+        "total": 6424
+      },
+      "training_agent_families": [
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              390
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 390
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 0.9973190349,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.9984984985,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              1,
+              332
+            ]
+          ],
+          "heldout_agent_recall": 0.996996997,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9930752808,
+          "per_class": {
+            "agent": {
+              "f1": 0.9984962406,
+              "precision": 1.0,
+              "recall": 0.996996997,
+              "support": 333
+            },
+            "human": {
+              "f1": 0.987654321,
+              "precision": 0.9756097561,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              416
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 416
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "Browser Use",
+      "metrics": {
+        "accuracy": 0.9991987179,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9995610184,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            1,
+            1138
+          ]
+        ],
+        "heldout_agent_recall": 0.9991220369,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9974973078,
+        "per_class": {
+          "agent": {
+            "f1": 0.9995608256,
+            "precision": 1.0,
+            "recall": 0.9991220369,
+            "support": 1139
+          },
+          "human": {
+            "f1": 0.99543379,
+            "precision": 0.9909090909,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1139,
+        "human": 109,
+        "total": 1248
+      },
+      "train_examples": {
+        "agent": 5848,
+        "human": 431,
+        "total": 6279
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              329
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 329
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "ChatGPT Agent",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            995
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 995
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 995,
+        "human": 109,
+        "total": 1104
+      },
+      "train_examples": {
+        "agent": 5992,
+        "human": 431,
+        "total": 6423
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "Claude",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            1002
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1002
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1002,
+        "human": 109,
+        "total": 1111
+      },
+      "train_examples": {
+        "agent": 5985,
+        "human": 431,
+        "total": 6416
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.9974619289,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.998603352,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              1,
+              357
+            ]
+          ],
+          "heldout_agent_recall": 0.9972067039,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9924513842,
+          "per_class": {
+            "agent": {
+              "f1": 0.9986013986,
+              "precision": 1.0,
+              "recall": 0.9972067039,
+              "support": 358
+            },
+            "human": {
+              "f1": 0.9863013699,
+              "precision": 0.972972973,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              205
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 205
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              327
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 327
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "Comet",
+      "metrics": {
+        "accuracy": 0.998998999,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9994382022,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            1,
+            889
+          ]
+        ],
+        "heldout_agent_recall": 0.9988764045,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9974358382,
+        "per_class": {
+          "agent": {
+            "f1": 0.9994378865,
+            "precision": 1.0,
+            "recall": 0.9988764045,
+            "support": 890
+          },
+          "human": {
+            "f1": 0.99543379,
+            "precision": 0.9909090909,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 890,
+        "human": 109,
+        "total": 999
+      },
+      "train_examples": {
+        "agent": 6097,
+        "human": 431,
+        "total": 6528
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.9832402235,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.9906832298,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              6,
+              316
+            ]
+          ],
+          "heldout_agent_recall": 0.9813664596,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9568362672,
+          "per_class": {
+            "agent": {
+              "f1": 0.9905956113,
+              "precision": 1.0,
+              "recall": 0.9813664596,
+              "support": 322
+            },
+            "human": {
+              "f1": 0.9230769231,
+              "precision": 0.8571428571,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              283
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 283
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "Manus",
+      "metrics": {
+        "accuracy": 0.994269341,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9968017058,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            6,
+            932
+          ]
+        ],
+        "heldout_agent_recall": 0.9936034115,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9850028648,
+        "per_class": {
+          "agent": {
+            "f1": 0.9967914439,
+            "precision": 1.0,
+            "recall": 0.9936034115,
+            "support": 938
+          },
+          "human": {
+            "f1": 0.9732142857,
+            "precision": 0.947826087,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 938,
+        "human": 109,
+        "total": 1047
+      },
+      "train_examples": {
+        "agent": 6049,
+        "human": 431,
+        "total": 6480
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.9972972973,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.998502994,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              1,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 0.997005988,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9924010597,
+          "per_class": {
+            "agent": {
+              "f1": 0.9985007496,
+              "precision": 1.0,
+              "recall": 0.997005988,
+              "support": 334
+            },
+            "human": {
+              "f1": 0.9863013699,
+              "precision": 0.972972973,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 0.9974619289,
+          "average_precision": 0.9999923478,
+          "balanced_accuracy": 0.9986149584,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              1,
+              360
+            ]
+          ],
+          "heldout_agent_recall": 0.9972299169,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9918438322,
+          "per_class": {
+            "agent": {
+              "f1": 0.9986130374,
+              "precision": 1.0,
+              "recall": 0.9972299169,
+              "support": 361
+            },
+            "human": {
+              "f1": 0.9850746269,
+              "precision": 0.9705882353,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 0.9999160581
+        }
+      },
+      "feature_set": "behavioral",
+      "heldout_agent_family": "Skyvern",
+      "metrics": {
+        "accuracy": 0.9982425308,
+        "average_precision": 0.9999981148,
+        "balanced_accuracy": 0.9990281827,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            2,
+            1027
+          ]
+        ],
+        "heldout_agent_recall": 0.9980563654,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9949681641,
+        "per_class": {
+          "agent": {
+            "f1": 0.9990272374,
+            "precision": 1.0,
+            "recall": 0.9980563654,
+            "support": 1029
+          },
+          "human": {
+            "f1": 0.9909090909,
+            "precision": 0.981981982,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 0.9999821685
+      },
+      "test_examples": {
+        "heldout_agent": 1029,
+        "human": 109,
+        "total": 1138
+      },
+      "train_examples": {
+        "agent": 5958,
+        "human": 431,
+        "total": 6389
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              330
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 330
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 0.9946091644,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.996978852,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              2,
+              329
+            ]
+          ],
+          "heldout_agent_recall": 0.9939577039,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9862897265,
+          "per_class": {
+            "agent": {
+              "f1": 0.996969697,
+              "precision": 1.0,
+              "recall": 0.9939577039,
+              "support": 331
+            },
+            "human": {
+              "f1": 0.9756097561,
+              "precision": 0.9523809524,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "Atlas Agent",
+      "metrics": {
+        "accuracy": 0.9981867634,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9989939638,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            2,
+            992
+          ]
+        ],
+        "heldout_agent_recall": 0.9979879276,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9949510208,
+        "per_class": {
+          "agent": {
+            "f1": 0.9989929507,
+            "precision": 1.0,
+            "recall": 0.9979879276,
+            "support": 994
+          },
+          "human": {
+            "f1": 0.9909090909,
+            "precision": 0.981981982,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 994,
+        "human": 109,
+        "total": 1103
+      },
+      "train_examples": {
+        "agent": 5993,
+        "human": 431,
+        "total": 6424
+      },
+      "training_agent_families": [
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              390
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 390
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              416
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 416
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "Browser Use",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            1139
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1139
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1139,
+        "human": 109,
+        "total": 1248
+      },
+      "train_examples": {
+        "agent": 5848,
+        "human": 431,
+        "total": 6279
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              329
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 329
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "ChatGPT Agent",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            995
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 995
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 995,
+        "human": 109,
+        "total": 1104
+      },
+      "train_examples": {
+        "agent": 5992,
+        "human": 431,
+        "total": 6423
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "Claude",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "Claude",
+      "metrics": {
+        "accuracy": 1.0,
+        "average_precision": 1.0,
+        "balanced_accuracy": 1.0,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            0,
+            1002
+          ]
+        ],
+        "heldout_agent_recall": 1.0,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 1.0,
+        "per_class": {
+          "agent": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1002
+          },
+          "human": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 1002,
+        "human": 109,
+        "total": 1111
+      },
+      "train_examples": {
+        "agent": 5985,
+        "human": 431,
+        "total": 6416
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Comet",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.9974619289,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.998603352,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              1,
+              357
+            ]
+          ],
+          "heldout_agent_recall": 0.9972067039,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9924513842,
+          "per_class": {
+            "agent": {
+              "f1": 0.9986013986,
+              "precision": 1.0,
+              "recall": 0.9972067039,
+              "support": 358
+            },
+            "human": {
+              "f1": 0.9863013699,
+              "precision": 0.972972973,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              205
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 205
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              327
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 327
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "Comet",
+      "metrics": {
+        "accuracy": 0.998998999,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9994382022,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            1,
+            889
+          ]
+        ],
+        "heldout_agent_recall": 0.9988764045,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9974358382,
+        "per_class": {
+          "agent": {
+            "f1": 0.9994378865,
+            "precision": 1.0,
+            "recall": 0.9988764045,
+            "support": 890
+          },
+          "human": {
+            "f1": 0.99543379,
+            "precision": 0.9909090909,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 890,
+        "human": 109,
+        "total": 999
+      },
+      "train_examples": {
+        "agent": 6097,
+        "human": 431,
+        "total": 6528
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Manus",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.9832402235,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.9906832298,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              6,
+              316
+            ]
+          ],
+          "heldout_agent_recall": 0.9813664596,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9568362672,
+          "per_class": {
+            "agent": {
+              "f1": 0.9905956113,
+              "precision": 1.0,
+              "recall": 0.9813664596,
+              "support": 322
+            },
+            "human": {
+              "f1": 0.9230769231,
+              "precision": 0.8571428571,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              283
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 283
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              0,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 333
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 1.0
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "Manus",
+      "metrics": {
+        "accuracy": 0.994269341,
+        "average_precision": 1.0,
+        "balanced_accuracy": 0.9968017058,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            6,
+            932
+          ]
+        ],
+        "heldout_agent_recall": 0.9936034115,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9850028648,
+        "per_class": {
+          "agent": {
+            "f1": 0.9967914439,
+            "precision": 1.0,
+            "recall": 0.9936034115,
+            "support": 938
+          },
+          "human": {
+            "f1": 0.9732142857,
+            "precision": 0.947826087,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "test_examples": {
+        "heldout_agent": 938,
+        "human": 109,
+        "total": 1047
+      },
+      "train_examples": {
+        "agent": 6049,
+        "human": 431,
+        "total": 6480
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Skyvern"
+      ]
+    },
+    {
+      "by_task": {
+        "Flight-booking": {
+          "accuracy": 0.9972972973,
+          "average_precision": 1.0,
+          "balanced_accuracy": 0.998502994,
+          "confusion_matrix_human_agent": [
+            [
+              36,
+              0
+            ],
+            [
+              1,
+              333
+            ]
+          ],
+          "heldout_agent_recall": 0.997005988,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9924010597,
+          "per_class": {
+            "agent": {
+              "f1": 0.9985007496,
+              "precision": 1.0,
+              "recall": 0.997005988,
+              "support": 334
+            },
+            "human": {
+              "f1": 0.9863013699,
+              "precision": 0.972972973,
+              "recall": 1.0,
+              "support": 36
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Forums": {
+          "accuracy": 1.0,
+          "average_precision": 1.0,
+          "balanced_accuracy": 1.0,
+          "confusion_matrix_human_agent": [
+            [
+              40,
+              0
+            ],
+            [
+              0,
+              334
+            ]
+          ],
+          "heldout_agent_recall": 1.0,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 1.0,
+          "per_class": {
+            "agent": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 334
+            },
+            "human": {
+              "f1": 1.0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "support": 40
+            }
+          },
+          "roc_auc": 1.0
+        },
+        "Shopping": {
+          "accuracy": 0.9974619289,
+          "average_precision": 0.9999923478,
+          "balanced_accuracy": 0.9986149584,
+          "confusion_matrix_human_agent": [
+            [
+              33,
+              0
+            ],
+            [
+              1,
+              360
+            ]
+          ],
+          "heldout_agent_recall": 0.9972299169,
+          "human_false_positive_rate": 0.0,
+          "human_specificity": 1.0,
+          "macro_f1": 0.9918438322,
+          "per_class": {
+            "agent": {
+              "f1": 0.9986130374,
+              "precision": 1.0,
+              "recall": 0.9972299169,
+              "support": 361
+            },
+            "human": {
+              "f1": 0.9850746269,
+              "precision": 0.9705882353,
+              "recall": 1.0,
+              "support": 33
+            }
+          },
+          "roc_auc": 0.9999160581
+        }
+      },
+      "feature_set": "combined",
+      "heldout_agent_family": "Skyvern",
+      "metrics": {
+        "accuracy": 0.9982425308,
+        "average_precision": 0.9999990565,
+        "balanced_accuracy": 0.9990281827,
+        "confusion_matrix_human_agent": [
+          [
+            109,
+            0
+          ],
+          [
+            2,
+            1027
+          ]
+        ],
+        "heldout_agent_recall": 0.9980563654,
+        "human_false_positive_rate": 0.0,
+        "human_specificity": 1.0,
+        "macro_f1": 0.9949681641,
+        "per_class": {
+          "agent": {
+            "f1": 0.9990272374,
+            "precision": 1.0,
+            "recall": 0.9980563654,
+            "support": 1029
+          },
+          "human": {
+            "f1": 0.9909090909,
+            "precision": 0.981981982,
+            "recall": 1.0,
+            "support": 109
+          }
+        },
+        "roc_auc": 0.9999910842
+      },
+      "test_examples": {
+        "heldout_agent": 1029,
+        "human": 109,
+        "total": 1138
+      },
+      "train_examples": {
+        "agent": 5958,
+        "human": 431,
+        "total": 6389
+      },
+      "training_agent_families": [
+        "Atlas Agent",
+        "Browser Use",
+        "ChatGPT Agent",
+        "Claude",
+        "Comet",
+        "Manus"
+      ]
+    }
+  ],
+  "human_split_summary": {
+    "group_overlap": 0,
+    "method": "stable seeded hash split of opaque participant groups",
+    "participant_groups_test": 14,
+    "participant_groups_total": 66,
+    "participant_groups_train": 52,
+    "rows_test": 109,
+    "rows_train": 431,
+    "task_counts_test": {
+      "Flight-booking": 36,
+      "Forums": 40,
+      "Shopping": 33
+    },
+    "task_counts_train": {
+      "Flight-booking": 150,
+      "Forums": 153,
+      "Shopping": 128
+    },
+    "test_group_fraction_requested": 0.2
+  },
+  "limitations": [
+    "This is a retrospective family holdout inside one public corpus, not a prospective test on future agents or new collection environments.",
+    "Agent family is confounded with its software, browser/OS setup, model, and collection period; browser-fingerprint results can exploit those environment differences rather than interaction style.",
+    "The corpus contains three website tasks. This protocol holds out an agent family, not a task; task transfer is not established.",
+    "The fixed human test set is reused across seven family folds. Macro summaries average family-level point estimates and are descriptive, not seven independent estimates of human performance.",
+    "Rows are repeated task attempts, not an independently sampled population. No population-level deployment claim or uncertainty interval is made."
+  ],
+  "macro_across_heldout_families": {
+    "behavioral": {
+      "balanced_accuracy": {
+        "maximum": 1.0,
+        "mean": 0.9991175818,
+        "median": 0.9994382022,
+        "minimum": 0.9968017058
+      },
+      "heldout_agent_recall": {
+        "maximum": 1.0,
+        "mean": 0.9982351637,
+        "median": 0.9988764045,
+        "minimum": 0.9936034115
+      },
+      "human_false_positive_rate": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0
+      },
+      "human_specificity": {
+        "maximum": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "minimum": 1.0
+      },
+      "macro_f1": {
+        "maximum": 1.0,
+        "mean": 0.9956935994,
+        "median": 0.9974358382,
+        "minimum": 0.9850028648
+      },
+      "roc_auc": {
+        "maximum": 1.0,
+        "mean": 0.9999974526,
+        "median": 1.0,
+        "minimum": 0.9999821685
+      }
+    },
+    "browser": {
+      "balanced_accuracy": {
+        "maximum": 1.0,
+        "mean": 0.9285714286,
+        "median": 1.0,
+        "minimum": 0.5
+      },
+      "heldout_agent_recall": {
+        "maximum": 1.0,
+        "mean": 0.8571428571,
+        "median": 1.0,
+        "minimum": 0.0
+      },
+      "human_false_positive_rate": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0
+      },
+      "human_specificity": {
+        "maximum": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "minimum": 1.0
+      },
+      "macro_f1": {
+        "maximum": 1.0,
+        "mean": 0.8706129511,
+        "median": 1.0,
+        "minimum": 0.0942906574
+      },
+      "roc_auc": {
+        "maximum": 1.0,
+        "mean": 0.9882044561,
+        "median": 1.0,
+        "minimum": 0.9174311927
+      }
+    },
+    "combined": {
+      "balanced_accuracy": {
+        "maximum": 1.0,
+        "mean": 0.9991802935,
+        "median": 0.9994382022,
+        "minimum": 0.9968017058
+      },
+      "heldout_agent_recall": {
+        "maximum": 1.0,
+        "mean": 0.998360587,
+        "median": 0.9988764045,
+        "minimum": 0.9936034115
+      },
+      "human_false_positive_rate": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0
+      },
+      "human_specificity": {
+        "maximum": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "minimum": 1.0
+      },
+      "macro_f1": {
+        "maximum": 1.0,
+        "mean": 0.9960511268,
+        "median": 0.9974358382,
+        "minimum": 0.9850028648
+      },
+      "roc_auc": {
+        "maximum": 1.0,
+        "mean": 0.9999987263,
+        "median": 1.0,
+        "minimum": 0.9999910842
+      }
+    }
+  },
+  "package_versions": {
+    "numpy": "2.4.6",
+    "python": "3.14.5",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.2.0"
+  },
+  "protocol": "fp-agent-loafo-v1",
+  "protocol_details": {
+    "agent_split": "leave one named agent family out in each fold",
+    "decision_threshold": 0.5,
+    "duplicate_handling": "collapse exact duplicate 468-dimensional combined vectors within each family before every feature-set evaluation",
+    "feature_sets": {
+      "behavioral": "50 released interaction-behavior features",
+      "browser": "418 released browser-fingerprint features",
+      "combined": "browser followed by behavioral (468 features)"
+    },
+    "human_split": "one fixed 80/20-style split by opaque participant group; the same human test set is reused only to make family folds comparable",
+    "human_test_group_fraction": 0.2,
+    "model": "binary XGBoost classifier trained from scratch per fold",
+    "model_parameters": {
+      "colsample_bytree": 1.0,
+      "eval_metric": "logloss",
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "min_child_weight": 1.0,
+      "n_estimators": 200,
+      "n_jobs": 1,
+      "objective": "binary:logistic",
+      "random_state": 20260808,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 1.0,
+      "tree_method": "hist",
+      "verbosity": 0
+    },
+    "primary_metrics": [
+      "heldout_agent_recall",
+      "human_specificity",
+      "balanced_accuracy"
+    ],
+    "seed": 20260808,
+    "target": "agent=1, human=0",
+    "training_balance": "inverse-frequency sample weights; mean weight is 1"
+  },
+  "question": "Can a binary classifier trained on Human plus six known agent families identify the seventh, unseen family as agent-generated?",
+  "schema_version": "1.0",
+  "source": {
+    "feature_vectors_file": "feature_vectors.json",
+    "feature_vectors_sha256": "54aa9eb6e74a509b86a3504f97e1f2c6fee99467c1ac935b92a5385e9e1cf641",
+    "feature_vectors_source": "https://osf.io/j6b5p/",
+    "repository": "https://github.com/ethanbwang/fp-agent",
+    "repository_commit": "e614e2f0f935211e22d856195d56e91fa88a7b16"
+  },
+  "status": "completed"
+}

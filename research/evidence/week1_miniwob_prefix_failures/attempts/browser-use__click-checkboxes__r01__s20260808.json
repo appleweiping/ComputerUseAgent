@@ -1,0 +1,238 @@
+{
+  "schema_version": "cui-week1-attempt-record-v1",
+  "evidence_scope": "formal-full-matrix",
+  "attempt": {
+    "attempt_id": "browser-use__click-checkboxes__r01__s20260808",
+    "manifest_sha256": "04536ea8079dd2feecea9bb4a0947c64cf369dbab1e56ed1ddeaf49d31818914",
+    "protocol_version": "week1-miniwob-matched-v1",
+    "framework": {
+      "id": "browser-use",
+      "version": "0.11.5",
+      "adapter_command_env": "CUI_WEEK1_BROWSER_USE_ADAPTER",
+      "default_adapter_command": [
+        "{python}",
+        "experiments/week1/adapters/dispatch.py",
+        "browser-use"
+      ]
+    },
+    "task": {
+      "id": "click-checkboxes",
+      "environment_id": "browsergym/miniwob.click-checkboxes"
+    },
+    "repetition": 1,
+    "seed": 20260808,
+    "model": "gpt-5.5",
+    "model_configuration": {
+      "task_seed_policy": "Each attempt seed initializes the official BrowserGym task for every framework.",
+      "browser-use": {
+        "temperature": 0,
+        "model_seed": "attempt_seed"
+      },
+      "skyvern": {
+        "temperature": 1,
+        "model_seed": null,
+        "max_completion_tokens": 8192,
+        "exception": "Skyvern 1.0.47's pinned OPENAI_GPT5_5 registry requires temperature=1 and its LLMConfig does not expose a model seed."
+      },
+      "stagehand": {
+        "requested_temperature": 0,
+        "temperature": null,
+        "model_seed": null,
+        "exception": "Stagehand 3.7.1 AgentConfig/AgentExecuteOptions expose neither parameter; its OpenAI Responses provider marks seed unsupported and removes temperature for reasoning models."
+      },
+      "comparison_boundary": "The task seed, model name, action cap, and wall-time cap are matched. Unsupported framework model parameters are reported, not silently claimed as fixed."
+    },
+    "limits": {
+      "max_actions": 30,
+      "timeout_seconds": 480
+    },
+    "browser": {
+      "engine": "Google Chrome",
+      "product_version": "151.0.7922.108",
+      "viewport": {
+        "width": 332,
+        "height": 214
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "fresh_context_per_attempt": true
+    },
+    "recorder": {
+      "extension_path": "recorder",
+      "minimum_version": "0.3.0",
+      "required": true,
+      "capture_adapter": "browser_mv3",
+      "source_class": "cui_agent"
+    },
+    "benchmark": {
+      "name": "BrowserGym MiniWoB++",
+      "package": "browsergym-miniwob",
+      "package_version": "0.14.1",
+      "source_repository": "https://github.com/ServiceNow/BrowserGym",
+      "miniwob_repository": "https://github.com/Farama-Foundation/miniwob-plusplus",
+      "miniwob_commit": "7fd85d71a4b60325c6585396ec4f48377d049838",
+      "miniwob_html_tree_sha256": "b6541e36c70d6621294edfe0ca3bae7794fb9cfb9def2829dfcda4fd284b3925",
+      "miniwob_static_tree_sha256": "9883c9117804c0865920b3313021a0bd0cccc094f2f707678f6c3a72b3af4f3a",
+      "reward_source": "BrowserGym official task validator"
+    }
+  },
+  "orchestrator": {
+    "started_at": "2026-08-08T16:55:04.408508Z",
+    "finished_at": "2026-08-08T16:58:15.356778Z",
+    "elapsed_seconds": 190.953,
+    "adapter_command_env": "CUI_WEEK1_BROWSER_USE_ADAPTER",
+    "adapter_command_source": "repository-default",
+    "adapter_argv": [
+      "{python}",
+      "experiments/week1/adapters/dispatch.py",
+      "browser-use"
+    ],
+    "adapter_executable": "python.exe",
+    "source_provenance": {
+      "commit": "c56a7b5fe01126ef00157e123738ae280292422b",
+      "clean": true,
+      "manifest_sha256": "04536ea8079dd2feecea9bb4a0947c64cf369dbab1e56ed1ddeaf49d31818914"
+    },
+    "task_timeout_seconds": 480,
+    "process_overhead_seconds": 180,
+    "outer_watchdog_seconds": 660,
+    "stderr_artifact": {
+      "artifact_id": "private-stderr-5236b81ebb0cb05c",
+      "retained_private": true,
+      "bytes": 10050,
+      "sha256": "5236b81ebb0cb05c28b9e7375ccb472b08412fe6f62622def6e1658b50b6a4f1"
+    }
+  },
+  "result": {
+    "schema_version": "cui-week1-adapter-result-v1",
+    "attempt_id": "browser-use__click-checkboxes__r01__s20260808",
+    "status": "error",
+    "agent": {
+      "framework": "browser-use",
+      "framework_version": "0.11.5",
+      "model": "gpt-5.5",
+      "action_count": 0,
+      "action_count_observed": true,
+      "action_count_censored": false,
+      "action_history": [],
+      "framework_completed": false
+    },
+    "validator": {
+      "source": "browsergym_official_reward",
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false,
+      "task_setup_artifact": {
+        "artifact_id": "private-official-task-setup-d280a6411c6c3cde",
+        "retained_private": true,
+        "bytes": 599,
+        "sha256": "d280a6411c6c3cde32bfcbe3bbfe1a81df73755263becbc31f7d9d6e50987f12"
+      },
+      "task_setup_retained_private": true,
+      "task_info_artifact": {
+        "artifact_id": "private-official-validator-info-3b96d534a9b2efad",
+        "retained_private": true,
+        "bytes": 352,
+        "sha256": "3b96d534a9b2efad76ea68a0ce428479fa188602b5cc56f001d943d7b832cd5a"
+      },
+      "task_info_retained_private": true
+    },
+    "recorder": {
+      "capture_adapter": "browser_mv3",
+      "source_class": "cui_agent",
+      "status": "complete",
+      "session_id": "session-ref-a1db8c2fafd33bed",
+      "event_count": 1,
+      "trace_artifact": {
+        "artifact_id": "private-recorder-trace-e94117eeca4aef87",
+        "retained_private": true,
+        "bytes": 2260,
+        "sha256": "e94117eeca4aef87521bd2031dcd03f0cdc3fc81885dc89c19ba6794b6cd1b11"
+      },
+      "artifact_validation": null
+    },
+    "browser": {
+      "product_version": "Chrome/151.0.7922.108",
+      "viewport": {
+        "width": 332,
+        "height": 214
+      },
+      "device_pixel_ratio": 1,
+      "locale": "en-US",
+      "timezone": "UTC",
+      "environment_guard": {
+        "requested_locale": "en-US",
+        "requested_timezone": "UTC",
+        "observed_locale": "en-US",
+        "observed_timezone": "UTC",
+        "verified": true
+      },
+      "episode_guard": {
+        "stable": true,
+        "sticky_lifecycle_monitoring": true,
+        "pre_validator_attested": true,
+        "post_validator_attested": true,
+        "clean_disarm_attested": true,
+        "target_id_unchanged": true,
+        "loader_id_unchanged": true,
+        "document_token_unchanged": true,
+        "time_origin_unchanged": true,
+        "episode_start_unchanged": true,
+        "attestation_count": 2,
+        "violation_count": 0
+      },
+      "fresh_profile": true
+    },
+    "artifacts": {
+      "final_screenshot": {
+        "artifact_id": "private-final-screenshot-5b3a59893639af83",
+        "retained_private": true,
+        "bytes": 4906,
+        "sha256": "5b3a59893639af83fcf667688ca5852f3d40682f72d571488bea42ca089f2cf3"
+      },
+      "final_screenshot_validation": {
+        "png_header_valid": true,
+        "png_complete": true,
+        "chunk_crc_valid": true,
+        "image_data_decoded": true,
+        "chunk_count": 5,
+        "width": 332,
+        "height": 214
+      },
+      "framework": {
+        "framework_step_count": 4,
+        "framework_error_count": 4,
+        "external_cdp_compatibility": true,
+        "skipped_unconditional_resumes": 29,
+        "bounded_resume_timeouts": 0,
+        "official_target_locked": true,
+        "target_guard_interval_seconds": 1,
+        "target_guard_input_events": 0,
+        "model_temperature": 0,
+        "model_seed_applied": true,
+        "model_seed": 20260808,
+        "browser_session_stopped": true
+      }
+    },
+    "dependencies": {
+      "snapshots": [
+        {
+          "environment": "browser-use",
+          "artifact": {
+            "artifact_id": "private-dependency-freeze-741734979ccad2a7",
+            "retained_private": true,
+            "bytes": 2102,
+            "sha256": "741734979ccad2a79ad0248205f168e24837f3a572dbab983ea89842b206cb7a"
+          }
+        }
+      ]
+    },
+    "error": {
+      "code": "recorder_trace_invalid"
+    },
+    "provenance_complete": false,
+    "artifact_bundle_complete": false,
+    "formal_matrix_eligible": false,
+    "analysis_eligible": false
+  }
+}

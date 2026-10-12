@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ComputerUseAgent Trace Recorder · Sessions</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">ComputerUseAgent Trace Recorder</p>
+          <h1>Session library</h1>
+          <p>Inspect metadata and sampled event rows before exporting. Typed text, page text and field values are never stored in the default privacy-safe mode.</p>
+        </div>
+        <button id="refresh">Refresh</button>
+      </header>
+      <section class="guardrail">
+        <strong>Before sharing:</strong> inspect the export, keep participant codes pseudonymous, and never commit consent forms or identifiable raw traces.
+      </section>
+      <p id="message" role="status"></p>
+      <section id="sessions" class="sessions" aria-live="polite"></section>
+    </main>
+    <template id="session-template">
+      <article class="session-card">
+        <div class="session-main">
+          <div class="session-title-row">
+            <h2></h2>
+            <span class="actor-chip"></span>
+          </div>
+          <p class="session-id"></p>
+          <dl></dl>
+        </div>
+        <div class="actions">
+          <button data-action="inspect">Inspect</button>
+          <button data-format="json">JSON</button>
+          <button data-format="jsonl">JSONL</button>
+          <button data-format="csv">CSV</button>
+          <button data-format="json-v1" title="Compatibility export for a V1-only reader">Legacy V1 JSON</button>
+          <button data-action="delete" class="delete">Delete</button>
+        </div>
+        <pre class="event-preview" hidden></pre>
+      </article>
+    </template>
+    <script src="../src/core.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+browsergym-miniwob==0.14.1
+jsonschema==4.26.0

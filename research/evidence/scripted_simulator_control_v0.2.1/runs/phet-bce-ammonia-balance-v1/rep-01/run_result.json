@@ -1,0 +1,110 @@
+{
+  "schema_version": "cui-simulator-run-result-v1",
+  "run_id": "phet-bce-ammonia-balance-v1-rep-01",
+  "task_id": "phet-bce-ammonia-balance-v1",
+  "task_version": "1.0.0",
+  "repetition": 1,
+  "actor_type": "agent",
+  "executor": "puppeteer-cdp",
+  "session_id": "0c9ab30a-fca2-4fda-986f-9bbd889a94bd",
+  "simulator": {
+    "name": "PhET Balancing Chemical Equations",
+    "version": "1.3.1",
+    "requested_url": "https://phet.colorado.edu/sims/html/balancing-chemical-equations/1.3.1/balancing-chemical-equations_en.html",
+    "resolved_url": "https://phet.colorado.edu/sims/html/balancing-chemical-equations/1.3.1/balancing-chemical-equations_en.html",
+    "html_sha256": "cbe5fef2e07f83321e88d747bc150c06326233e286c8f246aada727b2bf0053b"
+  },
+  "action_started_at": "2026-08-07T13:59:08.571Z",
+  "action_finished_at": "2026-08-07T13:59:15.575Z",
+  "timing": {
+    "time_limit_seconds": 45,
+    "action_duration_ms": 7004,
+    "action_within_time_limit": true
+  },
+  "validator_passed": true,
+  "validator_check_count": 1,
+  "capture": {
+    "event_count": 122,
+    "duration_ms": 5940,
+    "pointer_distance_px": 3615.27,
+    "trusted_input_event_count": 49,
+    "captured_types": [
+      "click",
+      "gotpointercapture",
+      "lostpointercapture",
+      "navigation",
+      "pointerdown",
+      "pointerenter",
+      "pointerleave",
+      "pointermove",
+      "pointerout",
+      "pointerover",
+      "pointerup"
+    ],
+    "captured_type_count": 11,
+    "post_stop_negative_control_passed": true,
+    "privacy_safe_export_passed": true
+  },
+  "causal_controls": {
+    "storage_empty_before_start": true,
+    "real_extension_indicator_seen": true,
+    "real_extension_badge_seen": true,
+    "post_stop_event_count_unchanged": true,
+    "dashboard_storage_readback_seen": true
+  },
+  "browser_console_error_count": 0,
+  "browser_console_errors": [],
+  "browser_console_allowlisted_error_count": 2,
+  "browser_console_allowlisted_errors": [
+    {
+      "kind": "console.error",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+      "source_origin": "https://www.google-analytics.com",
+      "source_path": "/g/collect",
+      "allowlist_id": "phet-google-analytics-connection-closed-v1"
+    },
+    {
+      "kind": "console.error",
+      "message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+      "source_origin": "https://www.google-analytics.com",
+      "source_path": "/g/collect",
+      "allowlist_id": "phet-google-analytics-connection-closed-v1"
+    }
+  ],
+  "browser_console_error_policy": {
+    "id": "phet-google-analytics-connection-closed-v1",
+    "simulator_origin": "https://phet.colorado.edu",
+    "error_kind": "console.error",
+    "error_message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "source_origin": "https://www.google-analytics.com",
+    "source_path": "/g/collect",
+    "rationale": "The optional Google Analytics collection request can be closed by the local network; simulator state and first-party assets remain validated independently."
+  },
+  "artifacts": {
+    "sanitized_trace": {
+      "path": "results/week3_scientific_simulators/runs/phet-bce-ammonia-balance-v1/rep-01/sanitized_trace.json",
+      "sha256": "fa13504afd52427b1dbd9276a397c6fe3728bb241e62ead347289490c7b56393"
+    },
+    "validator_result": {
+      "path": "results/week3_scientific_simulators/runs/phet-bce-ammonia-balance-v1/rep-01/validator_result.json",
+      "sha256": "dbc3a3da1b7c1f193669f021296c1cfb6f3e6888c6af4e3bf4cb28d6a0834559"
+    },
+    "recording_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-bce-ammonia-balance-v1/rep-01/simulator-recording.png",
+      "sha256": "085fb0b1c577f87ef3b79dd6c085beb71c023ed0b5b467ef28bf375d3211f583"
+    },
+    "final_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-bce-ammonia-balance-v1/rep-01/simulator-final-state.png",
+      "sha256": "cd28d0a66806d4554edf70df45417b0636852cde40e42fc9e8b9ee0b4e304768"
+    },
+    "recorder_popup_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-bce-ammonia-balance-v1/rep-01/recorder-agent-metadata.png",
+      "sha256": "111e378b919c6fbf279a3641062af2305849ab7a1461d46fdbd4583c6357faef"
+    },
+    "dashboard_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/phet-bce-ammonia-balance-v1/rep-01/dashboard-inspect.png",
+      "sha256": "c8ee2d3bbd02a5d4ec2372c9a66a06d6933a34c84180e186458aea66db8bb6d2"
+    }
+  },
+  "status": "passed"
+}

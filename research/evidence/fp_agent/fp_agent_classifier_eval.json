@@ -1,0 +1,494 @@
+{
+  "experiment": "FP-Agent released-model inference reproduction",
+  "scope": "Inference-only evaluation of the three released all-class classifiers on the released random test split; no retraining.",
+  "timestamp_utc": "2026-07-27T09:08:31.456840+00:00",
+  "repository": "https://github.com/ethanbwang/fp-agent",
+  "repository_commit": "e614e2f0f935211e22d856195d56e91fa88a7b16",
+  "dataset": {
+    "source": "https://osf.io/j6b5p/",
+    "feature_vectors_file": "feature_vectors.json",
+    "feature_vectors_sha256": "54aa9eb6e74a509b86a3504f97e1f2c6fee99467c1ac935b92a5385e9e1cf641",
+    "split_file": "train_test_split.npz",
+    "split_sha256": "463f7779fdd8487dca19b7c5f8c8939383de2cacaf8719c90cabfedafa87c643",
+    "train_examples": 6175,
+    "validation_examples": 0,
+    "test_examples": 1544,
+    "classes": [
+      "Atlas Agent",
+      "Browser Use",
+      "ChatGPT Agent",
+      "Claude",
+      "Comet",
+      "Human",
+      "Manus",
+      "Skyvern"
+    ],
+    "class_mapping": {
+      "Atlas Agent": 0,
+      "Browser Use": 1,
+      "ChatGPT Agent": 2,
+      "Claude": 3,
+      "Comet": 4,
+      "Human": 5,
+      "Manus": 6,
+      "Skyvern": 7
+    }
+  },
+  "results": {
+    "browser": {
+      "model_file": "classifier_training/classifiers/browser_fingerprint_all_classes.json",
+      "model_sha256": "ac757440a8635b304c2f7fa0cbd541d4c4b17dd81888257c091bfbfd525c41b9",
+      "feature_dimensions": 418,
+      "train_examples": 6175,
+      "test_examples": 1544,
+      "accuracy": 0.8212435233,
+      "macro_precision": 0.8839957456,
+      "macro_recall": 0.8407017544,
+      "macro_f1": 0.8222806043,
+      "errors": 276,
+      "per_class": {
+        "Atlas Agent": {
+          "precision": 0.4901477833,
+          "recall": 1.0,
+          "f1": 0.6578512397,
+          "support": 199
+        },
+        "Browser Use": {
+          "precision": 1.0,
+          "recall": 0.2456140351,
+          "f1": 0.3943661972,
+          "support": 228
+        },
+        "ChatGPT Agent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 199
+        },
+        "Claude": {
+          "precision": 0.5818181818,
+          "recall": 0.48,
+          "f1": 0.5260273973,
+          "support": 200
+        },
+        "Comet": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 205
+        },
+        "Human": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 109
+        },
+        "Manus": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 198
+        },
+        "Skyvern": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 206
+        }
+      },
+      "confusion_matrix": [
+        [
+          199,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          103,
+          56,
+          0,
+          69,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          199,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          104,
+          0,
+          0,
+          96,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          205,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          109,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          198,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          206
+        ]
+      ]
+    },
+    "behavioral": {
+      "model_file": "classifier_training/classifiers/behavioral_fingerprint_all_classes.json",
+      "model_sha256": "c1540ba80dfb52b1a5c4ab48b40653877b34fd16e606421aba4da34be34a01e5",
+      "feature_dimensions": 50,
+      "train_examples": 6175,
+      "test_examples": 1544,
+      "accuracy": 0.9993523316,
+      "macro_precision": 0.9993961353,
+      "macro_recall": 0.9993686869,
+      "macro_f1": 0.9993808809,
+      "errors": 1,
+      "per_class": {
+        "Atlas Agent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 199
+        },
+        "Browser Use": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 228
+        },
+        "ChatGPT Agent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 199
+        },
+        "Claude": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 200
+        },
+        "Comet": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 205
+        },
+        "Human": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 109
+        },
+        "Manus": {
+          "precision": 1.0,
+          "recall": 0.9949494949,
+          "f1": 0.9974683544,
+          "support": 198
+        },
+        "Skyvern": {
+          "precision": 0.9951690821,
+          "recall": 1.0,
+          "f1": 0.9975786925,
+          "support": 206
+        }
+      },
+      "confusion_matrix": [
+        [
+          199,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          228,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          199,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          200,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          205,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          109,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          197,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          206
+        ]
+      ]
+    },
+    "combined": {
+      "model_file": "classifier_training/classifiers/combined_fingerprint_all_classes.json",
+      "model_sha256": "8997b6160f712071fc06f50a7d1ec607993cedeb251804524d3d3e2c29c1b55f",
+      "feature_dimensions": 468,
+      "train_examples": 6175,
+      "test_examples": 1544,
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "errors": 0,
+      "per_class": {
+        "Atlas Agent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 199
+        },
+        "Browser Use": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 228
+        },
+        "ChatGPT Agent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 199
+        },
+        "Claude": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 200
+        },
+        "Comet": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 205
+        },
+        "Human": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 109
+        },
+        "Manus": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 198
+        },
+        "Skyvern": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 206
+        }
+      },
+      "confusion_matrix": [
+        [
+          199,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          228,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          199,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          200,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          205,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          109,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          198,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          206
+        ]
+      ]
+    }
+  },
+  "interpretation_limit": "Scores quantify re-execution on the released within-corpus split. They do not measure out-of-distribution or future-agent generalization.",
+  "schema_version": "1.0",
+  "run_id": "20260727T090828Z",
+  "system": "fp-agent",
+  "repo": "https://github.com/ethanbwang/fp-agent",
+  "repo_commit": "e614e2f0f935211e22d856195d56e91fa88a7b16",
+  "package_versions": {
+    "python": "3.13.14",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.8.0",
+    "xgboost": "3.2.0"
+  },
+  "model": "three released all-class XGBoost classifiers",
+  "task": "released-model inference on the released 1,544-example test split",
+  "repetition": 1,
+  "started_at": "2026-07-27T09:08:28.302936+00:00",
+  "completed_at": "2026-07-27T09:08:32.049645+00:00",
+  "duration_seconds": 4.159,
+  "steps": null,
+  "validator": "exact released split, model/data SHA-256 provenance, and deterministic metric recomputation",
+  "success": true,
+  "error_category": null,
+  "reported_cost_usd": 0.0
+}

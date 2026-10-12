@@ -1,0 +1,11 @@
+# Security-minimal host runtime for pinned ScienceBoard commit c8d5010b.
+#
+# Do not install the desktop-env distribution. Its 0.1.22 release constrains
+# requests to a vulnerable version, while 1.0.2 pulls a 227-package graph with
+# known, constraint-locked vulnerabilities unrelated to ScienceBoard's VMware
+# path. The repo-owned runtime_compat package implements only the five members
+# consumed by pinned sci/vm/vmanager.py and is verified by source hash/AST before
+# a VM may start. ScienceBoard itself additionally imports Pillow and tiktoken.
+Pillow==12.3.0
+requests==2.34.2
+tiktoken==0.13.0

@@ -1,0 +1,16 @@
+ComputerUseAgent: browser and X11 interaction trace recorder and
+human-vs-agent evaluation toolkit
+Copyright (c) 2026 Weiping Yan
+
+The original first-party code and text in this repository are licensed under
+the MIT License in LICENSE.
+
+Third-party software, data, model weights, task assets, papers, screenshots
+and trademarks remain subject to their own licenses and terms. The MIT License
+does not relicense those materials. See THIRD_PARTY_NOTICES.md and
+CITATION.cff for attribution and redistribution boundaries; each GitHub
+Release attaches a CycloneDX SBOM that inventories every locked dependency.
+
+This repository must not contain raw human traces, typed text, credentials,
+browser profiles, VM images or snapshots, downloaded paper PDFs, or upstream
+model weights without documented redistribution authorization.
