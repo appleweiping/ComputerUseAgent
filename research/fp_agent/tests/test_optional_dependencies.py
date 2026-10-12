@@ -34,7 +34,17 @@ def _run_blocked(blocked: tuple[str, ...], lines: list[str]) -> subprocess.Compl
 def _pytest_loafo(
     blocked: tuple[str, ...], imports: tuple[str, ...] = ()
 ) -> subprocess.CompletedProcess[str]:
-    arguments = [str(LOAFO_TESTS), "-q", "-rs", "-p", "no:cacheprovider", "-p", "no:faulthandler"]
+    # --color=no: CI sets FORCE_COLOR, whose ANSI codes would split "4 passed, 1 skipped".
+    arguments = [
+        str(LOAFO_TESTS),
+        "-q",
+        "-rs",
+        "--color=no",
+        "-p",
+        "no:cacheprovider",
+        "-p",
+        "no:faulthandler",
+    ]
     lines = [f"import {module}" for module in imports]
     lines += ["import pytest", f"raise SystemExit(pytest.main({arguments!r}))"]
     return _run_blocked(blocked, lines)

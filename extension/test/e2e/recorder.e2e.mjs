@@ -1127,8 +1127,14 @@ async function main() {
       (target) => !existingTargets.has(target) && target.url().includes("/privacy/disclosure.html"),
       { timeout: 10_000 }
     );
-    await popup.click('a[href="../privacy/disclosure.html"]');
+    // In headful Chrome the action popup closes as soon as the new tab takes
+    // focus, which can happen while the synthetic click is still being
+    // dispatched. Tolerate only that closure; the disclosure tab must still open.
+    const disclosureClick = popup.click('a[href="../privacy/disclosure.html"]').catch((error) => {
+      if (!/Target closed|Session closed|detached/i.test(String(error?.message))) throw error;
+    });
     const disclosurePage = await (await disclosureTarget).asPage();
+    await disclosureClick;
     assert(disclosurePage);
     recordPageDiagnostics(disclosurePage, "privacy-disclosure");
     await disclosurePage.waitForSelector("body");

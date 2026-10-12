@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -191,10 +192,13 @@ class DispatchTests(unittest.TestCase):
                 dispatch.subprocess, "run", return_value=completed
             ) as run, mock.patch("sys.stdout"):
                 self.assertEqual(dispatch.main(), 0)
-        command = run.call_args.args[0]
+            command = run.call_args.args[0]
+            # samefile, not string equality: Windows may report the temp dir in its
+            # 8.3 short form (RUNNER~1) on one side and the long form on the other.
+            self.assertTrue(os.path.samefile(command[0], python), (command[0], python))
         self.assertEqual(
-            command,
-            [str(python), "-m", "research.week1_miniwob.adapters.browser_use_adapter", "--self-test"],
+            command[1:],
+            ["-m", "research.week1_miniwob.adapters.browser_use_adapter", "--self-test"],
         )
         self.assertEqual(run.call_args.kwargs["cwd"], dispatch.REPO_ROOT)
         self.assertFalse(run.call_args.kwargs.get("shell", False))
