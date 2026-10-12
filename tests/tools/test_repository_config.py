@@ -209,17 +209,20 @@ def test_ci_caches_are_keyed_per_job_and_saved_only_by_jobs_that_install() -> No
     assert setup_uv["with"]["enable-cache"] is False
 
 
-def test_research_npm_audit_runs_after_the_failing_pip_audit() -> None:
-    # The frozen research Python locks carry known advisories, so the pip-audit
-    # step always fails; the npm steps must not be skipped because of it.
+def test_research_lock_findings_are_warnings_not_failures() -> None:
+    # The frozen research locks carry known advisories by design, so findings
+    # must surface as warning annotations instead of a red check on every
+    # lockfile PR, and the npm audit must still run after the pip-audit.
     job = _workflow("audit.yml")["jobs"]["research-locks"]
     assert job["continue-on-error"] is True
-    steps = job["steps"]
-    pip_audit = next(i for i, step in enumerate(steps) if "pip-audit" in str(step.get("run", "")))
-    later = steps[pip_audit + 1 :]
-    assert any("npm audit" in str(step.get("run", "")) for step in later)
-    for step in later:
-        assert step.get("if") == "${{ !cancelled() }}", step.get("name")
+    runs = [str(step.get("run", "")) for step in job["steps"]]
+    pip_audit = next(i for i, run in enumerate(runs) if "pip-audit" in run)
+    npm_audit = next(i for i, run in enumerate(runs) if "npm audit" in run)
+    assert pip_audit < npm_audit
+    for run in (runs[pip_audit], runs[npm_audit]):
+        assert "::warning title=Frozen research lock::" in run
+        assert "GITHUB_STEP_SUMMARY" in run
+        assert "exit" not in run
 
 
 def test_sdist_ships_no_repository_only_trees() -> None:
