@@ -82,7 +82,7 @@ has `security-events: write`.
 |---|---|
 | `python` | `uv export --locked --all-extras --all-groups` piped to `pip-audit --strict --disable-pip --require-hashes`: every package in `uv.lock`, including the research and notebook extras and the dev tools |
 | `npm` | `npm audit --audit-level=high` in `extension/` (development dependencies included, because CI executes them) |
-| `research-locks` | informational: `pip-audit` on each hash-locked research graph listed by `tools/ci/supply_chain.py --print-python-audit-targets`, each in isolation, and `npm audit` on research lockfiles. These graphs are frozen provenance, so findings are reported, not auto-fixed, and never block |
+| `research-locks` | informational: `pip-audit` on each hash-locked research graph listed by `tools/ci/supply_chain.py --print-python-audit-targets`, each in isolation, and `npm audit` on research lockfiles. These graphs are frozen provenance, so findings are reported as warning annotations and a job summary, not auto-fixed, and never block or turn the check red |
 | `dependency-review` | pull requests only: `actions/dependency-review-action`, failing on new dependencies with high-severity advisories |
 
 ### `release.yml` (tags `vX.Y.Z`; manual dispatch is a dry run)

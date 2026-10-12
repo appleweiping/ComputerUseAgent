@@ -110,38 +110,44 @@ jobs:
       - name: Install audit tooling from uv.lock
         run: uv sync --locked --no-default-groups --group dev
 
+      # The frozen research locks carry known advisories by design (they are
+      # provenance, never installed by the product), so findings are surfaced
+      # as warning annotations and a job summary instead of a red check.
       - name: pip-audit every hash-locked research graph in isolation
         run: |
-          status=0
+          echo "## Frozen research locks: pip-audit" >> "${GITHUB_STEP_SUMMARY}"
           while IFS=$'\t' read -r group mode path; do
             [ "${mode}" = "locked" ] || continue
             echo "::group::${group} (${path})"
-            uv run --no-sync pip-audit --progress-spinner off --disable-pip \
-              --require-hashes -r "${path}" || status=1
+            if uv run --no-sync pip-audit --progress-spinner off --disable-pip \
+              --require-hashes -r "${path}"; then
+              echo "- \`${group}\`: no known vulnerabilities" >> "${GITHUB_STEP_SUMMARY}"
+            else
+              echo "::warning title=Frozen research lock::${group} (${path}) has known advisories; see this step's log"
+              echo "- \`${group}\`: **known advisories** (see log)" >> "${GITHUB_STEP_SUMMARY}"
+            fi
             echo "::endgroup::"
           done < <(uv run --no-sync python tools/ci/supply_chain.py --print-python-audit-targets)
-          exit "${status}"
 
-      # The frozen research Python locks carry known advisories, so the step
-      # above fails on every run; without `if:` the npm audit would be skipped
-      # every time. The job still concludes red (informational, continue-on-error).
       - name: Set up Node.js
-        if: ${{ !cancelled() }}
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: npm audit research lockfiles
-        if: ${{ !cancelled() }}
         run: |
-          status=0
+          echo "## Frozen research locks: npm audit" >> "${GITHUB_STEP_SUMMARY}"
           while IFS= read -r lock; do
             dir="$(dirname "${lock}")"
             echo "::group::${dir}"
-            (cd "${dir}" && npm audit --audit-level=high) || status=1
+            if (cd "${dir}" && npm audit --audit-level=high); then
+              echo "- \`${dir}\`: no high-severity advisories" >> "${GITHUB_STEP_SUMMARY}"
+            else
+              echo "::warning title=Frozen research lock::${dir} has high-severity advisories; see this step's log"
+              echo "- \`${dir}\`: **high-severity advisories** (see log)" >> "${GITHUB_STEP_SUMMARY}"
+            fi
             echo "::endgroup::"
           done < <(git ls-files 'research/**/package-lock.json')
-          exit "${status}"
 
   dependency-review:
     name: Dependency review
