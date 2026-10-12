@@ -1,0 +1,45 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #11251d; background: #edf4f1; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.site-header { display: flex; justify-content: space-between; align-items: center; padding: 22px max(28px, calc((100vw - 1180px)/2)); color: #fff; background: #103d2e; }
+.eyebrow, .step-label { margin: 0 0 5px; color: #35c996; font-size: 12px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+h1 { margin: 0; font-size: 31px; letter-spacing: -.04em; }
+.live-state { display: grid; grid-template-columns: auto auto; column-gap: 8px; align-items: center; }
+.live-state span { grid-row: 1 / 3; width: 13px; height: 13px; border: 3px solid #5b8f7c; border-radius: 50%; }
+.live-state.active span { border: 0; background: #ff745e; box-shadow: 0 0 0 6px rgba(255,116,94,.18); }
+.live-state small { color: #b6d0c6; }
+main { width: min(1180px, calc(100% - 40px)); margin: 30px auto 70px; }
+.brief, .workspace, .configuration, .success, .event-preview { border: 1px solid #d1ded8; border-radius: 16px; background: #fff; box-shadow: 0 8px 26px rgba(22,57,43,.055); }
+.brief { display: grid; grid-template-columns: 1fr 330px; gap: 40px; padding: 26px; }
+h2 { margin: 0 0 10px; font-size: 24px; letter-spacing: -.025em; }
+ol { margin: 12px 0 0; padding-left: 22px; color: #4d6259; line-height: 1.75; }
+label { display: block; color: #40584e; font-size: 12px; font-weight: 750; }
+input, select { width: 100%; margin-top: 6px; border: 1px solid #c9d8d1; border-radius: 9px; background: #fff; padding: 11px; font: inherit; }
+input:focus, select:focus { outline: 3px solid rgba(45,181,134,.22); border-color: #2db586; }
+button { border: 0; border-radius: 9px; background: #0b815d; color: #fff; padding: 11px 14px; font-weight: 800; cursor: pointer; }
+button.secondary { color: #315347; background: #e6efeb; }
+.recorder-controls { display: grid; gap: 9px; align-content: center; padding: 16px; border-radius: 12px; background: #eef6f2; }
+.workspace { display: grid; grid-template-columns: 250px 1fr; gap: 28px; margin-top: 18px; padding: 24px; }
+aside { padding: 18px; border-radius: 12px; background: #f2f6f4; }
+aside label:not(:first-child) { margin-top: 14px; }
+.privacy-note { margin-top: 20px; color: #71827a; font-size: 11px; line-height: 1.45; }
+.catalog-heading { display: flex; justify-content: space-between; align-items: center; }
+.catalog-heading h3 { margin: 0; font-size: 19px; }
+#result-count { color: #70827a; font-size: 12px; }
+.catalog { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+.instrument { display: grid; grid-template-columns: 54px 1fr auto; gap: 13px; align-items: center; padding: 15px; border: 1px solid #d7e2dd; border-radius: 11px; }
+.instrument-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 12px; color: #087f5b; background: #daf1e8; font-weight: 900; }
+.instrument h4 { margin: 0 0 4px; }
+.instrument p { margin: 0; color: #71827a; font-size: 11px; }
+.configuration { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; margin-top: 18px; padding: 26px; }
+#run-form { display: grid; grid-template-columns: 1fr 150px; gap: 12px; align-items: end; }
+#run-form button { grid-column: 1 / -1; }
+.success { margin-top: 18px; padding: 28px; color: #fff; background: #103d2e; }
+.success .eyebrow { color: #7ee0bb; }
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 18px 0; }
+.summary-grid div { padding: 12px; border-radius: 10px; background: rgba(255,255,255,.09); }
+.summary-grid strong, .summary-grid span { display: block; }
+.summary-grid span { margin-top: 3px; color: #b8d0c7; font-size: 11px; }
+.event-preview { display: grid; grid-template-columns: 250px 1fr; gap: 25px; margin-top: 18px; padding: 24px; }
+pre { max-height: 260px; margin: 0; overflow: auto; border-radius: 10px; background: #0c2119; color: #a9e8cf; padding: 16px; font: 11px/1.55 ui-monospace, Consolas, monospace; white-space: pre-wrap; }
+@media (max-width: 800px) { .brief, .workspace, .configuration, .event-preview { grid-template-columns: 1fr; } .catalog { grid-template-columns: 1fr; } }

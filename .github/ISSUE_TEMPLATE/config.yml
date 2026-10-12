@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability or privacy leak (private)
+    url: https://github.com/appleweiping/ComputerUseAgent/security/advisories/new
+    about: >-
+      Use GitHub private vulnerability reporting for anything that could expose
+      recorded data, typed text, credentials or the extension message API. Never
+      attach raw traces to a public issue.
+  - name: Security policy
+    url: https://github.com/appleweiping/ComputerUseAgent/security/policy
+    about: Supported versions, scope and what to include in a report.

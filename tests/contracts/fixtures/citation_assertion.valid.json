@@ -1,0 +1,30 @@
+{
+  "schema_version": "cui-citation-assertion-v1",
+  "assertion_id": "fixture-edge-001",
+  "provider": "openalex",
+  "relation": "cites",
+  "evidence_type": "explicit_reference",
+  "citing_work": {
+    "canonical_id": "doi:10.0000/citing",
+    "provider_id": "W1"
+  },
+  "cited_work": {
+    "canonical_id": "doi:10.0000/cited",
+    "provider_id": "W2"
+  },
+  "observation": {
+    "source_endpoint": "https://api.openalex.org/works",
+    "request_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "raw_response_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "retrieved_at_utc": "2026-08-11T00:00:00Z",
+    "provider_record_updated_at_utc": null,
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0",
+    "page": {
+      "ordinal": 1,
+      "offset": 0,
+      "cursor_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "is_xpac": false
+  },
+  "review_status": "verified"
+}

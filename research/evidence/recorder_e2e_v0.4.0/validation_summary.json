@@ -1,0 +1,282 @@
+{
+  "schema_version": "cui-recorder-extension-e2e-summary-v1",
+  "overall_status": "passed",
+  "claim_boundary": "Automated extension QA on deterministic loopback fixtures; this is not a CUI-framework run, a human trace, a human-vs-agent comparison, or a detector result.",
+  "counts": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0
+  },
+  "cases": [
+    {
+      "id": "T00",
+      "name": "isolated bootstrap, manifest, and fresh storage",
+      "status": "passed",
+      "started_at": "2026-08-09T23:15:28.723Z",
+      "details": {
+        "extension_id": "dagbagkhhdpjmfgdgobghjjjcgdclekl",
+        "storage_keys": [
+          "cui-recorder-root"
+        ]
+      },
+      "finished_at": "2026-08-09T23:15:28.739Z"
+    },
+    {
+      "id": "T01",
+      "name": "consent gate and versioned disclosure",
+      "status": "passed",
+      "started_at": "2026-08-09T23:15:28.739Z",
+      "details": {
+        "consent_blocked_before_storage": true,
+        "disclosure_version": "2026-08-03-v1"
+      },
+      "finished_at": "2026-08-09T23:15:33.367Z"
+    },
+    {
+      "id": "T02",
+      "name": "real action broad-event capture and privacy invariants",
+      "status": "passed",
+      "started_at": "2026-08-09T23:15:33.367Z",
+      "details": {
+        "session_id": "0ae4cf60-1c28-469d-a273-803acfdaf6f2",
+        "event_count": 527,
+        "captured_types": [
+          "auxclick",
+          "beforeinput",
+          "change",
+          "click",
+          "compositionend",
+          "compositionstart",
+          "compositionupdate",
+          "contextmenu",
+          "copy",
+          "cut",
+          "dblclick",
+          "drag",
+          "dragend",
+          "dragenter",
+          "dragleave",
+          "dragover",
+          "dragstart",
+          "drop",
+          "focusin",
+          "focusout",
+          "input",
+          "invalid",
+          "keydown",
+          "keyup",
+          "navigation",
+          "paste",
+          "pointercancel",
+          "pointerdown",
+          "pointerenter",
+          "pointerleave",
+          "pointermove",
+          "pointerout",
+          "pointerover",
+          "pointerup",
+          "reset",
+          "resize",
+          "scroll",
+          "selectionchange",
+          "submit",
+          "toggle",
+          "touchend",
+          "touchstart",
+          "wheel"
+        ],
+        "raw_key_capture": false
+      },
+      "finished_at": "2026-08-09T23:15:43.776Z"
+    },
+    {
+      "id": "T03",
+      "name": "dashboard inspect, JSON/JSONL/CSV export, and delete",
+      "status": "passed",
+      "started_at": "2026-08-09T23:15:43.776Z",
+      "details": {
+        "exports": [
+          {
+            "format": "json",
+            "file": "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.json",
+            "bytes": 675011,
+            "sha256": "088c892a19bc7f472bffbe88596def5a1e9f4f7c71460ced39260950ab9c14ed",
+            "chrome_download_id": 1,
+            "cdp_guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+            "cdp_completed": true
+          },
+          {
+            "format": "jsonl",
+            "file": "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.jsonl",
+            "bytes": 453832,
+            "sha256": "1c9ef85cb00ca382e36ce8e2ffa0fd57145b753c6468e5760a765163706ff642",
+            "chrome_download_id": 2,
+            "cdp_guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+            "cdp_completed": true
+          },
+          {
+            "format": "csv",
+            "file": "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.csv",
+            "bytes": 145423,
+            "sha256": "e6c7771b522e760f15b60dd8b8aa060df0d228f2fa3dd5c6a6289f5b624bc1ef",
+            "chrome_download_id": 3,
+            "cdp_guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+            "cdp_completed": true
+          }
+        ],
+        "delete_verified": true
+      },
+      "finished_at": "2026-08-09T23:15:50.133Z"
+    },
+    {
+      "id": "T04",
+      "name": "same-origin reload resumes capture",
+      "status": "passed",
+      "started_at": "2026-08-09T23:15:50.133Z",
+      "details": {
+        "navigation_events": 2
+      },
+      "finished_at": "2026-08-09T23:15:56.936Z"
+    },
+    {
+      "id": "T05",
+      "name": "cross-origin navigation interrupts and clears indicators",
+      "status": "passed",
+      "started_at": "2026-08-09T23:15:56.936Z",
+      "details": {
+        "status": "interrupted",
+        "capture_error": "Capture stopped after navigation revoked the temporary activeTab grant"
+      },
+      "finished_at": "2026-08-09T23:16:01.671Z"
+    },
+    {
+      "id": "T06",
+      "name": "recording tab closure interrupts without stranding active state",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:01.671Z",
+      "details": {
+        "status": "interrupted",
+        "active_session_cleared": true
+      },
+      "finished_at": "2026-08-09T23:16:06.147Z"
+    },
+    {
+      "id": "T07",
+      "name": "MV3 service-worker restart during active capture",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:06.147Z",
+      "details": {
+        "worker_restart_observed": true,
+        "event_count": 126
+      },
+      "finished_at": "2026-08-09T23:16:13.701Z"
+    },
+    {
+      "id": "T08",
+      "name": "storage rollover beyond one 500-event chunk",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:13.701Z",
+      "details": {
+        "event_count": 1405,
+        "chunk_lengths": [
+          500,
+          500,
+          405
+        ]
+      },
+      "finished_at": "2026-08-09T23:16:28.782Z"
+    },
+    {
+      "id": "T09",
+      "name": "raw-key double confirmation and private-field invariant",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:28.783Z",
+      "details": {
+        "dismissed_confirmation_created_no_session": true,
+        "ordinary_raw_key_present": true,
+        "private_key_redaction_verified": true,
+        "raw_trace_exported": false,
+        "raw_trace_deleted_immediately": true
+      },
+      "finished_at": "2026-08-09T23:16:37.326Z"
+    },
+    {
+      "id": "T10",
+      "name": "protected browser page is not recordable",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:37.326Z",
+      "details": {
+        "start_disabled": true,
+        "active_session_created": false
+      },
+      "finished_at": "2026-08-09T23:16:39.649Z"
+    },
+    {
+      "id": "T11",
+      "name": "event-time step boundary survives one delayed content batch",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:39.649Z",
+      "details": {
+        "delayed_step_id": "step-01",
+        "next_step_id": "step-02",
+        "event_seq_order": [
+          11,
+          15
+        ]
+      },
+      "finished_at": "2026-08-09T23:16:44.080Z"
+    },
+    {
+      "id": "T12",
+      "name": "dynamic same-origin iframe capture and all-frame final flush",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:44.080Z",
+      "details": {
+        "captured_frame_event_count": 126,
+        "query_and_input_content_absent": true,
+        "frame_indicator_cleared": true,
+        "cross_origin_without_grant_excluded": true
+      },
+      "finished_at": "2026-08-09T23:16:54.279Z"
+    },
+    {
+      "id": "T13",
+      "name": "trusted-only storage and post-stop negative control",
+      "status": "passed",
+      "started_at": "2026-08-09T23:16:54.280Z",
+      "details": {
+        "trusted_context_storage_only": true,
+        "event_count_at_stop": 12,
+        "event_count_after_negative_control": 12
+      },
+      "finished_at": "2026-08-09T23:16:59.751Z"
+    }
+  ],
+  "browser_errors": [],
+  "generated_artifacts": [
+    "results/week2_recorder/extension_e2e/E2E_REPORT.md",
+    "results/week2_recorder/extension_e2e/agent_extension_e2e_trace.json",
+    "results/week2_recorder/extension_e2e/event_coverage_summary.json",
+    "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.csv",
+    "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.json",
+    "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.jsonl",
+    "results/week2_recorder/extension_e2e/exports_manifest.json",
+    "results/week2_recorder/extension_e2e/run_manifest.json",
+    "results/week2_recorder/extension_e2e/screenshots/01-versioned-disclosure.png",
+    "results/week2_recorder/extension_e2e/screenshots/02-action-popup-agent-consent.png",
+    "results/week2_recorder/extension_e2e/screenshots/02-action-popup-agent-metadata.png",
+    "results/week2_recorder/extension_e2e/screenshots/02-page-recording-indicator.png",
+    "results/week2_recorder/extension_e2e/screenshots/03-dashboard-inspect-sanitized.png",
+    "results/week2_recorder/extension_e2e/screenshots/03-dashboard-post-delete.png",
+    "results/week2_recorder/extension_e2e/screenshots/04-same-origin-reload-resumed.png",
+    "results/week2_recorder/extension_e2e/screenshots/05-cross-origin-interrupted.png",
+    "results/week2_recorder/extension_e2e/screenshots/06-tab-close-interrupted.png",
+    "results/week2_recorder/extension_e2e/screenshots/07-service-worker-restart-active.png",
+    "results/week2_recorder/extension_e2e/screenshots/08-storage-chunk-rollover.png",
+    "results/week2_recorder/extension_e2e/screenshots/09-raw-mode-consent.png",
+    "results/week2_recorder/extension_e2e/screenshots/10-protected-page-blocked.png",
+    "results/week2_recorder/extension_e2e/storage_lifecycle_summary.json",
+    "results/week2_recorder/extension_e2e/validation_summary.json"
+  ]
+}

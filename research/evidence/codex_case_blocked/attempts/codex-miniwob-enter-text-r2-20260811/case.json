@@ -1,0 +1,107 @@
+{
+  "action_count": 0,
+  "actor": {
+    "app_version": "unavailable",
+    "backend_snapshot": null,
+    "harness": "computer_control",
+    "identity": "Codex Desktop",
+    "observed_at_utc": "2026-08-11T12:16:10.122Z",
+    "surface": "app"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "initial-screenshot",
+      "kind": "image",
+      "repository_path": "results/codex_case/attempts/codex-miniwob-enter-text-r2-20260811/initial.png",
+      "sha256": "b16a920887ed82a79bb7f52d7ccef8937023249b54ccc13acb77602b59c349f1"
+    },
+    {
+      "artifact_id": "verification",
+      "kind": "data",
+      "repository_path": "results/codex_case/attempts/codex-miniwob-enter-text-r2-20260811/verification.json",
+      "sha256": "afc85f1b66ba789e837ecc02351f8e954611af9a644d090dc15828094a35d922"
+    },
+    {
+      "artifact_id": "surface-preflight",
+      "kind": "log",
+      "repository_path": "results/codex_case/surface_preflight.json",
+      "sha256": "af121598fac7468520b4e71e4c0dd16d35f051cfa357cb24ddcc953c5a62743e"
+    }
+  ],
+  "benchmark": "miniwob",
+  "case_id": "codex-miniwob-enter-text-r2-20260811",
+  "claim_boundary": "Nine exploratory Codex Desktop cases on three official MiniWoB tasks. These cases are not a framework benchmark, a formal study, a matched human-agent study, or evidence about all computer-use agents.",
+  "completed_at_utc": "2026-08-11T12:16:59.121Z",
+  "environment_id": "browsergym/miniwob.enter-text",
+  "execution_mode": "exploratory_interaction",
+  "formal_claim_permitted": false,
+  "fresh_profile": true,
+  "human_participant_data_included": false,
+  "limits": {
+    "max_actions": 30,
+    "timeout_seconds": 480
+  },
+  "no_manual_rescue": true,
+  "no_scripted_control": true,
+  "objective": "Attempt official MiniWoB task enter-text with Codex Desktop through only the permitted in-app-browser or Computer Use surfaces.",
+  "outcome": {
+    "failure_code": "codex_interaction_surfaces_unavailable",
+    "status": "blocked"
+  },
+  "recorder": {
+    "event_count": null,
+    "implementation": "browser_mv3",
+    "record_sha256": null,
+    "session_id": null,
+    "status": "unavailable",
+    "version": "0.4.0"
+  },
+  "repetition": 2,
+  "schema_version": "cui-codex-case-v1",
+  "screenshots": [
+    {
+      "caption": "Official MiniWoB task after real fresh-profile initialization and before any task input; the permitted Codex interaction surfaces were unavailable.",
+      "cropped": false,
+      "repository_path": "results/codex_case/attempts/codex-miniwob-enter-text-r2-20260811/initial.png",
+      "sha256": "b16a920887ed82a79bb7f52d7ccef8937023249b54ccc13acb77602b59c349f1"
+    }
+  ],
+  "secrets_included": false,
+  "seed": 20260812,
+  "source_manifest": {
+    "manifest_id": "codex-miniwob-source-manifest-20260811",
+    "repository_path": "results/codex_case/source_manifest.json",
+    "schema_version": "cui-source-manifest-v1",
+    "sha256": "faee5fc4b4240f723d4d5241d71c79f2a971e3fde7a08d170dfbef299db4f213"
+  },
+  "started_at_utc": "2026-08-11T12:16:10.122Z",
+  "task_id": "enter-text",
+  "validator": {
+    "implementation": "browsergym_official_reward",
+    "reward": null,
+    "terminated": false,
+    "truncated": false
+  },
+  "verification": [
+    {
+      "check_id": "recorder-trace",
+      "evidence_sha256": "afc85f1b66ba789e837ecc02351f8e954611af9a644d090dc15828094a35d922",
+      "status": "blocked"
+    },
+    {
+      "check_id": "official-validator",
+      "evidence_sha256": "afc85f1b66ba789e837ecc02351f8e954611af9a644d090dc15828094a35d922",
+      "status": "blocked"
+    },
+    {
+      "check_id": "screenshot-integrity",
+      "evidence_sha256": "afc85f1b66ba789e837ecc02351f8e954611af9a644d090dc15828094a35d922",
+      "status": "pass"
+    },
+    {
+      "check_id": "interaction-surface",
+      "evidence_sha256": "af121598fac7468520b4e71e4c0dd16d35f051cfa357cb24ddcc953c5a62743e",
+      "status": "blocked"
+    }
+  ]
+}

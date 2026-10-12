@@ -1,0 +1,43 @@
+{
+  "sessions": [
+    {
+      "case": "T02",
+      "session_id": "0ae4cf60-1c28-469d-a273-803acfdaf6f2",
+      "status": "complete",
+      "event_count": 527,
+      "chunk_count": 2,
+      "chunk_lengths": [
+        500,
+        27
+      ],
+      "internal_tab_id_present": true,
+      "public_tab_id_removed": true,
+      "privacy_safe_assertions_passed": true
+    },
+    {
+      "case": "T03",
+      "session_id": "0ae4cf60-1c28-469d-a273-803acfdaf6f2",
+      "exports": [
+        "json",
+        "jsonl",
+        "csv"
+      ],
+      "storage_keys_after_delete": [
+        "cui-recorder-root"
+      ],
+      "delete_verified": true
+    },
+    {
+      "case": "T08",
+      "session_id": "26ccf1c0-658d-493e-a08b-f72f8a15f1e6",
+      "event_count": 1405,
+      "chunk_count": 3,
+      "chunk_lengths": [
+        500,
+        500,
+        405
+      ],
+      "rollover_verified": true
+    }
+  ]
+}

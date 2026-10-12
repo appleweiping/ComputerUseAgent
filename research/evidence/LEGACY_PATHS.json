@@ -1,0 +1,21 @@
+{
+  "schema_version": "computer-use-agent-legacy-paths-v1",
+  "description": "Maps the results/... paths recorded inside the archived evidence (original repository layout) to their current locations. The evidence bytes are never edited to update these paths; code that resolves a recorded path translates it through this map (longest matching prefix wins). Paths under experiments/, recorder/, scripts/ and literature/ are mapped in research/PROVENANCE.md.",
+  "provenance": "research/PROVENANCE.md",
+  "source_commit": "437070f519d4bd40e9e4e46bf19fcca52b4b7557",
+  "prefixes": [
+    {"old": "results/README.md", "new": "research/evidence/README.md"},
+    {"old": "results/auxiliary_data/", "new": "research/evidence/auxiliary_data/"},
+    {"old": "results/browser_use/", "new": "research/evidence/pilots/browser_use/"},
+    {"old": "results/codex_case/", "new": "research/evidence/codex_case_blocked/"},
+    {"old": "results/cost_summary.json", "new": "research/evidence/pilots/cost_summary.json"},
+    {"old": "results/fp_agent/", "new": "research/evidence/fp_agent/"},
+    {"old": "results/skyvern/", "new": "research/evidence/pilots/skyvern/"},
+    {"old": "results/stagehand/", "new": "research/evidence/pilots/stagehand/"},
+    {"old": "results/week1_browsergym_pre_fix_c56a7b5/", "new": "research/evidence/week1_miniwob_prefix_failures/"},
+    {"old": "results/week1_recap/", "new": "research/evidence/archive/week1_recap/"},
+    {"old": "results/week2_recorder/", "new": "research/evidence/archive/playground_fixture/"},
+    {"old": "results/week2_recorder/extension_e2e/", "new": "research/evidence/recorder_e2e_v0.4.0/"},
+    {"old": "results/week3_scientific_simulators/", "new": "research/evidence/scripted_simulator_control_v0.2.1/"}
+  ]
+}

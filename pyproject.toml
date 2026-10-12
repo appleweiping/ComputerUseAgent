@@ -1,0 +1,254 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "computer-use-agent"
+version = "0.5.0"
+description = "Browser and X11 interaction-trace recorder and human-vs-agent evaluation toolkit for computer-use agent research"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Weiping Yan" }]
+maintainers = [{ name = "Weiping Yan" }]
+keywords = [
+  "computer-use agents",
+  "interaction traces",
+  "chrome extension",
+  "behavioral features",
+  "human-vs-agent detection",
+  "x11",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Software Development :: Testing",
+  "Typing :: Typed",
+]
+# The installable package is standard-library only apart from schema validation.
+dependencies = ["jsonschema>=4.23,<5"]
+
+[project.optional-dependencies]
+# Guest-side X11 capture (the former scienceboard requirements-x11.txt pins).
+x11 = ["python-xlib==0.33", "PyAutoGUI==0.9.54"]
+# Research harnesses and analyses under research/ (not shipped in the wheel).
+# The exact hash locks that produced the archived evidence stay beside each
+# harness (research/fp_agent/requirements.lock, research/scienceboard/
+# requirements-host.lock, research/week1_miniwob/adapters/requirements-*.lock).
+research = [
+  "numpy>=2.2",
+  "scikit-learn>=1.6",
+  "xgboost>=3.0",
+  "ijson>=3.3",
+  "pyarrow>=19",
+  "requests>=2.32",
+]
+# Re-executing the research notebooks (see research/*/notebook-requirements.lock
+# for the exact versions used for the archived runs).
+notebooks = [
+  "jupytext>=1.16",
+  "nbclient>=0.10",
+  "nbformat>=5.10",
+  "ipykernel>=6.29",
+  "matplotlib>=3.9",
+  "pandas>=2.2",
+  "seaborn>=0.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/appleweiping/ComputerUseAgent"
+Repository = "https://github.com/appleweiping/ComputerUseAgent"
+Documentation = "https://github.com/appleweiping/ComputerUseAgent/tree/main/docs"
+Issues = "https://github.com/appleweiping/ComputerUseAgent/issues"
+Changelog = "https://github.com/appleweiping/ComputerUseAgent/blob/main/CHANGELOG.md"
+Security = "https://github.com/appleweiping/ComputerUseAgent/security/policy"
+
+[project.scripts]
+computer-use-agent = "computer_use_agent.cli:main"
+
+[dependency-groups]
+# PyYAML: tests/tools validate the workflow, Dependabot and pre-commit YAML.
+test = ["pytest>=8.3", "hypothesis>=6.120", "coverage[toml]>=7.6", "pyyaml>=6.0"]
+# Exact pins: lint results must not change underneath a contributor. ruff is
+# pinned twice, here and as the ruff-pre-commit rev in .pre-commit-config.yaml,
+# and tests/tools/test_repository_config.py requires the two to match. Dependabot
+# can only bump this one, so it ignores ruff (.github/dependabot.yml); bump both
+# together by hand:
+#   uv run pre-commit autoupdate --freeze --repo https://github.com/astral-sh/ruff-pre-commit
+#   then set ruff== below to the tag in its `# frozen: vX.Y.Z` comment and run `uv lock`.
+lint = ["ruff==0.17.0", "mypy==2.4.0"]
+dev = [
+  { include-group = "test" },
+  { include-group = "lint" },
+  "nox>=2025.2.9",
+  "pre-commit>=4.0",
+  "pip-audit>=2.7",
+  "cyclonedx-bom>=5.1",
+  "build>=1.2",
+  "twine>=6.1",
+]
+
+[tool.uv]
+# `uv sync` installs the dev group (which includes test and lint) by default.
+default-groups = ["dev"]
+required-version = ">=0.6"
+
+# ---------------------------------------------------------------- packaging --
+
+[tool.hatch.build.targets.wheel]
+# schemas/*.json and viewer/static/* ship as package data inside the package.
+packages = ["src/computer_use_agent"]
+exclude = ["**/__pycache__", "**/*.py[cod]"]
+
+[tool.hatch.build.targets.sdist]
+# research/ (archived provenance) and extension/ (shipped as its own ZIP) are
+# deliberately not part of the Python source distribution. Neither is tests/:
+# the suite needs a repository checkout (pytest's pythonpath = ["."] imports
+# tools/, and tests read research/, extension/ and .github/), so it would fail
+# from an unpacked sdist. CI's build job asserts that none of them leak in.
+include = [
+  "/src",
+  "/examples",
+  "/docs",
+  "/README.md",
+  "/CHANGELOG.md",
+  "/LICENSE",
+  "/NOTICE",
+  "/THIRD_PARTY_NOTICES.md",
+  "/CITATION.cff",
+  "/pyproject.toml",
+  "/uv.lock",
+]
+exclude = [
+  "/research",
+  "/extension",
+  "/.github",
+  "/.venv",
+  "/dist",
+  "**/__pycache__",
+  "**/*.py[cod]",
+]
+
+# ------------------------------------------------------------------- pytest --
+
+[tool.pytest.ini_options]
+minversion = "8.3"
+testpaths = ["tests"]
+addopts = ["--import-mode=importlib", "-ra", "--strict-markers", "--strict-config", "-p", "no:cacheprovider"]
+# The repository root is on sys.path so `research.*` and `tools.*` import from
+# a checkout; the product package itself is imported from the installed src/.
+pythonpath = ["."]
+xfail_strict = true
+markers = [
+  "slow: long-running test",
+  "requires_private_data: needs private, non-redistributable data under CUA_PRIVATE_ROOT",
+  "requires_large_artifacts: needs the large literature artifacts fetched by research.literature.fetch_large",
+  "requires_network: needs outbound network access",
+  "requires_x11: needs an X11 display and python-xlib",
+]
+
+# ----------------------------------------------------------------- coverage --
+
+[tool.coverage.run]
+branch = true
+source = ["computer_use_agent"]
+relative_files = true
+omit = [
+  # Guest-only X11 code: runs inside the ScienceBoard VM under the guest's
+  # system Python and is exercised only there (see docs/ci.md).
+  "*/computer_use_agent/capture/x11/recorder.py",
+  "*/computer_use_agent/capture/x11/guest_controller.py",
+  "*/computer_use_agent/capture/x11/calibration_probe.py",
+]
+
+[tool.coverage.paths]
+source = ["src/computer_use_agent", "*/site-packages/computer_use_agent"]
+
+[tool.coverage.report]
+# Ratchet +5 per minor release toward 85 (docs/ci.md).
+fail_under = 75
+precision = 1
+show_missing = true
+skip_covered = true
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+  "@(abc\\.)?abstractmethod",
+  "\\.\\.\\.$",
+]
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+# --------------------------------------------------------------------- ruff --
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "."]
+extend-exclude = [
+  # Archived, hash-bound bytes: never lint or rewrite.
+  "research/evidence",
+  "research/literature/generated",
+  # Adapted upstream code pinned by RUNTIME_COMPAT_HASHES.
+  "research/scienceboard/runtime_compat",
+]
+
+[tool.ruff.format]
+line-ending = "lf"
+# research/ is frozen provenance: it is linted (with the relaxations below) but
+# not reformatted, because several research files are bound by content hashes.
+exclude = ["research/**"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4", "PIE", "RUF100"]
+# The formatter owns line length.
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["computer_use_agent", "research", "tools", "tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# First-release relaxation for the archived research code; tighten later.
+"research/**" = ["B", "SIM", "UP", "C4", "PIE", "E402", "E731", "I", "RUF100"]
+# Code that runs inside the X11 guest bundle on Python 3.10, where
+# ``datetime.UTC`` does not exist: keep ``timezone.utc`` (UP017 would rewrite it).
+"src/computer_use_agent/trace/**" = ["UP017"]
+"src/computer_use_agent/capture/x11/**" = ["UP017"]
+# Transitional debt carried over unchanged from the source snapshot.
+"research/pilots/skyvern/runner.py" = ["F401"]
+"research/week1_miniwob/tests/test_protocol.py" = ["F401", "F841"]
+# Test modules use unittest-style assertions and broad fixtures.
+"tests/**" = ["B011", "B017"]
+
+# --------------------------------------------------------------------- mypy --
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src/computer_use_agent"]
+mypy_path = "src"
+strict = true
+show_error_codes = true
+warn_unreachable = true
+pretty = false
+
+[[tool.mypy.overrides]]
+module = ["Xlib", "Xlib.*", "pyautogui", "pyautogui.*", "jsonschema", "jsonschema.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*", "research.*", "tools.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true

@@ -1,0 +1,3 @@
+# Default owner for every path. Review is required from a code owner before merge
+# when branch protection enables "Require review from Code Owners".
+* @appleweiping

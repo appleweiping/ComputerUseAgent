@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/appleweiping/ComputerUseAgent/schemas/x11-trace-v2.schema.json",
+  "title": "ScienceBoard privacy-safe TraceEnvelopeV2 X11 JSONL record",
+  "oneOf": [
+    {"$ref": "#/$defs/session"},
+    {"$ref": "#/$defs/event"},
+    {"$ref": "#/$defs/sessionEnd"}
+  ],
+  "$defs": {
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "metadata"],
+      "properties": {
+        "record_type": {"const": "session"},
+        "metadata": {
+          "type": "object",
+          "required": [
+            "schema_version", "session_id", "actor_type", "actor_label",
+            "participant_code", "pair_id", "task_id", "protocol_version",
+            "executor", "executor_version", "recorder_version", "capture_adapter",
+            "environment_scope", "source_class", "environment", "guest_id",
+            "guest_os_id", "guest_os_version", "screen_resolution",
+            "scienceboard_commit", "raw_key_capture", "include_query",
+            "consent_confirmed", "controller_confirmed", "started_at", "status",
+            "privacy_policy", "monotonic_origin_ms", "timing_model",
+            "document_epoch_count"
+          ],
+          "properties": {
+            "schema_version": {"const": "cui-trace-v2"},
+            "session_id": {"type": "string", "minLength": 3, "maxLength": 128},
+            "actor_type": {"enum": ["human", "agent"]},
+            "actor_label": {"enum": ["human", "aio", "seeact", "xtest"]},
+            "participant_code": {"type": ["string", "null"], "pattern": "^self-human-[0-9]{3}$", "maxLength": 64},
+            "pair_id": {"type": ["string", "null"], "minLength": 3, "maxLength": 128},
+            "task_id": {"type": "string", "minLength": 1, "maxLength": 160},
+            "protocol_version": {"type": "string", "minLength": 1, "maxLength": 128},
+            "executor": {"enum": ["manual", "scienceboard-agent", "xtest"]},
+            "executor_version": {"type": "string", "maxLength": 128},
+            "recorder_version": {"const": "x11-v2"},
+            "capture_adapter": {"const": "x11_vm"},
+            "environment_scope": {"const": "scienceboard_vm_x11"},
+            "source_class": {"enum": ["self_human", "reasoning_agent", "scripted_automation_control"]},
+            "environment": {"type": "string", "maxLength": 160},
+            "guest_id": {"type": "string", "minLength": 3, "maxLength": 128},
+            "guest_os_id": {"const": "ubuntu"},
+            "guest_os_version": {"const": "22.04"},
+            "screen_resolution": {
+              "type": "object", "additionalProperties": false,
+              "required": ["width", "height"],
+              "properties": {
+                "width": {"type": "integer", "minimum": 320, "maximum": 16384},
+                "height": {"type": "integer", "minimum": 320, "maximum": 16384}
+              }
+            },
+            "scienceboard_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "raw_key_capture": {"const": false},
+            "include_query": {"const": false},
+            "consent_confirmed": {"type": "boolean"},
+            "controller_confirmed": {"type": "boolean"},
+            "started_at": {"type": "string", "format": "date-time"},
+            "status": {"const": "recording"},
+            "privacy_policy": {"const": "x11-metadata-only-v1"},
+            "monotonic_origin_ms": {"const": 0},
+            "timing_model": {"const": "session-global-monotonic-v1"},
+            "document_epoch_count": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {"properties": {"actor_label": {"const": "human"}}},
+              "then": {
+                "properties": {
+                  "actor_type": {"const": "human"}, "source_class": {"const": "self_human"},
+                  "executor": {"const": "manual"}, "consent_confirmed": {"const": true},
+                  "controller_confirmed": {"const": false},
+                  "participant_code": {"type": "string", "minLength": 3}
+                }
+              }
+            },
+            {
+              "if": {"properties": {"actor_label": {"enum": ["aio", "seeact"]}}},
+              "then": {
+                "properties": {
+                  "actor_type": {"const": "agent"}, "source_class": {"const": "reasoning_agent"},
+                  "executor": {"const": "scienceboard-agent"}, "consent_confirmed": {"const": false},
+                  "controller_confirmed": {"const": true}, "participant_code": {"const": null}
+                }
+              }
+            },
+            {
+              "if": {"properties": {"actor_label": {"const": "xtest"}}},
+              "then": {
+                "properties": {
+                  "actor_type": {"const": "agent"},
+                  "source_class": {"const": "scripted_automation_control"},
+                  "executor": {"const": "xtest"}, "consent_confirmed": {"const": false},
+                  "controller_confirmed": {"const": true}, "participant_code": {"const": null}
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type", "schema_version", "event_id", "type", "epoch_ms",
+        "monotonic_ms", "event_seq", "document_epoch", "t_session_ms",
+        "t_document_ms", "step_id", "viewport", "target", "key_class",
+        "keyboard", "pointer", "wheel"
+      ],
+      "properties": {
+        "record_type": {"const": "event"},
+        "schema_version": {"const": "cui-trace-v2"},
+        "event_id": {"type": "string", "minLength": 3, "maxLength": 128},
+        "type": {
+          "enum": [
+            "focusin", "focusout", "keydown", "keyup", "pointerdown",
+            "pointermove", "pointerup", "wheel"
+          ]
+        },
+        "epoch_ms": {"type": "number", "minimum": 0},
+        "monotonic_ms": {"type": "number", "minimum": 0},
+        "event_seq": {"type": "integer", "minimum": 1},
+        "document_epoch": {"type": "integer", "minimum": 0},
+        "t_session_ms": {"type": "number", "minimum": 0},
+        "t_document_ms": {"type": "number", "minimum": 0},
+        "step_id": {"type": ["string", "null"], "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9_.:-]+$"},
+        "viewport": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["width", "height", "device_pixel_ratio"],
+          "properties": {
+            "width": {"type": "integer", "minimum": 1},
+            "height": {"type": "integer", "minimum": 1},
+            "device_pixel_ratio": {"type": "number", "minimum": 0.1}
+          }
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["role", "application_id"],
+          "properties": {
+            "role": {"const": "desktop_application"},
+            "application_id": {"type": "string", "pattern": "^(KAlgebra|Celestia|GrassGIS|GnomeTerminal|unknown|other_[0-9a-f]{12})$"}
+          }
+        },
+        "key_class": {
+          "type": ["string", "null"],
+          "enum": [null, "correction", "editing_command", "function", "modifier", "navigation", "printable", "system", "unknown"]
+        },
+        "keyboard": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "repeat": {"type": "boolean"},
+            "hold_ms": {"type": "number", "minimum": 0}
+          },
+          "required": ["repeat"]
+        },
+        "pointer": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "x": {"type": "number"},
+            "y": {"type": "number"},
+            "button": {"type": "integer"},
+            "pointer_type": {"const": "mouse"}
+          },
+          "required": ["x", "y", "button", "pointer_type"]
+        },
+        "wheel": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "delta_x": {"type": "integer", "minimum": -1, "maximum": 1},
+            "delta_y": {"type": "integer", "minimum": -1, "maximum": 1},
+            "delta_mode": {"const": "step"}
+          },
+          "required": ["delta_x", "delta_y", "delta_mode"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"type": {"enum": ["keydown", "keyup"]}}},
+          "then": {
+            "properties": {
+              "key_class": {"type": "string"}, "keyboard": {"type": "object"},
+              "pointer": {"const": null}, "wheel": {"const": null}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"type": {"enum": ["pointerdown", "pointermove", "pointerup"]}}},
+          "then": {
+            "properties": {
+              "key_class": {"const": null}, "keyboard": {"const": null},
+              "pointer": {"type": "object"}, "wheel": {"const": null}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "wheel"}}},
+          "then": {
+            "properties": {
+              "key_class": {"const": null}, "keyboard": {"const": null},
+              "pointer": {"const": null}, "wheel": {"type": "object"}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"type": {"enum": ["focusin", "focusout"]}}},
+          "then": {
+            "properties": {
+              "key_class": {"const": null}, "keyboard": {"const": null},
+              "pointer": {"const": null}, "wheel": {"const": null}
+            }
+          }
+        }
+      ]
+    },
+    "sessionEnd": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type", "status", "stopped_at", "event_count", "capture_error",
+        "duration_ms", "event_seq_last", "document_epoch_count",
+        "dropped_event_count", "rejected_event_count", "flush_failure_count",
+        "quota_rejection_count"
+      ],
+      "properties": {
+        "record_type": {"const": "session_end"},
+        "status": {"enum": ["complete", "interrupted", "capture_error"]},
+        "stopped_at": {"type": "string", "format": "date-time"},
+        "event_count": {"type": "integer", "minimum": 0},
+        "capture_error": {"type": ["string", "null"], "maxLength": 128},
+        "duration_ms": {"type": "number", "minimum": 0},
+        "event_seq_last": {"type": "integer", "minimum": 0},
+        "document_epoch_count": {"type": "integer", "minimum": 0},
+        "dropped_event_count": {"type": "integer", "minimum": 0},
+        "rejected_event_count": {"type": "integer", "minimum": 0},
+        "flush_failure_count": {"type": "integer", "minimum": 0},
+        "quota_rejection_count": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

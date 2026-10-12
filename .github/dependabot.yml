@@ -1,0 +1,58 @@
+version: 2
+
+# research/** holds frozen provenance locks (research/PROVENANCE.md); Dependabot
+# must never rewrite them. None of the directories below contain research
+# manifests, and exclude-paths makes that explicit.
+updates:
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    exclude-paths:
+      - "research/**"
+    # ruff is pinned twice: pyproject [dependency-groups].lint and the
+    # ruff-pre-commit rev in .pre-commit-config.yaml. Both must match
+    # (tests/tools/test_repository_config.py), and this ecosystem can only bump
+    # the first, so a grouped PR carrying a ruff bump would fail CI and block
+    # every other update in the group. Bump both by hand (see pyproject.toml).
+    ignore:
+      - dependency-name: ruff
+    groups:
+      python-minor-and-patch:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: "deps(python)"
+
+  - package-ecosystem: npm
+    directory: /extension
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor-and-patch:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: "deps(npm)"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    exclude-paths:
+      - "research/**"
+    groups:
+      github-actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: "deps(actions)"

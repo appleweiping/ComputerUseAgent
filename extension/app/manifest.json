@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "ComputerUseAgent Trace Recorder",
+  "short_name": "CUA Recorder",
+  "version": "0.5.0",
+  "minimum_chrome_version": "151",
+  "description": "Consent-first, local-only interaction traces for matched human and computer-use-agent browser tasks.",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "unlimitedStorage"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "ComputerUseAgent Trace Recorder",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "options_page": "dashboard/dashboard.html"
+}

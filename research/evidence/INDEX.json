@@ -1,0 +1,1233 @@
+{
+  "schema_version": "computer-use-agent-evidence-index-v1",
+  "description": "Headline claims backed by archived research evidence. Each claim names a repository-relative file and an RFC 6901 JSON pointer; the pointer target, after the optional derivation, equals 'value' exactly. 'display' is the rounded form used in prose. Claims stated only in prose or code have json_pointer null and a 'note'; when they also carry 'text', that text must occur in the file. tools/ci/verify_evidence.py checks every entry.",
+  "derivations": {
+    "length": "number of items in the array (or keys in the object, or characters in the string) at the pointer",
+    "sum": "sum of the numeric array at the pointer",
+    "union_length": "number of distinct items in the array at the pointer together with the arrays at the 'with' pointers",
+    "difference": "sorted items of the array at the pointer that are in none of the arrays at the 'minus' pointers"
+  },
+  "claims": [
+    {
+      "id": "recorder_e2e.extension_version",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained recorder E2E run tested extension version 0.4.0.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/extension/version",
+      "value": "0.4.0",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.run_started_at",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E run started on 2026-08-09 (UTC).",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/started_at",
+      "value": "2026-08-09T23:15:24.512Z",
+      "display": "2026-08-09",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.cases_total",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E suite has 14 cases (T00-T13).",
+      "file": "research/evidence/recorder_e2e_v0.4.0/validation_summary.json",
+      "json_pointer": "/counts/total",
+      "value": 14,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.cases_passed",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "All 14 E2E cases passed.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/validation_summary.json",
+      "json_pointer": "/counts/passed",
+      "value": 14,
+      "display": "14/14",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.browser_errors",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E run recorded 0 browser errors.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/validation_summary.json",
+      "json_pointer": "/browser_errors",
+      "derive": {
+        "op": "length"
+      },
+      "value": 0,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.chrome_version",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E run used Chrome 151.0.7922.108.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/browser_runtime/product_version",
+      "value": "Chrome/151.0.7922.108",
+      "display": "Chrome 151.0.7922.108",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed. System Chrome with a fresh isolated profile, not Chrome for Testing."
+    },
+    {
+      "id": "recorder_e2e.puppeteer_version",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E run used Puppeteer 25.4.0.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/puppeteer_version",
+      "value": "25.4.0",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.node_version",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E run used Node 22.21.1.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/node_version",
+      "value": "v22.21.1",
+      "display": "22.21.1",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.platform",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The retained E2E run ran on win32-x64.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/platform",
+      "value": "win32-x64",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.records_total",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The main E2E session (case T02) stored 527 records.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/validation_summary.json",
+      "json_pointer": "/cases/2/details/event_count",
+      "value": 527,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.records_natural",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "516 of the 527 records were naturally observed fixture events.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/naturally_observed_in_fixture/event_count",
+      "value": 516,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed. is_trusted is diagnostic only; the natural/synthetic split describes this fixture, not an actor."
+    },
+    {
+      "id": "recorder_e2e.records_synthetic",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "10 of the 527 records were deliberately dispatched synthetic coverage events.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/synthetically_exercised_in_fixture/event_count",
+      "value": 10,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.records_navigation",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "1 of the 527 records was the recorder-generated navigation record.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/recorder_generated/event_count",
+      "value": 1,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.types_natural",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The naturally observed events cover 35 types.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/naturally_observed_in_fixture/types",
+      "derive": {
+        "op": "length"
+      },
+      "value": 35,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.types_synthetic",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The synthetic coverage events cover 10 types.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/synthetically_exercised_in_fixture/types",
+      "derive": {
+        "op": "length"
+      },
+      "value": 10,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.rollover_events",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The storage-rollover case (T08) stored 1,405 events across chunks of 500, 500 and 405.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/validation_summary.json",
+      "json_pointer": "/cases/8/details/event_count",
+      "value": 1405,
+      "display": "1,405",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.types_supported",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The 0.4.0 recorder supports 59 DOM event types, plus the recorder-generated navigation record.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/supported_browser_event_types",
+      "derive": {
+        "op": "length"
+      },
+      "value": 59,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.types_observed",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "42 of the 59 supported types occurred in the E2E session (35 natural, 10 synthetic, 3 in both).",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/naturally_observed_in_fixture/types",
+      "derive": {
+        "op": "union_length",
+        "with": [
+          "/synthetically_exercised_in_fixture/types"
+        ]
+      },
+      "value": 42,
+      "display": "42 of 59",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.types_never_observed",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "17 supported types never occurred in the E2E session.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+      "json_pointer": "/supported_browser_event_types",
+      "derive": {
+        "op": "difference",
+        "minus": [
+          "/naturally_observed_in_fixture/types",
+          "/synthetically_exercised_in_fixture/types"
+        ]
+      },
+      "value": [
+        "beforetoggle",
+        "cancel",
+        "close",
+        "fullscreenchange",
+        "fullscreenerror",
+        "gotpointercapture",
+        "hashchange",
+        "lostpointercapture",
+        "offline",
+        "online",
+        "pagehide",
+        "pageshow",
+        "popstate",
+        "select",
+        "touchcancel",
+        "touchmove",
+        "visibilitychange"
+      ],
+      "display": "17",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed. These listeners exist in the 0.4.0 source, but this run does not demonstrate their capture."
+    },
+    {
+      "id": "recorder_e2e.source_tree_sha256",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The E2E run hashed the extension source tree as fa5cfc61...; this equals the 0.4.0 recorder/ tree (32 files) at source commit 437070f.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/extension/source_tree_sha256",
+      "value": "fa5cfc61516551f3756166b6cd8c5f764d4f1305ed3704d1dcd6f8d571e0bfc0",
+      "display": "fa5cfc61",
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed. The equality with the 437070f tree was recomputed during the restructure with the runner's own directory-hash algorithm."
+    },
+    {
+      "id": "recorder_e2e.source_file_count",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The hashed 0.4.0 extension source tree had 32 files.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/extension/source_file_count",
+      "value": 32,
+      "caveat": "Archived evidence for recorder 0.4.0 only: one automated QA run on deterministic loopback fixtures (source_class=synthetic_coverage), not a human, reasoning-agent or detector result. Fresh E2E bundles for the current version are CI artifacts and are not committed."
+    },
+    {
+      "id": "recorder_e2e.cited_commit",
+      "section": "recorder_e2e_v0.4.0",
+      "claim": "The E2E run manifest cites source commit 621ad8ac.",
+      "file": "research/evidence/recorder_e2e_v0.4.0/run_manifest.json",
+      "json_pointer": "/repository_commit",
+      "value": "621ad8ac7a609b6db9e1f675284c25f10521df67",
+      "display": "621ad8ac",
+      "caveat": "This commit exists only in the private source repository; it is not in the public history of the original repository or of this repository. Use the source-tree hash to identify the tested code."
+    },
+    {
+      "id": "fp_agent.released.test_examples",
+      "section": "fp_agent_released_models",
+      "claim": "The released FP-Agent random split has 1,544 test examples.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/dataset/test_examples",
+      "value": 1544,
+      "display": "1,544",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.classes",
+      "section": "fp_agent_released_models",
+      "claim": "The released all-class models predict 8 classes.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/dataset/classes",
+      "derive": {
+        "op": "length"
+      },
+      "value": 8,
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.browser_accuracy",
+      "section": "fp_agent_released_models",
+      "claim": "Released browser-fingerprint model accuracy is 0.8212.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/results/browser/accuracy",
+      "value": 0.8212435233,
+      "display": "0.8212",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.browser_macro_f1",
+      "section": "fp_agent_released_models",
+      "claim": "Released browser-fingerprint model macro-F1 is 0.8223.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/results/browser/macro_f1",
+      "value": 0.8222806043,
+      "display": "0.8223",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.behavioral_accuracy",
+      "section": "fp_agent_released_models",
+      "claim": "Released behavioral model accuracy is 0.9994.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/results/behavioral/accuracy",
+      "value": 0.9993523316,
+      "display": "0.9994",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.behavioral_macro_f1",
+      "section": "fp_agent_released_models",
+      "claim": "Released behavioral model macro-F1 is 0.9994.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/results/behavioral/macro_f1",
+      "value": 0.9993808809,
+      "display": "0.9994",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.combined_accuracy",
+      "section": "fp_agent_released_models",
+      "claim": "Released combined model accuracy is 1.0000.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/results/combined/accuracy",
+      "value": 1.0,
+      "display": "1.0000",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.combined_macro_f1",
+      "section": "fp_agent_released_models",
+      "claim": "Released combined model macro-F1 is 1.0000.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/results/combined/macro_f1",
+      "value": 1.0,
+      "display": "1.0000",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.upstream_commit",
+      "section": "fp_agent_released_models",
+      "claim": "The released models come from upstream FP-Agent commit e614e2f.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/repository_commit",
+      "value": "e614e2f0f935211e22d856195d56e91fa88a7b16",
+      "display": "e614e2f",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.released.python",
+      "section": "fp_agent_released_models",
+      "claim": "The released-model reproduction ran under Python 3.13.14.",
+      "file": "research/evidence/fp_agent/fp_agent_classifier_eval.json",
+      "json_pointer": "/package_versions/python",
+      "value": "3.13.14",
+      "caveat": "Inference only with the released FP-Agent models on the authors' random within-corpus split; it does not measure unseen agents or deployment distributions. Run under Python 3.13.14 outside the hash-locked research environment."
+    },
+    {
+      "id": "fp_agent.loafo.folds",
+      "section": "fp_agent_loafo",
+      "claim": "Leave-one-agent-family-out evaluation has 21 folds.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/folds",
+      "derive": {
+        "op": "length"
+      },
+      "value": 21,
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.python",
+      "section": "fp_agent_loafo",
+      "claim": "The LOAFO analysis ran under Python 3.14.5.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/package_versions/python",
+      "value": "3.14.5",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.browser_mean_ba",
+      "section": "fp_agent_loafo",
+      "claim": "Browser-feature mean balanced accuracy across held-out families is 0.9286.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/macro_across_heldout_families/browser/balanced_accuracy/mean",
+      "value": 0.9285714286,
+      "display": "0.9286",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.browser_worst_ba",
+      "section": "fp_agent_loafo",
+      "claim": "Browser-feature worst-fold balanced accuracy is 0.5000.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/macro_across_heldout_families/browser/balanced_accuracy/minimum",
+      "value": 0.5,
+      "display": "0.5000",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.browser_manus_fold_family",
+      "section": "fp_agent_loafo",
+      "claim": "LOAFO folds[5] holds out Manus.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/folds/5/heldout_agent_family",
+      "value": "Manus",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.browser_manus_fold_feature_set",
+      "section": "fp_agent_loafo",
+      "claim": "LOAFO folds[5] uses the browser feature set.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/folds/5/feature_set",
+      "value": "browser",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.browser_manus_recall",
+      "section": "fp_agent_loafo",
+      "claim": "With browser features, held-out Manus recall is 0.0.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/folds/5/metrics/heldout_agent_recall",
+      "value": 0.0,
+      "display": "0.0",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent. Recall is 0.0 although AUROC is 0.9174: the ranking transfers but the threshold does not."
+    },
+    {
+      "id": "fp_agent.loafo.browser_manus_auroc",
+      "section": "fp_agent_loafo",
+      "claim": "With browser features, held-out Manus AUROC is 0.9174.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/folds/5/metrics/roc_auc",
+      "value": 0.9174311927,
+      "display": "0.9174",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.behavioral_min_ba",
+      "section": "fp_agent_loafo",
+      "claim": "Behavioral-feature worst-fold balanced accuracy is 0.9968.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/macro_across_heldout_families/behavioral/balanced_accuracy/minimum",
+      "value": 0.9968017058,
+      "display": ">=0.9968",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.combined_min_ba",
+      "section": "fp_agent_loafo",
+      "claim": "Combined-feature worst-fold balanced accuracy is 0.9968.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/macro_across_heldout_families/combined/balanced_accuracy/minimum",
+      "value": 0.9968017058,
+      "display": ">=0.9968",
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.loafo.human_test_rows",
+      "section": "fp_agent_loafo",
+      "claim": "Every LOAFO fold uses the same 109 human test rows.",
+      "file": "research/evidence/fp_agent/fp_agent_loafo.json",
+      "json_pointer": "/human_split_summary/rows_test",
+      "value": 109,
+      "caveat": "Leave-one-agent-family-out on the released FP-Agent feature vectors, 21 folds (7 held-out families x 3 feature sets), run under Python 3.14.5 outside the hash-locked environment. The same 109 human test rows are reused in every fold, so the folds are not independent."
+    },
+    {
+      "id": "fp_agent.retro.features",
+      "section": "fp_agent_retrospective",
+      "claim": "The retrospective uses the shared 23-feature allowlist.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/features",
+      "derive": {
+        "op": "length"
+      },
+      "value": 23,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.sessions",
+      "section": "fp_agent_retrospective",
+      "claim": "The retrospective covers 7,728 sessions.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/sampling_ledger/rows",
+      "value": 7728,
+      "display": "7,728",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.human_sessions",
+      "section": "fp_agent_retrospective",
+      "claim": "546 of the sessions are human.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/sampling_ledger/counts_by_family/Human",
+      "value": 546,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.agent_sessions",
+      "section": "fp_agent_retrospective",
+      "claim": "7,182 of the sessions are agent sessions (92.9% prevalence).",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/aggregate/confusion/values/1",
+      "derive": {
+        "op": "sum"
+      },
+      "value": 7182,
+      "display": "7,182",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.seed",
+      "section": "fp_agent_retrospective",
+      "claim": "The retrospective seed is 20260811.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/protocol/seed",
+      "value": 20260811,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.requirements_lock_sha256",
+      "section": "fp_agent_retrospective",
+      "claim": "The retrospective ran in an isolated, hash-locked environment.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/execution_environment/requirements_lock_sha256",
+      "value": "cb894c571616bddb95d6e8671d609a527691e6652988452863f6160618db6e66",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.tasks",
+      "section": "fp_agent_retrospective",
+      "claim": "The primary analysis has 3 task folds (n=3 tasks).",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds",
+      "derive": {
+        "op": "length"
+      },
+      "value": 3,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.pooled_ba",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary purged 3-fold LOTO logistic pooled balanced accuracy is 0.6001.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/aggregate/balanced_accuracy",
+      "value": 0.6001381659276396,
+      "display": "0.6001",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.pooled_auroc",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary pooled AUROC is 0.6358.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/aggregate/auroc",
+      "value": 0.6357674048776806,
+      "display": "0.6358",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). The pooled AUROC mixes three separately calibrated models."
+    },
+    {
+      "id": "fp_agent.retro.pooled_macro_f1",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary pooled macro-F1 is 0.5746.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/aggregate/macro_f1",
+      "value": 0.5746319908169619,
+      "display": "0.5746",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.pooled_auprc",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary pooled AUPRC is 0.958.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/aggregate/auprc",
+      "value": 0.9583912537193406,
+      "display": "0.958",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). AUPRC is inflated by the 92.9% agent prevalence."
+    },
+    {
+      "id": "fp_agent.retro.fold0_task",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary folds[0] holds out the Flight-booking task.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/0/fold",
+      "value": "Flight-booking",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.flight_ba",
+      "section": "fp_agent_retrospective",
+      "claim": "Flight-booking held-out balanced accuracy is 0.500.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/0/metrics/balanced_accuracy",
+      "value": 0.5,
+      "display": "0.500",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.flight_auroc",
+      "section": "fp_agent_retrospective",
+      "claim": "Flight-booking held-out AUROC is 0.998.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/0/metrics/auroc",
+      "value": 0.998222528784422,
+      "display": "0.998",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.fold1_task",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary folds[1] holds out the Forums task.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/1/fold",
+      "value": "Forums",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.forums_ba",
+      "section": "fp_agent_retrospective",
+      "claim": "Forums held-out balanced accuracy is 0.497.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/1/metrics/balanced_accuracy",
+      "value": 0.4974271012006861,
+      "display": "0.497",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.forums_auroc",
+      "section": "fp_agent_retrospective",
+      "claim": "Forums held-out AUROC is 0.829.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/1/metrics/auroc",
+      "value": 0.8294243638852105,
+      "display": "0.829",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.fold2_task",
+      "section": "fp_agent_retrospective",
+      "claim": "Primary folds[2] holds out the Shopping task.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/2/fold",
+      "value": "Shopping",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.shopping_ba",
+      "section": "fp_agent_retrospective",
+      "claim": "Shopping held-out balanced accuracy is 0.853.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/2/metrics/balanced_accuracy",
+      "value": 0.8527004909983633,
+      "display": "0.853",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.shopping_auroc",
+      "section": "fp_agent_retrospective",
+      "claim": "Shopping held-out AUROC is 0.967.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_3_fold_loto_logistic/folds/2/metrics/auroc",
+      "value": 0.9674539999008084,
+      "display": "0.967",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.ba_interval_lower",
+      "section": "fp_agent_retrospective",
+      "claim": "The reported '95% interval' for balanced accuracy has lower bound 0.497.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_group_bootstrap/intervals_95/balanced_accuracy/lower",
+      "value": 0.4974271012006861,
+      "display": "0.497",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). With 3 outer groups the interval is the min/max over the 3 folds (it equals the Forums and Shopping fold values), not a population confidence interval."
+    },
+    {
+      "id": "fp_agent.retro.ba_interval_upper",
+      "section": "fp_agent_retrospective",
+      "claim": "The reported '95% interval' for balanced accuracy has upper bound 0.853.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/primary_group_bootstrap/intervals_95/balanced_accuracy/upper",
+      "value": 0.8527004909983633,
+      "display": "0.853",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). With 3 outer groups the interval is the min/max over the 3 folds."
+    },
+    {
+      "id": "fp_agent.retro.purge_train_rows_flight",
+      "section": "fp_agent_retrospective",
+      "claim": "After the participant/trial-group purge, the Flight-booking fold keeps 79 training rows.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/split_audit/task_folds/0/train_rows",
+      "value": 79,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.purge_train_rows_forums",
+      "section": "fp_agent_retrospective",
+      "claim": "After the purge, the Forums fold keeps 212 training rows.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/split_audit/task_folds/1/train_rows",
+      "value": 212,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.purge_train_rows_shopping",
+      "section": "fp_agent_retrospective",
+      "claim": "After the purge, the Shopping fold keeps 37 training rows.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/split_audit/task_folds/2/train_rows",
+      "value": 37,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.permutation_p",
+      "section": "fp_agent_retrospective",
+      "claim": "The within-task permutation p-value is 0.000999.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/permutation/p_value",
+      "value": 0.000999000999000999,
+      "display": "0.000999",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). 0.000999 is the minimum possible p-value with 1,000 draws."
+    },
+    {
+      "id": "fp_agent.retro.permutation_draws",
+      "section": "fp_agent_retrospective",
+      "claim": "The permutation test used 1,000 successful draws.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/permutation/successful",
+      "value": 1000,
+      "display": "1,000",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.task_confound_ba",
+      "section": "fp_agent_retrospective",
+      "claim": "The same features predict the task with balanced accuracy 0.866.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/task_confound/balanced_accuracy",
+      "value": 0.8661804407750133,
+      "display": "0.866",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). A strong task confound."
+    },
+    {
+      "id": "fp_agent.retro.source_confound_ba",
+      "section": "fp_agent_retrospective",
+      "claim": "The same features predict the agent family with balanced accuracy 0.974.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/source_confound/balanced_accuracy",
+      "value": 0.974363242391672,
+      "display": "0.974",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974). A strong source confound."
+    },
+    {
+      "id": "fp_agent.retro.keyboard_ablation_group",
+      "section": "fp_agent_retrospective",
+      "claim": "Group ablation entry [2] drops the keyboard features.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/ablations/group_drop/2/dropped",
+      "value": "keyboard",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.keyboard_ablation_delta",
+      "section": "fp_agent_retrospective",
+      "claim": "Dropping the keyboard features raises pooled balanced accuracy by +0.181.",
+      "file": "research/evidence/fp_agent/fp_agent_retrospective.json",
+      "json_pointer": "/ablations/group_drop/2/delta",
+      "value": 0.1812651286335497,
+      "display": "+0.181",
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974)."
+    },
+    {
+      "id": "fp_agent.retro.missing_focus",
+      "section": "fp_agent_retrospective",
+      "claim": "Focus is never observed in FP-Agent: missing_focus=1 and focus_transition_count=0 for every row.",
+      "file": "research/fp_agent/retrospective_features.py",
+      "json_pointer": null,
+      "value": 1,
+      "caveat": "Retrospective on the public FP-Agent raw corpus with only n=3 tasks. Read the pooled numbers as a cross-task threshold and calibration transfer failure, not chance-level ranking: the pooled AUROC mixes three separately calibrated fold models, AUPRC is inflated by 92.9% agent prevalence, the purge leaves 79/212/37 training rows, focus is never observed, and the same features predict the task (BA 0.866) and the agent family (BA 0.974).",
+      "note": "Stated in code, not in a JSON result: the feature extractor raises unless every FP-Agent row has focus_transition_count=0 and missing_focus=1, because FP-Agent records no focus events."
+    },
+    {
+      "id": "pilots.browser_use.version",
+      "section": "pilots",
+      "claim": "The Browser-Use pilot used Browser-Use 0.11.5.",
+      "file": "research/evidence/pilots/browser_use/aggregate.json",
+      "json_pointer": "/framework_version",
+      "value": "0.11.5",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.browser_use.planned_runs",
+      "section": "pilots",
+      "claim": "The Browser-Use pilot planned 9 runs (3 tasks x 3 repetitions).",
+      "file": "research/evidence/pilots/browser_use/aggregate.json",
+      "json_pointer": "/planned_runs",
+      "value": 9,
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.browser_use.successful_runs",
+      "section": "pilots",
+      "claim": "9 of 9 Browser-Use pilot runs succeeded.",
+      "file": "research/evidence/pilots/browser_use/aggregate.json",
+      "json_pointer": "/successful_runs",
+      "value": 9,
+      "display": "9/9",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.browser_use.cost_usd",
+      "section": "pilots",
+      "claim": "The Browser-Use pilot reported USD 0.436519.",
+      "file": "research/evidence/pilots/browser_use/aggregate.json",
+      "json_pointer": "/reported_cost_usd",
+      "value": 0.436519,
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.skyvern.version",
+      "section": "pilots",
+      "claim": "The Skyvern pilot used Skyvern 1.0.47.",
+      "file": "research/evidence/pilots/skyvern/aggregate.json",
+      "json_pointer": "/framework_version",
+      "value": "1.0.47",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.skyvern.planned_runs",
+      "section": "pilots",
+      "claim": "The Skyvern pilot planned 9 runs (3 tasks x 3 repetitions).",
+      "file": "research/evidence/pilots/skyvern/aggregate.json",
+      "json_pointer": "/planned_runs",
+      "value": 9,
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.skyvern.successful_runs",
+      "section": "pilots",
+      "claim": "9 of 9 Skyvern pilot runs succeeded.",
+      "file": "research/evidence/pilots/skyvern/aggregate.json",
+      "json_pointer": "/successful_runs",
+      "value": 9,
+      "display": "9/9",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.skyvern.cost_usd",
+      "section": "pilots",
+      "claim": "The Skyvern pilot reported USD 0.432419.",
+      "file": "research/evidence/pilots/skyvern/aggregate.json",
+      "json_pointer": "/reported_cost_usd",
+      "value": 0.432419,
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.stagehand.version",
+      "section": "pilots",
+      "claim": "The Stagehand smoke run used Stagehand 3.7.1.",
+      "file": "research/evidence/pilots/stagehand/aggregate.json",
+      "json_pointer": "/framework_version",
+      "value": "3.7.1",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices. Stagehand was a supplemental single-pass smoke run, not one of the three-repetition pilots."
+    },
+    {
+      "id": "pilots.stagehand.planned_runs",
+      "section": "pilots",
+      "claim": "The Stagehand smoke run planned 3 runs.",
+      "file": "research/evidence/pilots/stagehand/aggregate.json",
+      "json_pointer": "/planned_runs",
+      "value": 3,
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.stagehand.successful_runs",
+      "section": "pilots",
+      "claim": "3 of 3 Stagehand smoke runs succeeded.",
+      "file": "research/evidence/pilots/stagehand/aggregate.json",
+      "json_pointer": "/successful_runs",
+      "value": 3,
+      "display": "3/3",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.stagehand.cost_usd",
+      "section": "pilots",
+      "claim": "The Stagehand cost was not reported.",
+      "file": "research/evidence/pilots/stagehand/aggregate.json",
+      "json_pointer": "/reported_cost_usd",
+      "value": null,
+      "display": "unreported",
+      "caveat": "Pilot integration runs on three public read-only micro-tasks (example.com, IANA, Hacker News); not benchmark scores. Costs are application-reported and not reconciled to provider invoices."
+    },
+    {
+      "id": "pilots.stagehand.retired_framework",
+      "section": "pilots",
+      "claim": "Entry frameworks[2] of the frozen MiniWoB benchmark manifest is Stagehand.",
+      "file": "research/week1_miniwob/benchmark_manifest.json",
+      "json_pointer": "/frameworks/2/id",
+      "value": "stagehand",
+      "caveat": "Read from the frozen MiniWoB harness manifest, not from research/evidence."
+    },
+    {
+      "id": "pilots.stagehand.blocking_advisories",
+      "section": "pilots",
+      "claim": "Stagehand 3.7.1 was retired from the formal matrix over 13 blocking GHSA advisories.",
+      "file": "research/week1_miniwob/benchmark_manifest.json",
+      "json_pointer": "/frameworks/2/formal_security/blocking_advisories",
+      "derive": {
+        "op": "length"
+      },
+      "value": 13,
+      "caveat": "Read from the frozen MiniWoB harness manifest, not from research/evidence. The advisory list is as of the date the harness was frozen."
+    },
+    {
+      "id": "formal.miniwob.planned_attempts",
+      "section": "formal_studies",
+      "claim": "The formal MiniWoB matrix planned 27 attempts (3 frameworks x 3 tasks x 3 repetitions).",
+      "file": "research/evidence/week1_miniwob_prefix_failures/correction_manifest.json",
+      "json_pointer": "/matrix_disposition/planned_attempts",
+      "value": 27,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.completed_attempts",
+      "section": "formal_studies",
+      "claim": "0 of the 27 formal MiniWoB attempts completed.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/correction_manifest.json",
+      "json_pointer": "/matrix_disposition/formal_attempts_completed",
+      "value": 0,
+      "display": "0/27",
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.published_failure_records",
+      "section": "formal_studies",
+      "claim": "Two Browser-Use launch records are retained as failure evidence.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/correction_manifest.json",
+      "json_pointer": "/records",
+      "derive": {
+        "op": "length"
+      },
+      "value": 2,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.attempt1_cause",
+      "section": "formal_studies",
+      "claim": "The first Browser-Use launch failed with a model-provider error.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/correction_manifest.json",
+      "json_pointer": "/records/0/primary_operational_cause",
+      "value": "model_provider_error",
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.attempt2_cause",
+      "section": "formal_studies",
+      "claim": "The second Browser-Use launch failed with a model-provider error.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/correction_manifest.json",
+      "json_pointer": "/records/1/primary_operational_cause",
+      "value": "model_provider_error",
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.attempt1_actions",
+      "section": "formal_studies",
+      "claim": "The first launch produced zero agent actions.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/attempts/browser-use__click-checkboxes__r01__s20260808.json",
+      "json_pointer": "/result/agent/action_count",
+      "value": 0,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.attempt2_actions",
+      "section": "formal_studies",
+      "claim": "The second launch produced zero agent actions.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/attempts/browser-use__click-checkboxes__r02__s20260809.json",
+      "json_pointer": "/result/agent/action_count",
+      "value": 0,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.miniwob.preflight_http_status",
+      "section": "formal_studies",
+      "claim": "A later provider preflight observed HTTP 502.",
+      "file": "research/evidence/week1_miniwob_prefix_failures/correction_manifest.json",
+      "json_pointer": "/subsequent_provider_preflight/last_observed_http_status",
+      "value": 502,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project. No evidence file records an HTTP 403."
+    },
+    {
+      "id": "formal.scienceboard.planned_sessions",
+      "section": "formal_studies",
+      "claim": "The formal ScienceBoard matrix planned 27 sessions.",
+      "file": "research/evidence/scripted_simulator_control_v0.2.1/correction_manifest.json",
+      "json_pointer": "/replacement_formal_protocol/planned_sessions",
+      "value": 27,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.scienceboard.collected_sessions",
+      "section": "formal_studies",
+      "claim": "0 of the 27 formal ScienceBoard sessions were collected.",
+      "file": "research/evidence/scripted_simulator_control_v0.2.1/correction_manifest.json",
+      "json_pointer": "/replacement_formal_protocol/collected_sessions",
+      "value": 0,
+      "display": "0/27",
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project. The harness never ran on a VM."
+    },
+    {
+      "id": "formal.scienceboard.status",
+      "section": "formal_studies",
+      "claim": "The formal ScienceBoard matrix status is not_run.",
+      "file": "research/evidence/scripted_simulator_control_v0.2.1/correction_manifest.json",
+      "json_pointer": "/replacement_formal_protocol/status",
+      "value": "not_run",
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.codex.planned_attempts",
+      "section": "formal_studies",
+      "claim": "The Codex Desktop case planned 9 attempts.",
+      "file": "research/evidence/codex_case_blocked/codex_case_summary.json",
+      "json_pointer": "/planned_attempts",
+      "value": 9,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project."
+    },
+    {
+      "id": "formal.codex.blocked_attempts",
+      "section": "formal_studies",
+      "claim": "All 9 Codex Desktop attempts were blocked.",
+      "file": "research/evidence/codex_case_blocked/codex_case_summary.json",
+      "json_pointer": "/outcomes/blocked",
+      "value": 9,
+      "display": "9/9",
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project. The interaction surfaces were unavailable; no recorder trace was eligible."
+    },
+    {
+      "id": "formal.human_traces",
+      "section": "formal_studies",
+      "claim": "No human traces have been collected by this project.",
+      "file": "research/evidence/README.md",
+      "json_pointer": null,
+      "value": 0,
+      "caveat": "No formal study produced data: MiniWoB 0/27, ScienceBoard 0/27, Codex Desktop 9/9 blocked, and no human traces were collected by this project.",
+      "note": "An absence claim: no file under research/evidence contains a human interaction trace collected by this project. The human rows in the FP-Agent and auxiliary analyses are third-party public data.",
+      "text": "No human trace has been collected"
+    },
+    {
+      "id": "formal.simulators.source_class",
+      "section": "formal_studies",
+      "claim": "The NetLogo/PhET runs are scripted automation controls, not agents.",
+      "file": "research/evidence/scripted_simulator_control_v0.2.1/correction_manifest.json",
+      "json_pointer": "/corrected_interpretation/source_class",
+      "value": "scripted_automation_control",
+      "caveat": "Fixed Puppeteer/CDP scripts with recorder 0.2.1; recorder-compatibility evidence only."
+    },
+    {
+      "id": "formal.simulators.passed_runs",
+      "section": "formal_studies",
+      "claim": "9 of 9 scripted simulator control runs passed their task-state validators.",
+      "file": "research/evidence/scripted_simulator_control_v0.2.1/aggregate_metrics.json",
+      "json_pointer": "/passed_run_count",
+      "value": 9,
+      "display": "9/9",
+      "caveat": "Fixed Puppeteer/CDP scripts with recorder 0.2.1; recorder-compatibility evidence only."
+    },
+    {
+      "id": "formal.simulators.events",
+      "section": "formal_studies",
+      "claim": "The scripted simulator controls captured 908 sanitized events.",
+      "file": "research/evidence/scripted_simulator_control_v0.2.1/aggregate_metrics.json",
+      "json_pointer": "/total_event_count",
+      "value": 908,
+      "caveat": "Fixed Puppeteer/CDP scripts with recorder 0.2.1; recorder-compatibility evidence only."
+    },
+    {
+      "id": "aux.molmoweb.action_sequence_ba",
+      "section": "auxiliary",
+      "claim": "The MolmoWeb domain-held-out action n-gram source classifier reaches balanced accuracy 0.8167.",
+      "file": "research/evidence/auxiliary_data/molmoweb_metrics.json",
+      "json_pointer": "/domain_held_out_analysis/action_sequence_model/metrics/balanced_accuracy",
+      "value": 0.8167,
+      "caveat": "Auxiliary public datasets used for sampling-fidelity and leakage checks only; never combined with FP-Agent and never a headline detector result. Likely label leakage: only synthetic rows carry action_timestamp."
+    },
+    {
+      "id": "aux.molmoweb.synthetic_rows_with_action_timestamp",
+      "section": "auxiliary",
+      "claim": "Every audited synthetic MolmoWeb row (108,254) carries action_timestamp.",
+      "file": "research/evidence/auxiliary_data/molmoweb_metrics.json",
+      "json_pointer": "/timestamp_audit/synthetic/timestamp_field_row_counts/action_timestamp",
+      "value": 108254,
+      "display": "108,254",
+      "caveat": "Auxiliary public datasets used for sampling-fidelity and leakage checks only; never combined with FP-Agent and never a headline detector result."
+    },
+    {
+      "id": "aux.molmoweb.human_rows_with_timestamp",
+      "section": "auxiliary",
+      "claim": "No audited human MolmoWeb row carries a timestamp field.",
+      "file": "research/evidence/auxiliary_data/molmoweb_metrics.json",
+      "json_pointer": "/timestamp_audit/human/rows_with_timestamp_fields",
+      "value": 0,
+      "caveat": "Auxiliary public datasets used for sampling-fidelity and leakage checks only; never combined with FP-Agent and never a headline detector result."
+    },
+    {
+      "id": "aux.molmoweb.domain_only_ba",
+      "section": "auxiliary",
+      "claim": "The domain-only baseline has balanced accuracy 0.5.",
+      "file": "research/evidence/auxiliary_data/molmoweb_metrics.json",
+      "json_pointer": "/domain_held_out_analysis/domain_only_baseline/metrics/balanced_accuracy",
+      "value": 0.5,
+      "caveat": "Auxiliary public datasets used for sampling-fidelity and leakage checks only; never combined with FP-Agent and never a headline detector result. 0.5 by construction: held-out domains are unseen, so every row maps to the same all-zero vector."
+    },
+    {
+      "id": "aux.captchasolve30k.scope",
+      "section": "auxiliary",
+      "claim": "CaptchaSolve30k is used only for mouse-only aggregate distribution calibration.",
+      "file": "research/evidence/auxiliary_data/captchasolve30k_metrics.json",
+      "json_pointer": "/scope",
+      "value": "mouse-only aggregate distribution calibration",
+      "caveat": "Auxiliary public datasets used for sampling-fidelity and leakage checks only; never combined with FP-Agent and never a headline detector result."
+    },
+    {
+      "id": "aux.aalto.scope",
+      "section": "auxiliary",
+      "claim": "Aalto 136M Keystrokes is used only for participant-level aggregate distribution calibration.",
+      "file": "research/evidence/auxiliary_data/aalto_136m_metrics.json",
+      "json_pointer": "/scope",
+      "value": "physical-keyboard participant-level aggregate distribution calibration",
+      "caveat": "Auxiliary public datasets used for sampling-fidelity and leakage checks only; never combined with FP-Agent and never a headline detector result."
+    },
+    {
+      "id": "literature.items",
+      "section": "literature",
+      "claim": "The literature corpus has 68 items.",
+      "file": "research/literature/generated/literature_truth_68.json",
+      "json_pointer": "/counts/total",
+      "value": 68,
+      "caveat": "Corpus counts from the generated literature truth file built from the persisted 2026-08-11 snapshot; a public clone can check consistency but cannot re-fetch the private raw full texts."
+    },
+    {
+      "id": "literature.papers",
+      "section": "literature",
+      "claim": "64 of the items are papers or preprints.",
+      "file": "research/literature/generated/literature_truth_68.json",
+      "json_pointer": "/counts/papersAndPreprints",
+      "value": 64,
+      "caveat": "Corpus counts from the generated literature truth file built from the persisted 2026-08-11 snapshot; a public clone can check consistency but cannot re-fetch the private raw full texts."
+    },
+    {
+      "id": "literature.repositories",
+      "section": "literature",
+      "claim": "4 of the items are repositories.",
+      "file": "research/literature/generated/literature_truth_68.json",
+      "json_pointer": "/counts/repositories",
+      "value": 4,
+      "caveat": "Corpus counts from the generated literature truth file built from the persisted 2026-08-11 snapshot; a public clone can check consistency but cannot re-fetch the private raw full texts."
+    },
+    {
+      "id": "literature.fulltext_reviewed",
+      "section": "literature",
+      "claim": "60 full texts were reviewed.",
+      "file": "research/literature/generated/literature_truth_68.json",
+      "json_pointer": "/counts/fullTextReviewed",
+      "value": 60,
+      "caveat": "Corpus counts from the generated literature truth file built from the persisted 2026-08-11 snapshot; a public clone can check consistency but cannot re-fetch the private raw full texts."
+    },
+    {
+      "id": "literature.access_blocked",
+      "section": "literature",
+      "claim": "4 items were access-blocked.",
+      "file": "research/literature/generated/literature_truth_68.json",
+      "json_pointer": "/counts/accessBlocked",
+      "value": 4,
+      "caveat": "Corpus counts from the generated literature truth file built from the persisted 2026-08-11 snapshot; a public clone can check consistency but cannot re-fetch the private raw full texts."
+    },
+    {
+      "id": "literature.repository_reviews",
+      "section": "literature",
+      "claim": "4 repository reviews were done.",
+      "file": "research/literature/generated/literature_truth_68.json",
+      "json_pointer": "/counts/repositoryReviewed",
+      "value": 4,
+      "caveat": "Corpus counts from the generated literature truth file built from the persisted 2026-08-11 snapshot; a public clone can check consistency but cannot re-fetch the private raw full texts."
+    },
+    {
+      "id": "literature.citation_nodes",
+      "section": "literature",
+      "claim": "The citation graph has 12,932 nodes.",
+      "file": "research/literature/generated/citation_qa.json",
+      "json_pointer": "/metrics/nodes",
+      "value": 12932,
+      "display": "12,932",
+      "caveat": "The citation graph retrieval is partial (1 partial and 15 blocked seed-directions). The full graph files are too large to commit; research/literature/generated/LARGE_ARTIFACTS.json records where to download them."
+    },
+    {
+      "id": "literature.citation_assertions",
+      "section": "literature",
+      "claim": "The citation graph has 22,117 citation assertions.",
+      "file": "research/literature/generated/citation_qa.json",
+      "json_pointer": "/metrics/assertions",
+      "value": 22117,
+      "display": "22,117",
+      "caveat": "The citation graph retrieval is partial (1 partial and 15 blocked seed-directions). The full graph files are too large to commit; research/literature/generated/LARGE_ARTIFACTS.json records where to download them."
+    },
+    {
+      "id": "literature.citation_partial_directions",
+      "section": "literature",
+      "claim": "The citation retrieval is partial: 1 seed-direction is partial.",
+      "file": "research/literature/generated/citation_qa.json",
+      "json_pointer": "/metrics/partialDirections",
+      "value": 1,
+      "caveat": "The citation graph retrieval is partial (1 partial and 15 blocked seed-directions). The full graph files are too large to commit; research/literature/generated/LARGE_ARTIFACTS.json records where to download them."
+    },
+    {
+      "id": "literature.citation_blocked_directions",
+      "section": "literature",
+      "claim": "15 seed-directions are blocked.",
+      "file": "research/literature/generated/citation_qa.json",
+      "json_pointer": "/blockedDirections",
+      "derive": {
+        "op": "length"
+      },
+      "value": 15,
+      "caveat": "The citation graph retrieval is partial (1 partial and 15 blocked seed-directions). The full graph files are too large to commit; research/literature/generated/LARGE_ARTIFACTS.json records where to download them."
+    }
+  ]
+}

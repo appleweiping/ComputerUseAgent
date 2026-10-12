@@ -1,0 +1,102 @@
+{
+  "schema_version": "scienceboard-task-matrix-v2",
+  "protocol_version": "scienceboard-matched-traces-v2",
+  "upstream": {
+    "repository": "https://github.com/OS-Copilot/ScienceBoard",
+    "source_ref": "c8d5010bdba32afc5dfb16472873bed148c39a45",
+    "commit": "c8d5010bdba32afc5dfb16472873bed148c39a45",
+    "observed_at": "2026-08-08",
+    "commit_policy": "Formal preflight requires this exact immutable commit and a clean checkout; moving main is never formal provenance."
+  },
+  "selection_status": "researcher-selected, pending independent confirmation",
+  "snapshot": "sci_bench",
+  "guest_binding": {
+    "guest_id": "scienceboard-vm-sci-bench-v1",
+    "guest_os_id": "ubuntu",
+    "guest_os_version": "22.04",
+    "screen_resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "verification_policy": "Protocol pins these values; guest capability doctor must measure an exact match before formal collection. No formal session has yet passed this gate."
+  },
+  "randomization_seed": 20260808,
+  "repetitions_per_cell": 3,
+  "agent_model": "gpt-5.5",
+  "agent_action_limit": 5,
+  "agent_timeout_seconds": 480,
+  "human_timeout_seconds": 300,
+  "actors": [
+    {
+      "id": "human",
+      "actor_type": "human",
+      "source_class": "self_human",
+      "scienceboard_community": null
+    },
+    {
+      "id": "aio",
+      "actor_type": "agent",
+      "source_class": "reasoning_agent",
+      "scienceboard_community": "AllInOne"
+    },
+    {
+      "id": "seeact",
+      "actor_type": "agent",
+      "source_class": "reasoning_agent",
+      "scienceboard_community": "SeeAct"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "scienceboard-vm-kalgebra-a-01-v0.1",
+      "application": "KAlgebra",
+      "local_file": "KAlgebra-A-01.json",
+      "canonical_payload_sha256": "b9a194fc194e8bd31b2cac5e26201d565ac214e5e49ed1355a3245356ca32169",
+      "upstream_path": "tasks/VM/KAlgebra/A-01.json",
+      "raw_url": "https://raw.githubusercontent.com/OS-Copilot/ScienceBoard/c8d5010bdba32afc5dfb16472873bed148c39a45/tasks/VM/KAlgebra/A-01.json",
+      "outcome_summary": "Variable p equals 1+-i."
+    },
+    {
+      "id": "scienceboard-vm-celestia-a-01-v0.1",
+      "application": "Celestia",
+      "local_file": "Celestia-A-01.json",
+      "canonical_payload_sha256": "854775c2cbbea2f4be528fd87e6cd212b47c350309fd55695e01778494b57c30",
+      "upstream_path": "tasks/VM/Celestia/A-01.json",
+      "raw_url": "https://raw.githubusercontent.com/OS-Copilot/ScienceBoard/c8d5010bdba32afc5dfb16472873bed148c39a45/tasks/VM/Celestia/A-01.json",
+      "outcome_summary": "Julian date is within 0.1 of 2400000."
+    },
+    {
+      "id": "scienceboard-vm-grassgis-a-01-v0.1",
+      "application": "GrassGIS",
+      "local_file": "GrassGIS-A-01.json",
+      "canonical_payload_sha256": "a685a93b8885ce6e9f352aa354c5f31d80ca0809cacb7851f90549f0f6c4e976",
+      "upstream_path": "tasks/VM/GrassGIS/A-01.json",
+      "raw_url": "https://raw.githubusercontent.com/OS-Copilot/ScienceBoard/c8d5010bdba32afc5dfb16472873bed148c39a45/tasks/VM/GrassGIS/A-01.json",
+      "outcome_summary": "Layer list contains countries@PERMANENT."
+    }
+  ],
+  "required_artifacts_per_session": [
+    "trace.jsonl",
+    "task.json",
+    "worker_spec.json",
+    "worker_state.json",
+    "final_state.png",
+    "validator_result.json",
+    "official/result.out",
+    "official/traj.jsonl",
+    "run.log",
+    "run_manifest.json"
+  ],
+  "required_artifacts_by_actor": {
+    "human": [
+      ".manual-stop.json"
+    ],
+    "aio": [],
+    "seeact": []
+  },
+  "privacy": {
+    "human_raw_trace_storage": "operator-controlled private storage under CUA_PRIVATE_ROOT only",
+    "public_release": "de-identified feature summaries and non-behavioral examples only",
+    "other_participants": "prohibited unless an operator-recorded human-research determination allows them"
+  }
+}

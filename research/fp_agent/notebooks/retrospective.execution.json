@@ -1,0 +1,115 @@
+{
+  "schema_version": "cui-notebook-execution-v2",
+  "status": "complete",
+  "executed_at_utc": "2026-10-11T23:15:30.676598+00:00",
+  "clean_kernel": true,
+  "allow_errors": false,
+  "executed_notebook_tracked": false,
+  "executed_notebook_sha256": "086e2f403465ee81b86b5763e602482045e9dc9e5b4c021ac0c3e2728a7b9a2e",
+  "source": {
+    "path": "research/fp_agent/notebooks/retrospective.py",
+    "bytes": 18102,
+    "sha256": "680721b25046af82945b43a0e112adc5e8b6396565406bc415fb98940554d0fb"
+  },
+  "result": {
+    "path": "research/evidence/fp_agent/fp_agent_retrospective.json",
+    "bytes": 68552,
+    "sha256": "50ee4452756691bc70774e32f8a6e4c43906b509da711817c70aefbd5dffa119"
+  },
+  "result_status": {
+    "path": "research/evidence/fp_agent/fp_agent_retrospective_status.json",
+    "bytes": 162,
+    "sha256": "26a4e94a4e1c43693364135148ff7cc68a0cf26081cc55ba5e40fe5f9279b7d2"
+  },
+  "figure_manifest": {
+    "path": "research/evidence/fp_agent/figures/figure_manifest.json",
+    "bytes": 2801,
+    "sha256": "68224b804d33876bfe5197e31725079200298e512baf01c6b142b3f2488a65ea"
+  },
+  "figures": [
+    {
+      "path": "research/evidence/fp_agent/figures/data_composition.png",
+      "bytes": 119116,
+      "sha256": "5a292d2ada00bc91566d10e4f0a9abf2479d05a4ca313e0ca86cd9362920f422"
+    },
+    {
+      "path": "research/evidence/fp_agent/figures/model_metric_comparison.png",
+      "bytes": 72745,
+      "sha256": "6306e4103495af209708e573845a746a620f821b986bed22e452a75a051c149c"
+    },
+    {
+      "path": "research/evidence/fp_agent/figures/held_out_fold_performance.png",
+      "bytes": 158376,
+      "sha256": "ee27295a03218afb42df1525b45b63a960b66e6c6626ee2986a3a52bb892cc34"
+    },
+    {
+      "path": "research/evidence/fp_agent/figures/confusion_matrices.png",
+      "bytes": 63748,
+      "sha256": "322f721ff06868a193e1284d4794e3c589e70a9cce586b716134555ec6327569"
+    },
+    {
+      "path": "research/evidence/fp_agent/figures/calibration_curves.png",
+      "bytes": 152341,
+      "sha256": "fa56837f5d331248f8cfdf8f2950ce3899ab9fbbf2269559d0c8a1cc1ceb2f99"
+    },
+    {
+      "path": "research/evidence/fp_agent/figures/confound_and_permutation_controls.png",
+      "bytes": 74258,
+      "sha256": "2a978ffffd79be90a20070f149356f681ed49a09a26f673ea8f2f1d58e8b3886"
+    },
+    {
+      "path": "research/evidence/fp_agent/figures/ablation_deltas.png",
+      "bytes": 170303,
+      "sha256": "bc82d92269397b77bef35675d0a022ee6c32f7b039cdf0444797f71bf6a4432b"
+    }
+  ],
+  "figures_reproduced_byte_identical": true,
+  "code_cell_count": 10,
+  "executed_code_cell_count": 10,
+  "error_output_count": 0,
+  "environment": {
+    "python": "3.12.3",
+    "implementation": "CPython",
+    "operating_system": "Windows",
+    "operating_system_release": "11",
+    "machine": "AMD64",
+    "isolated_python": true,
+    "packages": {
+      "ipykernel": "7.3.0",
+      "jupytext": "1.19.5",
+      "matplotlib": "3.10.9",
+      "nbclient": "0.11.0",
+      "nbformat": "5.11.0",
+      "numpy": "2.4.4",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "seaborn": "0.13.2",
+      "xgboost": "3.2.0"
+    },
+    "lock": {
+      "path": "research/fp_agent/notebook-requirements.lock",
+      "bytes": 108188,
+      "sha256": "6cebb7e4acb93bd1881be4ce0121d5afb73568941f4db39806ef2bdfac1c05f0"
+    }
+  },
+  "original_execution": {
+    "schema_version": "cui-notebook-execution-v1",
+    "executed_at_utc": "2026-08-11T14:10:23.802120+00:00",
+    "source": "experiments/fp_agent/notebooks/retrospective.py",
+    "source_sha256": "8165966a053aef8adbdaef0de3b42d04a12a2f3fc5ee81d21958d18c46fbc6d2",
+    "executed_notebook_sha256": "b4252d0d946f1d977d26d99be3ffaa46d6ee6b672e50ed5ff58dcb93d1dc0c86",
+    "python": "3.12.3",
+    "packages": {
+      "ipykernel": "7.3.0",
+      "jupytext": "1.19.5",
+      "matplotlib": "3.10.9",
+      "nbclient": "0.11.0",
+      "nbformat": "5.11.0",
+      "numpy": "2.4.4",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "seaborn": "0.13.2",
+      "xgboost": "3.2.0"
+    }
+  }
+}

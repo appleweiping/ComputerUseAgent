@@ -1,0 +1,29 @@
+{
+  "name": "computer-use-agent-recorder",
+  "version": "0.5.0",
+  "private": true,
+  "description": "ComputerUseAgent Trace Recorder: Chrome Manifest V3 extension sources, unit tests, and the isolated Chromium E2E harness.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appleweiping/ComputerUseAgent.git",
+    "directory": "extension"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "test": "node --test \"test/unit/*.test.js\" \"test/e2e/*.test.mjs\" \"scripts/*.test.mjs\"",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-include=\"app/**/*.js\" --test-coverage-lines=85 --test-coverage-branches=78 --test-coverage-functions=85 \"test/unit/*.test.js\"",
+    "lint": "eslint .",
+    "e2e": "node test/e2e/recorder.e2e.mjs",
+    "package": "node scripts/package.mjs",
+    "version:check": "node scripts/check-version.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.11.0",
+    "globals": "17.12.0",
+    "puppeteer": "25.4.0"
+  }
+}

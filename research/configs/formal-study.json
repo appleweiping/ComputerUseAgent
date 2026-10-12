@@ -1,0 +1,130 @@
+{
+  "schema_version": "cui-formal-study-config-v1",
+  "protocol_status": "draft_fail_closed",
+  "project": {
+    "id": "computer-use-agent-formal-study",
+    "research_question": "Can privacy-reduced interaction timing and movement distinguish a self-human session from a reasoning computer-use agent on the same versioned task?",
+    "primary_unit": "complete task session",
+    "claim_boundary": "Recorder and single-participant pipeline study; no population or deployment claim."
+  },
+  "budget": {
+    "currency": "USD",
+    "hard_total_cap": 200.0,
+    "model_entitlement_probe_required": true,
+    "canary_attempts_before_matrix": 2,
+    "mixed_model_or_provider_fallback_allowed": false,
+    "stop_if_projected_total_exceeds_cap": true,
+    "entitlement_certificate": {
+      "schema_version": "cui-week1-provider-entitlement-v1",
+      "environment_reference": "env:CUI_WEEK1_PROVIDER_CERT",
+      "provider": "openai",
+      "endpoint": "https://api.openai.com/v1/responses",
+      "requested_model": "gpt-5.5",
+      "required_response_model": "gpt-5.5-2026-04-23",
+      "maximum_age_hours": 24,
+      "tools_enabled": false
+    }
+  },
+  "week1_miniwob": {
+    "manifest": "../week1_miniwob/benchmark_manifest.json",
+    "planned_attempts": 27,
+    "matrix": {
+      "frameworks": ["browser-use", "skyvern", "stagehand"],
+      "tasks": ["click-checkboxes", "enter-text", "choose-list"],
+      "repetitions": 3
+    },
+    "required_gates": [
+      "clean_source_commit",
+      "exact_model_entitlement_probe",
+      "two_protocol_canaries",
+      "pinned_browsergym_validator",
+      "real_mv3_recorder",
+      "fresh_profile_per_attempt",
+      "artifact_bundle_validation"
+    ],
+    "failure_policy": "Preserve every launched failure and timeout; never replace a failed agent with a hand-written action script."
+  },
+  "week2_human_qa": {
+    "planned_self_qa_sessions": 3,
+    "research_training_eligible_before_determination": false,
+    "other_participants_allowed": false,
+    "raw_trace_publication_allowed": false,
+    "private_storage_requirement": "under CUA_PRIVATE_ROOT, outside the repository and research/evidence"
+  },
+  "human_research_policy": {
+    "schema_version": "cui-human-research-policy-v1",
+    "determination_status": "not_recorded",
+    "determination_scope": null,
+    "determination_record_reference": "env:CUA_HUMAN_RESEARCH_DETERMINATION_RECORD",
+    "determination_record_sha256": null,
+    "self_human_engineering_qa_allowed": true,
+    "self_human_formal_research_allowed": false,
+    "other_participants_formal_research_allowed": false,
+    "detector_training_allowed": false,
+    "self_consent_confirmation_required": true,
+    "claim_boundary": "Until a human-research determination is recorded and bound into a sealed run capsule, self-human traces are private engineering QA only and no other participant may be recorded."
+  },
+  "scienceboard": {
+    "manifest": "../scienceboard/tasks/manifest.json",
+    "planned_sessions": 27,
+    "matrix": {
+      "actors": ["human", "aio", "seeact"],
+      "tasks": ["KAlgebra-A-01", "Celestia-A-01", "GrassGIS-A-01"],
+      "repetitions": 3,
+      "randomization_seed": 20260808
+    },
+    "required_gates": [
+      "task_selection_recorded",
+      "verified_vm_archive_hash",
+      "exact_scienceboard_commit",
+      "vm_import_and_sci_bench_snapshot",
+      "host_and_guest_capability_attestation",
+      "two_source_x11_calibration",
+      "post_stop_negative_control",
+      "privacy_scan",
+      "v3_host_worker",
+      "official_same_task_validator",
+      "official_provider_endpoint",
+      "artifact_bundle_validation"
+    ],
+    "human_gate": "A self-session may be engineering QA only until a human-research determination is recorded; no other participant may be recorded.",
+    "security_stop": "Stop before any instruction to disable VBS, Credential Guard, or another host security control."
+  },
+  "analysis": {
+    "primary_model": "regularized_logistic_regression",
+    "secondary_model": "xgboost_exploratory_only",
+    "split": "leave_one_task_out",
+    "required_controls": [
+      "task_identification_negative_control",
+      "label_permutation",
+      "missing_modality_ablation",
+      "feature_ablation",
+      "threshold_and_calibration_report",
+      "confidence_intervals",
+      "fp_agent_leave_one_family_out"
+    ],
+    "prohibited_features": [
+      "actor",
+      "framework",
+      "executor",
+      "task_id",
+      "url",
+      "selector",
+      "session_uuid",
+      "absolute_time",
+      "os_version",
+      "browser_version",
+      "validator_outcome",
+      "is_trusted",
+      "action_text",
+      "task_description"
+    ]
+  },
+  "secrets": {
+    "storage_policy": "Secret values stay outside Git and outside formal artifacts.",
+    "required_environment_references": [
+      "env:OPENAI_API_KEY",
+      "env:CUI_WEEK1_PROVIDER_CERT"
+    ]
+  }
+}

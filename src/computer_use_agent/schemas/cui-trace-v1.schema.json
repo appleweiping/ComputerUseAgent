@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/appleweiping/ComputerUseAgent/schemas/cui-trace-v1.schema.json",
+  "title": "ComputerUseAgent Trace Recorder V1 session export (cui-trace-v1)",
+  "description": "Legacy V1 JSON export of the ComputerUseAgent Trace Recorder (formerly CUI Trace Recorder). New metadata fields are optional so exports from recorder 0.2 remain valid. Since recorder 0.5.0, key events on private targets carry null keyboard.repeat/location and null modifier flags.",
+  "type": "object",
+  "required": ["metadata", "summary", "events"],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": { "$ref": "#/$defs/sessionMetadata" },
+    "summary": { "$ref": "#/$defs/summary" },
+    "events": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/event" }
+    }
+  },
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "nullableNumber": { "type": ["number", "null"] },
+    "nullableBoolean": { "type": ["boolean", "null"] },
+    "sessionMetadata": {
+      "oneOf": [
+        { "$ref": "#/$defs/currentSessionMetadata" },
+        { "$ref": "#/$defs/legacyStandaloneMetadata" }
+      ]
+    },
+    "currentSessionMetadata": {
+      "type": "object",
+      "required": [
+        "schema_version", "session_id", "actor_type", "actor_label",
+        "participant_code", "pair_id", "task_id", "protocol_version",
+        "executor", "executor_version", "recorder_version", "environment",
+        "raw_key_capture", "include_query", "scope_origin",
+        "consent_confirmed", "disclosure_version", "retention_policy",
+        "started_at", "stopped_at", "status", "event_count", "chunk_count"
+      ],
+      "properties": {
+        "schema_version": { "const": "cui-trace-v1" },
+        "session_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "actor_type": { "enum": ["human", "agent"] },
+        "actor_label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "participant_code": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "pair_id": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "task_id": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "protocol_version": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "executor": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "executor_version": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "recorder_version": { "type": "string", "minLength": 1, "maxLength": 24 },
+        "environment": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "capture_adapter": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "environment_scope": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "source_class": {
+          "enum": ["human_self", "cui_agent", "scripted_automation_control", "synthetic_coverage"]
+        },
+        "raw_key_capture": { "type": "boolean" },
+        "include_query": { "type": "boolean" },
+        "scope_origin": { "type": "string", "pattern": "^https?://" },
+        "consent_confirmed": { "const": true },
+        "disclosure_version": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "retention_policy": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "started_at": { "type": "string", "format": "date-time" },
+        "stopped_at": { "type": ["string", "null"], "format": "date-time" },
+        "status": { "enum": ["recording", "complete", "incomplete", "interrupted"] },
+        "capture_error": { "type": ["string", "null"], "maxLength": 300 },
+        "event_count": { "type": "integer", "minimum": 0 },
+        "chunk_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["event_count", "duration_ms", "pointer_distance_px", "by_type"],
+      "additionalProperties": false,
+      "properties": {
+        "event_count": { "type": "integer", "minimum": 0 },
+        "duration_ms": { "type": "number", "minimum": 0 },
+        "pointer_distance_px": { "type": "number", "minimum": 0 },
+        "by_type": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "event": {
+      "oneOf": [
+        { "$ref": "#/$defs/currentEvent" },
+        { "$ref": "#/$defs/legacyStandaloneEvent" }
+      ]
+    },
+    "currentEvent": {
+      "type": "object",
+      "required": [
+        "schema_version", "event_id", "type", "epoch_ms", "monotonic_ms",
+        "url", "viewport", "pointer", "wheel", "scroll", "key",
+        "key_class", "keyboard", "modifiers", "input", "clipboard",
+        "transfer", "touch", "form", "document_state", "target",
+        "is_trusted", "visibility_state"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": "cui-trace-v1" },
+        "event_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "type": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "epoch_ms": { "type": "integer", "minimum": 0 },
+        "monotonic_ms": { "type": "number", "minimum": 0 },
+        "url": { "type": "string" },
+        "viewport": {
+          "type": "object", "additionalProperties": false,
+          "required": ["width", "height", "device_pixel_ratio"],
+          "properties": {
+            "width": { "type": "integer", "minimum": 0 },
+            "height": { "type": "integer", "minimum": 0 },
+            "device_pixel_ratio": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        "pointer": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "x": { "type": "number" }, "y": { "type": "number" },
+            "button": { "type": "integer" }, "buttons": { "type": "integer" },
+            "pointer_type": { "$ref": "#/$defs/nullableString" },
+            "pointer_id": { "$ref": "#/$defs/nullableNumber" },
+            "width": { "$ref": "#/$defs/nullableNumber" },
+            "height": { "$ref": "#/$defs/nullableNumber" },
+            "pressure": { "$ref": "#/$defs/nullableNumber" },
+            "tangential_pressure": { "$ref": "#/$defs/nullableNumber" },
+            "tilt_x": { "$ref": "#/$defs/nullableNumber" },
+            "tilt_y": { "$ref": "#/$defs/nullableNumber" },
+            "twist": { "$ref": "#/$defs/nullableNumber" },
+            "is_primary": { "$ref": "#/$defs/nullableBoolean" }
+          }
+        },
+        "wheel": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "delta_x": { "type": "number" }, "delta_y": { "type": "number" },
+            "delta_mode": { "type": "integer", "minimum": 0, "maximum": 2 }
+          }
+        },
+        "scroll": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+        },
+        "key": { "$ref": "#/$defs/nullableString" },
+        "key_class": { "enum": ["control", "whitespace", "letter", "digit", "punctuation", "other", null] },
+        "keyboard": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "repeat": { "$ref": "#/$defs/nullableBoolean" }, "location": { "type": ["integer", "null"] },
+            "is_composing": { "type": "boolean" }
+          }
+        },
+        "modifiers": {
+          "type": "object", "additionalProperties": false,
+          "required": ["alt", "ctrl", "meta", "shift"],
+          "properties": {
+            "alt": { "$ref": "#/$defs/nullableBoolean" }, "ctrl": { "$ref": "#/$defs/nullableBoolean" },
+            "meta": { "$ref": "#/$defs/nullableBoolean" }, "shift": { "$ref": "#/$defs/nullableBoolean" }
+          }
+        },
+        "input": { "$ref": "#/$defs/nullableObject" },
+        "clipboard": { "$ref": "#/$defs/nullableObject" },
+        "transfer": { "$ref": "#/$defs/nullableObject" },
+        "touch": { "$ref": "#/$defs/nullableObject" },
+        "form": { "$ref": "#/$defs/nullableObject" },
+        "document_state": { "$ref": "#/$defs/nullableObject" },
+        "target": {
+          "type": "object", "additionalProperties": false,
+          "required": ["tag", "role", "input_type", "selector_hint", "password_like"],
+          "properties": {
+            "tag": { "type": "string" }, "role": { "$ref": "#/$defs/nullableString" },
+            "input_type": { "$ref": "#/$defs/nullableString" },
+            "selector_hint": { "type": "string" }, "password_like": { "type": "boolean" }
+          }
+        },
+        "is_trusted": { "$ref": "#/$defs/nullableBoolean" },
+        "visibility_state": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "legacyStandaloneMetadata": {
+      "description": "Closed compatibility shape for the retained pre-extension standalone mirror recorded on 2026-08-03. New recorder exports must use currentSessionMetadata.",
+      "type": "object",
+      "required": [
+        "schema_version", "session_id", "actor_type", "actor_label",
+        "participant_code", "task_id", "executor", "executor_version",
+        "environment", "raw_key_capture", "include_query",
+        "consent_confirmed", "started_at", "stopped_at", "status",
+        "event_count", "evidence_scope"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": "cui-trace-v1" },
+        "session_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "actor_type": { "enum": ["human", "agent"] },
+        "actor_label": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "participant_code": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "task_id": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "executor": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "executor_version": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "environment": { "type": "string", "minLength": 1, "maxLength": 512 },
+        "raw_key_capture": { "type": "boolean" },
+        "include_query": { "type": "boolean" },
+        "consent_confirmed": { "const": true },
+        "started_at": { "type": "string", "format": "date-time" },
+        "stopped_at": { "type": "string", "format": "date-time" },
+        "status": { "const": "complete" },
+        "event_count": { "type": "integer", "minimum": 0 },
+        "evidence_scope": { "type": "string", "minLength": 1, "maxLength": 200 }
+      }
+    },
+    "legacyStandaloneEvent": {
+      "description": "Closed event shape used only by the retained 2026-08-03 standalone mirror.",
+      "type": "object",
+      "required": [
+        "schema_version", "event_id", "type", "epoch_ms", "monotonic_ms",
+        "url", "viewport", "pointer", "wheel", "scroll", "key",
+        "key_class", "modifiers", "input", "target", "is_trusted",
+        "visibility_state"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": "cui-trace-v1" },
+        "event_id": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "type": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "epoch_ms": { "type": "integer", "minimum": 0 },
+        "monotonic_ms": { "type": "number", "minimum": 0 },
+        "url": { "type": "string" },
+        "viewport": {
+          "type": "object", "additionalProperties": false,
+          "required": ["width", "height", "device_pixel_ratio"],
+          "properties": {
+            "width": { "type": "integer", "minimum": 0 },
+            "height": { "type": "integer", "minimum": 0 },
+            "device_pixel_ratio": { "type": "number", "exclusiveMinimum": 0 }
+          }
+        },
+        "pointer": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "x": { "type": "number" }, "y": { "type": "number" },
+            "button": { "type": "integer" }, "buttons": { "type": "integer" },
+            "pointer_type": { "$ref": "#/$defs/nullableString" }
+          }
+        },
+        "wheel": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "delta_x": { "type": "number" }, "delta_y": { "type": "number" },
+            "delta_mode": { "type": "integer", "minimum": 0, "maximum": 2 }
+          }
+        },
+        "scroll": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+        },
+        "key": { "$ref": "#/$defs/nullableString" },
+        "key_class": { "enum": ["control", "whitespace", "letter", "digit", "punctuation", "other", null] },
+        "modifiers": {
+          "type": "object", "additionalProperties": false,
+          "required": ["alt", "ctrl", "meta", "shift"],
+          "properties": {
+            "alt": { "type": "boolean" }, "ctrl": { "type": "boolean" },
+            "meta": { "type": "boolean" }, "shift": { "type": "boolean" }
+          }
+        },
+        "input": {
+          "type": ["object", "null"], "additionalProperties": false,
+          "properties": {
+            "input_type": { "$ref": "#/$defs/nullableString" },
+            "data_length": { "$ref": "#/$defs/nullableNumber" }
+          }
+        },
+        "target": {
+          "type": "object", "additionalProperties": false,
+          "required": ["tag", "role", "input_type", "selector_hint", "password_like"],
+          "properties": {
+            "tag": { "type": "string" }, "role": { "$ref": "#/$defs/nullableString" },
+            "input_type": { "$ref": "#/$defs/nullableString" },
+            "selector_hint": { "type": "string" }, "password_like": { "type": "boolean" }
+          }
+        },
+        "is_trusted": { "$ref": "#/$defs/nullableBoolean" },
+        "visibility_state": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "nullableObject": {
+      "type": ["object", "null"]
+    }
+  }
+}

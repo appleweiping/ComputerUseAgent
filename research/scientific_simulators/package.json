@@ -1,0 +1,18 @@
+{
+  "name": "computer-use-agent-scientific-simulators",
+  "private": true,
+  "description": "Archived scripted-automation simulator control for the ComputerUseAgent recorder (research provenance, not part of the product).",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "test": "node --test validator.test.mjs runner_policy.test.mjs",
+    "plan": "node run_extension_e2e.mjs --dry-run",
+    "e2e": "node run_extension_e2e.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "25.4.0"
+  }
+}

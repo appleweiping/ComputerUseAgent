@@ -1,0 +1,32 @@
+{
+  "schema_version": "cui-codex-surface-preflight-v1",
+  "observed_at_utc": "2026-08-11T12:02:27.663Z",
+  "actor": "Codex Desktop",
+  "checks": [
+    {
+      "surface": "in_app_browser",
+      "status": "blocked",
+      "failure_code": "mv3_extension_surface_unavailable",
+      "detail": "The Codex in-app browser was reachable, but it did not expose a supported way to launch the repository-owned Chrome profile with the unpacked MV3 recorder."
+    },
+    {
+      "surface": "computer_control",
+      "status": "blocked",
+      "failure_code": "window_binding_ownership_failure",
+      "detail": "The helper returned exactly one fresh-profile Chrome task window, but state capture rejected it because the window was reported as no longer belonging to the same app identifier that the helper simultaneously reported as its current owner."
+    }
+  ],
+  "computer_control_recovery": [
+    "Repeated selection from a fresh window list.",
+    "Rehydrated the returned window by ID with and without its returned app identifier.",
+    "Reset and reinitialized the Computer Use JavaScript kernel.",
+    "Repeated the canary with Chrome Dev as an independent local Chrome binary."
+  ],
+  "canary_task": "click-checkboxes",
+  "canary_task_inputs_sent": 0,
+  "scripted_control_used": false,
+  "manual_rescue_used": false,
+  "private_canary_data_redistributed": false,
+  "decision": "Record all nine planned cells as blocked after real task initialization; do not substitute CDP, Playwright, Puppeteer, or human task actions.",
+  "formal_claim_permitted": false
+}

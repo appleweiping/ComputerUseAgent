@@ -1,0 +1,53 @@
+{
+  "schema_version": "cui-retrospective-study-config-v1",
+  "study_mode": "retrospective_non_interventional",
+  "protocol_status": "active_non_formal",
+  "historical_formal_config": {
+    "repository_path": "configs/formal-study.yaml",
+    "source_commit": "437070f519d4bd40e9e4e46bf19fcca52b4b7557",
+    "sha256": "1a69495e8f4202002cd08cf25b140df183916566964ee729f6bc7588653ca6ee",
+    "mutation_allowed": false
+  },
+  "formal_claim_permitted": false,
+  "budget": {
+    "currency": "USD",
+    "hard_total_cap": 200.0,
+    "stop_if_projected_total_exceeds_cap": true
+  },
+  "data_policy": {
+    "allowed_evidence_classes": ["external_public", "external_restricted"],
+    "allowed_participant_scopes": ["public_dataset", "third_party_existing_data"],
+    "new_participant_collection_allowed": false,
+    "raw_human_trace_publication_allowed": false,
+    "source_manifest_schema": "cui-source-manifest-v1",
+    "detector_dataset_schema": "cui-detector-dataset-v2"
+  },
+  "citation_snapshot": {
+    "snapshot_label_local_date": "2026-08-11",
+    "display_timezone": "Asia/Shanghai",
+    "retrieval_window_utc": {
+      "start": "2026-08-10T16:00:00Z",
+      "end_exclusive": "2026-08-11T16:00:00Z"
+    },
+    "primary_index": "openalex",
+    "cross_checks": ["semantic_scholar", "crossref"],
+    "edge_schema": "cui-citation-assertion-v1",
+    "raw_response_hash_required": true,
+    "xpac_reporting": "separate_sensitivity_layer",
+    "claim_boundary": "Index-dependent API state observed during the frozen retrieval window; not citation ground truth or historical time travel."
+  },
+  "codex_cases": {
+    "schema_version": "cui-codex-case-v1",
+    "human_participant_data_allowed": false,
+    "formal_claim_permitted": false
+  },
+  "stagehand_retirement": {
+    "version": "3.7.1",
+    "status": "historical_only",
+    "active_install_allowed": false,
+    "active_formal_execution_allowed": false,
+    "historical_results_preserved": true,
+    "replacement_implemented": false,
+    "replacement_name": null
+  }
+}

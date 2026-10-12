@@ -1,0 +1,264 @@
+{
+  "exports": [
+    {
+      "format": "json",
+      "file": "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.json",
+      "bytes": 675011,
+      "sha256": "088c892a19bc7f472bffbe88596def5a1e9f4f7c71460ced39260950ab9c14ed",
+      "chrome_download_id": 1,
+      "cdp_guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+      "cdp_completed": true
+    },
+    {
+      "format": "jsonl",
+      "file": "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.jsonl",
+      "bytes": 453832,
+      "sha256": "1c9ef85cb00ca382e36ce8e2ffa0fd57145b753c6468e5760a765163706ff642",
+      "chrome_download_id": 2,
+      "cdp_guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+      "cdp_completed": true
+    },
+    {
+      "format": "csv",
+      "file": "results/week2_recorder/extension_e2e/exports/cui-trace-e2e-safe-happy-path-agent-0ae4cf60.csv",
+      "bytes": 145423,
+      "sha256": "e6c7771b522e760f15b60dd8b8aa060df0d228f2fa3dd5c6a6289f5b624bc1ef",
+      "chrome_download_id": 3,
+      "cdp_guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+      "cdp_completed": true
+    }
+  ],
+  "browser_download_events": [
+    {
+      "at": "2026-08-09T23:15:45.557Z",
+      "method": "Browser.downloadWillBegin",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": null,
+        "total_bytes": null,
+        "received_bytes": null,
+        "suggested_filename": "cui-trace-e2e-safe-happy-path-agent-0ae4cf60.json"
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:45.564Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": "inProgress",
+        "total_bytes": 675011,
+        "received_bytes": 0,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:45.565Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": "inProgress",
+        "total_bytes": 675011,
+        "received_bytes": 675011,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:45.572Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": "inProgress",
+        "total_bytes": 675011,
+        "received_bytes": 675011,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:45.601Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": "inProgress",
+        "total_bytes": 675011,
+        "received_bytes": 675011,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:46.478Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": "inProgress",
+        "total_bytes": 675011,
+        "received_bytes": 675011,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:46.754Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "f4b9a419-26f2-4b47-a289-9bcf2f4c292c",
+        "state": "completed",
+        "total_bytes": 675011,
+        "received_bytes": 675011,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:47.348Z",
+      "method": "Browser.downloadWillBegin",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": null,
+        "total_bytes": null,
+        "received_bytes": null,
+        "suggested_filename": "cui-trace-e2e-safe-happy-path-agent-0ae4cf60.jsonl"
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:47.352Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": "inProgress",
+        "total_bytes": 453832,
+        "received_bytes": 0,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:47.356Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": "inProgress",
+        "total_bytes": 453832,
+        "received_bytes": 453832,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:47.358Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": "inProgress",
+        "total_bytes": 453832,
+        "received_bytes": 453832,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:47.382Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": "inProgress",
+        "total_bytes": 453832,
+        "received_bytes": 453832,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:47.821Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": "inProgress",
+        "total_bytes": 453832,
+        "received_bytes": 453832,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:48.064Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "514a196b-b789-4089-ae7f-8cb28568a2db",
+        "state": "completed",
+        "total_bytes": 453832,
+        "received_bytes": 453832,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:48.509Z",
+      "method": "Browser.downloadWillBegin",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": null,
+        "total_bytes": null,
+        "received_bytes": null,
+        "suggested_filename": "cui-trace-e2e-safe-happy-path-agent-0ae4cf60.csv"
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:48.514Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": "inProgress",
+        "total_bytes": 145423,
+        "received_bytes": 0,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:48.515Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": "inProgress",
+        "total_bytes": 145423,
+        "received_bytes": 145423,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:48.515Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": "inProgress",
+        "total_bytes": 145423,
+        "received_bytes": 145423,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:48.520Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": "inProgress",
+        "total_bytes": 145423,
+        "received_bytes": 145423,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:49.040Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": "inProgress",
+        "total_bytes": 145423,
+        "received_bytes": 145423,
+        "suggested_filename": null
+      }
+    },
+    {
+      "at": "2026-08-09T23:15:49.330Z",
+      "method": "Browser.downloadProgress",
+      "params": {
+        "guid": "df70cfc0-0b5c-433f-80c0-41b9e8496e8c",
+        "state": "completed",
+        "total_bytes": 145423,
+        "received_bytes": 145423,
+        "suggested_filename": null
+      }
+    }
+  ]
+}

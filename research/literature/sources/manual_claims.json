@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "cui-literature-manual-claims-v1",
+  "curatedAt": "2026-08-11T12:11:25.5665253Z",
+  "policy": "These are promoted scientific claims. Numeric claims are included only where the full text was reviewed and the locator names the supporting section, page, table, figure, or equation. Legacy abstract-only numbers are deliberately absent.",
+  "claims": [
+    {
+      "claimKey": "fp-agent-behavioral-vs-metadata",
+      "persistentId": "arXiv:2605.01247",
+      "claimKind": "empirical-synthesis",
+      "claimText": "In FP-Agent's released closed-set evaluation, behavioral interaction features separate the studied actors more effectively than browser metadata, while held-out-task results show a generalization loss.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 4.2-4.7 and 6.1",
+        "table": "Tables 2, 4, and 7",
+        "appendix": "Appendix C"
+      },
+      "claimBoundary": "This does not establish unseen-agent-family generalization; the local project has only used the released split and model."
+    },
+    {
+      "claimKey": "fp-agent-release-boundary",
+      "persistentId": "arXiv:2605.01247",
+      "claimKind": "reproducibility-boundary",
+      "claimText": "The FP-Agent artifact supports released-split review, but reproducing that result is not equivalent to retraining or validating on an unseen executor family.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Section 6.1",
+        "appendix": "Appendix C"
+      },
+      "claimBoundary": "Keep released-split reproduction, new-family evaluation, and matched human collection as separate evidence levels."
+    },
+    {
+      "claimKey": "known-actions-attribution-scope",
+      "persistentId": "arXiv:2605.14786",
+      "claimKind": "scope-and-transfer-boundary",
+      "claimText": "UI trajectories can attribute known browser-agent implementations, but the paper assumes automation is already known and reports task/site dependence.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 3.1-3.2, 5.1, and 6.1",
+        "figure": "Figures 2-5",
+        "table": "Tables 1, 7, 8, and 14"
+      },
+      "claimBoundary": "Agent-family attribution is not the same problem as human-versus-agent detection."
+    },
+    {
+      "claimKey": "cognitive-trap-main-threshold",
+      "persistentId": "DOI:10.1093/jcr/ucag006",
+      "claimKind": "empirical-result",
+      "claimText": "Under the paper's selected three-failure threshold, the six-item active challenge detected 97.1% of 526 deployed agents while flagging 4.1% of 1,007 presumed humans.",
+      "numericClaim": true,
+      "locator": {
+        "section": "Prolific Method and Results; Human Validation; Practical Recommendations",
+        "figure": "Figure 2",
+        "table": "Tables 2-4"
+      },
+      "claimBoundary": "This is an active survey intervention with platform-verified human labels, not passive mouse/keyboard trace detection."
+    },
+    {
+      "claimKey": "webcloak-disruption-not-attribution",
+      "persistentId": "IEEE-S&P-2026:WebCloak",
+      "claimKind": "scope-and-transfer-boundary",
+      "claimText": "WebCloak disrupts parse-then-interpret scraping through structural and semantic defenses; successful disruption does not identify the actor that initiated a session.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 3-5, 7, and 8",
+        "figure": "Figures 1-2 and 8",
+        "table": "Tables 2-4, 6-7, and 10-15"
+      },
+      "claimBoundary": "Treat it as executor/threat characterization and active defense, not a passive detector benchmark."
+    },
+    {
+      "claimKey": "killourhy-protocol-comparability",
+      "persistentId": "DOI:10.1109/dsn.2009.5270346",
+      "claimKind": "methodological-result",
+      "claimText": "When feature definitions, repetitions, outlier handling, attempt counts, and threshold rules were fixed on one dataset, the three strongest compared keystroke detectors fell within a narrow 9.6%-10.2% equal-error-rate band.",
+      "numericClaim": true,
+      "locator": {
+        "section": "Sections 6.2, 7.1, and 7.2",
+        "table": "Table 2",
+        "page": "132 (PDF page 8)"
+      },
+      "claimBoundary": "The absolute error rates belong to a fixed-password, single-machine protocol; the transferable result is the need to pin the evaluation contract."
+    },
+    {
+      "claimKey": "jorgensen-environment-confound",
+      "persistentId": "DOI:10.1145/1966913.1966983",
+      "claimKind": "confound-boundary",
+      "claimText": "Mouse-dynamics results can reflect pointing-device and computing-environment differences rather than stable identity behavior when those variables are not controlled across enrollment and verification.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 4, 5, 5.1, 6.2, and 7.5",
+        "page": "476-482"
+      },
+      "claimBoundary": "Executor, browser, device, viewport, and task provenance must therefore stay available for confound audits."
+    },
+    {
+      "claimKey": "jorgensen-verification-horizon",
+      "persistentId": "DOI:10.1145/1966913.1966983",
+      "claimKind": "measurement-boundary",
+      "claimText": "Authentication practicality depends on the amount and duration of mouse activity required before a decision, not only on an aggregate error rate.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 4.1 and 7.2",
+        "page": "476-482"
+      },
+      "claimBoundary": "The detector report should pair discrimination metrics with horizon and abstention coverage."
+    },
+    {
+      "claimKey": "monrose-timing-primitives",
+      "persistentId": "DOI:10.1016/S0167-739X(99)00059-X",
+      "claimKind": "feature-definition",
+      "claimText": "Keystroke dynamics models habitual typing rhythm using inter-key latencies and key durations rather than the semantic content of the typed string.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 1-2",
+        "page": "351-353"
+      },
+      "claimBoundary": "Identity verification is not the same label problem as human-versus-agent detection, so feature definitions transfer more directly than reported accuracy."
+    },
+    {
+      "claimKey": "twitter-third-class",
+      "persistentId": "DOI:10.1109/TDSC.2012.75",
+      "claimKind": "class-ontology",
+      "claimText": "The human/bot/cyborg formulation is an early demonstration that a mixed human-automation actor cannot be represented faithfully by a binary human-or-bot label.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 3-5 and Conclusion",
+        "table": "Tables 2-4",
+        "page": "811-824"
+      },
+      "claimBoundary": "Its signals are account- and post-level; they do not transfer directly to mouse/keyboard event features."
+    },
+    {
+      "claimKey": "becaptcha-neuromotor-scope",
+      "persistentId": "arXiv:2005.00890",
+      "claimKind": "feature-and-adversary-model",
+      "claimText": "BeCAPTCHA-Mouse grounds synthetic cursor generation in a neuromotor/lognormal trajectory model and evaluates detectors against generated mouse paths.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 3.2.1-3.2.2 and 4",
+        "page": "15-27 of the reviewed arXiv PDF"
+      },
+      "claimBoundary": "The negative class is a trajectory generator, not an LLM agent completing matched browser tasks."
+    },
+    {
+      "claimKey": "workflow-guided-evaluation",
+      "persistentId": "arXiv:1802.08802",
+      "claimKind": "benchmark-scope",
+      "claimText": "Workflow-guided exploration constrains web-interface reinforcement learning with demonstration-derived workflows and evaluates both benchmark and live-web task variants.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 3-6.3.4 and 7",
+        "page": "3-9 of the reviewed arXiv PDF"
+      },
+      "claimBoundary": "It supplies agent/environment context, not human-versus-agent labels or passive event traces."
+    },
+    {
+      "claimKey": "minimal-features-dataset-composition",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "dataset-composition",
+      "claimText": "The controlled corpus combines more than 14,000 CaptchaSolve30k human sessions, 5,000 simulated bot samples, and 1,025 Claude/Playwright agent sessions across 10 tasks.",
+      "numericClaim": true,
+      "locator": {
+        "section": "Sections 3.1-3.4",
+        "figure": "Figure 1",
+        "appendix": "Appendix A"
+      },
+      "claimBoundary": "Only the human and agent classes are real interaction data; the bot class is generated from specified distributions."
+    },
+    {
+      "claimKey": "minimal-features-event-schema",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "data-schema",
+      "claimText": "Each agent session is recorded as JSONL containing mousemove, mousedown, mouseup, click, keydown, keyup, and scroll events with timestamps and isTrusted.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Section 3.3",
+        "appendix": "Appendix A: Event Parsing, Button State Machine, and Trajectory Segmentation"
+      },
+      "claimBoundary": "The public-release paragraph does not yet provide a verified artifact URL for these session files."
+    },
+    {
+      "claimKey": "minimal-features-task-mismatch",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "confound-boundary",
+      "claimText": "Human sessions come from CAPTCHA solving, whereas agent sessions come from ten different browser tasks; the task-domain analysis is an ablation, not a matched-task human collection.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Sections 3.1, 3.3, and 8"
+      },
+      "claimBoundary": "The paper cannot establish task-invariant human-versus-agent separation under a fully matched interaction protocol."
+    },
+    {
+      "claimKey": "minimal-features-executor-artifact",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "mechanism-and-transfer-boundary",
+      "claimText": "The discriminative signal is attributed to Playwright's event-emission pattern, especially missing raw pointer and wheel streams, rather than to agent reasoning.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Section 4.1; Section 12, What We Are Actually Detecting"
+      },
+      "claimBoundary": "A detector trained on this signature should be described as executor-sensitive until tested on independent OS-level and API-level executors."
+    },
+    {
+      "claimKey": "minimal-features-two-feature-result",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "empirical-result",
+      "claimText": "In the paper's controlled benchmark, mouse_event_rate plus teleport_click_ratio produced 100% observed agent recall across the tested evasion levels with 0.994 agent precision; the paper also shows the single-feature regime can collapse into an always-agent classifier.",
+      "numericClaim": true,
+      "locator": {
+        "section": "Sections 9.1-9.2 and 11.3",
+        "appendix": "Appendix B feature definitions"
+      },
+      "claimBoundary": "These are in-corpus observations under the paper's task/executor design, not a universal minimal detector."
+    },
+    {
+      "claimKey": "minimal-features-threat-model",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "threat-model-boundary",
+      "claimText": "The evaluated threat model covers API-driven browser automation and does not test OS-level input simulation such as PyAutoGUI.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Section 5.1 and Section 12, Limitations"
+      },
+      "claimBoundary": "Claims should not be extended to hardware-event injection or arbitrary desktop automation."
+    },
+    {
+      "claimKey": "minimal-features-release-status",
+      "persistentId": "arXiv:2607.26935",
+      "claimKind": "reproducibility-boundary",
+      "claimText": "The paper states that code, trained models, processed datasets, feature extraction, and evaluation scripts will be released upon publication, but no public artifact URL was verified on 2026-08-11.",
+      "numericClaim": false,
+      "locator": {
+        "section": "Section 12, Reproducibility"
+      },
+      "claimBoundary": "Do not describe the data or code as currently released; recheck the paper record before planning a reproduction."
+    }
+  ]
+}

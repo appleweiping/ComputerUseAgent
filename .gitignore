@@ -1,0 +1,88 @@
+# --- Secrets and local configuration -------------------------------------
+# Explicit names only: broad globs such as *secret* would also hide source and
+# test files (for example tests/tools/test_scan_secrets.py).
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+.npmrc
+.pypirc
+credential_vault/
+
+# --- Python and Node environments ----------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+
+# --- Build, packaging and task-runner outputs -----------------------------
+dist/
+# Executed notebooks are build outputs (research/*/execute_notebook.py).
+*.executed.ipynb
+build/
+*.egg-info/
+.nox/
+*.pyz
+extension/coverage/
+# Default output directory of the README/docs quick start
+# (computer-use-agent analyze ... --output-dir out/run1). Anchored to the
+# repository root so a source directory named `out` elsewhere stays visible.
+/out/
+
+# --- Test, lint and coverage caches --------------------------------------
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.runtime/
+extension/.e2e-results/
+
+# --- Private, raw or machine-specific data (never commit) ------------------
+_private/
+private_data/
+raw_data/
+raw_traces/
+human_traces/
+recorder_exports/
+run_data/
+browser_sessions/
+profiles/
+profile_*/
+user-data/
+cookies*
+*.har
+*.webm
+*.mp4
+logs/
+*.log
+*.inspect.ndjson
+
+# --- Large or third-party data and checkouts -------------------------------
+research/literature/generated/large/
+feature_vectors.json
+train_test_split.npz
+third_party/
+repos/
+backups/
+*.sqlite
+*.sqlite3
+
+# --- Editors and operating systems ----------------------------------------
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

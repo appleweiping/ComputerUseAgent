@@ -1,0 +1,5 @@
+numpy==2.4.2
+pyarrow==23.0.1
+requests==2.33.1
+scikit-learn==1.8.0
+matplotlib==3.10.9

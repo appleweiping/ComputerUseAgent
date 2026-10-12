@@ -1,0 +1,30 @@
+{
+  "browser_version": "Chrome/151.0.7922.108",
+  "case_id": "codex-miniwob-choose-list-r2-20260811",
+  "failure_code": "codex_interaction_surfaces_unavailable",
+  "instruction_observed": true,
+  "manual_rescue_used": false,
+  "natural_codex_actions": 0,
+  "official_reward_available": false,
+  "official_task_initialized": true,
+  "private_raw_redistributed": false,
+  "private_zero_action_trace_retained": true,
+  "recorder_session_started": true,
+  "recorder_session_stopped": true,
+  "schema_version": "cui-codex-case-verification-v1",
+  "screenshot": {
+    "chunk_count": 5,
+    "chunk_crc_valid": true,
+    "height": 214,
+    "image_data_decoded": true,
+    "png_complete": true,
+    "png_header_valid": true,
+    "width": 332
+  },
+  "scripted_control_used": false,
+  "status": "blocked",
+  "surface_preflight": {
+    "repository_path": "results/codex_case/surface_preflight.json",
+    "sha256": "af121598fac7468520b4e71e4c0dd16d35f051cfa357cb24ddcc953c5a62743e"
+  }
+}

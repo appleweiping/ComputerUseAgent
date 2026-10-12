@@ -1,0 +1,159 @@
+{
+  "schema_version": "cui-week3-simulator-aggregate-v1",
+  "generated_at": "2026-08-07T14:01:23.923Z",
+  "run_count": 9,
+  "task_count": 3,
+  "simulator_count": 3,
+  "passed_run_count": 9,
+  "pass_rate": 1,
+  "total_event_count": 908,
+  "unique_event_types": [
+    "beforeinput",
+    "change",
+    "click",
+    "focusin",
+    "focusout",
+    "gotpointercapture",
+    "input",
+    "keydown",
+    "keyup",
+    "lostpointercapture",
+    "navigation",
+    "pointerdown",
+    "pointerenter",
+    "pointerleave",
+    "pointermove",
+    "pointerout",
+    "pointerover",
+    "pointerup",
+    "select",
+    "selectionchange"
+  ],
+  "by_task": {
+    "netlogo-ca-rule90-v1": {
+      "run_count": 3,
+      "passed_run_count": 3,
+      "pass_rate": 1,
+      "event_count": {
+        "mean": 116,
+        "min": 116,
+        "max": 116
+      },
+      "duration_ms": {
+        "mean": 4720.67,
+        "min": 4359,
+        "max": 4907
+      },
+      "pointer_distance_px": {
+        "mean": 301.27,
+        "min": 301.27,
+        "max": 301.27
+      },
+      "trusted_input_event_count": {
+        "mean": 31,
+        "min": 31,
+        "max": 31
+      },
+      "captured_types": [
+        "beforeinput",
+        "change",
+        "click",
+        "focusin",
+        "focusout",
+        "input",
+        "keydown",
+        "keyup",
+        "navigation",
+        "pointerdown",
+        "pointerenter",
+        "pointerleave",
+        "pointermove",
+        "pointerout",
+        "pointerover",
+        "pointerup",
+        "select",
+        "selectionchange"
+      ]
+    },
+    "phet-bce-ammonia-balance-v1": {
+      "run_count": 3,
+      "passed_run_count": 3,
+      "pass_rate": 1,
+      "event_count": {
+        "mean": 122.33,
+        "min": 122,
+        "max": 123
+      },
+      "duration_ms": {
+        "mean": 5968,
+        "min": 5888,
+        "max": 6076
+      },
+      "pointer_distance_px": {
+        "mean": 3615.27,
+        "min": 3615.27,
+        "max": 3615.27
+      },
+      "trusted_input_event_count": {
+        "mean": 49.33,
+        "min": 49,
+        "max": 50
+      },
+      "captured_types": [
+        "click",
+        "gotpointercapture",
+        "lostpointercapture",
+        "navigation",
+        "pointerdown",
+        "pointerenter",
+        "pointerleave",
+        "pointermove",
+        "pointerout",
+        "pointerover",
+        "pointerup"
+      ]
+    },
+    "phet-pdl-annotated-single-launch-v1": {
+      "run_count": 3,
+      "passed_run_count": 3,
+      "pass_rate": 1,
+      "event_count": {
+        "mean": 64.33,
+        "min": 63,
+        "max": 65
+      },
+      "duration_ms": {
+        "mean": 4642,
+        "min": 4467,
+        "max": 4942
+      },
+      "pointer_distance_px": {
+        "mean": 2477.99,
+        "min": 2477.99,
+        "max": 2477.99
+      },
+      "trusted_input_event_count": {
+        "mean": 27.33,
+        "min": 26,
+        "max": 28
+      },
+      "captured_types": [
+        "click",
+        "focusin",
+        "focusout",
+        "gotpointercapture",
+        "keydown",
+        "keyup",
+        "lostpointercapture",
+        "navigation",
+        "pointerdown",
+        "pointerenter",
+        "pointerleave",
+        "pointermove",
+        "pointerout",
+        "pointerover",
+        "pointerup"
+      ]
+    }
+  }
+}

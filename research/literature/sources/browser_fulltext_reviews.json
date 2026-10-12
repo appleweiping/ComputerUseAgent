@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "cui-literature-browser-fulltext-review-v1",
+  "policy": "These entries are used only when a legal full-text page was reviewed in the Codex embedded browser but blocks direct scripted retrieval. They are not raw-cache substitutes: the absence of a byte hash stays explicit.",
+  "reviews": {
+    "DOI:10.1093/jcr/ucag006": {
+      "reviewedAt": "2026-08-11T12:11:25.5665253Z",
+      "sourceUrl": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "accessOutcome": "Full corrected proof rendered and reviewed in the embedded browser; evidence record finalized at reviewedAt after the scripted request returned HTTP 403.",
+      "titleVerified": true,
+      "fullTextExtent": "129-page corrected proof including article, web appendix, figures, and tables",
+      "locatorInventory": [
+        "Cognitive Trap Framework steps 1-4",
+        "Human Validation",
+        "Initial Model Validation",
+        "Expanded Model Validation",
+        "Prolific Method and Results",
+        "Figure 2",
+        "Tables 2-4",
+        "Practical Recommendations",
+        "Limitations"
+      ],
+      "license": "CC-BY-4.0",
+      "licenseEvidenceUrl": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "reuseBoundary": "Attribution required; retain the corrected-proof citation and label any crop or annotation."
+    },
+    "DOI:10.1145/1966913.1966983": {
+      "reviewedAt": "2026-08-11T12:11:25.5665253Z",
+      "sourceUrl": "https://www.researchgate.net/publication/221609165_On_mouse_dynamics_as_a_behavioral_biometric_for_authentication",
+      "accessOutcome": "Author-uploaded full text rendered and reviewed in the embedded browser; evidence record finalized at reviewedAt after direct ResearchGate returned HTTP 403 and the historical CiteSeerX byte URL returned 404.",
+      "titleVerified": true,
+      "fullTextExtent": "Complete ASIACCS paper, pages 476-482",
+      "locatorInventory": [
+        "Sections 1-4: motivation, prior methods, and evaluation pitfalls",
+        "Section 5 and Section 5.1: study questions and experimental design",
+        "Section 6.2: controlled-environment experiment",
+        "Sections 7.1-7.5: common data, verification time, false rejection, offline analysis, and environmental variables",
+        "Pages 476-482"
+      ],
+      "license": "ACM-personal-or-classroom-use-notice",
+      "licenseEvidenceUrl": "https://doi.org/10.1145/1966913.1966983",
+      "reuseBoundary": "The paper notice permits personal/classroom copying with citation and no profit; broader redistribution, republication, or figure reuse requires permission."
+    }
+  }
+}

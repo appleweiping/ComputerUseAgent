@@ -1,0 +1,102 @@
+{
+  "schema_version": "cui-simulator-run-result-v1",
+  "run_id": "netlogo-ca-rule90-v1-rep-01",
+  "task_id": "netlogo-ca-rule90-v1",
+  "task_version": "1.0.0",
+  "repetition": 1,
+  "actor_type": "agent",
+  "executor": "puppeteer-cdp",
+  "session_id": "eb80502a-2dca-4752-bc5e-8edd0b053001",
+  "simulator": {
+    "name": "NetLogo Web CA 1D Elementary",
+    "version": "NetLogo Web 2.15.0 / model commit ca8e0e1611aef188fadeebd2097b70d1e5fa4e00",
+    "requested_url": "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox",
+    "resolved_url": "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox",
+    "html_sha256": "760123f4996da8f248b4307131d5952147fb6ce37c3cbd7bac4fccfb68717c6a"
+  },
+  "action_started_at": "2026-08-07T13:58:06.356Z",
+  "action_finished_at": "2026-08-07T13:58:09.162Z",
+  "timing": {
+    "time_limit_seconds": 120,
+    "action_duration_ms": 2805,
+    "action_within_time_limit": true
+  },
+  "validator_passed": true,
+  "validator_check_count": 1,
+  "capture": {
+    "event_count": 116,
+    "duration_ms": 4359,
+    "pointer_distance_px": 301.27,
+    "trusted_input_event_count": 31,
+    "captured_types": [
+      "beforeinput",
+      "change",
+      "click",
+      "focusin",
+      "focusout",
+      "input",
+      "keydown",
+      "keyup",
+      "navigation",
+      "pointerdown",
+      "pointerenter",
+      "pointerleave",
+      "pointermove",
+      "pointerout",
+      "pointerover",
+      "pointerup",
+      "select",
+      "selectionchange"
+    ],
+    "captured_type_count": 18,
+    "post_stop_negative_control_passed": true,
+    "privacy_safe_export_passed": true
+  },
+  "causal_controls": {
+    "storage_empty_before_start": true,
+    "real_extension_indicator_seen": true,
+    "real_extension_badge_seen": true,
+    "post_stop_event_count_unchanged": true,
+    "dashboard_storage_readback_seen": true
+  },
+  "browser_console_error_count": 0,
+  "browser_console_errors": [],
+  "browser_console_allowlisted_error_count": 0,
+  "browser_console_allowlisted_errors": [],
+  "browser_console_error_policy": {
+    "id": "phet-google-analytics-connection-closed-v1",
+    "simulator_origin": "https://phet.colorado.edu",
+    "error_kind": "console.error",
+    "error_message": "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+    "source_origin": "https://www.google-analytics.com",
+    "source_path": "/g/collect",
+    "rationale": "The optional Google Analytics collection request can be closed by the local network; simulator state and first-party assets remain validated independently."
+  },
+  "artifacts": {
+    "sanitized_trace": {
+      "path": "results/week3_scientific_simulators/runs/netlogo-ca-rule90-v1/rep-01/sanitized_trace.json",
+      "sha256": "b41f5d086b274af760f93219e135cb4bc5e568948ffa46a1c80c2cd3e6dbd38a"
+    },
+    "validator_result": {
+      "path": "results/week3_scientific_simulators/runs/netlogo-ca-rule90-v1/rep-01/validator_result.json",
+      "sha256": "acb7bdb071faaf583bcbd164be8d8622089d6e180876472f5f8db3460d8a31c1"
+    },
+    "recording_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/netlogo-ca-rule90-v1/rep-01/simulator-recording.png",
+      "sha256": "782c2258bb6cc440a2615a13d2a77149308aea9673e2223a3c57e3e089a17753"
+    },
+    "final_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/netlogo-ca-rule90-v1/rep-01/simulator-final-state.png",
+      "sha256": "cdcd82e5f365c02dfc5cf75bb3b70f2c2190e5f9799cfdf71e798f56c5fea725"
+    },
+    "recorder_popup_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/netlogo-ca-rule90-v1/rep-01/recorder-agent-metadata.png",
+      "sha256": "7659b1bc8acbf8cb20ae5ff34634b4925d139cec044ec3bad2e9f617c048bc9b"
+    },
+    "dashboard_screenshot": {
+      "path": "results/week3_scientific_simulators/runs/netlogo-ca-rule90-v1/rep-01/dashboard-inspect.png",
+      "sha256": "d243bc947be1a2a4fe1a7c9d2abf7eea3617df52389ae9a44e4bf0077879ffc9"
+    }
+  },
+  "status": "passed"
+}

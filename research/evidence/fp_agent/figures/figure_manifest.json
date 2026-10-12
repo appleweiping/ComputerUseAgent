@@ -1,0 +1,57 @@
+{
+  "schema_version": "cui-retrospective-figure-manifest-v1",
+  "source_result": "results/fp_agent/fp_agent_retrospective.json",
+  "source_result_sha256": "50ee4452756691bc70774e32f8a6e4c43906b509da711817c70aefbd5dffa119",
+  "notebook_source": "experiments/fp_agent/notebooks/retrospective.py",
+  "figures": [
+    {
+      "path": "results/fp_agent/figures/data_composition.png",
+      "sha256": "5a292d2ada00bc91566d10e4f0a9abf2479d05a4ca313e0ca86cd9362920f422",
+      "bytes": 119116,
+      "caption": "Raw-derived session counts by task and actor family; aggregate counts only.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    },
+    {
+      "path": "results/fp_agent/figures/model_metric_comparison.png",
+      "sha256": "6306e4103495af209708e573845a746a620f821b986bed22e452a75a051c149c",
+      "bytes": 72745,
+      "caption": "Primary logistic, exploratory XGBoost, and agent-family-holdout aggregate metrics.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    },
+    {
+      "path": "results/fp_agent/figures/held_out_fold_performance.png",
+      "sha256": "ee27295a03218afb42df1525b45b63a960b66e6c6626ee2986a3a52bb892cc34",
+      "bytes": 158376,
+      "caption": "Balanced accuracy for every task-held-out and agent-family-held-out fold; no folds omitted.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    },
+    {
+      "path": "results/fp_agent/figures/confusion_matrices.png",
+      "sha256": "322f721ff06868a193e1284d4794e3c589e70a9cce586b716134555ec6327569",
+      "bytes": 63748,
+      "caption": "Aggregate confusion matrices for primary task-held-out and seven-family-held-out logistic models.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    },
+    {
+      "path": "results/fp_agent/figures/calibration_curves.png",
+      "sha256": "fa56837f5d331248f8cfdf8f2950ce3899ab9fbbf2269559d0c8a1cc1ceb2f99",
+      "bytes": 152341,
+      "caption": "Aggregate task-held-out calibration curves and expected calibration error.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    },
+    {
+      "path": "results/fp_agent/figures/confound_and_permutation_controls.png",
+      "sha256": "2a978ffffd79be90a20070f149356f681ed49a09a26f673ea8f2f1d58e8b3886",
+      "bytes": 74258,
+      "caption": "Primary balanced accuracy compared with task/source encoding controls and the permutation null mean.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    },
+    {
+      "path": "results/fp_agent/figures/ablation_deltas.png",
+      "sha256": "bc82d92269397b77bef35675d0a022ee6c32f7b039cdf0444797f71bf6a4432b",
+      "bytes": 170303,
+      "caption": "Change in task-held-out logistic balanced accuracy after grouped and single-feature removal.",
+      "crop": "none; Matplotlib bbox_inches=tight"
+    }
+  ]
+}

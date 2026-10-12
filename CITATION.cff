@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the metadata below. If you use
+  the archived research evidence under research/, also cite the exact release and
+  the third-party sources your analysis relies on.
+title: "ComputerUseAgent: browser and X11 interaction trace recorder and human-vs-agent evaluation toolkit"
+type: software
+authors:
+  - family-names: Yan
+    given-names: Weiping
+version: "0.5.0"
+date-released: "2026-10-11"
+license: MIT
+repository-code: "https://github.com/appleweiping/ComputerUseAgent"
+url: "https://github.com/appleweiping/ComputerUseAgent"
+abstract: >-
+  ComputerUseAgent is a consent-first toolkit for recording and analysing
+  computer-use interaction traces. It contains a Chrome Manifest V3 extension
+  that stores privacy-reduced browser interaction traces locally, an X11 capture
+  path, JSON Schemas for the trace and dataset formats, a standard-library
+  Python package that extracts 23 behavioral features and runs a deterministic,
+  leakage-aware human-vs-agent evaluation pipeline, and a loopback-only trace
+  viewer. No validated human-vs-agent detector is claimed; the archived research
+  evidence documents what was and was not measured.
+keywords:
+  - computer-use agents
+  - interaction traces
+  - human-vs-agent detection
+  - browser extension
+  - behavior measurement
+  - reproducibility

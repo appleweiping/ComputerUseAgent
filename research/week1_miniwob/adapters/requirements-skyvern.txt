@@ -1,0 +1,2 @@
+skyvern[local]==1.0.47
+playwright==1.62.0

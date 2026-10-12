@@ -1,0 +1,4 @@
+-r requirements-common.txt
+browser-use==0.11.5
+# Browser-Use 0.11.5 imports this package but omits it from wheel metadata.
+pydantic-settings==2.14.2

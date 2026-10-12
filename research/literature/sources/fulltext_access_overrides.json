@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "cui-literature-fulltext-access-overrides-v1",
+  "verifiedAt": "2026-08-11T11:34:40.6671228Z",
+  "policy": {
+    "blockedMeaning": "No legally accessible full text was verified for this project. Metadata and abstract may be inventoried but may not support promoted empirical claims.",
+    "licenseMeaning": "The license applies only to the named access copy. Unknown is preserved as unknown; repository availability is not treated as permission to redistribute figures.",
+    "screenshotRule": "Prefer project-created plots. A source figure/table screenshot is permitted only when the access-copy license allows it or when a separately documented quotation/fair-use rationale is approved; always include source title, locator, and citation."
+  },
+  "overrides": {
+    "DOI:10.1016/s0167-739x(99)00059-x": {
+      "fullTextUrl": "https://www.cs.columbia.edu/~hgs/teaching/security/hw/keystroke.pdf",
+      "accessCopyKind": "university-hosted teaching copy of the publisher paper",
+      "license": "CC-BY-NC-ND-4.0",
+      "licenseEvidenceUrl": "https://cir.nii.ac.jp/crid/1360574095705744384",
+      "reuseBoundary": "Attribution required; no commercial reuse or adaptations. Preserve the publisher citation."
+    },
+    "DOI:10.1109/dsn.2009.5270346": {
+      "fullTextUrl": "https://www.cs.cmu.edu/~maxion/pubs/KillourhyMaxion09.pdf",
+      "accessCopyKind": "author-hosted accepted paper PDF",
+      "license": "publisher-copyright-no-open-license-verified",
+      "licenseEvidenceUrl": "https://doi.org/10.1109/DSN.2009.5270346",
+      "reuseBoundary": "Read and quote with citation; do not redistribute source figures or the PDF without permission."
+    },
+    "DOI:10.1145/3733103": {
+      "fullTextUrl": "https://arxiv.org/pdf/2303.04605",
+      "accessCopyKind": "author preprint on arXiv",
+      "license": "verify-arxiv-record-before-redistribution",
+      "licenseEvidenceUrl": "https://arxiv.org/abs/2303.04605",
+      "reuseBoundary": "Citation and limited quotation only until the arXiv record license is machine-verified; do not reuse figures by default."
+    },
+    "DOI:10.1145/1966913.1966983": {
+      "fullTextUrl": "https://citeseerx.ist.psu.edu/document?doi=6f1c430f14360acdd6a399b9752a3b2faf7acdb6&repid=rep1&type=pdf",
+      "accessCopyKind": "institutional-indexed author copy with ACM notice",
+      "license": "ACM-personal-or-classroom-use-notice",
+      "licenseEvidenceUrl": "https://doi.org/10.1145/1966913.1966983",
+      "reuseBoundary": "The paper notice permits personal/classroom copying with citation and no profit; broader redistribution, republication, or figure reuse requires permission."
+    },
+    "DOI:10.1049/iet-bmt.2018.5126": {
+      "fullTextUrl": "https://arxiv.org/pdf/1810.04668",
+      "accessCopyKind": "author preprint on arXiv",
+      "license": "verify-arxiv-record-before-redistribution",
+      "licenseEvidenceUrl": "https://arxiv.org/abs/1810.04668",
+      "reuseBoundary": "Citation and limited quotation only until the arXiv record license is verified; do not reuse figures by default."
+    },
+    "DOI:10.1109/tdsc.2012.75": {
+      "fullTextUrl": "https://www.eecis.udel.edu/~hnw/paper/tdsc12b.pdf",
+      "accessCopyKind": "author-hosted paper PDF",
+      "license": "publisher-copyright-no-open-license-verified",
+      "licenseEvidenceUrl": "https://doi.org/10.1109/TDSC.2012.75",
+      "reuseBoundary": "Read and quote with citation; do not redistribute source figures or the PDF without permission."
+    },
+    "DOI:10.1109/eurosp.2016.37": {
+      "fullTextUrl": "https://www.cs.columbia.edu/~angelos/Papers/2016/recaptcha.pdf",
+      "accessCopyKind": "author-hosted paper PDF",
+      "license": "publisher-copyright-no-open-license-verified",
+      "licenseEvidenceUrl": "https://doi.org/10.1109/EuroSP.2016.37",
+      "reuseBoundary": "Read and quote with citation; do not redistribute source figures or the PDF without permission."
+    },
+    "DOI:10.1145/3339252.3339267": {
+      "fullTextUrl": "https://eprints.bournemouth.ac.uk/32523/1/paper_82.pdf",
+      "accessCopyKind": "institutional repository full-text PDF",
+      "license": "repository-access-no-open-license-verified",
+      "licenseEvidenceUrl": "https://eprints.bournemouth.ac.uk/32523/",
+      "reuseBoundary": "Read and quote with citation; confirm repository rights before reusing figures."
+    },
+    "DOI:10.1145/3447815": {
+      "fullTextUrl": "https://eprints.bournemouth.ac.uk/36055/1/3447815.pdf",
+      "accessCopyKind": "institutional repository open-access PDF",
+      "license": "CC-BY-4.0",
+      "licenseEvidenceUrl": "https://eprints.bournemouth.ac.uk/36055/",
+      "reuseBoundary": "Attribution required; retain the paper citation and identify any crop or annotation."
+    },
+    "ACL:P19-3019": {
+      "fullTextUrl": "https://aclanthology.org/P19-3019.pdf",
+      "accessCopyKind": "ACL Anthology official PDF",
+      "license": "CC-BY-4.0",
+      "licenseEvidenceUrl": "https://aclanthology.org/P19-3019/",
+      "reuseBoundary": "Attribution required; retain the ACL Anthology citation and label any crop or annotation."
+    },
+    "PMLR:v70/shi17a": {
+      "fullTextUrl": "https://proceedings.mlr.press/v70/shi17a/shi17a.pdf",
+      "accessCopyKind": "PMLR official open-access PDF",
+      "license": "CC-BY-4.0",
+      "licenseEvidenceUrl": "https://proceedings.mlr.press/v70/shi17a.html",
+      "reuseBoundary": "Attribution required; retain the PMLR citation and label any crop or annotation."
+    },
+    "IEEE-S&P-2026:WebCloak": {
+      "fullTextUrl": "https://letterligo.netlify.app/paper/SP26_WebAgent.pdf",
+      "accessCopyKind": "official project-linked paper PDF",
+      "license": "publisher-copyright-no-open-license-verified",
+      "licenseEvidenceUrl": "https://letterligo.netlify.app/",
+      "reuseBoundary": "Read and quote with citation; do not redistribute source figures or the PDF without permission."
+    },
+    "DOI:10.1093/jcr/ucag006": {
+      "fullTextUrl": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "accessCopyKind": "publisher corrected-proof full HTML",
+      "license": "CC-BY-4.0",
+      "licenseEvidenceUrl": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "reuseBoundary": "Attribution required; retain the corrected-proof citation and label any crop or annotation."
+    }
+  },
+  "blocked": [
+    "DOI:10.1145/581271.581272",
+    "DOI:10.1145/1085126.1085129",
+    "DOI:10.1109/tdsc.2007.70207",
+    "DOI:10.1109/tifs.2012.2223677"
+  ]
+}

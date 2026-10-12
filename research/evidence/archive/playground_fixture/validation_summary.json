@@ -1,0 +1,40 @@
+{
+  "schema_version": "cui-week2-validation-v1",
+  "experiment_id": "20260803-recorder-agent-qa",
+  "task_id": "week2-matched-task-v1",
+  "actor_type": "agent",
+  "actor_label": "codex-in-app-browser",
+  "executor": "codex-in-app-browser",
+  "started_at": "2026-08-03T12:56:50.245Z",
+  "stopped_at": "2026-08-03T12:56:52.693Z",
+  "validator": {
+    "passed": true,
+    "selected_instrument": "SpectraScope",
+    "run_code": "W2-DEMO",
+    "replications": 3
+  },
+  "trace_summary": {
+    "event_count": 50,
+    "duration_ms": 2443,
+    "pointer_distance_px": 1668.79,
+    "by_type": {
+      "focusout": 4,
+      "pointermove": 4,
+      "pointerdown": 3,
+      "focusin": 4,
+      "pointerup": 3,
+      "click": 3,
+      "keydown": 14,
+      "beforeinput": 14,
+      "change": 1
+    }
+  },
+  "privacy_audit": {
+    "printableKeyValuesRetained": 0,
+    "urlsWithQueryOrFragment": 0,
+    "passwordLikeEvents": 0,
+    "rawKeyCapture": false
+  },
+  "trace_sha256": "08c46aaa2b475de8ff94fc7fa8a80127dbce2674c31385b4e29fa03ade963fef",
+  "claim_boundary": "Engineering QA on an agent-operated matched-task playground; not a human-versus-agent study and not an extension-storage end-to-end test."
+}

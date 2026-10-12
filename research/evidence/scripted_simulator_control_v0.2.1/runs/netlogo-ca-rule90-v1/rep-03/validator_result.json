@@ -1,0 +1,42 @@
+{
+  "schema_version": "cui-task-validator-result-v1",
+  "task_id": "netlogo-ca-rule90-v1",
+  "task_version": "1.0.0",
+  "validator_id": "netlogo-scientific-state-validator",
+  "validator_version": "1.1.0",
+  "started_at": "2026-08-07T13:58:51.659Z",
+  "finished_at": "2026-08-07T13:58:51.694Z",
+  "passed": true,
+  "checks": [
+    {
+      "id": "rule90_terminal_state",
+      "kind": "netlogo_rule90_oracle",
+      "passed": true,
+      "expected": {
+        "rule": 90,
+        "row": -64,
+        "ticks": 128,
+        "on_cell_count": 2189,
+        "patch_bit_count": 33153,
+        "patch_state_sha256": "669dd8381d3bdcf0d93e40170ccf3237a194e213344da0d024ec1ee5770d1a27",
+        "go_pressed": false
+      },
+      "observed": {
+        "rule": 90,
+        "row": -64,
+        "ticks": 128,
+        "on_cell_count": 2189,
+        "patch_bit_count": 33153,
+        "patch_state_sha256": "669dd8381d3bdcf0d93e40170ccf3237a194e213344da0d024ec1ee5770d1a27",
+        "go_pressed": false
+      }
+    }
+  ],
+  "provenance": {
+    "simulator_url": "https://netlogoweb.org/versions/2.15.0.html?disableAnalytics&disableWorkInProgress&speed=1&url=https%3A%2F%2Fraw.githubusercontent.com%2FNetLogo%2Fmodels%2Fca8e0e1611aef188fadeebd2097b70d1e5fa4e00%2FSample%2520Models%2FComputer%2520Science%2FCellular%2520Automata%2FCA%25201D%2520Elementary.nlogox",
+    "simulator_html_sha256": "760123f4996da8f248b4307131d5952147fb6ce37c3cbd7bac4fccfb68717c6a",
+    "task_manifest_sha256": "282d8c32a81c4f46b27b3e0ce70c5f5600f96f88537086a1952d6ecedc85e6a1",
+    "validator_sha256": "c3ecb1dc190b75114e4d625ca3fb9658b99ee7beb181e613a957da671d0592e9",
+    "session_id": "2f5d1f1f-ba6b-4776-aafc-4e36f473008e"
+  }
+}

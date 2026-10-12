@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "cui-literature-deep-read-addendum-v1",
+  "generatedAt": "2026-08-09",
+  "scope": {
+    "canonicalTableRows": 43,
+    "canonicalTableColumns": 41,
+    "existingDeepReadRows": 12,
+    "addendumRows": 5,
+    "targetDeepReadRowsAfterIntegration": 17,
+    "expectedReadStatusBreakdownAfterIntegration": {
+      "Abstract reviewed": 25,
+      "Abstract/project reviewed": 0,
+      "Key sections reviewed": 14,
+      "Repository/project reviewed": 4
+    },
+    "selectionRule": "Taxonomy Confidence=High and Persistent ID absent from the existing Deep Read worksheet",
+    "selectedPersistentIds": [
+      "DOI:10.1093/jcr/ucag006",
+      "IEEE-S&P-2026:WebCloak",
+      "arXiv:2511.13725",
+      "arXiv:2506.21506",
+      "arXiv:2504.12516"
+    ]
+  },
+  "integration": {
+    "status": "integrated_and_locally_verified",
+    "generatedAt": "2026-08-10T04:41:34.199Z",
+    "authoringRuntime": "loader-verified bundled @oai/artifact-tool runtime",
+    "integratedFiles": [
+      "Literature_Survey_Week1.xlsx",
+      "Literature_Survey_Week1.csv",
+      "Literature_Survey_Week1.upsert.csv",
+      "literature_survey_upsert.json",
+      "literature_survey_qa.json",
+      "Literature_Deep_Read_12.csv"
+    ],
+    "verification": {
+      "canonicalShape": "43x41",
+      "finalDeepReadShape": "17x14",
+      "closedSchemaChecks": "pass",
+      "persistentIdDeduplication": "pass",
+      "workbookRoundTrip": "pass",
+      "csvAndUpsertRoundTrip": "pass",
+      "formulaErrorScan": "pass",
+      "allSheetRenderGeneration": "pass",
+      "manualVisualInspection": "pass"
+    },
+    "cloudBoundary": "No Google Sheet or Drive write/readback was performed in this literature-only local integration stage.",
+    "requiredNextStep": "Refresh shared release checks/status/deliverables and perform any separately authorized authenticated UMN Google Sheet write/readback.",
+    "completedAt": "2026-08-10T04:42:39.118Z"
+  },
+  "canonicalRowUpdates": [
+    {
+      "Persistent ID": "DOI:10.1093/jcr/ucag006",
+      "Read Status": "Key sections reviewed",
+      "Evidence Locator": "Oxford corrected proof: Cognitive Trap Framework steps 1-4; Human Validation; Initial and Expanded Model Validation; Prolific Method and Results; Figure 2; Tables 2-4; Practical Recommendations; Limitations",
+      "Benchmark/Dataset": "202-human trap validation; 34 VLMs / 2,040 expanded-model trials; 1,007 Prolific humans; 526 author-deployed agents across four platforms; MTurk N=263 and CloudResearch Connect N=506 replications",
+      "Metrics": "Sensitivity and human false-positive rate by trap-failure threshold; per-trap discrimination; CAPTCHA AUC; response-time condition sensitivity",
+      "Key Takeaway": "A diversified six-item visual challenge detected 97.1% of 526 deployed agents at a 4.1% presumed-human false-positive rate, but it is an active survey intervention with population, vision, platform, and model-drift limits rather than a passive trace detector.",
+      "Notes/Blockers": "The three-failure threshold was selected on the main validation deployment and then preregistered for the MTurk and CloudResearch replications. The paper does not compare directly against behavioral biometrics; human ground truth used platform verification rather than biometrics. Any new participant deployment requires the appropriate human-research determination.",
+      "Observer Position": "Survey instrument scoring visual responses and decision timing",
+      "Observation Signal": "Six visual-trap outcomes, response timing, traditional attention checks, and reCAPTCHA comparator; no raw keyboard or pointer trace",
+      "Evaluation Setting": "Browser survey; retained-trap validation, expanded cross-model testing, four-platform agent deployment, and two human-platform replications",
+      "Primary Source URL": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "Official Paper URL": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "Official Code URL": "https://FelipeMAffonso.github.io/cognitive-trap-repository",
+      "Official Data URL": "https://osf.io/f2jhx/"
+    },
+    {
+      "Persistent ID": "IEEE-S&P-2026:WebCloak",
+      "Read Status": "Key sections reviewed",
+      "Evidence Locator": "IEEE S&P 2026 paper: Sections 2.1-2.3, 3, 4, 5.1-5.3, 7.1-7.5, and 8; Figures 1-2 and 8; Tables 2-4, 6-7, and 10-15",
+      "Benchmark/Dataset": "LLMCrawlBench: 237 offline webpage snapshots, 10,895 manually annotated image URLs, 50 high-traffic websites, and five categories; 32 scraper variants across L2S, LNC, and LWA paradigms",
+      "Metrics": "Image-extraction recall and precision; manual effort; time, token, CPU, and memory overhead; protected/unprotected recall; visual fidelity and user ratings",
+      "Key Takeaway": "WebCloak exposes executor dependence: Browser-Use achieved 60.4% recall and 88.8% precision while UI-only agents often failed without structure; the full defense reduced average evaluated-agent recall from 88.7% to 0% by disrupting parse-then-interpret rather than by identifying an actor.",
+      "Notes/Blockers": "This is threat characterization and active in-page defense, not a human-versus-agent detector. The main benchmark is image-centric, the text/audio study is smaller, client restoration requires JavaScript, and the threat model emphasizes scalable novice-to-intermediate attackers rather than bespoke expert bypasses.",
+      "Observer Position": "Website owner and offline benchmark with annotated target assets",
+      "Observation Signal": "Extracted asset URLs, recall/precision, execution resource use, DOM/visual input mode, and protected-page condition; no low-level user-event trace",
+      "Evaluation Setting": "Matched protected/unprotected offline pages, representative scraper deep dives, adaptive attacks, browser/OS checks, and an IRB-approved N=35 usability study; no detector train/test split",
+      "Primary Source URL": "https://letterligo.netlify.app/paper/SP26_WebAgent.pdf",
+      "Official Paper URL": "https://letterligo.netlify.app/paper/SP26_WebAgent.pdf",
+      "Official Code URL": "https://github.com/LetterLiGO/Agent-WebCloak",
+      "Official Data URL": "https://zenodo.org/records/17251212"
+    },
+    {
+      "Persistent ID": "arXiv:2511.13725",
+      "Read Status": "Key sections reviewed",
+      "Evidence Locator": "arXiv:2511.13725v4: Sections 4.1-4.3, 5.1-5.3, 6-7, and Limitations; Figures 1-5; Tables 1-4 and 6-8; Appendix A.7-A.10",
+      "Benchmark/Dataset": "KILLBENCH: 550 bypass-expanded prompts across eight web scenarios and seven sites; four malicious-agent configurations; four external kill-switch defenses; WebArena tasks with BrowserGym/AgentLab infrastructure",
+      "Metrics": "Trajectory-level ISR, KSR, KSRcond, PSR, ASR, and CSR; per-defense, configuration, backbone, scenario, and jailbreak-pattern analysis",
+      "Key Takeaway": "The best external payload is strongly configuration-dependent: AUTOGUARD averages 43.5% conditional kill-switch rate, exceeds 88% on aligned GPT-5.2 C1/C3 settings, but system-prompt-bypass and uncensored regimes remain difficult. Halt state must therefore be separated from task outcome and intrinsic refusal.",
+      "Notes/Blockers": "KILLBENCH deliberately does not score whether real-world harm succeeded; payload perturbation and true halt causality are not separated without paired counterfactuals. One Table 7 cell is marked as an unrecoverable raw-log inconsistency. This project should not reproduce the harmful scenarios.",
+      "Observer Position": "External browser harness observing payload encounter, terminal/refusal behavior, and trajectory progression",
+      "Observation Signal": "Stop/refusal timing, post-signal actions, terminal action, task continuation, and trajectory-level outcome categories; chain-of-thought cause is benchmark-only and must not enter this detector",
+      "Evaluation Setting": "No-s baseline plus four defenses across agent configurations/backbones, with per-scenario and per-pattern analysis; no detector train/test split",
+      "Primary Source URL": "https://arxiv.org/abs/2511.13725",
+      "Official Paper URL": "https://arxiv.org/pdf/2511.13725",
+      "Official Code URL": "Not reported",
+      "Official Data URL": "Not reported"
+    },
+    {
+      "Persistent ID": "arXiv:2506.21506",
+      "Read Status": "Key sections reviewed",
+      "Evidence Locator": "Mind2Web 2 paper: Sections 3.2-3.5 and 4.1-4.4; Tables 2-3; Figures 3-5; Appendix F.1; official repository sections Submission Guideline, Precache Webpage, and Run Evaluation Locally Yourself",
+      "Benchmark/Dataset": "130 long-horizon agentic-search tasks across six domains and 24 subdomains; 10-task public development split, 120-task test split; Subset-30 human study; average 50 rubric nodes and maximum 603",
+      "Metrics": "Partial Completion, Success Rate, Pass@3, time, answer length, source-attribution validity, and human judge-agent correctness",
+      "Key Takeaway": "On three runs per task, OpenAI Deep Research reached 0.54 partial completion, 0.28 success, and 0.40 Pass@3 versus humans at 0.79, 0.54, and 0.83 on Subset-30; the large partial/full gap argues for keeping graded progress rather than reducing every trace to binary success.",
+      "Notes/Blockers": "The evaluator consumes final answers, citations, and cached webpages rather than low-level interaction traces. Live pages introduce time variance, CAPTCHAs, login walls, and cache failures; many capable systems are closed. The paper-era dev/test release policy changed when the official repository released all evaluation scripts on 2025-10-23, so evaluation version must be pinned.",
+      "Observer Position": "Benchmark judge agent consuming final answer, cited URLs, and cached webpage evidence",
+      "Observation Signal": "Markdown answer, source attribution, cached page content, rubric-node completion, elapsed time, and answer length; no keyboard or pointer events",
+      "Evaluation Setting": "Three runs per system on a 10/120 dev/test split; human comparison on randomly selected Subset-30; webpage caching for reproducible judging",
+      "Primary Source URL": "https://arxiv.org/abs/2506.21506",
+      "Official Paper URL": "https://arxiv.org/pdf/2506.21506",
+      "Official Code URL": "https://github.com/OSU-NLP-Group/Mind2Web-2",
+      "Official Data URL": "https://huggingface.co/datasets/osunlp/Mind2Web-2"
+    },
+    {
+      "Persistent ID": "arXiv:2504.12516",
+      "Read Status": "Key sections reviewed",
+      "Evidence Locator": "BrowseComp paper: Sections 2.1-2.4, 3, and 4.1-4.5; Tables 2-3; Figures 1 and 3-5; Appendix B; official simple-evals browsecomp_eval.py lines defining encrypted test-set loading, seed-0 subsampling, prompting, and semantic grading",
+      "Benchmark/Dataset": "1,266 human-written hard-to-find questions with short reference answers; official encrypted test-set CSV; 1,255 questions attempted in the human verification campaign; 64 trials per question in pass-rate analysis",
+      "Metrics": "Semantically graded short-answer accuracy, calibration error, human solvability/agreement, compute scaling, and repeated-sample pass-rate distribution",
+      "Key Takeaway": "The original Deep Research result was 51.5% accuracy while human trainers solved 29.2% of attempted questions under a long search protocol; however, BrowseComp scores only final answer equivalence and therefore cannot validate a mouse/keyboard recorder or identify the actor producing the answer.",
+      "Notes/Blockers": "The benchmark intentionally omits open-ended user-query realism, may admit alternative valid answers, and is sensitive to test leakage and grader behavior. The authors removed 21 problematic tasks after reviewing zero-pass cases and explicitly request that decrypted questions/answers not be republished.",
+      "Observer Position": "Final-answer evaluator with encrypted reference answers and a model-based semantic grader",
+      "Observation Signal": "Question, generated explanation, exact answer, self-reported confidence, and correctness; no standardized browser trajectory or executor",
+      "Evaluation Setting": "Reference implementation evaluates the encrypted test set, optionally takes a deterministic seed-0 subset, and grades semantic answer equivalence; no training split is defined for the benchmark evaluator",
+      "Primary Source URL": "https://arxiv.org/abs/2504.12516",
+      "Official Paper URL": "https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf",
+      "Official Code URL": "https://github.com/openai/simple-evals",
+      "Official Data URL": "https://openaipublic.blob.core.windows.net/simple-evals/browse_comp_test_set.csv"
+    }
+  ],
+  "deepReadRows": [
+    {
+      "Persistent ID": "DOI:10.1093/jcr/ucag006",
+      "Item": "Cognitive Trap Framework",
+      "1. Research role": "Active-challenge detector evidence for survey-taking agents; complementary to passive behavioral biometrics",
+      "2. Interface / environment": "Qualtrics browser survey with Prolific humans and four vision-agent platforms; MTurk and CloudResearch Connect replications",
+      "3. Observer position": "Survey instrument scores response correctness and decision timing; it does not observe raw OS or browser events",
+      "4. Observable signal": "Six randomized visual-trap outcomes, per-item discrimination, choice-page decision time, attention checks, and CAPTCHA comparator",
+      "5. Action / architecture": "Vision-enabled agents capture screenshots, reason over rendered questions, and submit responses; validation spans 34 VLMs and four deployed agent platforms",
+      "6. Unit / horizon": "One approximately seven-minute survey session; six traps; 1,007 Prolific humans and 526 deployed agents in the main validation",
+      "7. Evaluation protocol": "Trap retention on 202 humans and six models; expanded 34-model/2,040-trial validation; main deployment threshold selected from validation data, then preregistered for MTurk and Connect replications",
+      "Key result": "Failing at least three of six traps detected 511/526 agents (97.1%) while flagging 41/1,007 presumed humans (4.1%); traditional checks detected 2.3% of agents",
+      "8. Failure / claim boundary": "Active challenge rather than passive trace detection; assumed human ground truth, visual-accessibility risk, platform heterogeneity, model drift, and no direct behavioral-biometric comparison",
+      "Project-design consequence": "Treat active cognitive traps as a future complementary channel, not a replacement for event traces; calibrate thresholds on an independent population and keep response content out of the passive detector",
+      "Evidence locator": "Cognitive Trap Framework; Human/Initial/Expanded Model Validation; Figure 2; Tables 2-4; Prolific Method/Results; Practical Recommendations; Limitations",
+      "Primary URL": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432"
+    },
+    {
+      "Persistent ID": "IEEE-S&P-2026:WebCloak",
+      "Item": "WebCloak",
+      "1. Research role": "Agent-as-attacker characterization and active website defense; not a detector benchmark",
+      "2. Interface / environment": "237 offline snapshots from 50 websites with 10,895 annotated images; L2S, LNC, and LWA scraper paradigms",
+      "3. Observer position": "Website owner and benchmark harness with ground-truth target-asset URLs",
+      "4. Observable signal": "Extracted asset URLs, recall/precision, execution time, token/CPU/memory overhead, input modality, and protected-page condition",
+      "5. Action / architecture": "Parse-then-interpret scrapers; Browser-Use combines UI and DOM while UI-only agents act visually; WebCloak applies structural obfuscation plus semantic labyrinth",
+      "6. Unit / horizon": "One page-level extraction episode; 32 scraper variants for measurement and three representative systems on the full benchmark",
+      "7. Evaluation protocol": "Offline protected/unprotected comparison, adaptive-attack checks, browser/OS checks, and N=35 usability study; benchmark-wide defense evaluation rather than a detector split",
+      "Key result": "Browser-Use reached 60.4% recall and 88.8% precision without defense; full WebCloak reduced average evaluated-agent recall from 88.7% to 0%",
+      "8. Failure / claim boundary": "Image-centric benchmark, smaller text/audio check, JavaScript-dependent restoration, and novice-to-intermediate threat model; disruption does not identify who produced a session",
+      "Project-design consequence": "Audit DOM/visual executor and page condition as provenance, exclude them from detector features, and test recorder coverage under adversarial DOM changes before interpreting missing events as actor behavior",
+      "Evidence locator": "Sections 2.1-2.3, 3-5, 7-8; Figures 1-2 and 8; Tables 2-4, 6-7, and 10-15",
+      "Primary URL": "https://letterligo.netlify.app/paper/SP26_WebAgent.pdf"
+    },
+    {
+      "Persistent ID": "arXiv:2511.13725",
+      "Item": "KILLBENCH",
+      "1. Research role": "External intervention and corrigibility benchmark; threat evidence rather than actor detection",
+      "2. Interface / environment": "WebArena-derived multi-step browser tasks across eight harmful scenarios and seven sites",
+      "3. Observer position": "External harness observes signal encounter, terminal/refusal behavior, and subsequent task progression",
+      "4. Observable signal": "ISR, KSR, KSRcond, PSR, ASR, terminal actions, and post-signal continuation; benchmark-only chain-of-thought cause",
+      "5. Action / architecture": "C1 text, C2 system-prompt-bypass, C3 multimodal, and C4 uncensored agents over BrowserGym/AgentLab; four external payload defenses",
+      "6. Unit / horizon": "One multi-step trajectory with payload placed on the second page; 550 prompts from ten jailbreak patterns",
+      "7. Evaluation protocol": "No-s baseline and four defenses across configurations/backbones, with per-scenario and per-pattern analysis; no detector train/test split",
+      "Key result": "AUTOGUARD averages 43.5% KSRcond and exceeds 88% on aligned GPT-5.2 C1/C3, while C2/C4 remain difficult and GCG averages 2.8%",
+      "8. Failure / claim boundary": "ASR measures failure to halt, not real-world harm success; payload perturbation is not causally separated from halt; one Table 7 cell has an unrecoverable logging inconsistency",
+      "Project-design consequence": "Represent refusal, stop, timeout, and validator outcome separately; keep post-stop negative controls and termination timing, but do not reproduce harmful scenarios or ingest action text",
+      "Evidence locator": "Sections 4.1-4.3, 5.1-5.3, 6-7, and Limitations; Figures 1-5; Tables 1-4 and 6-8; Appendix A.7-A.10",
+      "Primary URL": "https://arxiv.org/pdf/2511.13725"
+    },
+    {
+      "Persistent ID": "arXiv:2506.21506",
+      "Item": "Mind2Web 2",
+      "1. Research role": "Long-horizon agentic-search benchmark and partial-progress evaluator",
+      "2. Interface / environment": "Live web search across 130 tasks, six domains, and 24 subdomains; answers require citations and time-varying information",
+      "3. Observer position": "Judge agent consumes final answer, cited URLs, and cached webpage evidence",
+      "4. Observable signal": "Rubric-node completion, full success, Pass@3, citations, cached pages, elapsed time, and answer length; no low-level interaction events",
+      "5. Action / architecture": "Search products, Deep Research systems, and direct-browser Operator; some systems combine search, browser interaction, and code tools",
+      "6. Unit / horizon": "One long-horizon task answer; average human task uses 18 minutes, eight websites, and 110 pages on Subset-30; three runs per agent system",
+      "7. Evaluation protocol": "10-task development and 120-task test split; three runs per system; randomly selected Subset-30 human study; cached-webpage judging and human audit",
+      "Key result": "OpenAI Deep Research scored 0.54 partial completion, 0.28 full success, and 0.40 Pass@3; humans scored 0.79, 0.54, and 0.83 on Subset-30",
+      "8. Failure / claim boundary": "Final-answer benchmark rather than trace dataset; live-page drift, cache failures, login/CAPTCHA barriers, closed systems, and a large partial/full-success gap",
+      "Project-design consequence": "Version task and cached evidence, retain graded progress, and record low-level events separately; do not use final-answer metrics as evidence that the extension captured an agent",
+      "Evidence locator": "Sections 3.2-3.5 and 4.1-4.4; Tables 2-3; Figures 3-5; Appendix F.1; official repository evaluation and caching instructions",
+      "Primary URL": "https://arxiv.org/pdf/2506.21506"
+    },
+    {
+      "Persistent ID": "arXiv:2504.12516",
+      "Item": "BrowseComp",
+      "1. Research role": "Hard-search capability benchmark and contamination-control reference; not a recorder or actor detector",
+      "2. Interface / environment": "Open-web search questions with short, entangled-information answers; tool and executor are not standardized",
+      "3. Observer position": "Final-answer evaluator holding an encrypted reference answer and using a semantic grader",
+      "4. Observable signal": "Generated explanation, exact answer, confidence, and correctness; no standardized browser events or action path",
+      "5. Action / architecture": "Any internet-enabled model or browsing agent; paper compares non-browsing, search-enabled, and Deep Research systems",
+      "6. Unit / horizon": "One question-answer episode; 1,266 tasks; 64 samples per question in repeated-trial analyses; human search can last roughly two hours",
+      "7. Evaluation protocol": "Official encrypted test-set evaluation with semantic answer matching; deterministic seed-0 optional subsampling; no benchmark training split",
+      "Key result": "Deep Research achieved 51.5% accuracy; humans solved 29.2% of 1,255 attempted questions and agreed with the reference on 86.4% of solved cases",
+      "8. Failure / claim boundary": "Short-answer proxy omits real user-query ambiguity, may have alternate valid answers, is leakage-sensitive, and uses a model grader; 21 problematic tasks were removed after zero-pass review",
+      "Project-design consequence": "Do not use BrowseComp as the matched mouse/keyboard protocol; preserve its canary and never publish decrypted items, and treat any use as outcome-only capability evidence",
+      "Evidence locator": "Sections 2.1-2.4, 3, and 4.1-4.5; Tables 2-3; Figures 1 and 3-5; Appendix B; official simple-evals browsecomp_eval.py",
+      "Primary URL": "https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf"
+    }
+  ],
+  "primarySources": [
+    {
+      "Persistent ID": "DOI:10.1093/jcr/ucag006",
+      "url": "https://academic.oup.com/jcr/advance-article/doi/10.1093/jcr/ucag006/8540432",
+      "kind": "publisher corrected proof"
+    },
+    {
+      "Persistent ID": "DOI:10.1093/jcr/ucag006",
+      "url": "https://osf.io/f2jhx/",
+      "kind": "author-linked data and code artifact"
+    },
+    {
+      "Persistent ID": "IEEE-S&P-2026:WebCloak",
+      "url": "https://letterligo.netlify.app/paper/SP26_WebAgent.pdf",
+      "kind": "official project-linked paper PDF"
+    },
+    {
+      "Persistent ID": "IEEE-S&P-2026:WebCloak",
+      "url": "https://github.com/LetterLiGO/Agent-WebCloak",
+      "kind": "official code repository"
+    },
+    {
+      "Persistent ID": "IEEE-S&P-2026:WebCloak",
+      "url": "https://zenodo.org/records/17251212",
+      "kind": "official project-linked artifact record"
+    },
+    {
+      "Persistent ID": "arXiv:2511.13725",
+      "url": "https://arxiv.org/pdf/2511.13725",
+      "kind": "arXiv v4 paper PDF"
+    },
+    {
+      "Persistent ID": "arXiv:2506.21506",
+      "url": "https://arxiv.org/pdf/2506.21506",
+      "kind": "paper PDF"
+    },
+    {
+      "Persistent ID": "arXiv:2506.21506",
+      "url": "https://github.com/OSU-NLP-Group/Mind2Web-2",
+      "kind": "official code and evaluator repository"
+    },
+    {
+      "Persistent ID": "arXiv:2504.12516",
+      "url": "https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf",
+      "kind": "official paper PDF"
+    },
+    {
+      "Persistent ID": "arXiv:2504.12516",
+      "url": "https://github.com/openai/simple-evals/blob/main/browsecomp_eval.py",
+      "kind": "official reference evaluator"
+    }
+  ]
+}

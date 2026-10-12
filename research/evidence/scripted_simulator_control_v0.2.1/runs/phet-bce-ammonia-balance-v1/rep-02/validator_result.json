@@ -1,0 +1,62 @@
+{
+  "schema_version": "cui-task-validator-result-v1",
+  "task_id": "phet-bce-ammonia-balance-v1",
+  "task_version": "1.0.0",
+  "validator_id": "phet-scientific-state-validator",
+  "validator_version": "1.1.0",
+  "started_at": "2026-08-07T13:59:36.307Z",
+  "finished_at": "2026-08-07T13:59:36.316Z",
+  "passed": true,
+  "checks": [
+    {
+      "id": "ammonia_balanced",
+      "kind": "phet_ammonia_balance_oracle",
+      "passed": true,
+      "expected": {
+        "project": "balancing-chemical-equations",
+        "version": "1.3.1",
+        "coefficients": [
+          1,
+          3,
+          2
+        ],
+        "scale_counts": [
+          2,
+          2,
+          6,
+          6
+        ],
+        "element_labels": [
+          "H",
+          "N"
+        ]
+      },
+      "observed": {
+        "project": "balancing-chemical-equations",
+        "version": "1.3.1",
+        "coefficients": [
+          1,
+          3,
+          2
+        ],
+        "scale_counts": [
+          2,
+          2,
+          6,
+          6
+        ],
+        "element_labels": [
+          "H",
+          "N"
+        ]
+      }
+    }
+  ],
+  "provenance": {
+    "simulator_url": "https://phet.colorado.edu/sims/html/balancing-chemical-equations/1.3.1/balancing-chemical-equations_en.html",
+    "simulator_html_sha256": "cbe5fef2e07f83321e88d747bc150c06326233e286c8f246aada727b2bf0053b",
+    "task_manifest_sha256": "53e2f97cbe994feeb2482286e1e0ecdc93bcd5230c1384aa70db35fc1995cb33",
+    "validator_sha256": "c3ecb1dc190b75114e4d625ca3fb9658b99ee7beb181e613a957da671d0592e9",
+    "session_id": "500df876-a300-414d-b905-dbaad361dae0"
+  }
+}

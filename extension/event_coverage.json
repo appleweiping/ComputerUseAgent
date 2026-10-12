@@ -1,0 +1,28 @@
+{
+  "schema_version": "cui-recorder-event-coverage-v1",
+  "supported_browser_event_types": [
+    "auxclick", "beforeinput", "beforetoggle", "cancel", "change", "click",
+    "close", "compositionend", "compositionstart", "compositionupdate",
+    "contextmenu", "copy", "cut", "dblclick", "drag", "dragend",
+    "dragenter", "dragleave", "dragover", "dragstart", "drop", "focusin",
+    "focusout", "fullscreenchange", "fullscreenerror", "gotpointercapture",
+    "hashchange", "input", "invalid", "keydown", "keyup",
+    "lostpointercapture", "offline", "online", "pagehide", "pageshow",
+    "paste", "pointercancel", "pointerdown", "pointerenter", "pointerleave",
+    "pointermove", "pointerout", "pointerover", "pointerup", "popstate",
+    "reset", "resize", "scroll", "select", "selectionchange", "submit",
+    "toggle", "touchcancel", "touchend", "touchmove", "touchstart",
+    "visibilitychange", "wheel"
+  ],
+  "recorder_generated_event_types": ["navigation"],
+  "run_evidence_contract": {
+    "artifact": "event_coverage_summary.json in the E2E result bundle (CUA_E2E_RESULT_DIR); the retained 0.4.0 run is research/evidence/recorder_e2e_v0.4.0/event_coverage_summary.json",
+    "required_groups": [
+      "naturally_observed_in_fixture",
+      "synthetically_exercised_in_fixture",
+      "recorder_generated"
+    ],
+    "note": "Counts and observed types belong to a specific clean-profile run and are not duplicated in this source capability manifest."
+  },
+  "interpretation_warning": "is_trusted is diagnostic-only. CDP-driven events may be trusted; this classification describes one QA fixture and must not be used as an actor detector."
+}
