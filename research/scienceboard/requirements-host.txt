@@ -6,6 +6,6 @@
 # path. The repo-owned runtime_compat package implements only the five members
 # consumed by pinned sci/vm/vmanager.py and is verified by source hash/AST before
 # a VM may start. ScienceBoard itself additionally imports Pillow and tiktoken.
-Pillow==12.3.0
+Pillow==13.0.0
 requests==2.34.2
 tiktoken==0.13.0
